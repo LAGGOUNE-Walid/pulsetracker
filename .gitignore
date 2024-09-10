@@ -1,0 +1,4 @@
+mariadb/*
+redis/*
+src/vendor/*
+.env

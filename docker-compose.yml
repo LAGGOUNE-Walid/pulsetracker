@@ -1,0 +1,58 @@
+networks:
+  pulsetracker-network:
+services:
+  soketi: 
+    image: quay.io/soketi/soketi:1.4-16-debian
+    environment:
+      PUSHER_APP_ID: ${MARIADB_ROOT_PASSWORD}
+      PUSHER_APP_KEY: gmOfiurYZmpl2Hc7
+      PUSHER_APP_SECRET: gmOfiurYZmpl2Hc7
+    ports: 
+      - 6001:6001
+    networks:
+      - pulsetracker-network
+  mariadb:
+    image: bitnami/mariadb:10.5.26
+    volumes:
+      - ./mariadb:/bitnami/mariadb
+    environment:
+      MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD}
+      MARIADB_DATABASE: gmOfiurYZmpl2Hc7
+    ports: 
+      - 3301:3306
+    networks:
+      - pulsetracker-network
+  redis:
+    image: bitnami/redis:6.2.14
+    volumes:
+      - ./redis:/bitnami/redis/data
+    environment:
+      REDIS_PASSWORD: ${REDIS_PWD}
+    networks:
+      - pulsetracker-network
+  php:
+    image: ghcr.io/serversideup/php:8.3-fpm-nginx
+    volumes: 
+     - ./src:/var/www/html
+     - ./nginx/:/etc/nginx/conf.d/:ro
+    ports: 
+      - 83:8080
+    environment:
+      SSL_MODE: "off"
+    networks:
+      - pulsetracker-network
+  geopulse:
+    restart: unless-stopped
+    deploy:
+     resources:
+      limits:
+        memory: 2048M
+    build: ./geopulse
+    environment:
+      DISABLE_DEFAULT_SERVER: 1
+    volumes:
+      - ./geopulse/src/:/var/www/html/
+    networks:
+      - pulsetracker-network
+    ports:
+      - "9505:9505/udp"
