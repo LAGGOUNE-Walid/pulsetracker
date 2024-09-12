@@ -1,0 +1,12 @@
+:root, [data-bs-theme=light] {
+  --bs-body-font-family: Alatsi, sans-serif;
+  --bs-body-font-size: 1rem;
+  --bs-body-font-weight: 600;
+  --bs-body-line-height: 2;
+  --bs-border-radius: 0.6rem;
+  --bs-border-radius-sm: 0.5rem;
+  --bs-border-radius-lg: 1rem;
+  --bs-border-radius-xl: 1.5rem;
+  --bs-border-radius-xxl: 2.5rem;
+}
+

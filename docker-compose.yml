@@ -2,6 +2,7 @@ networks:
   pulsetracker-network:
 services:
   soketi: 
+    restart: unless-stopped
     image: quay.io/soketi/soketi:1.4-16-debian
     environment:
       PUSHER_APP_ID: ${MARIADB_ROOT_PASSWORD}
@@ -12,6 +13,7 @@ services:
     networks:
       - pulsetracker-network
   mariadb:
+    restart: unless-stopped
     image: bitnami/mariadb:10.5.26
     volumes:
       - ./mariadb:/bitnami/mariadb
@@ -23,6 +25,7 @@ services:
     networks:
       - pulsetracker-network
   redis:
+    restart: unless-stopped
     image: bitnami/redis:6.2.14
     volumes:
       - ./redis:/bitnami/redis/data
@@ -31,6 +34,7 @@ services:
     networks:
       - pulsetracker-network
   php:
+    restart: unless-stopped
     image: ghcr.io/serversideup/php:8.3-fpm-nginx
     volumes: 
      - ./src:/var/www/html
@@ -41,6 +45,24 @@ services:
       SSL_MODE: "off"
     networks:
       - pulsetracker-network
+  queue:
+    restart: unless-stopped
+    image: ghcr.io/serversideup/php:8.3-fpm-nginx
+    volumes: 
+     - ./src:/var/www/html
+    command: ["php", "/var/www/html/artisan", "queue:work", "--tries=3"]
+    environment:
+      PHP_FPM_POOL_NAME: "pulse-queue"
+    depends_on:
+      - redis
+      - mariadb
+      - soketi
+      - php
+    networks:
+      - pulsetracker-network
+    deploy:
+      mode: replicated
+      replicas: 6
   geopulse:
     restart: unless-stopped
     deploy:
