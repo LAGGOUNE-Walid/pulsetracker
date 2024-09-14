@@ -2,11 +2,10 @@
 
 namespace App\Traits;
 
-use App\Models\User;
 use App\Mail\EmailVerify;
-use Illuminate\Mail\SentMessage;
-use Illuminate\Support\Facades\URL;
+use App\Models\User;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\URL;
 
 trait SendEmailVerificationLinkTrait
 {

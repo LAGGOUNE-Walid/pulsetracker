@@ -20,9 +20,10 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&amp;display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alatsi&amp;display=swap">
-    <link rel="stylesheet" href="{{ url('assets/css/bs-theme-overrides.css') }}">
-    <link rel="stylesheet" href="{{ url('assets/css/Banner-Heading-Image-images.css') }}">
-    <link rel="stylesheet" href="{{ url('assets/css/Navbar-Centered-Brand-Dark-icons.css') }}">
+    <link rel="stylesheet" href="/assets/css/bs-theme-overrides.css">
+    <link rel="stylesheet" href="/assets/css/Banner-Heading-Image-images.css">
+    <link rel="stylesheet" href="/assets/css/Navbar-Centered-Brand-Dark-icons.css">
+    @paddleJS
 </head>
 
 <body style="background: var(--bs-emphasis-color);--bs-primary: #00498c;--bs-primary-rgb: 0,73,140;">
@@ -70,7 +71,9 @@
                                 devices with lightning-fast UDP technology. Minimize battery consumption, scale
                                 effortlessly, and view locations in real-time or dispatch data to your preferred
                                 systems.</p>
-                            <div class="my-3">@guest <a class="btn btn-primary" role="button">Getting started</a> @endguest</div>
+                            <div class="my-3">@guest <a class="btn btn-primary" role="button">Getting started</a>
+                                @endguest
+                            </div>
                         </div>
                     </div>
                     <div class="col-md-6 order-first order-md-last" style="min-height: 250px;"><img
@@ -175,6 +178,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
+                    <h1 class="text-center" style="--bs-body-font-weight: 1000;font-weight: bold;">How it works
+                    </h1>
+                    <img class="mt-3 img-fluid" src="assets/img/Pulsetracker-howto.svg" alt="">
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-12">
                     <h1 class="text-center" style="--bs-body-font-weight: 1000;font-weight: bold;">Integrate tonight
                     </h1>
                     <h4 style="color: var(--bs-gray-500);margin-top: 9px;padding-top: 20px;"><strong>Seamlessly
@@ -205,7 +215,8 @@
                 <div class="col-md-4">
                     <div style="border: 1px solid var(--bs-dark-text-emphasis);padding: 5%;border-radius: 10px;">
                         <h5 class="text-center">Free</h5>
-                        <h3 class="text-center" style="margin-top: 5%;">$0 / mo</h3>
+                        <h3 class="text-center" style="margin-top: 5%;">${{ $subscriptions['free']['price'] }} / mo
+                        </h3>
                         <hr>
                         <ul class="list-unstyled">
                             <li><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
@@ -216,7 +227,7 @@
                                     <path
                                         d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05">
                                     </path>
-                                </svg>&nbsp;1 app</li>
+                                </svg>&nbsp;{{ $subscriptions['free']['size']['apps'] }} app</li>
                             <li><span style="color: var(--bs-form-valid-color);"> </span><svg
                                     xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
                                     fill="currentColor" viewBox="0 0 16 16" class="bi bi-check-circle"
@@ -226,7 +237,7 @@
                                     <path
                                         d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05">
                                     </path>
-                                </svg>&nbsp;50 Devices</li>
+                                </svg>&nbsp;{{ $subscriptions['free']['size']['devices'] }} Devices</li>
                             <li><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
                                     fill="currentColor" viewBox="0 0 16 16" class="bi bi-check-circle"
                                     style="color: var(--bs-form-valid-color);">
@@ -235,7 +246,18 @@
                                     <path
                                         d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05">
                                     </path>
-                                </svg><strong>&nbsp;72000 messages per day</strong></li>
+                                </svg><strong>&nbsp;{{ $subscriptions['free']['size']['messages_per_day'] }} messages
+                                    per day</strong></li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                    fill="currentColor" viewBox="0 0 16 16" class="bi bi-check-circle"
+                                    style="color: var(--bs-form-valid-color);">
+                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16">
+                                    </path>
+                                    <path
+                                        d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05">
+                                    </path>
+                                </svg><strong>&nbsp;{{ $subscriptions['free']['size']['wesockets_limits'] }} websockets
+                                    connections</strong></li>
                             <li><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
                                     fill="currentColor" viewBox="0 0 16 16" class="bi bi-check-circle"
                                     style="color: var(--bs-form-valid-color);">
@@ -245,14 +267,22 @@
                                         d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05">
                                     </path>
                                 </svg>&nbsp;Unlimited concurrent connections</li>
-                        </ul><a class="btn btn-outline-light btn-lg" role="button" style="width: 100%;color: white;"
-                            href="{url('signup')}">Sign up</a>
+                        </ul>
+                        @guest
+                            <a class="btn btn-outline-light btn-lg" role="button" style="width: 100%;color: white;"
+                                href="{{ url('signup') }}">Sign up</a>
+                        @endguest
+                        @auth
+                            <a class="btn btn-outline-light btn-lg" role="button" style="width: 100%;color: white;"
+                                href="{{ url('subscribe-plan-to-free') }}">Subscribe</a>
+                        @endauth
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div style="padding: 5%;border-radius: 10px;border: 1px solid var(--bs-link-hover-color) ;">
+                    <div style="padding: 5%;border-radius: 10px;border: 2px solid var(--bs-link-hover-color) ;">
                         <h5 class="text-center">Pro</h5>
-                        <h3 class="text-center" style="margin-top: 5%;">$40 / mo</h3>
+                        <h3 class="text-center" style="margin-top: 5%;">${{ $subscriptions['pro']['price'] }} / mo
+                        </h3>
                         <hr>
                         <ul class="list-unstyled">
                             <li><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
@@ -263,7 +293,7 @@
                                     <path
                                         d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05">
                                     </path>
-                                </svg>&nbsp;5 apps</li>
+                                </svg>&nbsp;{{ $subscriptions['pro']['size']['apps'] }} apps</li>
                             <li><span style="color: var(--bs-form-valid-color);"> </span>&nbsp;<svg
                                     xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
                                     fill="currentColor" viewBox="0 0 16 16" class="bi bi-check-circle"
@@ -273,7 +303,7 @@
                                     <path
                                         d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05">
                                     </path>
-                                </svg>&nbsp;1000 Device</li>
+                                </svg>&nbsp;{{ $subscriptions['pro']['size']['devices'] }} Device</li>
                             <li><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
                                     fill="currentColor" viewBox="0 0 16 16" class="bi bi-check-circle"
                                     style="color: var(--bs-form-valid-color);">
@@ -282,7 +312,18 @@
                                     <path
                                         d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05">
                                     </path>
-                                </svg><strong>&nbsp;Unlimted messages per day</strong></li>
+                                </svg><strong>&nbsp;{{ $subscriptions['pro']['size']['messages_per_day'] }} messages
+                                    per day</strong></li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                    fill="currentColor" viewBox="0 0 16 16" class="bi bi-check-circle"
+                                    style="color: var(--bs-form-valid-color);">
+                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16">
+                                    </path>
+                                    <path
+                                        d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05">
+                                    </path>
+                                </svg><strong>&nbsp;{{ $subscriptions['pro']['size']['wesockets_limits'] ?? 'Unlimited' }}
+                                    websockets connections</strong></li>
                             <li><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
                                     fill="currentColor" viewBox="0 0 16 16" class="bi bi-check-circle"
                                     style="color: var(--bs-form-valid-color);">
@@ -292,14 +333,26 @@
                                         d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05">
                                     </path>
                                 </svg>&nbsp;Unlimited concurrent connections</li>
-                        </ul><a class="btn btn-outline-light btn-lg" role="button" style="width: 100%;color: white;"
-                            href="{url('signup')}">Sign up</a>
+                        </ul>
+                        @guest
+                            <a class="btn btn-outline-light btn-lg" role="button" style="width: 100%;color: white;"
+                                href="{{ url('signup') }}">Sign up</a>
+                        @endguest
+                        @auth
+                            @if (!auth()->user()->subscribed('pro'))
+                                <x-paddle-button :checkout="$checkoutLinks['pro']" class="btn btn-outline-light btn-lg"
+                                    style="width: 100%;color: white;">
+                                    Subscribe
+                                </x-paddle-button>
+                            @endif
+                        @endauth
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div style="border: 1px solid var(--bs-dark-text-emphasis);padding: 5%;border-radius: 10px;">
                         <h5 class="text-center">Enterprise</h5>
-                        <h3 class="text-center" style="margin-top: 5%;">$99 / mo</h3>
+                        <h3 class="text-center" style="margin-top: 5%;">${{ $subscriptions['enterprise']['price'] }}
+                            / mo</h3>
                         <hr>
                         <ul class="list-unstyled">
                             <li><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
@@ -310,8 +363,8 @@
                                     <path
                                         d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05">
                                     </path>
-                                </svg>&nbsp;Unlimited apps</li>
-                            <li><span style="color: var(--bs-form-valid-color);"> </span><svg
+                                </svg>&nbsp;{{ $subscriptions['enterprise']['size']['apps'] ?? 'Unlimited' }} apps</li>
+                            <li><span style="color: var(--bs-form-valid-color);"> </span>&nbsp;<svg
                                     xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
                                     fill="currentColor" viewBox="0 0 16 16" class="bi bi-check-circle"
                                     style="color: var(--bs-form-valid-color);">
@@ -320,7 +373,7 @@
                                     <path
                                         d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05">
                                     </path>
-                                </svg>&nbsp;Unlimited devices</li>
+                                </svg>&nbsp;{{ $subscriptions['enterprise']['size']['devices'] }} Device</li>
                             <li><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
                                     fill="currentColor" viewBox="0 0 16 16" class="bi bi-check-circle"
                                     style="color: var(--bs-form-valid-color);">
@@ -329,7 +382,18 @@
                                     <path
                                         d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05">
                                     </path>
-                                </svg><strong>&nbsp;Unlimted messages per day</strong></li>
+                                </svg><strong>&nbsp;{{ $subscriptions['enterprise']['size']['messages_per_day'] }}
+                                    messages per day</strong></li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                    fill="currentColor" viewBox="0 0 16 16" class="bi bi-check-circle"
+                                    style="color: var(--bs-form-valid-color);">
+                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16">
+                                    </path>
+                                    <path
+                                        d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05">
+                                    </path>
+                                </svg><strong>&nbsp;{{ $subscriptions['enterprise']['size']['wesockets_limits'] ?? 'Unlimited' }}
+                                    websockets connections</strong></li>
                             <li><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
                                     fill="currentColor" viewBox="0 0 16 16" class="bi bi-check-circle"
                                     style="color: var(--bs-form-valid-color);">
@@ -339,25 +403,26 @@
                                         d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05">
                                     </path>
                                 </svg>&nbsp;Unlimited concurrent connections</li>
-                        </ul><a class="btn btn-outline-light btn-lg" role="button" style="width: 100%;color: white;"
-                            href="{url('signup')}">Sign up</a>
+                        </ul>
+                        @guest
+                            <a class="btn btn-outline-light btn-lg" role="button" style="width: 100%;color: white;"
+                                href="{{ url('signup') }}">Sign up</a>
+                        @endguest
+                        @auth
+                            @if (!auth()->user()->subscribed('enterprise'))
+                                <x-paddle-button :checkout="$checkoutLinks['enterprise']" class="btn btn-outline-light btn-lg"
+                                    style="width: 100%;color: white;">
+                                    Subscribe
+                                </x-paddle-button>
+                            @endif
+                        @endauth
                     </div>
                 </div>
             </div>
         </div><!-- End: 1 Row 3 Columns -->
     </section><!-- Start: Footer Dark -->
-    <footer class="text-center bg-dark" style="margin-top: 8%;">
-        <div class="container text-white py-4 py-lg-5">
-            <ul class="list-inline">
-                <li class="list-inline-item me-4"><a class="link-light" href="#">Terms of Service</a></li>
-                <li class="list-inline-item me-4"><a class="link-light" href="#">Privacy Policy</a></li>
-                <li class="list-inline-item me-4"><a class="link-light" href="{{ url('docs') }}">API
-                        Documentation</a></li>
-                <li class="list-inline-item"><a class="link-light" href="#">Contact Us</a></li>
-            </ul>
-            <p class="text-muted mb-0">Copyright © 2024 PulseTracker</p>
-        </div>
-    </footer><!-- End: Footer Dark -->
+    <x-footer />
+    <!-- End: Footer Dark -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

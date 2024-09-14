@@ -2,22 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use Illuminate\Http\Request;
-use App\Actions\CreateUserAction;
+use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
 use App\Actions\ManualCreateUserAction;
 
 class UserController extends Controller
 {
-
     public function __construct(
         private ManualCreateUserAction $manualCreateUserAction
-    )
-    {
-        
-    } 
+    ) {}
 
     public function create(Request $request): RedirectResponse
     {
@@ -31,6 +26,7 @@ class UserController extends Controller
         $request->session()->regenerate();
 
         Auth::attempt($credentials, true);
+
         return redirect()->intended(url('dashboard'));
     }
 
@@ -43,13 +39,28 @@ class UserController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
- 
+
             return redirect()->intended(url('dashboard'));
         }
- 
+
         return back()->withErrors([
             'email' => 'The provided credentials do not match our records.',
         ])->onlyInput('email');
     }
 
+    public function update(Request $request): RedirectResponse
+    {
+        $request->validate([
+            'email' => ['required', Rule::unique('users')->ignore($request->user()->id)]
+        ]);
+        $request->user()->update(['email' => $request->email]);
+        if (
+            $request->has('password') and
+            $request->password !== "" and
+            $request->password !== null
+        ) {
+            $request->user()->update(['password' => $request->password]);
+        }
+        return redirect()->back()->with('success', 'Profile updated!');
+    }
 }

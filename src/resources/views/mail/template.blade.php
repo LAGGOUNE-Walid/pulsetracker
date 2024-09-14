@@ -37,15 +37,7 @@
             </div>
         </div>
     </div><!-- End: 1 Row 1 Column -->
-    <div class="container text-white py-4 py-lg-5" style="text-align: center;">
-        <ul class="list-inline">
-            <li class="list-inline-item me-4"><a class="link-light" href="#">Terms of Service</a></li>
-            <li class="list-inline-item me-4"><a class="link-light" href="#">Privacy Policy</a></li>
-            <li class="list-inline-item me-4"><a class="link-light" href="#">API Documentation</a></li>
-            <li class="list-inline-item"><a class="link-light" href="#">Contact Us</a></li>
-        </ul>
-        <p class="text-muted mb-0">Copyright © 2024 PulseTracker</p>
-    </div>
+    <x-footer/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

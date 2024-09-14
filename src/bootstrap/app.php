@@ -11,7 +11,9 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/healthcheck',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
+        $middleware->validateCsrfTokens(except: [
+            'paddle/*',
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

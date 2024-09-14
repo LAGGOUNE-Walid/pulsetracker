@@ -4,20 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Actions\OauthCreateUserAction;
 use App\Models\User;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 
 class LoginWithProvider extends Controller
 {
-
     public function __construct(
         private OauthCreateUserAction $oauthCreateUserAction
-    )
-    {
-        
-    }
+    ) {}
 
     public function redirectToProvider($provider): RedirectResponse
     {
@@ -29,6 +24,7 @@ class LoginWithProvider extends Controller
         $user = Socialite::driver($provider)->user();
         $authUser = $this->findOrCreateUser($user, $provider);
         Auth::login($authUser, true);
+
         return redirect(url('dashboard'));
     }
 
@@ -41,13 +37,15 @@ class LoginWithProvider extends Controller
         $alreadyExistsUser = User::where('email', $user->email)->first();
         if ($alreadyExistsUser) {
             $alreadyExistsUser->update([
-                'name'     => $user->name,
-                'email'    => $user->email,
+                'name' => $user->name,
+                'email' => $user->email,
                 'provider' => $provider,
-                'provider_id' => $user->id
+                'provider_id' => $user->id,
             ]);
+
             return $alreadyExistsUser;
         }
+
         return $this->oauthCreateUserAction->create($user, $provider);
     }
 }

@@ -8,7 +8,7 @@ use App\Traits\SendWelcomeEmailToNewCreatedUser;
 
 class ManualCreateUserAction
 {
-    use SendWelcomeEmailToNewCreatedUser, SendEmailVerificationLinkTrait;
+    use SendEmailVerificationLinkTrait, SendWelcomeEmailToNewCreatedUser;
 
     public function create(array $credentials): User
     {

@@ -12,11 +12,11 @@ class OauthCreateUserAction
     public function create($userData, string $provider): User
     {
         $user = User::create([
-            'name'     => $userData->name,
-            'email'    => $userData->email,
+            'name' => $userData->name,
+            'email' => $userData->email,
             'provider' => $provider,
             'provider_id' => $userData->id,
-            'email_verified_at' => now()
+            'email_verified_at' => now(),
         ]);
 
         $this->sendWelcomeEmailToNewCreatedUser($user);

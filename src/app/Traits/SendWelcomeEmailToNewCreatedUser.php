@@ -2,9 +2,8 @@
 
 namespace App\Traits;
 
-use App\Models\User;
 use App\Mail\UserJoined;
-use Illuminate\Mail\SentMessage;
+use App\Models\User;
 use Illuminate\Support\Facades\Mail;
 
 trait SendWelcomeEmailToNewCreatedUser
