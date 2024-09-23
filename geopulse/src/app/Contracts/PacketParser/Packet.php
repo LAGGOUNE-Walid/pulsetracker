@@ -15,7 +15,7 @@ interface Packet
      * @param  string  $data  The data (message) sent to the server by the client over UDP.
      * @return ?Packet Returns the instance of the Packet that has been populated with data from the string.
      */
-    public function fromString(string $data): ?Packet;
+    public function fromString(string $data, string $ip): ?Packet;
 
     /**
      * Check if sended data are valide and ready to parse
@@ -75,4 +75,6 @@ interface Packet
      * }
      */
     public function toArray(): array;
+
+    public function getIp(): string;
 }

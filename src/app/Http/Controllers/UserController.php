@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Validation\Rule;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Http\RedirectResponse;
 use App\Actions\ManualCreateUserAction;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
 
 class UserController extends Controller
 {
@@ -51,16 +51,17 @@ class UserController extends Controller
     public function update(Request $request): RedirectResponse
     {
         $request->validate([
-            'email' => ['required', Rule::unique('users')->ignore($request->user()->id)]
+            'email' => ['required', Rule::unique('users')->ignore($request->user()->id)],
         ]);
         $request->user()->update(['email' => $request->email]);
         if (
             $request->has('password') and
-            $request->password !== "" and
+            $request->password !== '' and
             $request->password !== null
         ) {
             $request->user()->update(['password' => $request->password]);
         }
+
         return redirect()->back()->with('success', 'Profile updated!');
     }
 }

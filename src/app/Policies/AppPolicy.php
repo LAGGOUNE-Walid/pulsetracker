@@ -3,11 +3,10 @@
 namespace App\Policies;
 
 use App\Models\User;
-use NunoMaduro\Collision\Adapters\Phpunit\Subscribers\Subscriber;
 
 class AppPolicy
 {
-    public function create(User $user)
+    public function create(User $user): bool
     {
         $subscriptions = config('paddle-subscriptions.plans');
         foreach ($subscriptions as $subscription) {
@@ -16,6 +15,7 @@ class AppPolicy
                 return true;
             }
         }
+
         return $user->apps()->count() < 1;
     }
 }

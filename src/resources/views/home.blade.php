@@ -15,7 +15,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="description"
         content="PulseTracker, the cutting-edge solution for real-time location tracking designed for developers and businesses. Our eco-friendly service uses the efficient UDP protocol to minimize mobile power consumption while delivering accurate location updates. PulseTracker offers seamless integration with WebSockets for real-time data dispatch, comprehensive API access, and robust tracking features. Whether you're building a new app or enhancing existing services, PulseTracker's scalable solutions and flexible pricing plans ensure you get the most reliable and cost-effective location tracking. Start with our free plan and scale up as your needs grow. Try PulseTracker today and experience unparalleled location tracking performance.">
-    <link rel="icon" type="image/jpeg" sizes="720x720" href="assets/img/Circle%20Brand%20Identity.jpeg">
+    <link rel="icon" type="image/jpeg" sizes="720x720" href="assets/img/Circle_Brand_Identity__Copy_-removebg-preview.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/darkly/bootstrap.min.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&amp;display=swap">
@@ -202,8 +202,8 @@
                     <h1 class="text-center" style="font-weight: bold;">Everything in your control</h1>
                     <h4 style="color: var(--bs-gray-500);margin-top: 9px;padding-top: 20px;">PulseTracker puts you in
                         charge, offering complete control over how you track, manage, and dispatch location data.</h4>
-                    <img src="{{ url('assets/img/Screenshot%202024-09-10%20at%2013-53-05%20CodePen%20-%20Leaflet%20Map%20-%20Dark%20Theme.webp') }}"
-                        style="width: 100%;border-radius: 10px;margin-top: 3%;">
+                    <img src="{{ url('assets/img/Screenshot 2024-09-23 at 11-40-30 Dashboard - Pulsetracker.png') }}"
+                        style="width: 100%;border-radius: 10px;margin-top: 3%; border: 2px solid #f3f3f3; ">
                 </div>
             </div>
         </div><!-- End: 1 Row 1 Column -->
@@ -246,8 +246,7 @@
                                     <path
                                         d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05">
                                     </path>
-                                </svg><strong>&nbsp;{{ $subscriptions['free']['size']['messages_per_day'] }} messages
-                                    per day</strong></li>
+                                </svg><strong>&nbsp;{{ number_format($subscriptions['free']['size']['messages_per_month']) }} messages/month</strong></li>
                             <li><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
                                     fill="currentColor" viewBox="0 0 16 16" class="bi bi-check-circle"
                                     style="color: var(--bs-form-valid-color);">
@@ -312,8 +311,7 @@
                                     <path
                                         d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05">
                                     </path>
-                                </svg><strong>&nbsp;{{ $subscriptions['pro']['size']['messages_per_day'] }} messages
-                                    per day</strong></li>
+                                </svg><strong>&nbsp;{{ number_format($subscriptions['pro']['size']['messages_per_month']) }} messages/month</strong></li>
                             <li><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
                                     fill="currentColor" viewBox="0 0 16 16" class="bi bi-check-circle"
                                     style="color: var(--bs-form-valid-color);">
@@ -382,8 +380,8 @@
                                     <path
                                         d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05">
                                     </path>
-                                </svg><strong>&nbsp;{{ $subscriptions['enterprise']['size']['messages_per_day'] }}
-                                    messages per day</strong></li>
+                                </svg><strong>&nbsp;{{ number_format($subscriptions['enterprise']['size']['messages_per_month']) }}
+                                    messages/month</strong></li>
                             <li><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
                                     fill="currentColor" viewBox="0 0 16 16" class="bi bi-check-circle"
                                     style="color: var(--bs-form-valid-color);">

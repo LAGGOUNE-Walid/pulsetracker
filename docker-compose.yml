@@ -5,21 +5,19 @@ services:
     restart: unless-stopped
     image: quay.io/soketi/soketi:1.4-16-debian
     environment:
-      PUSHER_APP_ID: ${MARIADB_ROOT_PASSWORD}
-      PUSHER_APP_KEY: gmOfiurYZmpl2Hc7
-      PUSHER_APP_SECRET: gmOfiurYZmpl2Hc7
-    ports: 
-      - 6001:6001
+      SOKETI_DEFAULT_APP_ID: '${PUSHER_APP_ID}'
+      SOKETI_DEFAULT_APP_KEY: '${PUSHER_APP_KEY}'
+      SOKETI_DEFAULT_APP_SECRET: '${PUSHER_APP_SECRET}'
     networks:
       - pulsetracker-network
   mariadb:
     restart: unless-stopped
-    image: bitnami/mariadb:10.5.26
+    build: ./mariadbBuild
     volumes:
-      - ./mariadb:/bitnami/mariadb
+      - ./mariadb:/var/lib/mysql
     environment:
       MARIADB_ROOT_PASSWORD: ${MARIADB_ROOT_PASSWORD}
-      MARIADB_DATABASE: gmOfiurYZmpl2Hc7
+      MARIADB_DATABASE: pulse_tracker
     ports: 
       - 3301:3306
     networks:
@@ -33,6 +31,8 @@ services:
       REDIS_PASSWORD: ${REDIS_PWD}
     networks:
       - pulsetracker-network
+    ports: 
+      - 6379:6379
   php:
     restart: unless-stopped
     image: ghcr.io/serversideup/php:8.3-fpm-nginx
@@ -40,9 +40,12 @@ services:
      - ./src:/var/www/html
      - ./nginx/:/etc/nginx/conf.d/:ro
     ports: 
-      - 83:8080
+      - 83:8443
+      - 6001:6001
     environment:
-      SSL_MODE: "off"
+      SSL_MODE: "mixed"
+      SSL_PRIVATE_KEY_FILE: "/etc/ssl/private/test-key.pem"
+      SSL_CERTIFICATE_FILE: "/etc/ssl/private/test.pem"
     networks:
       - pulsetracker-network
   queue:
@@ -51,6 +54,24 @@ services:
     volumes: 
      - ./src:/var/www/html
     command: ["php", "/var/www/html/artisan", "queue:work", "--tries=3"]
+    environment:
+      PHP_FPM_POOL_NAME: "pulse-queue"
+    networks:
+      - pulsetracker-network
+    deploy:
+      mode: replicated
+      replicas: 6
+    depends_on:
+      - redis
+      - mariadb
+      - soketi
+      - php
+  geoqueue:
+    restart: unless-stopped
+    image: ghcr.io/serversideup/php:8.3-fpm-nginx
+    volumes: 
+     - ./src:/var/www/html
+    command: ["php", "/var/www/html/artisan", "queue:work", "--tries=3", "--queue=geopulse"]
     environment:
       PHP_FPM_POOL_NAME: "pulse-queue"
     depends_on:

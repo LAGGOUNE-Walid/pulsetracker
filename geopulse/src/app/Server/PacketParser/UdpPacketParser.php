@@ -28,9 +28,14 @@ class UdpPacketParser implements Packet
      */
     private string $clientId;
 
+    /**
+     * The Client ip
+     */
+    private string $ip;
+
     public function __construct(private bool $usingMsgPack) {}
 
-    public function fromString(string $data): ?Packet
+    public function fromString(string $data, string $ip): ?Packet
     {
         try {
             if ($this->usingMsgPack) {
@@ -47,6 +52,7 @@ class UdpPacketParser implements Packet
                 $this->appId = $unpackedData['appId'];
                 $this->clientId = $unpackedData['clientId'];
                 $this->payload = $unpackedData['data'];
+                $this->ip = $ip;
                 return $this;
             }
         }
@@ -57,6 +63,11 @@ class UdpPacketParser implements Packet
     public function dataIsValide(array $data): bool
     {
         return array_key_exists('appId', $data) and array_key_exists('clientId', $data) and array_key_exists('data', $data);
+    }
+
+    public function getIp(): string
+    {
+        return $this->ip;        
     }
 
     public function getAppId(): string
@@ -99,6 +110,7 @@ class UdpPacketParser implements Packet
             'point' => $this->toPoint(),
             'appId' => $this->getAppId(),
             'clientId' => $this->getClientId(),
+            'ip' => $this->ip
         ];
     }
 }

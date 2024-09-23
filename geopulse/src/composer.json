@@ -1,14 +1,17 @@
 {
     "require": {
         "illuminate/queue": "^11.21",
-        "illuminate/events": "^11.21",
         "illuminate/database": "^11.21",
         "aws/aws-sdk-php": "^3.320",
         "pda/pheanstalk": "^5.0",
         "predis/predis": "^2.0",
         "jmikola/geojson": "^1.0",
         "league/container": "^4.2",
-        "illuminate/redis": "^11.21"
+        "illuminate/bus": "^11.23",
+        "swoole/ide-helper": "~5.0.0",
+        "guzzlehttp/guzzle": "^7.9",
+        "pusher/pusher-php-server": "^7.2",
+        "illuminate/redis": "^11.23"
     },
     "require-dev": {
         "laravel/pint": "^1.17",

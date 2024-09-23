@@ -10,7 +10,6 @@ use Illuminate\Http\Request;
 
 class AppController extends Controller
 {
-
     public function __construct(
         public CreateAppAction $createAppAction
     ) {}
@@ -22,13 +21,13 @@ class AppController extends Controller
 
     public function create(Request $request): RedirectResponse
     {
-        if($request->user()->cannot('create', App::class)) {
+        if ($request->user()->cannot('create', App::class)) {
             return redirect()->back()->with('error', "You've reached the limit for creating apps on your current plan. Please upgrade to add more apps and unlock additional features.");
         }
         $request->validate(['name' => 'required']);
 
         $this->createAppAction->create($request->user(), $request->name);
 
-        return redirect()->back()->with('success', "App successfully created! You can now return to the Apps table and start using it with the provided App ID.");
+        return redirect()->back()->with('success', 'App successfully created! You can now return to the Apps table and start using it with the provided App ID.');
     }
 }

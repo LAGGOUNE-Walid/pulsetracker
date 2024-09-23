@@ -18,7 +18,8 @@ class UserSubscriptionController extends Controller
                     ->returnTo(route('settings'));
             }
         }
-        return view('home', ['checkoutLinks' => $checkoutLinks, "subscriptions" => $subscriptions]);
+
+        return view('home', ['checkoutLinks' => $checkoutLinks, 'subscriptions' => $subscriptions]);
     }
 
     public function moveToFree(Request $request): RedirectResponse
@@ -27,6 +28,7 @@ class UserSubscriptionController extends Controller
         if ($currentActiveSubscription) {
             $currentActiveSubscription->cancel();
         }
+
         return redirect(url('dashboard/settings'));
     }
 }

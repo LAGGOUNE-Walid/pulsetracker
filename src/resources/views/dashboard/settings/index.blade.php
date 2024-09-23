@@ -2,7 +2,7 @@
 @section('content')
     <div class="col m-5">
         <h3>Settings:</h3>
-        <form method="POST" action="{{url('dashboard/settings/update')}}">
+        <form method="POST" action="{{ url('dashboard/settings/update') }}">
 
             @csrf
             <div class="form-group mt-5">
@@ -27,7 +27,8 @@
             </div>
             <div class="form-group mt-3">
                 <label for="exampleInputPassword1">Password</label>
-                <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                <input name="password" type="password" class="form-control" id="exampleInputPassword1"
+                    placeholder="Password">
             </div>
             <br />
             <button type="submit" class="btn btn-primary float-end">Save modifications</button>
@@ -43,40 +44,72 @@
                     </div>
                     <div class="col col-6">
                         <b>
-                            @if (auth()->user()->subscribed('pro'))
+                            @if ($user->subscribed('pro'))
                                 PRO
-                            @elseif(auth()->user()->subscribed('enterprise'))
+                                <?php $plan = config('paddle-subscriptions.plans.pro'); ?>
+                            @elseif($user->subscribed('enterprise'))
                                 ENTERPRISE
+                                <?php $plan = config('paddle-subscriptions.plans.enterprise'); ?>
                             @else
                                 FREE
+                                <?php $plan = config('paddle-subscriptions.plans.free'); ?>
                             @endif
                         </b>
                     </div>
                     <div class="col col-6">
-                        Applications 1/4
+                        Applications {{ $user->apps_count }}/{{ $plan['size']['apps'] ?? 'UNLIMITED' }}
                     </div>
                     <div class="col col-6">
                         <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: 10%" aria-valuenow="10"
-                                aria-valuemin="0" aria-valuemax="100"></div>
+                            @php
+                                if ($plan['size']['apps']) {
+                                    $plansPercentage = ($user->apps_count / $plan['size']['apps']) * 100;
+                                } else {
+                                    $plansPercentage = 0;
+                                }
+
+                            @endphp
+                            <div class="progress-bar" role="progressbar" style="width: {{ $plansPercentage }}%"
+                                aria-valuenow="{{ $plansPercentage }}" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                     </div>
                     <div class="col col-6">
-                        Dwevices 30/50
+                        Devices {{ $user->devices_count }}/{{ $plan['size']['devices'] ?? 'UNLIMITED' }}
                     </div>
                     <div class="col col-6">
                         <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="70"
-                                aria-valuemin="0" aria-valuemax="100"></div>
+                            @php
+                                if ($plan['size']['devices']) {
+                                    $devicesPercentage = ($user->devices_count / $plan['size']['devices']) * 100;
+                                } else {
+                                    $devicesPercentage = 0;
+                                }
+                            @endphp
+                            <div class="progress-bar" role="progressbar" style="width: {{ $devicesPercentage }}%"
+                                aria-valuenow="{{ $devicesPercentage }}" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                     </div>
                     <div class="col col-6">
-                        Messages 30/10000
+                        Messages this month
+                        {{ number_format($user->locationsCounts?->first()?->messages_sent ?? 0) }}/{{ $plan['size']['messages_per_month'] ? number_format($plan['size']['messages_per_month']) : 'UNLIMITED' }}
                     </div>
                     <div class="col col-6">
                         <div class="progress">
-                            <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25"
-                                aria-valuemin="0" aria-valuemax="100"></div>
+                            @php
+                                if (
+                                    $plan['size']['messages_per_month'] and
+                                    $user->locationsCounts?->first()?->messages_sent
+                                ) {
+                                    $messagesPercentage =
+                                        ($user->locationsCounts->first()->messages_sent /
+                                            $plan['size']['messages_per_month']) *
+                                        100;
+                                } else {
+                                    $messagesPercentage = 0;
+                                }
+                            @endphp
+                            <div class="progress-bar" role="progressbar" style="width: {{ $messagesPercentage }}%"
+                                aria-valuenow="{{ $messagesPercentage }}" aria-valuemin="0" aria-valuemax="100"></div>
                         </div>
                     </div>
 
