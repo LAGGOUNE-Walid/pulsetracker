@@ -13,6 +13,7 @@ class DatabaseConnectionPool extends ConnectionPool
         parent::__construct(function () use ($container) {
             $db = $container->get(DB::class);
             $db->getConnection()->getPdo();
+
             return $db->connection('default');
         }, $size);
     }

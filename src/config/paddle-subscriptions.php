@@ -9,7 +9,7 @@ return [
             'size' => [
                 'apps' => 1,
                 'devices' => 3,
-                'messages_per_month' => 45000,
+                'messages_per_month' => 2500,
                 'data_retention_days' => 7,
                 'wesockets_limits' => 1,
             ],
@@ -21,7 +21,7 @@ return [
             'size' => [
                 'apps' => 5,
                 'devices' => 25,
-                'messages_per_month' => 3000000,
+                'messages_per_month' => 50000,
                 'data_retention_days' => 30,
                 'wesockets_limits' => null,
             ],
@@ -29,11 +29,11 @@ return [
         'enterprise' => [
             'name' => 'enterprise',
             'price_id' => 'pri_01j7p1k24mh7sp2dpbprazpz1q',
-            'price' => 199,
+            'price' => 149,
             'size' => [
                 'apps' => null,
-                'devices' => 100,
-                'messages_per_month' => 30000000,
+                'devices' => 500,
+                'messages_per_month' => 5000000,
                 'data_retention_days' => 90,
                 'wesockets_limits' => null,
             ],

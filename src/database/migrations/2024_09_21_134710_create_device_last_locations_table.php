@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('app_key');
             // $table->geometry('location', subtype: 'point');
             $table->json('location');
+            $table->json('extra_data')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

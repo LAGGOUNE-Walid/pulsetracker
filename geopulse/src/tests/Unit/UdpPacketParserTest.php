@@ -1,6 +1,5 @@
 <?php
 
-use GeoJson\GeoJson;
 use GeoJson\Geometry\Point;
 use PHPUnit\Framework\TestCase;
 use Pulse\Server\PacketParser\UdpPacketParser;
@@ -57,7 +56,7 @@ final class UdpPacketParserTest extends TestCase
         $udpPacketParser = new UdpPacketParser(false);
         $data = '{"data":{},"appId":"22f8e456-93f2-4173-8f2d-8a010abcceb1","clientId":"22f8e456-93f2-4173-8f2d-8a010abcceb1"}';
         $packet = $udpPacketParser->fromString($data);
-        $this->assertEquals([0,0], $packet->toPoint()->getCoordinates());
+        $this->assertEquals([0, 0], $packet->toPoint()->getCoordinates());
     }
 
     public function testGettingEmptyJsonOfNonValidePoint(): void

@@ -26,6 +26,8 @@ RUN apk add --update --virtual builds \
 RUN pecl channel-update pecl.php.net
 RUN pecl install msgpack
 RUN docker-php-ext-enable msgpack
+RUN pecl install excimer
+RUN docker-php-ext-enable excimer
 COPY src/ /var/www/html/
 COPY supervisor/conf.d /etc/supervisor/conf.d
 WORKDIR /var/www/html/

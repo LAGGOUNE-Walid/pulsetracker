@@ -12,8 +12,12 @@ class EnqueuePacketAction implements PacketActionContract
 
     public function handle(Packet $packet): void
     {
-        $queueConnection = $this->queueConnectionsPool->get();
-        $queueConnection::push('App\Jobs\PulseLocationUpdatedJob@handle', $packet->toArray(), "geopulse");
-        $this->queueConnectionsPool->put($queueConnection);
+        try {
+            $queueConnection = $this->queueConnectionsPool->get();
+            $queueConnection::push('App\Jobs\PulseLocationUpdatedJob@handle', $packet->toArray(), 'geopulse');
+            $this->queueConnectionsPool->put($queueConnection);
+        } catch (\Throwable $th) {
+            \Sentry\captureException($th);
+        }
     }
 }

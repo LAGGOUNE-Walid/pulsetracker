@@ -14,8 +14,11 @@ class MapController extends Controller
             ->apps()
             ->with([
                 'devices' => function ($query) {
-                    return $query->whereHas('lastLocation');
+                    return $query->withWhereHas('lastLocation', function ($query) {
+                        return $query->where('device_last_locations.updated_at', '>', now()->subMinutes(15));
+                    });
                 },
+
                 'devices.deviceType',
             ])
             ->where('key', $appKey)

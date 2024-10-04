@@ -2,9 +2,9 @@
 
 namespace Pulse\Actions;
 
-use Pusher\Pusher;
-use Pulse\Contracts\PacketParser\Packet;
 use Pulse\Contracts\Action\PacketActionContract;
+use Pulse\Contracts\PacketParser\Packet;
+use Pusher\Pusher;
 
 class BroadcastPacketAction implements PacketActionContract
 {
@@ -12,12 +12,18 @@ class BroadcastPacketAction implements PacketActionContract
 
     public function handle(Packet $packet): void
     {
-        $this->pusher->trigger('private-apps.' . $packet->getAppId(), 'App\\Events\\DeviceLocationUpdated', [
-            'appKey' => $packet->getAppId(),
-            'key' => $packet->getClientId(),
-            'name' => $packet->getClientId(),
-            'ip' => $packet->getIp(),
-            'location' => $packet->toPoint()
-        ]);
+        try {
+            $this->pusher->trigger('private-apps.'.$packet->getAppId(), 'App\\Events\\DeviceLocationUpdated', [
+                'appKey' => $packet->getAppId(),
+                'key' => $packet->getClientId(),
+                'name' => $packet->getClientId(),
+                'ip' => $packet->getIp(),
+                'location' => $packet->toPoint(),
+                'extra' => $packet->getExtraData(),
+            ]);
+        } catch (\Throwable $th) {
+            \Sentry\captureException($th);
+        }
+
     }
 }

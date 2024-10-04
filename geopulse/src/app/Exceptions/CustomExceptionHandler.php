@@ -1,4 +1,5 @@
 <?php
+
 namespace Pulse\Exceptions;
 
 use Illuminate\Contracts\Debug\ExceptionHandler;
@@ -14,7 +15,7 @@ class CustomExceptionHandler implements ExceptionHandler
 
     public function render($request, Throwable $e)
     {
-        // In Laravel, this method would return an HTTP response. 
+        // In Laravel, this method would return an HTTP response.
         // In a non-Laravel project, you can just output the error message.
         echo $e->getMessage();
     }

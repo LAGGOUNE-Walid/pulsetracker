@@ -11,7 +11,10 @@
         "swoole/ide-helper": "~5.0.0",
         "guzzlehttp/guzzle": "^7.9",
         "pusher/pusher-php-server": "^7.2",
-        "illuminate/redis": "^11.23"
+        "illuminate/redis": "^11.23",
+        "sentry/sentry": "^4.9",
+        "monolog/monolog": "^3.7",
+        "jacklul/monolog-telegram": "^3.1"
     },
     "require-dev": {
         "laravel/pint": "^1.17",

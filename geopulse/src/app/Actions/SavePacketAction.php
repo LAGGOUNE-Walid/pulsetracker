@@ -2,12 +2,12 @@
 
 namespace Pulse\Actions;
 
-use Swoole\ConnectionPool;
-use Illuminate\Database\Connection;
-use Pulse\Contracts\PacketParser\Packet;
-use Illuminate\Database\PostgresConnection;
 use Illuminate\Database\Capsule\Manager as DB;
+use Illuminate\Database\Connection;
+use Illuminate\Database\PostgresConnection;
 use Pulse\Contracts\Action\PacketActionContract;
+use Pulse\Contracts\PacketParser\Packet;
+use Swoole\ConnectionPool;
 
 class SavePacketAction implements PacketActionContract
 {
@@ -15,14 +15,18 @@ class SavePacketAction implements PacketActionContract
 
     public function handle(Packet $packet): void
     {
-        $db = $this->databaseConnectionsPool->get();
+        try {
+            $db = $this->databaseConnectionsPool->get();
 
-        $db->table($this->table)->insert([
-            'appId' => $packet->getAppId(),
-            'clientId' => $packet->getClientId(),
-            'coordinate' => DB::raw($this->buildInsertPointQuery($packet->toPoint()->getCoordinates(), $db)),
-        ]);
-        $this->databaseConnectionsPool->put($db);
+            $db->table($this->table)->insert([
+                'appId' => $packet->getAppId(),
+                'clientId' => $packet->getClientId(),
+                'coordinate' => DB::raw($this->buildInsertPointQuery($packet->toPoint()->getCoordinates(), $db)),
+            ]);
+            $this->databaseConnectionsPool->put($db);
+        } catch (\Throwable $th) {
+            \Sentry\captureException($th);
+        }
     }
 
     public function buildInsertPointQuery(array $point, Connection $connection): string
@@ -30,7 +34,7 @@ class SavePacketAction implements PacketActionContract
         if ($connection instanceof PostgresConnection) {
             return "ST_GeomFromText('POINT(".implode(' ', $point).")')::POINT";
         }
+
         return "ST_GeomFromText('POINT(".implode(' ', $point).")')";
     }
-
 }

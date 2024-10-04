@@ -4,7 +4,6 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Http;
 use Symfony\Component\HttpFoundation\Response;
 
 class UserCanAccessLocationsHistory
@@ -16,7 +15,7 @@ class UserCanAccessLocationsHistory
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $date = $request->route("date");
+        $date = $request->route('date');
         $historyLimitsByDay = 0;
         $subscriptions = config('paddle-subscriptions.plans');
         foreach ($subscriptions as $subscription) {
@@ -27,9 +26,10 @@ class UserCanAccessLocationsHistory
         if ($historyLimitsByDay === 0) {
             $historyLimitsByDay = $subscriptions['free']['size']['data_retention_days'];
         }
-        if(now()->subDays($historyLimitsByDay)->gt($date)) {
+        if (now()->subDays($historyLimitsByDay)->gt($date)) {
             return abort(401);
         }
+
         return $next($request);
     }
 }

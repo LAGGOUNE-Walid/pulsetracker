@@ -20,7 +20,8 @@ class SetDeviceLastLocation implements ShouldQueue
         public App $app,
         public Device $device,
         public string $ip,
-        public Point $point
+        public Point $point,
+        public array $extraData
     ) {
         //
     }
@@ -39,6 +40,7 @@ class SetDeviceLastLocation implements ShouldQueue
                 'device_key' => $this->device->key,
                 'location' => $this->point,
                 'user_id' => $this->app->user_id,
+                'extra_data' => $this->extraData,
             ]
         );
     }

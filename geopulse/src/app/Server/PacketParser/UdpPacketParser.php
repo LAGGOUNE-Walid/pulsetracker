@@ -19,6 +19,11 @@ class UdpPacketParser implements Packet
     private array $payload;
 
     /**
+     * The extra data
+     */
+    private array $extraData;
+
+    /**
      * The Application ID extracted from the packet data.
      */
     private string $appId;
@@ -45,6 +50,7 @@ class UdpPacketParser implements Packet
             }
         } catch (\Throwable $th) {
             $unpackedData = [];
+            \Sentry\captureException($th);
         }
 
         if ($unpackedData !== [] and $unpackedData !== null and is_array($unpackedData)) {
@@ -52,7 +58,13 @@ class UdpPacketParser implements Packet
                 $this->appId = $unpackedData['appId'];
                 $this->clientId = $unpackedData['clientId'];
                 $this->payload = $unpackedData['data'];
+                if (array_key_exists('extra', $unpackedData)) {
+                    $this->extraData = $unpackedData['extra'];
+                } else {
+                    $this->extraData = [];
+                }
                 $this->ip = $ip;
+
                 return $this;
             }
         }
@@ -67,7 +79,7 @@ class UdpPacketParser implements Packet
 
     public function getIp(): string
     {
-        return $this->ip;        
+        return $this->ip;
     }
 
     public function getAppId(): string
@@ -99,9 +111,15 @@ class UdpPacketParser implements Packet
     {
         $json = json_encode($this->toArray());
         if (! $json) {
-            return "{}";
+            return '{}';
         }
+
         return $json;
+    }
+
+    public function getExtraData(): array
+    {
+        return $this->extraData;
     }
 
     public function toArray(): array
@@ -110,7 +128,8 @@ class UdpPacketParser implements Packet
             'point' => $this->toPoint(),
             'appId' => $this->getAppId(),
             'clientId' => $this->getClientId(),
-            'ip' => $this->ip
+            'ip' => $this->ip,
+            'extraData' => $this->extraData,
         ];
     }
 }

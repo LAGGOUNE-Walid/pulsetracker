@@ -3,11 +3,16 @@
 namespace App\Actions;
 
 use App\Models\User;
+use Illuminate\Support\Facades\Log;
+use App\Traits\HaveToCreateCurrentUsageQuota;
+use App\Traits\HaveToInitTheFreeSubscription;
 use App\Traits\SendWelcomeEmailToNewCreatedUser;
 
 class OauthCreateUserAction
 {
-    use SendWelcomeEmailToNewCreatedUser;
+    use HaveToCreateCurrentUsageQuota,
+        HaveToInitTheFreeSubscription,
+        SendWelcomeEmailToNewCreatedUser;
 
     public function create($userData, string $provider): User
     {
@@ -20,6 +25,10 @@ class OauthCreateUserAction
         ]);
 
         $this->sendWelcomeEmailToNewCreatedUser($user);
+        $this->createCurrentUsageQuota($user);
+        $this->initFreeSubscription($user);
+
+        Log::info("User created $user->email");
 
         return $user;
     }

@@ -40,6 +40,14 @@
             height: 90vh;
         }
     </style>
+    <script src="https://unpkg.com/feedbackfin@^1" defer></script>
+    <script>
+        window.feedbackfin = {
+            config: {},
+            ...window.feedbackfin
+        };
+        window.feedbackfin.config.url = "{{ url('dashboard/feedback') }}";
+    </script>
 </head>
 
 <body style="--bs-body-bg: black;background: black;">
@@ -54,19 +62,19 @@
         $subscriptions = config('paddle-subscriptions.plans');
         $userSubscriptionQuota = 0;
         foreach ($subscriptions as $subscription) {
-            $allowedDevicesPerSubscription = $subscription['size']['messages_per_month'] ?? PHP_INT_MAX;
+            $allowedMessagesPerSubscription = $subscription['size']['messages_per_month'] ?? PHP_INT_MAX;
             if (
                 auth()
                     ->user()
                     ->subscribed($subscription['name'])
             ) {
-                $userSubscriptionQuota = $allowedDevicesPerSubscription;
+                $userSubscriptionQuota = $allowedMessagesPerSubscription;
             }
         }
         if ($userSubscriptionQuota === 0) {
             $userSubscriptionQuota = $subscriptions['free']['size']['messages_per_month'];
         }
-        $left = $userSubscriptionQuota - (auth()->user()->locationsCounts?->first()?->messages_sent ?? 0);
+        $left = $userSubscriptionQuota - (auth()->user()->currentSubscription->messages_sent ?? 0);
 
     @endphp
     @if ($left <= 0)
@@ -131,11 +139,15 @@
                                         </path>
                                     </svg> Settings</span></a></li>
                         <li style="margin-top: 10%;">
+                            <button class="btn btn-success btn-lg" data-feedbackfin-button>Feedback&Issue</button>
+                        </li>
+                        <li style="margin-top: 30%;">
                             <form action="{{ url('dashboard/logout') }}" method="POST">
                                 @csrf
                                 <button class="btn btn-outline-warning mt-5" type="submit">Sign out</button>
                             </form>
                         </li>
+                        
                     </ul><!-- End: UL -->
                 </div>
             </div><!-- End: Column -->
@@ -173,7 +185,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     @stack('scripts')
     @vite('resources/js/app.js')
-    <script></script>
+    
 </body>
 
 </html>

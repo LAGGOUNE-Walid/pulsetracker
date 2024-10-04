@@ -15,7 +15,8 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="description"
         content="PulseTracker, the cutting-edge solution for real-time location tracking designed for developers and businesses. Our eco-friendly service uses the efficient UDP protocol to minimize mobile power consumption while delivering accurate location updates. PulseTracker offers seamless integration with WebSockets for real-time data dispatch, comprehensive API access, and robust tracking features. Whether you're building a new app or enhancing existing services, PulseTracker's scalable solutions and flexible pricing plans ensure you get the most reliable and cost-effective location tracking. Start with our free plan and scale up as your needs grow. Try PulseTracker today and experience unparalleled location tracking performance.">
-    <link rel="icon" type="image/jpeg" sizes="720x720" href="assets/img/Circle_Brand_Identity__Copy_-removebg-preview.png">
+    <link rel="icon" type="image/jpeg" sizes="720x720"
+        href="assets/img/Circle_Brand_Identity__Copy_-removebg-preview.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/darkly/bootstrap.min.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&amp;display=swap">
@@ -24,6 +25,7 @@
     <link rel="stylesheet" href="/assets/css/Banner-Heading-Image-images.css">
     <link rel="stylesheet" href="/assets/css/Navbar-Centered-Brand-Dark-icons.css">
     @paddleJS
+    @cookieconsentscripts
 </head>
 
 <body style="background: var(--bs-emphasis-color);--bs-primary: #00498c;--bs-primary-rgb: 0,73,140;">
@@ -41,7 +43,7 @@
                 <ul class="navbar-nav mx-auto" style="color: white;">
                     <li class="nav-item" style="color: white;margin-right: 15px;"><a class="nav-link active"
                             href="{{ url('about') }}" style="color: white;">About</a></li>
-                    <li class="nav-item" style="color: white;"><a class="nav-link active" href="{{ url('docs') }}"
+                    <li class="nav-item" style="color: white;"><a class="nav-link active" href="{{ url('docs/api') }}"
                             style="color: white;margin-right: 15px;">Docs</a></li>
                     <li class="nav-item" style="color: white;"><a class="nav-link active" href="#pricing"
                             style="color: white;">Pricing</a></li>
@@ -65,12 +67,12 @@
                 <div class="row g-0">
                     <div class="col-md-6">
                         <div class="text-white p-4 p-md-5">
-                            <h2 class="fw-bold text-white mb-3" style="font-size: 52px;">Real-Time Location Tracking.
-                                Fast. Efficient. Eco-Friendly</h2>
-                            <p class="mb-4" style="font-size: 18px;color: var(--bs-gray-500);">Track and manage mobile
-                                devices with lightning-fast UDP technology. Minimize battery consumption, scale
-                                effortlessly, and view locations in real-time or dispatch data to your preferred
-                                systems.</p>
+                            <h2 class="fw-bold text-white mb-3" style="font-size: 52px;">Real-Time Location Tracking for
+                                Developers and Everyone</h2>
+                            <p class="mb-4" style="font-size: 18px;color: var(--bs-gray-500);">Track and manage
+                                devices in real-time with fast UDP and WebSocket support. Optimize battery usage, scale
+                                effortlessly, and visualize live movements—perfect for developers and everyday users
+                                alike.</p>
                             <div class="my-3">@guest <a class="btn btn-primary" role="button">Getting started</a>
                                 @endguest
                             </div>
@@ -103,7 +105,7 @@
                     </svg>
                     <h3>Real-time Location Tracking</h3>
                     <p style="color: var(--bs-gray-500);font-size: 20px;">Integrate effortlessly with PulseTracker to
-                        send location updates every second using UDP, ensuring efficient data transmission.</p>
+                        send location updates every second using UDP or Websockets, ensuring real-Time transmission.</p>
                 </div>
                 <div class="col-md-4"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
                         fill="currentColor" viewBox="0 0 16 16" class="bi bi-browser-chrome"
@@ -114,7 +116,7 @@
                     </svg>
                     <h3>WebSocket Dispatching</h3>
                     <p style="color: var(--bs-gray-500);font-size: 20px;">Utilize WebSockets with Pusher protocol for
-                        instant updates and live tracking on your application’s map interface.</p>
+                        instant updates and live tracking on your backend or to your application’s map interface.</p>
                 </div>
                 <div class="col-md-4"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
                         fill="currentColor" viewBox="0 0 16 16" class="bi bi-file-zip"
@@ -129,7 +131,8 @@
                     <h3>Compact Format</h3>
                     <p style="color: var(--bs-gray-500);font-size: 20px;">Benefit from quick serialization and
                         deserialization, enhancing data transfer speed and reducing latency with MessagePack’s compact
-                        binary format.</p>
+                        binary format. <small><span class="badge rounded-pill text-bg-light"
+                                style="color: black !important;">Soon</span></small></p>
                 </div>
                 <div class="col-md-4"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
                         fill="currentColor" viewBox="0 0 16 16" class="bi bi-tree"
@@ -140,7 +143,7 @@
                     </svg>
                     <h3>Eco-Friendly Data Transmission</h3>
                     <p style="color: var(--bs-gray-500);font-size: 20px;">Benefit from the low-power consumption of
-                        UDP, making it ideal for mobile devices and reducing battery drain.</p>
+                        UDP, making it ideal for mobile/Iot devices and reducing battery drain.</p>
                 </div>
                 <div class="col-md-4"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
                         fill="currentColor" viewBox="0 0 16 16" class="bi bi-code"
@@ -150,7 +153,7 @@
                         </path>
                     </svg>
                     <h3>Flexible Integration</h3>
-                    <p style="color: var(--bs-gray-500);font-size: 20px;">Easy integration with mobile applications
+                    <p style="color: var(--bs-gray-500);font-size: 20px;">Easy integration with your devices & backend
                         through API endpoints for creating device tokens and sending location data.</p>
                 </div>
                 <div class="col-md-4"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
@@ -187,9 +190,19 @@
                 <div class="col-md-12">
                     <h1 class="text-center" style="--bs-body-font-weight: 1000;font-weight: bold;">Integrate tonight
                     </h1>
-                    <h4 style="color: var(--bs-gray-500);margin-top: 9px;padding-top: 20px;"><strong>Seamlessly
-                            integrate with PulseTracker in just a few lines of code. Below are examples for popular
-                            mobile programming languages to get you started.</strong></h4>
+                    <h4 class="text-center" style="color: var(--bs-gray-500);margin-top: 9px;padding-top: 20px;">
+                        <strong>Seamlessly
+                            integrate with PulseTracker in just a few lines of code. Below are examples for Dart and
+                            python .</strong>
+                    </h4>
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <img src="/assets/img/dart.png" class="rounded img-fluid" alt="example with dart">
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <img src="/assets/img/python.png" class="rounded img-fluid" alt="example with python">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div><!-- End: 1 Row 1 Column -->
@@ -200,10 +213,23 @@
             <div class="row">
                 <div class="col-md-12">
                     <h1 class="text-center" style="font-weight: bold;">Everything in your control</h1>
-                    <h4 style="color: var(--bs-gray-500);margin-top: 9px;padding-top: 20px;">PulseTracker puts you in
+                    <h4 class="text-center" style="color: var(--bs-gray-500);margin-top: 9px;padding-top: 20px;">
+                        PulseTracker puts you in
                         charge, offering complete control over how you track, manage, and dispatch location data.</h4>
                     <img src="{{ url('assets/img/Screenshot 2024-09-23 at 11-40-30 Dashboard - Pulsetracker.png') }}"
                         style="width: 100%;border-radius: 10px;margin-top: 3%; border: 2px solid #f3f3f3; ">
+                    <h4 class="text-center mt-5" style="color: var(--bs-gray-500);margin-top: 9px;padding-top: 20px;">
+                        Location data is also transmitted to your WebSocket listener using the Pusher protocol.</h4>
+                    <div class="mt-5 p-3 rounded" style="border: 1px solid #3e3e3e;">
+                        <small>
+                            <pre>{
+  "event": "App\\Events\\DeviceLocationUpdated",
+  "channel": "private-apps.APP_KEY",
+  "data": "{\"appKey\":\"APP_KEY\",\"key\":\"DEVICE_KEY\",\"name\":\"DEVICE_NAME\",\"ip\":\"0.0.0.0\",\"location\":{\"type\":\"Point\",\"coordinates\":[-0.071368,51.5107]}}"
+}
+                            </pre>
+                        </small>
+                    </div>
                 </div>
             </div>
         </div><!-- End: 1 Row 1 Column -->
@@ -246,7 +272,8 @@
                                     <path
                                         d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05">
                                     </path>
-                                </svg><strong>&nbsp;{{ number_format($subscriptions['free']['size']['messages_per_month']) }} messages/month</strong></li>
+                                </svg><strong>&nbsp;{{ number_format($subscriptions['free']['size']['messages_per_month']) }}
+                                    messages/month</strong></li>
                             <li><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
                                     fill="currentColor" viewBox="0 0 16 16" class="bi bi-check-circle"
                                     style="color: var(--bs-form-valid-color);">
@@ -266,14 +293,40 @@
                                         d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05">
                                     </path>
                                 </svg>&nbsp;Unlimited concurrent connections</li>
+
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                    fill="currentColor" viewBox="0 0 16 16" class="bi bi-check-circle"
+                                    style="color: var(--bs-form-valid-color);">
+                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16">
+                                    </path>
+                                    <path
+                                        d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05">
+                                    </path>
+                                </svg>&nbsp;{{ $subscriptions['free']['size']['data_retention_days'] }} Days data
+                                retention
+                            </li>
+
                         </ul>
                         @guest
                             <a class="btn btn-outline-light btn-lg" role="button" style="width: 100%;color: white;"
                                 href="{{ url('signup') }}">Sign up</a>
                         @endguest
                         @auth
-                            <a class="btn btn-outline-light btn-lg" role="button" style="width: 100%;color: white;"
-                                href="{{ url('subscribe-plan-to-free') }}">Subscribe</a>
+                            @if (!auth()->user()->subscriptions()->active()->first()?->onGracePeriod())
+                                @if (auth()->user()->subscriptions()->active()->first() !== null)
+                                    <a class="btn btn-outline-light btn" role="button" style="width: 100%;color: white;"
+                                        href="{{ url('subscribe-plan-to-free') }}">Switch to this NOW</a>
+                                @else
+                                    <a class="btn btn-outline-light btn-lg" role="button"
+                                        style="width: 100%;color: white;"
+                                        href="{{ url('subscribe-plan-to-free') }}">Subscribe</a>
+                                @endif
+                            @else
+                                <center>
+                                    <small class="text-muted text-center" style="font-size: 13px;">subscriptions cannot be
+                                        resumed after cancelations.</small>
+                                </center>
+                            @endif
                         @endauth
                     </div>
                 </div>
@@ -311,7 +364,8 @@
                                     <path
                                         d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05">
                                     </path>
-                                </svg><strong>&nbsp;{{ number_format($subscriptions['pro']['size']['messages_per_month']) }} messages/month</strong></li>
+                                </svg><strong>&nbsp;{{ number_format($subscriptions['pro']['size']['messages_per_month']) }}
+                                    messages/month</strong></li>
                             <li><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
                                     fill="currentColor" viewBox="0 0 16 16" class="bi bi-check-circle"
                                     style="color: var(--bs-form-valid-color);">
@@ -331,17 +385,49 @@
                                         d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05">
                                     </path>
                                 </svg>&nbsp;Unlimited concurrent connections</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                    fill="currentColor" viewBox="0 0 16 16" class="bi bi-check-circle"
+                                    style="color: var(--bs-form-valid-color);">
+                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16">
+                                    </path>
+                                    <path
+                                        d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05">
+                                    </path>
+                                </svg>&nbsp;{{ $subscriptions['pro']['size']['data_retention_days'] }} Days data
+                                retention
+                            </li>
                         </ul>
                         @guest
                             <a class="btn btn-outline-light btn-lg" role="button" style="width: 100%;color: white;"
                                 href="{{ url('signup') }}">Sign up</a>
                         @endguest
                         @auth
-                            @if (!auth()->user()->subscribed('pro'))
-                                <x-paddle-button :checkout="$checkoutLinks['pro']" class="btn btn-outline-light btn-lg"
-                                    style="width: 100%;color: white;">
-                                    Subscribe
-                                </x-paddle-button>
+                            @if (!auth()->user()->subscriptions()->active()->first()?->onGracePeriod())
+                                @if (auth()->user()->subscribed('pro'))
+                                    <form action="{{ url('subscription-cancel/pro') }}" method="POST">
+                                        @csrf
+                                        <button type="submit" class="btn btn-outline-danger"
+                                            style="width: 100%;">Cancel</button>
+                                    </form>
+                                @else
+                                    @if (auth()->user()->subscriptions()->active()->first() !== null)
+                                        <form action="{{ url('subscription-swap/pro') }}" method="POST">
+                                            @csrf
+                                            <button type="submit" class="btn btn-outline-success"
+                                                style="width: 100%;">Switch to this NOW</button>
+                                        </form>
+                                    @else
+                                        <x-paddle-button :checkout="$checkoutLinks['pro']" class="btn btn-outline-light btn-lg"
+                                            style="width: 100%;color: white;">
+                                            Subscribe
+                                        </x-paddle-button>
+                                    @endif
+                                @endif
+                            @else
+                                <center>
+                                    <small class="text-muted text-center" style="font-size: 13px;">subscriptions cannot be
+                                        resumed after cancelations.</small>
+                                </center>
                             @endif
                         @endauth
                     </div>
@@ -401,17 +487,49 @@
                                         d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05">
                                     </path>
                                 </svg>&nbsp;Unlimited concurrent connections</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                    fill="currentColor" viewBox="0 0 16 16" class="bi bi-check-circle"
+                                    style="color: var(--bs-form-valid-color);">
+                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16">
+                                    </path>
+                                    <path
+                                        d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05">
+                                    </path>
+                                </svg>&nbsp;{{ $subscriptions['enterprise']['size']['data_retention_days'] }} Days data
+                                retention
+                            </li>
                         </ul>
                         @guest
                             <a class="btn btn-outline-light btn-lg" role="button" style="width: 100%;color: white;"
                                 href="{{ url('signup') }}">Sign up</a>
                         @endguest
                         @auth
-                            @if (!auth()->user()->subscribed('enterprise'))
-                                <x-paddle-button :checkout="$checkoutLinks['enterprise']" class="btn btn-outline-light btn-lg"
-                                    style="width: 100%;color: white;">
-                                    Subscribe
-                                </x-paddle-button>
+                            @if (!auth()->user()->subscriptions()->active()->first()?->onGracePeriod())
+                                @if (auth()->user()->subscribed('enterprise'))
+                                    <form action="{{ url('subscription-cancel/enterprise') }}" method="POST">
+                                        @csrf
+                                        <button type="submit" class="btn btn-outline-danger"
+                                            style="width: 100%;">Cancel</button>
+                                    </form>
+                                @else
+                                    @if (auth()->user()->subscriptions()->active()->first() !== null)
+                                        <form action="{{ url('subscription-swap/enterprise') }}" method="POST">
+                                            @csrf
+                                            <button type="submit" class="btn btn-outline-success"
+                                                style="width: 100%;">Switch to this NOW</button>
+                                        </form>
+                                    @else
+                                        <x-paddle-button :checkout="$checkoutLinks['enterprise']" class="btn btn-outline-light btn-lg"
+                                            style="width: 100%;color: white;">
+                                            Subscribe
+                                        </x-paddle-button>
+                                    @endif
+                                @endif
+                            @else
+                                <center>
+                                    <small class="text-muted text-center" style="font-size: 13px;">subscriptions cannot be
+                                        resumed after cancelations.</small>
+                                </center>
                             @endif
                         @endauth
                     </div>
@@ -419,6 +537,7 @@
             </div>
         </div><!-- End: 1 Row 3 Columns -->
     </section><!-- Start: Footer Dark -->
+    @cookieconsentview
     <x-footer />
     <!-- End: Footer Dark -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>

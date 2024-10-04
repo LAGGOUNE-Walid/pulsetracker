@@ -2,14 +2,22 @@
 
 namespace Pulse\Jobs;
 
+use Pulse\Traits\CheckIfUserExistsInCache;
+use Swoole\Table;
+
 class AppDeletedJob
 {
+    use CheckIfUserExistsInCache;
 
     /**
      * Create a new job instance.
      */
-    public function __construct(public $table, public string $appKey)
-    {
+    public function __construct(
+        public Table $appsDevicesTable,
+        public Table $usersQuotaTable,
+        public string $appKey,
+        public int $userId
+    ) {
         //
     }
 
@@ -18,6 +26,12 @@ class AppDeletedJob
      */
     public function handle(): void
     {
-        $this->table->del($this->appKey);
+        try {
+            $this->appsDevicesTable->del($this->appKey);
+
+            $this->createUserIfNotExists($this->userId, $this->usersQuotaTable);
+        } catch (\Throwable $th) {
+            \Sentry\captureException($th);
+        }
     }
 }

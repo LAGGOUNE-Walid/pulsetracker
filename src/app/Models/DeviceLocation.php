@@ -18,9 +18,11 @@ class DeviceLocation extends Model
         'device_key',
         'user_id',
         'location',
+        'extra_data',
     ];
 
     protected $casts = [
         'location' => 'array',
+        'extra_data' => 'array',
     ];
 }

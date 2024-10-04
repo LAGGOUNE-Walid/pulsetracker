@@ -7,7 +7,6 @@ use Pulse\Server\EventHandler\SwooleUdpServerEventHandler;
 use Pulse\Server\PacketParser\UdpPacketParser;
 use Pulse\Services\BroadcastPacketService;
 use Swoole\Server;
-use Swoole\Server\Task;
 
 class SwooleUdpServerIntegrationTest extends TestCase
 {

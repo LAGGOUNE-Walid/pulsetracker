@@ -3,10 +3,11 @@
 namespace App\Actions;
 
 use App\Models\App;
+use App\Models\User;
 use App\Models\Device;
 use App\Models\DeviceType;
-use App\Models\User;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Log;
 
 class CreateDeviceAction
 {
@@ -19,6 +20,8 @@ class CreateDeviceAction
             'key' => Str::uuid(),
             'device_type_id' => $type?->id,
         ]);
+
+        Log::info("Device created of $user->email");
 
         return $device;
     }

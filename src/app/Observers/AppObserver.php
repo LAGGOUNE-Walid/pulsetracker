@@ -16,6 +16,6 @@ class AppObserver
 
     public function deleted(App $app): void
     {
-        $this->geopulseQueueAction->push('AppDeleted', ['appKey' => $app->key]);
+        $this->geopulseQueueAction->push('AppDeleted', ['appKey' => $app->key, 'userId' => $app->user_id]);
     }
 }

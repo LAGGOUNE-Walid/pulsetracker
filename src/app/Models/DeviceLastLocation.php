@@ -17,9 +17,11 @@ class DeviceLastLocation extends Model
         'device_key',
         'user_id',
         'location',
+        'extra_data',
     ];
 
     protected $casts = [
         'location' => 'json',
+        'extra_data' => 'json',
     ];
 }

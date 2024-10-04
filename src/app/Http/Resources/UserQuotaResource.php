@@ -29,8 +29,8 @@ class UserQuotaResource extends JsonResource
         return [
             'id' => $this->id,
             'quota' => $userSubscriptionQuota,
-            'used' => ($this->locationsCounts?->first()?->messages_sent ?? 0),
-            'left' => $userSubscriptionQuota - ($this->locationsCounts?->first()?->messages_sent ?? 0),
+            'used' => ($this->currentUsage->messages_sent ?? 0),
+            'left' => $userSubscriptionQuota - ($this->currentUsage->messages_sent ?? 0),
         ];
     }
 }

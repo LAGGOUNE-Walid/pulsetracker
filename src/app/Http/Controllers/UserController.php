@@ -64,4 +64,23 @@ class UserController extends Controller
 
         return redirect()->back()->with('success', 'Profile updated!');
     }
+
+    public function createToken(Request $request): RedirectResponse
+    {
+        $request->validate([
+            'name' => 'required',
+        ]);
+
+        return redirect()->back()->with('createdToken', $request->user()->createToken($request->name)->plainTextToken);
+    }
+
+    public function deleteToken(Request $request): RedirectResponse
+    {
+        $request->validate([
+            'token_id' => 'required',
+        ]);
+        $request->user()->tokens()->where('id', $request->token_id)->delete();
+
+        return redirect()->back();
+    }
 }

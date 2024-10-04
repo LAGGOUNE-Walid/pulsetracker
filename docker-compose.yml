@@ -41,8 +41,10 @@ services:
      - ./nginx/:/etc/nginx/conf.d/:ro
     ports: 
       - 83:8443
+      - 8080:8080
       - 6001:6001
     environment:
+      zend.exception_ignore_args: "off"
       SSL_MODE: "mixed"
       SSL_PRIVATE_KEY_FILE: "/etc/ssl/private/test-key.pem"
       SSL_CERTIFICATE_FILE: "/etc/ssl/private/test.pem"
@@ -55,9 +57,11 @@ services:
      - ./src:/var/www/html
     command: ["php", "/var/www/html/artisan", "queue:work", "--tries=3"]
     environment:
+      zend.exception_ignore_args: "off"
       PHP_FPM_POOL_NAME: "pulse-queue"
     networks:
       - pulsetracker-network
+    stop_signal: SIGTERM
     deploy:
       mode: replicated
       replicas: 6
@@ -72,7 +76,9 @@ services:
     volumes: 
      - ./src:/var/www/html
     command: ["php", "/var/www/html/artisan", "queue:work", "--tries=3", "--queue=geopulse"]
+    stop_signal: SIGTERM
     environment:
+      zend.exception_ignore_args: "off"
       PHP_FPM_POOL_NAME: "pulse-queue"
     depends_on:
       - redis
@@ -84,6 +90,27 @@ services:
     deploy:
       mode: replicated
       replicas: 6
+  scheduler:
+    restart: unless-stopped
+    image: ghcr.io/serversideup/php:8.3-fpm-nginx
+    volumes: 
+     - ./src:/var/www/html
+    command: ["php", "/var/www/html/artisan", "schedule:work"]
+    stop_signal: SIGTERM # Set this for graceful shutdown if you're using fpm-apache or fpm-nginx
+    healthcheck:
+      # This is our native healthcheck script for the scheduler
+      test: ["CMD", "healthcheck-scheduler"]
+      start_period: 10s
+    environment:
+      zend.exception_ignore_args: "off"
+      PHP_FPM_POOL_NAME: "pulse-queue"
+    depends_on:
+      - redis
+      - mariadb
+      - soketi
+      - php
+    networks:
+      - pulsetracker-network
   geopulse:
     restart: unless-stopped
     deploy:
@@ -99,3 +126,4 @@ services:
       - pulsetracker-network
     ports:
       - "9505:9505/udp"
+      - "9509:9509"

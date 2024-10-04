@@ -77,7 +77,7 @@ class DeviceController extends Controller
             ->firstOrFail();
 
         return view('dashboard.devices.show', [
-            'device' => $device
+            'device' => $device,
         ]);
     }
 }

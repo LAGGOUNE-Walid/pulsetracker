@@ -36,7 +36,7 @@
     </ul><!-- Start: 1 Row 1 Column -->
     <div class="container" style="margin-top: 5%;">
         <div class="row justify-content-center">
-            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6"><img
+            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 col-xxl-6"><img
                     src="assets/img/Circle%20Brand%20Identity.jpeg" width="111" height="101"
                     style="width: 70px;height: 70px;">
                 <h1 style="margin-top: 5%;">Login to Pulsetracker</h1>
@@ -79,9 +79,8 @@
                             </svg>&nbsp;Login with Google</a></div>
                 </div>
                 <h5 style="margin-top: 5%;color: var(--bs-gray-500);">By signing in, you agree to our <a
-                        href="https://resend.com/legal/terms-of-service" target="_blank">terms</a>, <a
-                        href="https://resend.com/legal/acceptable-use" target="_blank">acceptable use</a>, and <a
-                        href="https://resend.com/legal/privacy-policy" target="_blank">privacy policy</a>.</h5>
+                        href="{{url('terms-of-use')}}" target="_blank">terms</a>, <a
+                        href="{{url('privacy-policy')}}" target="_blank">privacy policy</a>.</h5>
             </div>
         </div>
     </div><!-- End: 1 Row 1 Column -->

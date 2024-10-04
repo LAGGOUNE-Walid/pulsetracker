@@ -20,7 +20,7 @@ interface Packet
     /**
      * Check if sended data are valide and ready to parse
      *
-     * @param array<string> $data
+     * @param  array<string>  $data
      * @return bool if data is valide.
      */
     public function dataIsValide(array $data): bool;
@@ -72,9 +72,13 @@ interface Packet
      *     point: \GeoJson\Geometry\Point,
      *     appId: string,
      *     clientId: string
+     *     ip: string
+     *     extraData: array{string:string}
      * }
      */
     public function toArray(): array;
 
     public function getIp(): string;
+
+    public function getExtraData(): array;
 }

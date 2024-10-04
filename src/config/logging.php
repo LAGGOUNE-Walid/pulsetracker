@@ -1,8 +1,11 @@
 <?php
 
 use Monolog\Handler\NullHandler;
+use Monolog\Handler\FilterHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Handler\SyslogUdpHandler;
+use Monolog\Handler\TelegramBotHandler;
+use App\LogHandlers\TelegramLoggerHandler;
 use Monolog\Processor\PsrLogMessageProcessor;
 
 return [
@@ -51,6 +54,12 @@ return [
     */
 
     'channels' => [
+
+        "telegram" => [
+            'driver' => 'monolog',
+            'handler' => TelegramLoggerHandler::class,
+            'level' => env('LOG_LEVEL', 'debug'),
+        ],
 
         'stack' => [
             'driver' => 'stack',

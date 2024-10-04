@@ -56,9 +56,11 @@
                                 icon: div_circle
                             });
                             marker.bindPopup(`${device.name} <br/> ${device.ip}`);
+                            
                             return marker;
                         }
                     }).addTo(this.map);
+                    marker.openPopup();
                     this.devices[device.key] = {
                         data: device,
                         marker: marker
@@ -66,15 +68,15 @@
                 },
                 listenForWebsocketsLocationsUpdates() {
                     Echo.private('apps.{{ $app->key }}').listen('DeviceLocationUpdated', (device) => {
-                        if (_.has(this.devices, device.deviceKey)) {
-                            this.moveMarker(this.map, this.devices[device.deviceKey]['marker'], device)
+                        if (_.has(this.devices, device.key)) {
+                            this.moveMarker(this.map, this.devices[device.key]['marker'], device)
                         } else {
                             this.addDevice(device);
                         }
                     })
                 },
                 moveMarker(map, marker, device) {
-                    var newCoordinates = device.point.coordinates;
+                    var newCoordinates = device.location.coordinates;
                     var latlng = L.latLng(newCoordinates[1], newCoordinates[0]);
                     marker.setLatLng(latlng);
                 }

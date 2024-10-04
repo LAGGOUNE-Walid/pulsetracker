@@ -31,4 +31,46 @@ class UserSubscriptionController extends Controller
 
         return redirect(url('dashboard/settings'));
     }
+
+    public function cancel(Request $request, string $type): RedirectResponse
+    {
+        $subscriptions = config('paddle-subscriptions.plans');
+        if (! array_key_exists($type, $subscriptions)) {
+            abort(404);
+        }
+        if (! $request->user()->subscribed($type)) {
+            return redirect()->back();
+        }
+        $request->user()->subscription($type)->cancel();
+
+        return redirect(url('/#pricing'));
+    }
+
+    public function resume(Request $request, string $type): RedirectResponse
+    {
+        $subscriptions = config('paddle-subscriptions.plans');
+        if (! array_key_exists($type, $subscriptions)) {
+            abort(404);
+        }
+        if (! $request->user()->subscription($type)->onGracePeriod()) {
+            return redirect()->back();
+        }
+        $request->user()->subscription($type)->stopCancelation();
+
+        return redirect(url('/#pricing'));
+    }
+
+    public function swap(Request $request, string $type): RedirectResponse
+    {
+        $subscriptions = config('paddle-subscriptions.plans');
+        if (! array_key_exists($type, $subscriptions)) {
+            abort(404);
+        }
+        // exit;
+        $currentActiveSubscription = $request->user()->subscriptions()->active()->first();
+        $request->user()->subscription($currentActiveSubscription->type)->noProrate()->swapAndInvoice($subscriptions[$type]['price_id']);
+        $request->user()->subscriptions()->active()->first()->update(['type' => $type]);
+
+        return redirect(url('/#pricing'));
+    }
 }

@@ -46,6 +46,6 @@ class Device extends Model
 
     public function locationsCounts(): HasMany
     {
-        return $this->hasMany(DeviceMonthlyQuota::class);
+        return $this->hasMany(DeviceMonthlyQuota::class)->orderByDesc('id');
     }
 }

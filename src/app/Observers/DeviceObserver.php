@@ -11,11 +11,11 @@ class DeviceObserver
 
     public function created(Device $device): void
     {
-        $this->geopulseQueueAction->push('DeviceCreated', ['deviceKey' => $device->key, 'appKey' => $device->app->key]);
+        $this->geopulseQueueAction->push('DeviceCreated', ['deviceKey' => $device->key, 'appKey' => $device->app->key, 'userId' => $device->user_id]);
     }
 
     public function deleted(Device $device): void
     {
-        $this->geopulseQueueAction->push('DeviceDeleted', ['deviceKey' => $device->key, 'appKey' => $device->app->key]);
+        $this->geopulseQueueAction->push('DeviceDeleted', ['deviceKey' => $device->key, 'appKey' => $device->app->key, 'userId' => $device->user_id]);
     }
 }

@@ -13,7 +13,7 @@ run(function () {
         'appId' => 'f1834d82-c3ee-4e3b-8891-ac04fc756684',
         'clientId' => '8ec2f812-7888-4567-a8f6-232c71772015',
         // long,lat
-        'data' => ['type' => 'Point', 'coordinates' => [-0.136302, 51.498132]]
+        'data' => ['type' => 'Point', 'coordinates' => [-0.136302, 51.498132]],
     ];
     // $data = msgpack_pack($data);
     $data = json_encode($data);
@@ -27,14 +27,22 @@ run(function () {
     ];
     $clients = ['8ec2f812-7888-4567-a8f6-232c71772015', '38012075-23b8-4b6e-9889-532463abf1a1', '08f3f5b5-cb26-45cc-8225-e954117fdd68', '0db9c544-d7c4-43f9-beea-b3de89898ef8'];
     $data = [
-        'appId' => 'f1834d82-c3ee-4e3b-8891-ac04fc756684',
-        'clientId' => $clients[array_rand($clients)],
+        'appId' => '734d7296-5608-48dc-bc34-81e7c1de1fea',
+        // 'clientId' => $clients[array_rand($clients)],
+        'clientId' => '2096c776-4b20-456b-a064-330be871ffdd',
         // long,lat
-        'data' => ['type' => 'Point', 'coordinates' => $locations[array_rand($locations)]]
+        'data' => ['type' => 'Point', 'coordinates' => $locations[array_rand($locations)]],
+        'extra' => [
+            'speed' => 100,
+        ],
     ];
     $data = json_encode($data);
-    $client->send($data);
+    while (true) {
 
+        $client->send($data);
+        usleep(10000);
+        exit;
+    }
 
     $client->close();
 });
