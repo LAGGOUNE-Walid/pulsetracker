@@ -1,5 +1,11 @@
 #!/bin/bash
-set -e
+if [ -f /sys/kernel/mm/transparent_hugepage/enabled ]; then
+    echo "Disabling Transparent Huge Pages (THP)"
+    echo never > /sys/kernel/mm/transparent_hugepage/enabled
+    echo never > /sys/kernel/mm/transparent_hugepage/defrag
+else
+    echo "THP settings file not found. Skipping THP disable step."
+fi
 
-echo never | tee /sys/kernel/mm/transparent_hugepage/enabled
-echo never | tee /sys/kernel/mm/transparent_hugepage/defrag
+# Start MariaDB
+exec "$@"
