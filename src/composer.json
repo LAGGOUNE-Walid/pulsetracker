@@ -8,7 +8,6 @@
         "php": "^8.2",
         "dedoc/scramble": "^0.11.16",
         "grantholle/laravel-timezone": "^1.3",
-        "itsgoingd/clockwork": "^5.2",
         "jmikola/geojson": "^1.2",
         "laravel/cashier-paddle": "^2.5",
         "laravel/framework": "^11.9",
