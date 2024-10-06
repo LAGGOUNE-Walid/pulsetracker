@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('device_last_locations', function (Blueprint $table) {
-            $table->engine('TokuDB');
+            // $table->engine('TokuDB');
 
             $table->id();
             $table->ipAddress('ip_address');

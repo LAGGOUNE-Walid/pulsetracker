@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('user_current_quotas', function (Blueprint $table) {
-            $table->engine('TokuDB');
+            // $table->engine('TokuDB');
             $table->id();
             $table->integer('messages_sent');
             $table->unsignedBigInteger('user_id');
