@@ -3,3 +3,4 @@ redis/*
 src/vendor/*
 .env
 docker-compose.yml
+nginx/default.conf
