@@ -73,7 +73,7 @@
                                 devices in real-time with fast UDP and WebSocket support. Optimize battery usage, scale
                                 effortlessly, and visualize live movements—perfect for developers and everyday users
                                 alike.</p>
-                            <div class="my-3">@guest <a class="btn btn-primary" role="button">Getting started</a>
+                            <div class="my-3">@guest <a class="btn btn-primary" role="button" href="{{ url('signup') }}">Getting started</a>
                                 @endguest
                             </div>
                         </div>
