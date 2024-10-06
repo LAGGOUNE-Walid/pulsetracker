@@ -7,17 +7,6 @@ use App\Models\User;
 
 class AppPolicy
 {
-    public function viewAny(User $user)
-    {
-        return true;
-    }
-
-    public function view(User $user, App $app): bool
-    {
-        dd('bb');
-
-        return $app->user()->is($user);
-    }
 
     public function create(User $user): bool
     {
@@ -25,7 +14,7 @@ class AppPolicy
         foreach ($subscriptions as $subscription) {
             $allowedAppsPersubsription = $subscription['size']['apps'] ?? PHP_INT_MAX;
             if ($user->subscribed($subscription['name']) and $user->apps()->count() < $allowedAppsPersubsription) {
-                return true and $user->hasVerifiedEmail();
+                return $user->hasVerifiedEmail();
             }
         }
 

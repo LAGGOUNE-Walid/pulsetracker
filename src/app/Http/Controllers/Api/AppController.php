@@ -28,7 +28,7 @@ class AppController extends Controller
     {
         return AppResource::collection($request->user()->apps()->with(['locationsCounts' => function ($query) {
             return $query->orderByDesc('id');
-        }])->orderByDesc('id')->paginate(12));
+        }])->withCount('devices')->orderByDesc('id')->paginate(12));
     }
 
     /**

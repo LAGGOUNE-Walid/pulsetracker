@@ -79,7 +79,9 @@ class DeviceController extends Controller
      */
     public function show(Request $request, string $id): DeviceResource
     {
-        return new DeviceResource($request->user()->devices()->where('key', $id)->with(['locationsCounts', 'deviceLastLoction'])->firstOrFail());
+        return new DeviceResource(
+            $request->user()->devices()->where('key', $id)->with(['locationsCounts', 'lastLocation'])->firstOrFail()
+        );
     }
 
     /**

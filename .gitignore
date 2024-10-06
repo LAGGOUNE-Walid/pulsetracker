@@ -2,3 +2,4 @@ mariadb/*
 redis/*
 src/vendor/*
 .env
+docker-compose.yml

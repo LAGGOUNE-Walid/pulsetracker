@@ -12,7 +12,7 @@ class DevicePolicy
         foreach ($subscriptions as $subscription) {
             $allowedDevicesPerSubscription = $subscription['size']['devices'] ?? PHP_INT_MAX;
             if ($user->subscribed($subscription['name']) and $user->devices()->count() < $allowedDevicesPerSubscription) {
-                return true and $user->hasVerifiedEmail();
+                return $user->hasVerifiedEmail();
             }
         }
 
