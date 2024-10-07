@@ -58,14 +58,14 @@
                     </div>
                     <div class="col col-6">
                         Messages this month
-                        {{ number_format($user->currentSubscription->messages_sent ?? 0) }}/{{ $plan['size']['messages_per_month'] ? number_format($plan['size']['messages_per_month']) : 'UNLIMITED' }}
+                        {{ number_format($user->currentUsage->messages_sent ?? 0) }}/{{ $plan['size']['messages_per_month'] ? number_format($plan['size']['messages_per_month']) : 'UNLIMITED' }}
                     </div>
                     <div class="col col-6">
                         <div class="progress">
                             @php
                                 if (
                                     $plan['size']['messages_per_month'] and
-                                    $user->currentSubscription->messages_sent
+                                    $user->currentUsage->messages_sent
                                 ) {
                                     $messagesPercentage =
                                         ($user->locationsCounts->first()->messages_sent /
