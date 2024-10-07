@@ -46,6 +46,7 @@ function startUdpServer(array $config, SwooleUdpServerEventHandler $swooleUdpEve
 function startWsServer(array $config, SwooleWsServerEventHandler $swooleWsServerEventHandler)
 {
     $ws = new Swoole\WebSocket\Server('0.0.0.0', $config['ws_port']);
+    $ws->set($config['swoole']);
     $ws->on('Open', [$swooleWsServerEventHandler, 'onOpen']);
     $ws->on('Message', [$swooleWsServerEventHandler, 'onMessage']);
     $ws->on('Close', [$swooleWsServerEventHandler, 'onClose']);
