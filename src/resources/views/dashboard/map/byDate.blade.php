@@ -6,6 +6,12 @@
             border-radius: 50%;
             /* see http://www.w3schools.com/css/css3_shadows.asp */
         }
+        .leaflet-layer,
+        .leaflet-control-zoom-in,
+        .leaflet-control-zoom-out,
+        .leaflet-control-attribution {
+            filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
+        }
     </style>
     <div class="col mt-5" x-data="map()" x-init="initMap({{ Js::from($locations) }})">
         <div id="map"></div>
@@ -32,11 +38,10 @@
                     } else {
                         this.map = L.map('map').setView([0, 0], 3);
                     }
-                    L.tileLayer(
-                        'https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.{ext}', {
+                    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
                             minZoom: 0,
                             maxZoom: 20,
-                            attribution: '&copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+                            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
                             ext: 'png'
                         }).addTo(this.map);
                     var markersClusters = L.markerClusterGroup();
