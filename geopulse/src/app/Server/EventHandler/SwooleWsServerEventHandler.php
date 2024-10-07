@@ -31,7 +31,6 @@ class SwooleWsServerEventHandler
 
     public function onMessage(Server $ws, Frame $frame): bool
     {
-        var_dump($this->clientIps[$frame->fd] ?? 'unknown');
         $packet = $this->wsPacketParser->fromString($frame->data, $this->clientIps[$frame->fd] ?? 'unknown');
         if ($packet === null) {
             $ws->disconnect($frame->fd);

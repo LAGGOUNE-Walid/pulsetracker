@@ -20,7 +20,6 @@ class SwooleUdpServerEventHandler
 
     public function onPacket(Server $server, string $data, $clientInfo): bool
     {
-        echo $data."\n";
         // Read and unpack the message if it is compressed with msgpack
         // This uses the udpPacketParser service to deserialize the incoming UDP packet data
         $packet = $this->udpPacketParser->fromString($data, $clientInfo['address']);

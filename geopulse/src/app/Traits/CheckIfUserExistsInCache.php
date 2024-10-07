@@ -9,7 +9,7 @@ trait CheckIfUserExistsInCache
     public function createUserIfNotExists(int $userId, Table $usersQuotaTable): void
     {
         if (! $usersQuotaTable->exists($userId)) {
-            echo "User id not in cache so create it \n";
+            //echo "User id not in cache so create it \n";
             $this->addUserToCache($userId, $usersQuotaTable);
         }
     }
@@ -22,9 +22,9 @@ trait CheckIfUserExistsInCache
         if ($response->getStatusCode() == 200) {
             $usersQuotaResponse = json_decode($response->getBody(), true)['data'];
             foreach ($usersQuotaResponse as $userQuota) {
-                echo 'Set user '.$userQuota['id']." quota to cache \n";
-                print_r($userQuota);
-                echo "\n";
+                //echo 'Set user '.$userQuota['id']." quota to cache \n";
+                //print_r($userQuota);
+                //echo "\n";
                 $usersQuotaTable->set($userQuota['id'], [
                     'quota' => $userQuota['quota'],
                     'used' => $userQuota['used'],

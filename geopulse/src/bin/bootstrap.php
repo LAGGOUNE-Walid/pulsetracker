@@ -107,7 +107,7 @@ $usersIds = [];
 foreach ($apps as $app) {
     $devices = $db->table('devices')->where('app_id', $app->id)->get();
     if ($devices->count() > 0) {
-        echo "Set $app->key to cache \n";
+        //echo "Set $app->key to cache \n";
         $appsDevicesTable->set($app->key, ['devicesKeys' => $devices->pluck('key')->toJson(), 'userId' => $app->user_id]);
     }
     if (array_search($app->user_id, $usersIds) === false) {
@@ -120,9 +120,9 @@ if ($usersIds !== []) {
     if ($response->getStatusCode() == 200) {
         $usersQuotaResponse = json_decode($response->getBody(), true)['data'];
         foreach ($usersQuotaResponse as $userQuota) {
-            echo 'Set user ' . $userQuota['id'] . " quota to cache \n";
-            print_r($userQuota);
-            echo "\n";
+            //echo 'Set user ' . $userQuota['id'] . " quota to cache \n";
+            //print_r($userQuota);
+            //echo "\n";
             $usersQuotaTable->set($userQuota['id'], [
                 'quota' => $userQuota['quota'],
                 'used' => $userQuota['used'],
