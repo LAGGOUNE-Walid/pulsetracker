@@ -48,6 +48,7 @@
         };
         window.feedbackfin.config.url = "{{ url('dashboard/feedback') }}";
     </script>
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="06db6e2e-fb33-4581-8722-67ece940e18e"></script>
 </head>
 
 <body style="--bs-body-bg: black;background: black;">
