@@ -4,6 +4,7 @@ namespace Pulse\Server\EventHandler;
 
 use Swoole\Table;
 use Monolog\Logger;
+use Swoole\Http\Request;
 use Swoole\WebSocket\Frame;
 use Swoole\WebSocket\Server;
 use Pulse\Contracts\PacketParser\Packet;
@@ -11,6 +12,9 @@ use Pulse\Services\BroadcastPacketService;
 
 class SwooleWsServerEventHandler
 {
+
+    private array $clientIps = [];
+
     public function __construct(
         private Packet $wsPacketParser,
         private BroadcastPacketService $broadcastPacketService,
@@ -19,9 +23,16 @@ class SwooleWsServerEventHandler
         private Logger $logger
     ) {}
 
+    public function onOpen(Server $server, Request $request): void
+    {
+        $real_ip = $request->header['x-forwarded-for'] ?? $server->getClientInfo($request->fd)['remote_ip'];
+        $this->clientIps[$request->fd] = $real_ip;
+    }
+
     public function onMessage(Server $ws, Frame $frame): bool
     {
-        $packet = $this->wsPacketParser->fromString($frame->data, $ws->getClientInfo($frame->fd)['remote_ip']);
+        var_dump($this->clientIps[$frame->fd] ?? 'unknown');
+        $packet = $this->wsPacketParser->fromString($frame->data, $this->clientIps[$frame->fd] ?? 'unknown');
         if ($packet === null) {
             $ws->disconnect($frame->fd);
         }
@@ -61,5 +72,10 @@ class SwooleWsServerEventHandler
         $this->broadcastPacketService->dropAndPopPacket($packet);
 
         return true;
+    }
+
+    public function onClose(Server $ws, int $fd): void
+    {
+        unset($this->clientIps[$fd]);
     }
 }
