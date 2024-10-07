@@ -31,7 +31,7 @@
 <body style="background: var(--bs-emphasis-color);--bs-primary: #00498c;--bs-primary-rgb: 0,73,140;">
     <!-- Start: Navbar Centered Links -->
     <nav class="navbar navbar-expand-md py-3" style="background: var(--bs-black);margin-top: 15px;">
-        <div class="container"><a class="navbar-brand d-flex align-items-center" href="#"><span
+        <div class="container"><a class="navbar-brand d-flex align-items-center" href="{{url('/')}}"><span
                     class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon"
                     style="background: rgba(0,73,140,0);"><img
                         src="{{ url('assets/img/Circle%20Brand%20Identity.jpeg') }}"
