@@ -12,6 +12,6 @@ class DeviceTypeSeeder extends Seeder
      */
     public function run(): void
     {
-        DeviceType::factory()->count(20)->create();
+        // DeviceType::factory()->count(20)->create();
     }
 }

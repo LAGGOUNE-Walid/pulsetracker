@@ -10,7 +10,7 @@ trait HaveToInitTheFreeSubscription
     public function initFreeSubscription(User $user): CurrentUserSubscription
     {
         return $user->currentSubscription()->create([
-            'plan' => 'free',
+            'type' => 'free',
             'starts_at' => now(),
             'ends_at' => now()->addMonth(),
         ]);

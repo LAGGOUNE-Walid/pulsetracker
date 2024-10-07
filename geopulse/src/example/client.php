@@ -39,7 +39,7 @@ run(function () {
     while (true) {
 
         $client->send($data);
-        sleep(1);
+        usleep(10000);
     }
 
     $client->close();
