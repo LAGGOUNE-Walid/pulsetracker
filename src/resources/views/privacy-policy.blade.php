@@ -82,7 +82,7 @@
                                     email address and/or password.</li>
                                 <li><strong>Device Information:</strong> We collect location data from devices linked to
                                     your account to provide the location tracking service.</li>
-                                <li><strong>Analytics Information:</strong> We use Plausible, an open-source analytics
+                                <li><strong>Analytics Information:</strong> We use umami, an open-source analytics
                                     platform, to collect non-personal information such as visitor sources and page
                                     interactions to improve our service.</li>
                             </ul>
@@ -118,7 +118,7 @@
                                 that requests may take up to 7 days to process.</p>
 
                             <h2>8. Cookies and Tracking Technologies</h2>
-                            <p>We use Plausible, which is privacy-focused and does not use cookies or track personal
+                            <p>We use umami, which is privacy-focused and does not use cookies or track personal
                                 information for analytics. No other cookies or tracking technologies are used on
                                 PulseTracker at this time.</p>
 
