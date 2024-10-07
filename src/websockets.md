@@ -1,8 +1,8 @@
 # Client (Device) configuration
 | Key | UDP | Websocekts |
 |-----|------|---------|
-|  IP/Domain  |    192.277.21.21   |   192.277.21.21     |
-|   Port  |    9001   |    9001    |
+|  IP/Domain  |    udp-tracking.pulsestracker.com   |   wss://ws-tracking.pulsestracker.com     |
+|   Port  |    9506   |    /    |
 
 > **Note**: If your quota is exceeded, the server will respond with an `"ERR_QUOTA"` message to your client.
 #### UDP Dart example
@@ -28,8 +28,6 @@ json_data = json.dumps(data)
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 # Define the host and port
-host = 'IP_ADDRESS'
-port = 'THE_PORT'
 
 # Send the data
 sock.sendto(json_data.encode('utf-8'), (host, port))
@@ -45,8 +43,7 @@ sock.close()
 
 To receive real-time location updates on the client side, connect to our Pusher server at the following address:
 
-- **Server Address**: `pusher.pulse.com`
-- **Server Port**: `6001`
+- **Server Address**: `wss://ws-tracking.pulsestracker.com`
 - **Channel Name**: `private-apps.APP_KEY`
 - **Event Name**: `App\Events\DeviceLocationUpdated`
 - **Auth endpoint**: `pulse.com/broadcasting/auth`
@@ -67,8 +64,6 @@ window.Echo = new Echo({
     cluster: import.meta.env.VITE_PUSHER_APP_CLUSTER,
     wsHost: import.meta.env.VITE_PUSHER_HOST,
     wssHost: import.meta.env.VITE_PUSHER_HOST,
-    wsPort: import.meta.env.VITE_PUSHER_PORT,
-    wssPort: import.meta.env.VITE_PUSHER_PORT,
     forceTLS: (import.meta.env.VITE_PUSHER_SCHEME ?? 'https') === 'https',
     enabledTransports: ['ws', 'wss'],
     disableStats: true,
