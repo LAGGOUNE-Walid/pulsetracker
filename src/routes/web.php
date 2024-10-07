@@ -18,6 +18,9 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\URL;
 
+Route::GET("/test-websockets-xx", function() {
+    return view("test-websockets");
+});
 Route::GET('/', [UserSubscriptionController::class, 'showHomePage']);
 Route::GET('/terms-of-use', function() {
     return view('terms-of-use');
