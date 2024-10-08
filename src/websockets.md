@@ -18,7 +18,10 @@ data = {
     "data": {
         "type": "Point",
         "coordinates": [-14.80665, -140.22159]
-    }
+    },
+    'extra' : {
+        'speed' => 100,
+    },
 }
 
 # Convert the data to a JSON string
