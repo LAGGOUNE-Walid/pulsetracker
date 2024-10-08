@@ -37,7 +37,7 @@ class SwooleWsServerEventHandler
         }
         if (! $this->appsDevicesTable->exists($packet->getAppId())) {
             $ws->disconnect($frame->fd);
-            $this->logger->notice('Could not find in table app id '.$packet->getAppId());
+            $this->logger->notice('Could not find in table app id ' . $packet->getAppId());
             return false;
         }
 
@@ -46,14 +46,14 @@ class SwooleWsServerEventHandler
         $appDevices = json_decode($appDataInCache['devicesKeys'], true);
         if (! in_array($packet->getClientId(), $appDevices)) {
             $ws->disconnect($frame->fd);
-            $this->logger->notice('Could not find device id '.$packet->getClientId());
+            $this->logger->notice('Could not find device id ' . $packet->getClientId());
             return false;
         }
 
         // Verify if the user has more monthly quota
         if (! $this->usersQuotaTable->exists($appDataInCache['userId'])) {
             $ws->disconnect($frame->fd);
-            $this->logger->notice('Could not user id '.$appDataInCache['userId']);
+            $this->logger->notice('Could not user id ' . $appDataInCache['userId']);
             return false;
         }
         $userQuotaInCache = $this->usersQuotaTable->get($appDataInCache['userId']);
@@ -63,8 +63,10 @@ class SwooleWsServerEventHandler
             // echo "No left quota in this month \n";
             $ws->push($frame->fd, 'ERR_QUOTA');
             $ws->disconnect($frame->fd);
-            $this->logger->notice('User id '.$appDataInCache['userId'].' quota exceeded');
             return false;
+        }
+        if ($userQuotaInCache['left']  === 0) {
+            $this->logger->notice('User id ' . $appDataInCache['userId'] . ' quota exceeded');
         }
         $this->usersQuotaTable->decr($appDataInCache['userId'], 'left');
 
