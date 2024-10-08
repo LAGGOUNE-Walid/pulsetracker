@@ -75,7 +75,7 @@
         if ($userSubscriptionQuota === 0) {
             $userSubscriptionQuota = $subscriptions['free']['size']['messages_per_month'];
         }
-        $left = $userSubscriptionQuota - (auth()->user()->currentSubscription->messages_sent ?? 0);
+        $left = $userSubscriptionQuota - (auth()->user()->currentUsage->messages_sent ?? 0);
 
     @endphp
     @if ($left <= 0)
