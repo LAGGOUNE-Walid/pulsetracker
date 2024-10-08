@@ -66,7 +66,7 @@ $pm->add(function (Pool $pool, int $workerId) use ($config, $swooleWsEventsHandl
 });
 
 $pm->add(function() use ($httpClient) {
-    $httpClient->request('https://uptime.betterstack.com/api/v1/heartbeat/fEzyiyJf3hSET2RkiKv8CrWT');
+    $httpClient->request('GET', 'https://uptime.betterstack.com/api/v1/heartbeat/fEzyiyJf3hSET2RkiKv8CrWT');
     sleep(1*60);
 });
 
