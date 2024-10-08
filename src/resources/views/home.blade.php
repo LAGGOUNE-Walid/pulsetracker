@@ -30,17 +30,6 @@
     @paddleJS
     @cookieconsentscripts
     <script defer src="https://cloud.umami.is/script.js" data-website-id="06db6e2e-fb33-4581-8722-67ece940e18e"></script>
-    <script src="https://uptime.betterstack.com/widgets/announcement.js" data-id="198009" async="async" type="text/javascript"></script>
-    <style>
-    .betteruptime-announcement {
-        top: unset;
-        bottom: 0;
-        background: red;
-    }
-    ..betteruptime-announcement__message {
-        color: black;
-    }
-    </style>
 </head>
 
 <body style="background: var(--bs-emphasis-color);--bs-primary: #00498c;--bs-primary-rgb: 0,73,140;">
