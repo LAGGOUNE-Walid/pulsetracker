@@ -7,6 +7,7 @@
                     Documentation</a></h5></li>
             <li class="list-inline-item"><h5><a class="link-light" href="mailto:contact@pulsestracker.com">Contact Us</a></h5></li>
         </ul>
-        <h6><p class="text-muted mb-0"><small>Copyright © {{now()->year}} PulseTracker</small></p></h6>
+        <h6><p class="text-muted mb-0"><small>Copyright © {{now()->year}} PulseTracker </small></p></h6>
+        
     </div>
 </footer>
