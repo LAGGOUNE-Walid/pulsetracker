@@ -31,7 +31,7 @@
 <body style="background: var(--bs-emphasis-color);--bs-primary: #00498c;--bs-primary-rgb: 0,73,140;">
     <!-- Start: Navbar Centered Links -->
     <nav class="navbar navbar-expand-md py-3" style="background: var(--bs-black);margin-top: 15px;">
-        <div class="container"><a class="navbar-brand d-flex align-items-center" href="{{url('/')}}"><span
+        <div class="container"><a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}"><span
                     class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon"
                     style="background: rgba(0,73,140,0);"><img
                         src="{{ url('assets/img/Circle%20Brand%20Identity.jpeg') }}"
@@ -67,95 +67,61 @@
                 <div class="row g-0">
                     <div class="col-md-12">
                         <div class="text-white p-4 p-md-5">
-                            <h1 id="pulsetracker-terms-of-service">PulseTracker Terms of Service</h1>
-                            <h3 id="last-updated-insert-date-">Last Updated: 2024-10-04</h3>
-                            <p>Welcome to PulseTracker! By using our service, you agree to comply with and be bound by
-                                the following terms and conditions. Please review them carefully. If you do not agree to
-                                these terms, you should not use PulseTracker.</p>
-                            <h3 id="1-account-registration-">1. <strong>Account Registration</strong></h3>
-                            <ul>
-                                <li>Anyone, whether an individual or a company, may create an account to track devices.
-                                </li>
-                                <li>To create an account, users must provide an email address and a password.</li>
-                                <li>It is the user&#39;s responsibility to maintain the confidentiality of their account
-                                    credentials.</li>
-                            </ul>
-                            <h3 id="2-subscription-plans-and-payment-">2. <strong>Subscription Plans and
-                                    Payment</strong></h3>
-                            <ul>
-                                <li>PulseTracker offers three subscription plans: Free, Pro, and Enterprise.</li>
-                                <li>Subscription plans are billed on a monthly basis.</li>
-                                <li>Changing your subscription plan (upgrade/downgrade) will result in an immediate
-                                    charge for the new plan, but your used quota will not be reset—only the limit will
-                                    be updated.</li>
-                                <li>At the beginning of each new billing period, your used quota will reset to zero.
-                                </li>
-                                <li>Subscription cancellations take effect at the end of the current billing period, and
-                                    canceled subscriptions cannot be resumed. There is no proration for plan changes or
-                                    cancellations.</li>
-                            </ul>
-                            <h3 id="3-data-privacy-and-security-">3. <strong>Data Privacy and Security</strong></h3>
-                            <ul>
-                                <li>PulseTracker does not share your data, including device location data, with third
-                                    parties unless required by law in cases where users or their devices are linked to
-                                    harmful activities such as terrorism or criminal behavior.</li>
-                                <li>All user data is stored securely, and we take necessary steps to protect it.</li>
-                            </ul>
-                            <h3 id="4-user-responsibilities-">4. <strong>User Responsibilities</strong></h3>
-                            <ul>
-                                <li>Users must use PulseTracker in compliance with all applicable laws and regulations.
-                                </li>
-                                <li>You are responsible for any activity that occurs under your account, including
-                                    ensuring that the tracked devices belong to you or that you have permission to track
-                                    them.</li>
-                                <li>Users must not exploit the platform for illegal activities, including tracking
-                                    devices associated with criminal or terrorist activities.</li>
-                            </ul>
-                            <h3 id="5-limitation-of-liability-">5. <strong>Limitation of Liability</strong></h3>
-                            <ul>
-                                <li>PulseTracker provides real-time location tracking and data storage services, but we
-                                    do not guarantee uninterrupted or error-free service.</li>
-                                <li>PulseTracker is not liable for any inaccuracies in the location data or for any harm
-                                    or loss resulting from service outages, data delays, or unauthorized access.</li>
-                                <li>PulseTracker disclaims all warranties of any kind, whether express or implied.</li>
-                            </ul>
-                            <h3 id="6-account-termination-">6. <strong>Account Termination</strong></h3>
-                            <ul>
-                                <li>PulseTracker reserves the right to terminate or suspend your account without prior
-                                    notice if you breach these Terms or for any other reason, including but not limited
-                                    to:<ul>
-                                        <li>Using the service to manipulate or attack PulseTracker servers.</li>
-                                        <li>Using the service in association with criminal or terrorist organizations.
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>Upon termination, your access to the service will cease immediately, and
-                                    PulseTracker is not liable for any data loss associated with the termination.</li>
-                            </ul>
-                            <h3 id="7-governing-law-">7. <strong>Governing Law</strong></h3>
-                            <ul>
-                                <li>These Terms of Service shall be governed by and construed in accordance with the
-                                    laws applicable to the user’s region. PulseTracker operates globally and strives to
-                                    comply with international standards.</li>
-                            </ul>
-                            <h3 id="8-changes-to-the-terms-">8. <strong>Changes to the Terms</strong></h3>
-                            <ul>
-                                <li>PulseTracker reserves the right to modify these Terms at any time. Changes will be
-                                    effective immediately upon posting to our website. Your continued use of
-                                    PulseTracker after any changes to these Terms constitutes acceptance of the revised
-                                    Terms.</li>
-                            </ul>
-                            <h3 id="9-third-party-services-">9. <strong>Third-Party Services</strong></h3>
-                            <ul>
-                                <li>PulseTracker may integrate with third-party services for mapping, data analysis, and
-                                    communications. However, we are not responsible for the practices or terms of these
-                                    third-party providers.</li>
-                            </ul>
-                            <h3 id="10-contact-information-">10. <strong>Contact Information</strong></h3>
-                            <ul>
-                                <li>If you have any questions about these Terms, please contact us at [Insert Contact
-                                    Information].</li>
-                            </ul>
+                            <h1>PulseTracker Terms of Service</h1>
+                            <small>Last Updated: October 9, 2024</small>
+
+                            <p>Welcome to PulseTracker! By using our service, you agree to comply with the following
+                                terms and conditions. If you do not agree, you should not use PulseTracker.</p>
+
+                            <h1>1. Account Registration</h1>
+                            <p>Anyone, whether an individual or a company, can create an account. Users must provide an
+                                email address and password, and are responsible for safeguarding their credentials.</p>
+
+                            <h1>2. Subscription Plans and Payment</h1>
+                            <p>PulseTracker offers Free, Pro, and Enterprise plans, billed monthly through Paddle. There
+                                are no refunds for subscription payments. If you upgrade or downgrade your plan, an
+                                immediate charge will occur, but your quota will only change, not reset. Quotas reset at
+                                the beginning of each billing period. Canceled subscriptions remain active until the end
+                                of the billing period. Payment methods include Visa, Mastercard, and PayPal.</p>
+
+                            <h1>3. Data Privacy and Security</h1>
+                            <p>PulseTracker collects and stores user data, including email address, password, and name, and device data such as IP address, latitude, longitude, app ID, client ID, and any additional data specified by the developer using the service. This data is stored securely in a cloud-based database. PulseTracker does not share user data with any third parties unless required by law in cases where users or their devices are linked to harmful activities such as terrorism or criminal behavior. PulseTracker implements security measures in accordance with the Laravel framework to protect user data.
+
+PulseTracker uses Umami, an open-source analytics service, to collect anonymous usage data to improve the service. For more information on Umami's privacy policy, please visit <a href="https://umami.is/privacy">Umami's privacy policy</a>.</p>
+
+                            <h1>4. User Responsibilities</h1>
+                            <p>Users must use PulseTracker in compliance with all applicable laws and regulations. You are responsible for any activity that occurs under your account, including ensuring that the tracked devices belong to you or that you have permission to track them. Users must not exploit the platform for illegal activities, including tracking devices associated with criminal or terrorist activities. Users are solely responsible for the accuracy of the data collected from devices and acknowledge that PulseTracker does not guarantee the accuracy of this data.</p>
+
+                            <h1>5. Limitation of Liability</h1>
+                            <p>PulseTracker provides real-time location tracking and data storage, broadcasting services as a backend, but we do not guarantee uninterrupted or error-free service. PulseTracker is not liable for any inaccuracies in the location data or for any harm or loss resulting from service outages, data delays, or unauthorized access. PulseTracker disclaims all warranties of any kind, whether express or implied.</p>
+
+                            <h1>6. Intellectual Property</h1>
+                            <p>All PulseTracker software, branding, and technology are the intellectual property of
+                                PulseTracker and its licensors. You are granted a limited, non-transferable license to
+                                use the service under these terms.</p>
+
+                            <h1>7. Account Termination</h1>
+                            <p>We may terminate or suspend your account with 5 days' notice via email if you violate
+                                these terms. Reasons for termination include, but are not limited to, non-payment,
+                                misuse of the service, or use linked to criminal activity.</p>
+
+                            <h1>8. Governing Law</h1>
+                            <p>These terms are governed by the laws of France, where PulseTracker servers are hosted. If
+                                you reside outside France, local laws may also apply.</p>
+
+                            <h1>9. Dispute Resolution</h1>
+                            <p>Any disputes arising from the use of PulseTracker will be resolved through binding
+                                arbitration in accordance with French law. Users waive the right to participate in
+                                class-action lawsuits.</p>
+
+                            <h1>10. Changes to the Terms</h1>
+                            <p>PulseTracker may update these terms at any time, with changes taking effect immediately
+                                upon posting to the website. Continued use of the service after updates constitutes
+                                acceptance.</p>
+
+                            <h1>11. Contact Information</h1>
+                            <p>For questions or concerns, please contact us at <strong><a href="mailto:contact@pulsestracker.com">contact@pulsestracker.com</a></strong>.</p>
+
 
                         </div>
                     </div>

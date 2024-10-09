@@ -134,7 +134,7 @@
 
                             <h2>11. Contact Information</h2>
                             <p>If you have any questions about this Privacy Policy or your data, please contact us at
-                                [Insert Contact Information].</p>
+                                <a href="mailto:contact@pulsestracker.com">contact@pulsestracker.com</a> .</p>
                         </div>
                     </div>
                 </div>
