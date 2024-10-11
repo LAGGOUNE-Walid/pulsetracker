@@ -16,12 +16,22 @@ class LoginWithProvider extends Controller
 
     public function redirectToProvider($provider): RedirectResponse
     {
-        return Socialite::driver($provider)->redirect();
+        try {
+            return Socialite::driver($provider)->redirect();
+        } catch (\Throwable $th) {
+            abort(404);
+        }
+        
     }
 
     public function handleProviderCallback(string $provider): RedirectResponse
     {
-        $user = Socialite::driver($provider)->user();
+        try {
+            $user = Socialite::driver($provider)->user();
+        } catch (\Throwable $th) {
+            abort(404);
+        }
+        
         $authUser = $this->findOrCreateUser($user, $provider);
         Auth::login($authUser, true);
 
