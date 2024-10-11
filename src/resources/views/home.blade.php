@@ -8,9 +8,9 @@
     <title>Home page</title>
     <meta name="twitter:description"
         content="Cutting-edge solution for real-time location tracking designed for developers and businesses. Our eco-friendly service uses the efficient UDP protocol to minimize mobile power consumption while delivering accurate location updates. PulseTracker offers seamless integration with WebSockets for real-time data dispatch, comprehensive API access, and robust tracking features. Whether you're building a new app or enhancing existing services, PulseTracker's scalable solutions and flexible pricing plans ensure you get the most reliable and cost-effective location tracking. Start with our free plan and scale up as your needs grow. Try PulseTracker today and experience unparalleled location tracking performance.">
-    <meta name="twitter:image" content="{{url('assets/img/Circle%20Brand%20Identity.jpeg')}}">
-    <meta property="og:image" content="{{url('assets/img/Circle%20Brand%20Identity.jpeg')}}">
-    <meta property="og:url" content="{{url('/')}}">
+    <meta name="twitter:image" content="{{ url('assets/img/Circle%20Brand%20Identity.jpeg') }}">
+    <meta property="og:image" content="{{ url('assets/img/Circle%20Brand%20Identity.jpeg') }}">
+    <meta property="og:url" content="{{ url('/') }}">
     <meta property="og:type" content="website">
     <meta property="og:title" content="PulseTracker">
     <meta name="twitter:card" content="summary_large_image">
@@ -30,12 +30,26 @@
     @paddleJS
     @cookieconsentscripts
     <script defer src="https://cloud.umami.is/script.js" data-website-id="06db6e2e-fb33-4581-8722-67ece940e18e"></script>
+    <!-- Brevo Conversations {literal} -->
+    <script>
+        (function(d, w, c) {
+            w.BrevoConversationsID = '6497148c29662f296f1f0eac';
+            w[c] = w[c] || function() {
+                (w[c].q = w[c].q || []).push(arguments);
+            };
+            var s = d.createElement('script');
+            s.async = true;
+            s.src = 'https://conversations-widget.brevo.com/brevo-conversations.js';
+            if (d.head) d.head.appendChild(s);
+        })(document, window, 'BrevoConversations');
+    </script>
+    <!-- /Brevo Conversations {/literal} -->
 </head>
 
 <body style="background: var(--bs-emphasis-color);--bs-primary: #00498c;--bs-primary-rgb: 0,73,140;">
     <!-- Start: Navbar Centered Links -->
     <nav class="navbar navbar-expand-md py-3" style="background: var(--bs-black);margin-top: 15px;">
-        <div class="container"><a class="navbar-brand d-flex align-items-center" href="{{url('/')}}"><span
+        <div class="container"><a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}"><span
                     class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon"
                     style="background: rgba(0,73,140,0);"><img
                         src="{{ url('assets/img/Circle%20Brand%20Identity.jpeg') }}"
@@ -77,7 +91,8 @@
                                 devices in real-time with fast UDP and WebSocket support. Optimize battery usage, scale
                                 effortlessly, and visualize live movements—perfect for developers and everyday users
                                 alike.</p>
-                            <div class="my-3">@guest <a class="btn btn-primary" role="button" href="{{ url('signup') }}">Getting started</a>
+                            <div class="my-3">@guest <a class="btn btn-primary" role="button"
+                                        href="{{ url('signup') }}">Getting started</a>
                                 @endguest
                             </div>
                         </div>
@@ -542,14 +557,15 @@
         </div><!-- End: 1 Row 3 Columns -->
     </section><!-- Start: Footer Dark -->
     @cookieconsentview
-    
+
     <x-footer />
     <center>
         <div style="text-align:center;">
-        <iframe src="https://status-pulsetracker.betteruptime.com/badge?theme=dark" width="200" height="50" frameborder="0" scrolling="no"></iframe>
+            <iframe src="https://status-pulsetracker.betteruptime.com/badge?theme=dark" width="200" height="50"
+                frameborder="0" scrolling="no"></iframe>
         </div>
     </center>
-    
+
     <!-- End: Footer Dark -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
