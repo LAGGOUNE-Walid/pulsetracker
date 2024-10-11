@@ -146,7 +146,7 @@
 
                             <h1>9. Dispute Resolution</h1>
                             <p>Any disputes arising from the use of PulseTracker will be resolved through binding
-                                arbitration in accordance with French law. Users waive the right to participate in
+                                arbitration in accordance with Europe law. Users waive the right to participate in
                                 class-action lawsuits.</p>
 
                             <h1>10. Changes to the Terms</h1>
