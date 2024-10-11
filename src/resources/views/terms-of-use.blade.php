@@ -78,22 +78,57 @@
                                 email address and password, and are responsible for safeguarding their credentials.</p>
 
                             <h1>2. Subscription Plans and Payment</h1>
-                            <p>PulseTracker offers Free, Pro, and Enterprise plans, billed monthly through Paddle. There
-                                are no refunds for subscription payments. If you upgrade or downgrade your plan, an
-                                immediate charge will occur, but your quota will only change, not reset. Quotas reset at
+                            <p>PulseTracker offers Free, Pro, and Enterprise plans, billed monthly through Paddle. In
+                                most cases
+                                , payments for Pulsetracker subscriptions and services aren't refundable, If you have an
+                                issue with your account, or think there has been an error in billing, please contact us
+                                by mail <a href="mailto:contact@pulsestracker.com">contact@pulsestracker.com</a>. If you
+                                upgrade or downgrade your plan, an
+                                immediate charge will occur, but your quota max limits will only change, not reset.
+                                Quotas reset at
                                 the beginning of each billing period. Canceled subscriptions remain active until the end
                                 of the billing period. Payment methods include Visa, Mastercard, and PayPal.</p>
 
                             <h1>3. Data Privacy and Security</h1>
-                            <p>PulseTracker collects and stores user data, including email address, password, and name, and device data such as IP address, latitude, longitude, app ID, client ID, and any additional data specified by the developer using the service. This data is stored securely in a cloud-based database. PulseTracker does not share user data with any third parties unless required by law in cases where users or their devices are linked to harmful activities such as terrorism or criminal behavior. PulseTracker implements security measures in accordance with the Laravel framework to protect user data.
+                            <p>PulseTracker collects and stores user data, including email address, password, and name,
+                                and device data such as IP address, latitude, longitude, app ID, client ID, and any
+                                additional data specified by the developer using the service.
+                                We use data hosting service providers in the EU to host the information we collect, and
+                                we use technical measures to secure your data. While we implement safeguards designed to
+                                protect your information, no security system is impenetrable and due to the inherent
+                                nature of the Internet, we cannot guarantee that data, during transmission through the
+                                Internet or while stored on our systems or otherwise in our care, is absolutely safe
+                                from intrusion by others. We will respond to requests about this within a reasonable
+                                timeframe.
 
-PulseTracker uses Umami, an open-source analytics service, to collect anonymous usage data to improve the service. For more information on Umami's privacy policy, please visit <a href="https://umami.is/privacy">Umami's privacy policy</a>.</p>
+                                Sensitive and private data exchange for our Services happen over an SSL secured
+                                communication channel and is encrypted and protected with digital signatures.
+
+                                We never store passwords in our database; they are always encrypted and hashed with
+                                individual salts. PulseTracker does not share user data with any third parties unless
+                                required by law in cases where users or their devices are linked to harmful activities
+                                such as terrorism or criminal behavior.
+                                <br/>
+                                <br/>
+                                PulseTracker uses Umami, an open-source analytics service, to collect anonymous usage
+                                data to improve the service. For more information on Umami's privacy policy, please
+                                visit <a href="https://umami.is/privacy">Umami's privacy policy</a>.</p>
 
                             <h1>4. User Responsibilities</h1>
-                            <p>Users must use PulseTracker in compliance with all applicable laws and regulations. You are responsible for any activity that occurs under your account, including ensuring that the tracked devices belong to you or that you have permission to track them. Users must not exploit the platform for illegal activities, including tracking devices associated with criminal or terrorist activities. Users are solely responsible for the accuracy of the data collected from devices and acknowledge that PulseTracker does not guarantee the accuracy of this data.</p>
+                            <p>Users must use PulseTracker in compliance with all applicable laws and regulations. You
+                                are responsible for any activity that occurs under your account, including ensuring that
+                                the tracked devices belong to you or that you have permission to track them. Users must
+                                not exploit the platform for illegal activities, including tracking devices associated
+                                with criminal or terrorist activities. Users are solely responsible for the accuracy of
+                                the GPS data collected from devices and acknowledge that PulseTracker does not guarantee
+                                the accuracy of this data.</p>
 
                             <h1>5. Limitation of Liability</h1>
-                            <p>PulseTracker provides real-time location tracking and data storage, broadcasting services as a backend, but we do not guarantee uninterrupted or error-free service. PulseTracker is not liable for any inaccuracies in the location data or for any harm or loss resulting from service outages, data delays, or unauthorized access. PulseTracker disclaims all warranties of any kind, whether express or implied.</p>
+                            <p>PulseTracker provides real-time location tracking and data storage, broadcasting services
+                                as a backend, but we do not guarantee uninterrupted or error-free service. PulseTracker
+                                is not liable for any inaccuracies in the location data or for any harm or loss
+                                resulting from service outages, data delays, or unauthorized access. PulseTracker
+                                disclaims all warranties of any kind, whether express or implied.</p>
 
                             <h1>6. Intellectual Property</h1>
                             <p>All PulseTracker software, branding, and technology are the intellectual property of
@@ -106,8 +141,8 @@ PulseTracker uses Umami, an open-source analytics service, to collect anonymous 
                                 misuse of the service, or use linked to criminal activity.</p>
 
                             <h1>8. Governing Law</h1>
-                            <p>These terms are governed by the laws of France, where PulseTracker servers are hosted. If
-                                you reside outside France, local laws may also apply.</p>
+                            <p>These terms are governed by the laws of Europe, where PulseTracker servers are hosted. If
+                                you reside outside Europe, local laws may also apply.</p>
 
                             <h1>9. Dispute Resolution</h1>
                             <p>Any disputes arising from the use of PulseTracker will be resolved through binding
@@ -120,7 +155,9 @@ PulseTracker uses Umami, an open-source analytics service, to collect anonymous 
                                 acceptance.</p>
 
                             <h1>11. Contact Information</h1>
-                            <p>For questions or concerns, please contact us at <strong><a href="mailto:contact@pulsestracker.com">contact@pulsestracker.com</a></strong>.</p>
+                            <p>For questions or concerns, please contact us at <strong><a
+                                        href="mailto:contact@pulsestracker.com">contact@pulsestracker.com</a></strong>.
+                            </p>
 
 
                         </div>

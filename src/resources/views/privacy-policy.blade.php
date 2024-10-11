@@ -78,8 +78,8 @@
 
                             <h2>2. Information We Collect</h2>
                             <ul>
-                                <li><strong>Account Information:</strong> When you create an account, we collect your
-                                    email address and/or password.</li>
+                                <li><strong>Account Information:</strong> When you create an account, we collect your fullname, 
+                                    email address and password.</li>
                                 <li><strong>Device Information:</strong> We collect location data from devices linked to
                                     your account to provide the location tracking service.</li>
                                 <li><strong>Analytics Information:</strong> We use umami, an open-source analytics
@@ -104,8 +104,7 @@
 
                             <h2>5. Sharing Your Information</h2>
                             <p>We do not share your personal or device data with third parties, except when required by
-                                law or in cases of harmful activity, such as terrorism or criminal behavior. We may
-                                share anonymized, non-identifiable data for analytical purposes.</p>
+                                law or in cases of harmful activity, such as terrorism or criminal behavior.</p>
 
                             <h2>6. Data Security</h2>
                             <p>We take data security seriously and employ reasonable measures to protect your
@@ -114,7 +113,7 @@
 
                             <h2>7. Your Rights</h2>
                             <p>As a user, you have the right to access, modify, or delete your personal data. You may
-                                also opt out of certain features or request data deletion by contacting us. Please note
+                                also opt out of certain features or request data deletion by <a href="mailto:contact@pulsestracker.com">contacting us</a>. Please note
                                 that requests may take up to 7 days to process.</p>
 
                             <h2>8. Cookies and Tracking Technologies</h2>
