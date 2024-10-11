@@ -19,9 +19,10 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('app_id');
             $table->string('app_key');
+            $table->softDeletes();
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('app_id')->references('id')->on('apps')->onDelete('cascade');
         });
     }
