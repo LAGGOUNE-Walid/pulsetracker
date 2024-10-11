@@ -87,7 +87,7 @@
                                 immediate charge will occur, but your quota max limits will only change, not reset.
                                 Quotas reset at
                                 the beginning of each billing period. Canceled subscriptions remain active until the end
-                                of the billing period. Payment methods include Visa, Mastercard, and PayPal.</p>
+                                of the billing period. Payment methods include Visa, Mastercard, Apple pay, and PayPal.</p>
 
                             <h1>3. Data Privacy and Security</h1>
                             <p>PulseTracker collects and stores user data, including email address, password, and name,
