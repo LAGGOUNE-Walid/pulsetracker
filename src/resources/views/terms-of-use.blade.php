@@ -118,7 +118,7 @@
                                 Your continued use of Service after Subscription fee change comes into effect
                                 constitutes your agreement to pay the modified Subscription fee amount.
                             </p>
-                            <h1 class="mt-5">3. Data Privacy and Security</h1>
+                            <h1 class="mt-5">5. Data Privacy and Security</h1>
                             <p>PulseTracker collects and stores user data, including email address, password, and name,
                                 and device data such as IP address, latitude, longitude, app ID, client ID, and any
                                 additional data specified by the developer using the service.
@@ -153,7 +153,7 @@
                                 visit <a href="https://umami.is/privacy">Umami's privacy policy</a>.
                             </p>
 
-                            <h1 class="mt-5">4. User Responsibilities</h1>
+                            <h1 class="mt-5">6. User Responsibilities</h1>
                             <p>Users must use PulseTracker in compliance with all applicable laws and regulations. You
                                 are responsible for any activity that occurs under your account, including ensuring that
                                 the tracked devices belong to you or that you have permission to track them. Users must
@@ -162,7 +162,7 @@
                                 the GPS data collected from devices and acknowledge that PulseTracker does not guarantee
                                 the accuracy of this data.</p>
 
-                            <h1 class="mt-5">5. Limitation of Liability</h1>
+                            <h1 class="mt-5">7. Limitation of Liability</h1>
                             <p>PulseTracker provides real-time location tracking and data storage, broadcasting services
                                 as a backend, but we do not guarantee uninterrupted or error-free service.
                                 <br />
@@ -176,31 +176,31 @@
                                 disclaims all warranties of any kind, whether express or implied.
                             </p>
 
-                            <h1 class="mt-5">6. Intellectual Property</h1>
+                            <h1 class="mt-5">8. Intellectual Property</h1>
                             <p>All PulseTracker software, branding, and technology are the intellectual property of
                                 PulseTracker and its licensors. You are granted a limited, non-transferable license to
                                 use the service under these terms.</p>
 
-                            <h1 class="mt-5">7. Account Termination</h1>
+                            <h1 class="mt-5">9. Account Termination</h1>
                             <p>We may terminate or suspend your account with 5 days' notice via email if you violate
                                 these terms. Reasons for termination include, but are not limited to, non-payment,
                                 misuse of the service, or use linked to criminal activity.</p>
 
-                            <h1 class="mt-5">8. Governing Law</h1>
+                            <h1 class="mt-5">10. Governing Law</h1>
                             <p>These terms are governed by the laws of Europe, where PulseTracker servers are hosted. If
                                 you reside outside Europe, local laws may also apply.</p>
 
-                            <h1 class="mt-5">9. Dispute Resolution</h1>
+                            <h1 class="mt-5">11. Dispute Resolution</h1>
                             <p>Any disputes arising from the use of PulseTracker will be resolved through binding
                                 arbitration in accordance with Europe law. Users waive the right to participate in
                                 class-action lawsuits.</p>
 
-                            <h1 class="mt-5">10. Changes to the Terms</h1>
+                            <h1 class="mt-5">12. Changes to the Terms</h1>
                             <p>PulseTracker may update these terms at any time, with changes taking effect immediately
                                 upon posting to the website. Continued use of the service after updates constitutes
                                 acceptance.</p>
 
-                            <h1 class="mt-5">11. Contact Information</h1>
+                            <h1 class="mt-5">13. Contact Information</h1>
                             <p>For questions or concerns, please contact us at <strong><a
                                         href="mailto:contact@pulsestracker.com">contact@pulsestracker.com</a></strong>.
                             </p>
