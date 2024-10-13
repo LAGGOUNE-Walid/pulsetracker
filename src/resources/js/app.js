@@ -5,7 +5,7 @@ let phi = 0;
 let canvas = document.getElementById("cobe");
 
 const globe = createGlobe(canvas, {
-    devicePixelRatio: 2,
+    devicePixelRatio: 2.3,
     width: 400 * 2,
     height: 400 * 2,
     phi: 0,
