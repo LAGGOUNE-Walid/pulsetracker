@@ -91,14 +91,20 @@
                                 devices in real-time with fast UDP and WebSocket support. Optimize battery usage, scale
                                 effortlessly, and visualize live movements—perfect for developers and everyday users
                                 alike.</p>
-                            <div class="my-3">@guest <a class="btn btn-primary" role="button"
-                                        href="{{ url('signup') }}">Getting started</a>
+                            <div class="my-3">
+                                @guest
+                                    <a class="btn btn-primary" role="button" href="{{ url('signup') }}">Getting
+                                        started</a>
                                 @endguest
+
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 order-first order-md-last" style="min-height: 250px;"><img
-                            class="w-100 h-100 fit-cover" src="{{ url('assets/img/ezgif-4-6c4552c94d.gif') }}"></div>
+                    <div class="col-md-6 order-first order-md-last " style="min-height: 250px;">
+                        <center>
+                            <canvas id="cobe" style="width: 400px; height: 400px;"></canvas>
+                        </center>
+                    </div>
                 </div>
             </div>
         </div><!-- End: 1 Row 2 Columns -->
@@ -569,6 +575,7 @@
     <!-- End: Footer Dark -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    @vite('resources/js/app.js')
 </body>
 
 </html>
