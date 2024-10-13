@@ -7,17 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Home page</title>
     <meta name="twitter:description"
-        content="Cutting-edge solution for real-time location tracking designed for developers and businesses. Our eco-friendly service uses the efficient UDP protocol to minimize mobile power consumption while delivering accurate location updates. PulseTracker offers seamless integration with WebSockets for real-time data dispatch, comprehensive API access, and robust tracking features. Whether you're building a new app or enhancing existing services, PulseTracker's scalable solutions and flexible pricing plans ensure you get the most reliable and cost-effective location tracking. Start with our free plan and scale up as your needs grow. Try PulseTracker today and experience unparalleled location tracking performance.">
+        content="Cutting-edge solution for real-time location tracking designed for developers and businesses. Our eco-friendly service uses the efficient UDP protocol to minimize mobile power consumption while delivering accurate location updates. Pulsetracker offers seamless integration with WebSockets for real-time data dispatch, comprehensive API access, and robust tracking features. Whether you're building a new app or enhancing existing services, Pulsetracker's scalable solutions and flexible pricing plans ensure you get the most reliable and cost-effective location tracking. Start with our free plan and scale up as your needs grow. Try Pulsetracker today and experience unparalleled location tracking performance.">
     <meta name="twitter:image" content="{{ url('assets/img/Circle%20Brand%20Identity.jpeg') }}">
     <meta property="og:image" content="{{ url('assets/img/Circle%20Brand%20Identity.jpeg') }}">
     <meta property="og:url" content="{{ url('/') }}">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="PulseTracker">
+    <meta property="og:title" content="Pulsetracker">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="og:description"
-        content="Cutting-edge solution for real-time location tracking designed for developers and businesses. Our eco-friendly service uses the efficient UDP protocol to minimize mobile power consumption while delivering accurate location updates. PulseTracker offers seamless integration with WebSockets for real-time data dispatch, comprehensive API access, and robust tracking features. Whether you're building a new app or enhancing existing services, PulseTracker's scalable solutions and flexible pricing plans ensure you get the most reliable and cost-effective location tracking. Start with our free plan and scale up as your needs grow. Try PulseTracker today and experience unparalleled location tracking performance.">
+        content="Cutting-edge solution for real-time location tracking designed for developers and businesses. Our eco-friendly service uses the efficient UDP protocol to minimize mobile power consumption while delivering accurate location updates. Pulsetracker offers seamless integration with WebSockets for real-time data dispatch, comprehensive API access, and robust tracking features. Whether you're building a new app or enhancing existing services, Pulsetracker's scalable solutions and flexible pricing plans ensure you get the most reliable and cost-effective location tracking. Start with our free plan and scale up as your needs grow. Try Pulsetracker today and experience unparalleled location tracking performance.">
     <meta name="description"
-        content="Cutting-edge solution for real-time location tracking designed for developers and businesses. Our eco-friendly service uses the efficient UDP protocol to minimize mobile power consumption while delivering accurate location updates. PulseTracker offers seamless integration with WebSockets for real-time data dispatch, comprehensive API access, and robust tracking features. Whether you're building a new app or enhancing existing services, PulseTracker's scalable solutions and flexible pricing plans ensure you get the most reliable and cost-effective location tracking. Start with our free plan and scale up as your needs grow. Try PulseTracker today and experience unparalleled location tracking performance.">
+        content="Cutting-edge solution for real-time location tracking designed for developers and businesses. Our eco-friendly service uses the efficient UDP protocol to minimize mobile power consumption while delivering accurate location updates. Pulsetracker offers seamless integration with WebSockets for real-time data dispatch, comprehensive API access, and robust tracking features. Whether you're building a new app or enhancing existing services, Pulsetracker's scalable solutions and flexible pricing plans ensure you get the most reliable and cost-effective location tracking. Start with our free plan and scale up as your needs grow. Try Pulsetracker today and experience unparalleled location tracking performance.">
     <link rel="icon" type="image/jpeg" sizes="720x720"
         href="assets/img/Circle_Brand_Identity__Copy_-removebg-preview.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/darkly/bootstrap.min.css">
@@ -54,7 +54,7 @@
                     style="background: rgba(0,73,140,0);"><img
                         src="{{ url('assets/img/Circle%20Brand%20Identity.jpeg') }}"
                         style="width: 50px;height: 50px;"></span><span
-                    style="color: var(--bs-body-color);">PulseTracker</span></a><button data-bs-toggle="collapse"
+                    style="color: var(--bs-body-color);">Pulsetracker</span></a><button data-bs-toggle="collapse"
                 class="navbar-toggler" data-bs-target="#navcol-3"><span class="visually-hidden">Toggle
                     navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-3" style="color: white;">
@@ -129,7 +129,7 @@
                         </path>
                     </svg>
                     <h3>Real-time Location Tracking</h3>
-                    <p style="color: var(--bs-gray-500);font-size: 20px;">Integrate effortlessly with PulseTracker to
+                    <p style="color: var(--bs-gray-500);font-size: 20px;">Integrate effortlessly with Pulsetracker to
                         send location updates every second using UDP or Websockets, ensuring real-Time transmission.</p>
                 </div>
                 <div class="col-md-4"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
@@ -217,7 +217,7 @@
                     </h1>
                     <h4 class="text-center" style="color: var(--bs-gray-500);margin-top: 9px;padding-top: 20px;">
                         <strong>Seamlessly
-                            integrate with PulseTracker in just a few lines of code. Below are examples for Dart and
+                            integrate with Pulsetracker in just a few lines of code. Below are examples for Dart and
                             python .</strong>
                     </h4>
                     <div class="row">
@@ -239,7 +239,7 @@
                 <div class="col-md-12">
                     <h1 class="text-center" style="font-weight: bold;">Everything in your control</h1>
                     <h4 class="text-center" style="color: var(--bs-gray-500);margin-top: 9px;padding-top: 20px;">
-                        PulseTracker puts you in
+                        Pulsetracker puts you in
                         charge, offering complete control over how you track, manage, and dispatch location data.</h4>
                     <img src="{{ url('assets/img/Screenshot 2024-09-23 at 11-40-30 Dashboard - Pulsetracker.png') }}"
                         style="width: 100%;border-radius: 10px;margin-top: 3%; border: 2px solid #f3f3f3; ">

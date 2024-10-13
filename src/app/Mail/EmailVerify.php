@@ -27,7 +27,7 @@ class EmailVerify extends Mailable implements ShouldQueue
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Verify Your Email for PulseTracker',
+            subject: 'Verify Your Email for Pulsetracker',
         );
     }
 

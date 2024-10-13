@@ -35,7 +35,7 @@ const globe = createGlobe(canvas, {
         { location: [41.9028, 12.4964], size: 0.06 },   // Rome, Italy
         { location: [-1.2921, 36.8219], size: 0.06 },   // Nairobi, Kenya
         { location: [39.9042, 116.4074], size: 0.06 },  // Beijing, China
-        { location: [-26.2041, 28.0473], size: 0.06 },  // Johannesburg, South Africa
+        { location: [-26.2041, 28.0473], size: 0.06 },  // Johannesburg, South Africaeee
         { location: [50.1109, 8.6821], size: 0.06 },    // Frankfurt, Germany
         { location: [41.3851, 2.1734], size: 0.06 },    // Barcelona, Spain
         { location: [35.6762, 139.6503], size: 0.06 }   // Tokyo, Japan

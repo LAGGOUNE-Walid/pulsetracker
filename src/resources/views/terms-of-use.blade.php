@@ -7,14 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Terms of use</title>
     <meta name="twitter:description"
-        content="PulseTracker, the cutting-edge solution for real-time location tracking designed for developers and businesses. Our eco-friendly service uses the efficient UDP protocol to minimize mobile power consumption while delivering accurate location updates. PulseTracker offers seamless integration with WebSockets for real-time data dispatch, comprehensive API access, and robust tracking features. Whether you're building a new app or enhancing existing services, PulseTracker's scalable solutions and flexible pricing plans ensure you get the most reliable and cost-effective location tracking. Start with our free plan and scale up as your needs grow. Try PulseTracker today and experience unparalleled location tracking performance.">
+        content="Pulsetracker, the cutting-edge solution for real-time location tracking designed for developers and businesses. Our eco-friendly service uses the efficient UDP protocol to minimize mobile power consumption while delivering accurate location updates. Pulsetracker offers seamless integration with WebSockets for real-time data dispatch, comprehensive API access, and robust tracking features. Whether you're building a new app or enhancing existing services, Pulsetracker's scalable solutions and flexible pricing plans ensure you get the most reliable and cost-effective location tracking. Start with our free plan and scale up as your needs grow. Try Pulsetracker today and experience unparalleled location tracking performance.">
     <meta name="twitter:image" content="assets/img/Circle%20Brand%20Identity.jpeg">
     <meta property="og:image" content="assets/img/Circle%20Brand%20Identity.jpeg">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="PulseTracker">
+    <meta property="og:title" content="Pulsetracker">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="description"
-        content="PulseTracker, the cutting-edge solution for real-time location tracking designed for developers and businesses. Our eco-friendly service uses the efficient UDP protocol to minimize mobile power consumption while delivering accurate location updates. PulseTracker offers seamless integration with WebSockets for real-time data dispatch, comprehensive API access, and robust tracking features. Whether you're building a new app or enhancing existing services, PulseTracker's scalable solutions and flexible pricing plans ensure you get the most reliable and cost-effective location tracking. Start with our free plan and scale up as your needs grow. Try PulseTracker today and experience unparalleled location tracking performance.">
+        content="Pulsetracker, the cutting-edge solution for real-time location tracking designed for developers and businesses. Our eco-friendly service uses the efficient UDP protocol to minimize mobile power consumption while delivering accurate location updates. Pulsetracker offers seamless integration with WebSockets for real-time data dispatch, comprehensive API access, and robust tracking features. Whether you're building a new app or enhancing existing services, Pulsetracker's scalable solutions and flexible pricing plans ensure you get the most reliable and cost-effective location tracking. Start with our free plan and scale up as your needs grow. Try Pulsetracker today and experience unparalleled location tracking performance.">
     <link rel="icon" type="image/jpeg" sizes="720x720"
         href="assets/img/Circle_Brand_Identity__Copy_-removebg-preview.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/darkly/bootstrap.min.css">
@@ -36,7 +36,7 @@
                     style="background: rgba(0,73,140,0);"><img
                         src="{{ url('assets/img/Circle%20Brand%20Identity.jpeg') }}"
                         style="width: 50px;height: 50px;"></span><span
-                    style="color: var(--bs-body-color);">PulseTracker</span></a><button data-bs-toggle="collapse"
+                    style="color: var(--bs-body-color);">Pulsetracker</span></a><button data-bs-toggle="collapse"
                 class="navbar-toggler" data-bs-target="#navcol-3"><span class="visually-hidden">Toggle
                     navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-3" style="color: white;">
@@ -67,18 +67,18 @@
                 <div class="row g-0">
                     <div class="col-md-12">
                         <div class="text-white p-4 p-md-5">
-                            <h1 class="mt-5">PulseTracker Terms of Service</h1>
+                            <h1 class="mt-5">Pulsetracker Terms of Service</h1>
                             <small>Last Updated: October 12, 2024</small>
 
-                            <p>Welcome to PulseTracker! By using our service, you agree to comply with the following
-                                terms and conditions. If you do not agree, you should not use PulseTracker.</p>
+                            <p>Welcome to Pulsetracker! By using our service, you agree to comply with the following
+                                terms and conditions. If you do not agree, you should not use Pulsetracker.</p>
 
                             <h1 class="mt-5">1. Account Registration</h1>
                             <p>Anyone, whether an individual or a company, can create an account. Users must provide an
                                 email address and password, and are responsible for safeguarding their credentials.</p>
 
                             <h1 class="mt-5">2. Subscription Plans and Payment</h1>
-                            <p>PulseTracker offers Free, Pro, and Enterprise plans, billed monthly through Paddle.
+                            <p>Pulsetracker offers Free, Pro, and Enterprise plans, billed monthly through Paddle.
                                 <br />
                                 If you upgrade or downgrade your plan, an immediate charge will occur, but your quota
                                 max limits will only change, not reset.
@@ -89,7 +89,7 @@
                             </p>
                             <h1 class="mt-5">3.Refunds</h1>
                             <p>
-                                At PulseTracker, we strive to deliver a high-quality service that meets your needs.
+                                At Pulsetracker, we strive to deliver a high-quality service that meets your needs.
                                 Given the nature of our real-time tracking and subscription-based service, we do not
                                 offer refunds for any subscription payments.
                                 <br />
@@ -119,7 +119,7 @@
                                 constitutes your agreement to pay the modified Subscription fee amount.
                             </p>
                             <h1 class="mt-5">5. Data Privacy and Security</h1>
-                            <p>PulseTracker collects and stores user data, including email address, password, and name,
+                            <p>Pulsetracker collects and stores user data, including email address, password, and name,
                                 and device data such as IP address, latitude, longitude, app ID, client ID, and any
                                 additional data specified by the developer using the service.
                                 <br />
@@ -143,42 +143,42 @@
                                 We never store passwords in our database; they are always encrypted and hashed .
                                 <br />
                                 <br />
-                                PulseTracker does not share user data with any third parties unless
+                                Pulsetracker does not share user data with any third parties unless
                                 required by law in cases where users or their devices are linked to harmful activities
                                 such as terrorism or criminal behavior.
                                 <br />
                                 <br />
-                                PulseTracker uses Umami, an open-source analytics service, to collect anonymous usage
+                                Pulsetracker uses Umami, an open-source analytics service, to collect anonymous usage
                                 data to improve the service. For more information on Umami's privacy policy, please
                                 visit <a href="https://umami.is/privacy">Umami's privacy policy</a>.
                             </p>
 
                             <h1 class="mt-5">6. User Responsibilities</h1>
-                            <p>Users must use PulseTracker in compliance with all applicable laws and regulations. You
+                            <p>Users must use Pulsetracker in compliance with all applicable laws and regulations. You
                                 are responsible for any activity that occurs under your account, including ensuring that
                                 the tracked devices belong to you or that you have permission to track them. Users must
                                 not exploit the platform for illegal activities, including tracking devices associated
                                 with criminal or terrorist activities. Users are solely responsible for the accuracy of
-                                the GPS data collected from devices and acknowledge that PulseTracker does not guarantee
+                                the GPS data collected from devices and acknowledge that Pulsetracker does not guarantee
                                 the accuracy of this data.</p>
 
                             <h1 class="mt-5">7. Limitation of Liability</h1>
-                            <p>PulseTracker provides real-time location tracking and data storage, broadcasting services
+                            <p>Pulsetracker provides real-time location tracking and data storage, broadcasting services
                                 as a backend, but we do not guarantee uninterrupted or error-free service.
                                 <br />
                                 <br />
-                                PulseTracker is not liable for any inaccuracies in the location data or for any harm or
+                                Pulsetracker is not liable for any inaccuracies in the location data or for any harm or
                                 loss
                                 resulting from service outages, data delays, or unauthorized access.
                                 <br />
                                 <br />
-                                PulseTracker
+                                Pulsetracker
                                 disclaims all warranties of any kind, whether express or implied.
                             </p>
 
                             <h1 class="mt-5">8. Intellectual Property</h1>
-                            <p>All PulseTracker software, branding, and technology are the intellectual property of
-                                PulseTracker and its licensors. You are granted a limited, non-transferable license to
+                            <p>All Pulsetracker software, branding, and technology are the intellectual property of
+                                Pulsetracker and its licensors. You are granted a limited, non-transferable license to
                                 use the service under these terms.</p>
 
                             <h1 class="mt-5">9. Account Termination</h1>
@@ -187,16 +187,16 @@
                                 misuse of the service, or use linked to criminal activity.</p>
 
                             <h1 class="mt-5">10. Governing Law</h1>
-                            <p>These terms are governed by the laws of Europe, where PulseTracker servers are hosted. If
+                            <p>These terms are governed by the laws of Europe, where Pulsetracker servers are hosted. If
                                 you reside outside Europe, local laws may also apply.</p>
 
                             <h1 class="mt-5">11. Dispute Resolution</h1>
-                            <p>Any disputes arising from the use of PulseTracker will be resolved through binding
+                            <p>Any disputes arising from the use of Pulsetracker will be resolved through binding
                                 arbitration in accordance with Europe law. Users waive the right to participate in
                                 class-action lawsuits.</p>
 
                             <h1 class="mt-5">12. Changes to the Terms</h1>
-                            <p>PulseTracker may update these terms at any time, with changes taking effect immediately
+                            <p>Pulsetracker may update these terms at any time, with changes taking effect immediately
                                 upon posting to the website. Continued use of the service after updates constitutes
                                 acceptance.</p>
 

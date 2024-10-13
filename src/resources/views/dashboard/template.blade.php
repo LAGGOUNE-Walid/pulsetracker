@@ -93,7 +93,7 @@
                 <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100"
                     style="background: black;margin: 5%;"><a href="/"
                         class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none"><span
-                            class="fs-5 d-none d-sm-inline">PulseTracker&nbsp;<img
+                            class="fs-5 d-none d-sm-inline">Pulsetracker&nbsp;<img
                                 src="{{ url('assets/img/Circle%20Brand%20Identity.jpeg') }}"
                                 style="width: 50px;height: 50px;"></span></a><!-- Start: UL -->
                     <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start"

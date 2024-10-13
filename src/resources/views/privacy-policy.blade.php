@@ -7,14 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Privacy policy</title>
     <meta name="twitter:description"
-        content="PulseTracker, the cutting-edge solution for real-time location tracking designed for developers and businesses. Our eco-friendly service uses the efficient UDP protocol to minimize mobile power consumption while delivering accurate location updates. PulseTracker offers seamless integration with WebSockets for real-time data dispatch, comprehensive API access, and robust tracking features. Whether you're building a new app or enhancing existing services, PulseTracker's scalable solutions and flexible pricing plans ensure you get the most reliable and cost-effective location tracking. Start with our free plan and scale up as your needs grow. Try PulseTracker today and experience unparalleled location tracking performance.">
+        content="Pulsetracker, the cutting-edge solution for real-time location tracking designed for developers and businesses. Our eco-friendly service uses the efficient UDP protocol to minimize mobile power consumption while delivering accurate location updates. Pulsetracker offers seamless integration with WebSockets for real-time data dispatch, comprehensive API access, and robust tracking features. Whether you're building a new app or enhancing existing services, Pulsetracker's scalable solutions and flexible pricing plans ensure you get the most reliable and cost-effective location tracking. Start with our free plan and scale up as your needs grow. Try Pulsetracker today and experience unparalleled location tracking performance.">
     <meta name="twitter:image" content="assets/img/Circle%20Brand%20Identity.jpeg">
     <meta property="og:image" content="assets/img/Circle%20Brand%20Identity.jpeg">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="PulseTracker">
+    <meta property="og:title" content="Pulsetracker">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="description"
-        content="PulseTracker, the cutting-edge solution for real-time location tracking designed for developers and businesses. Our eco-friendly service uses the efficient UDP protocol to minimize mobile power consumption while delivering accurate location updates. PulseTracker offers seamless integration with WebSockets for real-time data dispatch, comprehensive API access, and robust tracking features. Whether you're building a new app or enhancing existing services, PulseTracker's scalable solutions and flexible pricing plans ensure you get the most reliable and cost-effective location tracking. Start with our free plan and scale up as your needs grow. Try PulseTracker today and experience unparalleled location tracking performance.">
+        content="Pulsetracker, the cutting-edge solution for real-time location tracking designed for developers and businesses. Our eco-friendly service uses the efficient UDP protocol to minimize mobile power consumption while delivering accurate location updates. Pulsetracker offers seamless integration with WebSockets for real-time data dispatch, comprehensive API access, and robust tracking features. Whether you're building a new app or enhancing existing services, Pulsetracker's scalable solutions and flexible pricing plans ensure you get the most reliable and cost-effective location tracking. Start with our free plan and scale up as your needs grow. Try Pulsetracker today and experience unparalleled location tracking performance.">
     <link rel="icon" type="image/jpeg" sizes="720x720"
         href="assets/img/Circle_Brand_Identity__Copy_-removebg-preview.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/darkly/bootstrap.min.css">
@@ -36,7 +36,7 @@
                     style="background: rgba(0,73,140,0);"><img
                         src="{{ url('assets/img/Circle%20Brand%20Identity.jpeg') }}"
                         style="width: 50px;height: 50px;"></span><span
-                    style="color: var(--bs-body-color);">PulseTracker</span></a><button data-bs-toggle="collapse"
+                    style="color: var(--bs-body-color);">Pulsetracker</span></a><button data-bs-toggle="collapse"
                 class="navbar-toggler" data-bs-target="#navcol-3"><span class="visually-hidden">Toggle
                     navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-3" style="color: white;">
@@ -67,13 +67,13 @@
                 <div class="row g-0">
                     <div class="col-md-12">
                         <div class="text-white p-4 p-md-5">
-                            <h1>PulseTracker Privacy Policy</h1>
+                            <h1>Pulsetracker Privacy Policy</h1>
                             <p><strong>Effective Date:</strong> 2024-10-04</p>
 
                             <h2>1. Introduction</h2>
-                            <p>PulseTracker ("we", "our", or "us") is committed to protecting your privacy. This Privacy
+                            <p>Pulsetracker ("we", "our", or "us") is committed to protecting your privacy. This Privacy
                                 Policy explains how we collect, use, and disclose information about you when you use our
-                                services. By using PulseTracker, you agree to the collection and use of information in
+                                services. By using Pulsetracker, you agree to the collection and use of information in
                                 accordance with this policy.</p>
 
                             <h2>2. Information We Collect</h2>
@@ -90,7 +90,7 @@
                             <h2>3. How We Use Your Information</h2>
                             <p>We use your data to:</p>
                             <ul>
-                                <li>Provide and maintain the PulseTracker service.</li>
+                                <li>Provide and maintain the Pulsetracker service.</li>
                                 <li>Track and manage device locations as requested by users.</li>
                                 <li>Improve service performance through basic analytics.</li>
                                 <li>Communicate with you regarding updates to our services, including changes to this
@@ -119,10 +119,10 @@
                             <h2>8. Cookies and Tracking Technologies</h2>
                             <p>We use umami, which is privacy-focused and does not use cookies or track personal
                                 information for analytics. No other cookies or tracking technologies are used on
-                                PulseTracker at this time.</p>
+                                Pulsetracker at this time.</p>
 
                             <h2>9. Children's Privacy</h2>
-                            <p>PulseTracker is not intended for use by children under the age of 12, and we do
+                            <p>Pulsetracker is not intended for use by children under the age of 12, and we do
                                 not knowingly collect data from children without parental consent. If you believe we
                                 have collected such information, please contact us for removal.</p>
 
