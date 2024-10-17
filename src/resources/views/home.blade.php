@@ -263,7 +263,7 @@
         <h1 style="text-align: center;" id="pricing">Pricing</h1><!-- Start: 1 Row 3 Columns -->
         <div class="container" style="margin-top: 3%;">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4 mt-3">
                     <div style="border: 1px solid var(--bs-dark-text-emphasis);padding: 5%;border-radius: 10px;">
                         <h5 class="text-center">Free</h5>
                         <h3 class="text-center" style="margin-top: 5%;">${{ $subscriptions['free']['price'] }} / mo
@@ -355,7 +355,7 @@
                         @endauth
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 mt-3">
                     <div style="padding: 5%;border-radius: 10px;border: 2px solid var(--bs-link-hover-color) ;">
                         <h5 class="text-center">Pro</h5>
                         <h3 class="text-center" style="margin-top: 5%;">${{ $subscriptions['pro']['price'] }} / mo
@@ -457,7 +457,7 @@
                         @endauth
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 mt-3">
                     <div style="border: 1px solid var(--bs-dark-text-emphasis);padding: 5%;border-radius: 10px;">
                         <h5 class="text-center">Enterprise</h5>
                         <h3 class="text-center" style="margin-top: 5%;">${{ $subscriptions['enterprise']['price'] }}

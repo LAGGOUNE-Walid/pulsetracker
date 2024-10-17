@@ -43,7 +43,7 @@ class PaddleEventListener implements ShouldQueue
         if ($event->payload['event_type'] === 'subscription.updated') {
             $subscription = Subscription::where('paddle_id', $event->payload['data']['id'])->withWhereHas('billable')->first();
             if (! $subscription) {
-                throw new \Exception('Subscriptio not found', 1);
+                throw new \Exception('Subscription not found', 1);
             }
             $user = $subscription->billable;
             if ($event->payload['data']['status'] === 'active') {
