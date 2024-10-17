@@ -9,10 +9,10 @@ $numberOfClients = 4;
 
 $sendInterval = 100;
 
-$data = ['appId' => '123', 'clientId' => '22f8e456-93f2-4173-8f2d-8a010abcceb1', 'data' => ['type' => 'Point', 'coordinates' => [1, 1]]];
+// $data = ['appId' => '123', 'clientId' => '22f8e456-93f2-4173-8f2d-8a010abcceb1', 'data' => ['type' => 'Point', 'coordinates' => [1, 1]]];
 $data = [
-    'appId' => '272a0151-6251-432a-889f-d8d8d6ae7314',
-    'clientId' => '2ac172ac-3234-4820-98a0-8dc62ba30e19',
+    'appId' => 'cc0248b2-4e87-4714-9754-6ed23436459d',
+    'clientId' => '8a4bab21-7f3d-42cd-88cc-09d365bd6cf9',
     'data' => ['type' => 'Point', 'coordinates' => [-14.80665, -140.22159]],
 ];
 $jsonData = json_encode($data);
