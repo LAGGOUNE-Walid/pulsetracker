@@ -35,8 +35,8 @@ function simulateClient($host, $port, $jsonData, $sendInterval)
 }
 
 run(function () use ($numberOfClients, $jsonData, $sendInterval) {
-    $host = '192.168.1.7';
-    $port = 9505;
+    $host = 'udp-tracking.pulsestracker.com';
+    $port = 9506;
     for ($i = 0; $i < $numberOfClients; $i++) {
         go(function () use ($host, $port, $jsonData, $sendInterval) {
             simulateClient($host, $port, $jsonData, $sendInterval);

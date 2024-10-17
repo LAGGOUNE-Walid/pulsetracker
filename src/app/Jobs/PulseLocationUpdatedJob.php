@@ -33,16 +33,8 @@ class PulseLocationUpdatedJob implements ShouldQueue
 
         GeoJson::jsonUnserialize($data['point']);
         $point = new Point($data['point']['coordinates']);
-        DeviceLocation::create([
-            'ip_address' => $data['ip'],
-            'app_id' => $app->id,
-            'app_key' => $app->key,
-            'device_id' => $device->id,
-            'device_key' => $device->key,
-            'location' => $point,
-            'user_id' => $app->user_id,
-            'extra_data' => $data['extraData'],
-        ]);
+        InsertDeviceLocationJob::dispatch($app, $device, $point, $data);
+
 
         IncrementUserQuota::dispatch($app, $device);
         SetDeviceLastLocation::dispatch($app, $device, $data['ip'], $point, $data['extraData']);
@@ -52,10 +44,10 @@ class PulseLocationUpdatedJob implements ShouldQueue
 
     public function getAppByKey(string $key): App
     {
-        $app = Cache::get('cached-app-key-'.$key, null);
+        $app = Cache::get('cached-app-key-' . $key, null);
         if (! $app) {
             $app = App::where('key', $key)->firstOrFail();
-            Cache::put('cached-app-key-'.$key, $app);
+            Cache::put('cached-app-key-' . $key, $app);
         }
 
         return $app;
@@ -63,10 +55,10 @@ class PulseLocationUpdatedJob implements ShouldQueue
 
     public function getDeviceByKey(string $key): Device
     {
-        $device = Cache::get('cached-device-key-'.$key, null);
+        $device = Cache::get('cached-device-key-' . $key, null);
         if (! $device) {
             $device = Device::where('key', $key)->firstOrFail();
-            Cache::put('cached-device-key-'.$key, $device);
+            Cache::put('cached-device-key-' . $key, $device);
         }
 
         return $device;
