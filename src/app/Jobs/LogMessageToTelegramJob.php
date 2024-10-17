@@ -24,8 +24,10 @@ class LogMessageToTelegramJob implements ShouldQueue
      */
     public function handle(): void
     {
-        $token = env('TELEGRAM_BOT_TOKEN');
-        $chatId = env('TELEGRAM_CHANNEL_ID');
+        // $token = env('TELEGRAM_BOT_TOKEN');
+        $token = config("logging.channels.telegram.TELEGRAM_BOT_TOKEN");
+        // $chatId = env('TELEGRAM_CHANNEL_ID');
+        $chatId = config("logging.channels.telegram.TELEGRAM_CHANNEL_ID");
 
         try {
             $client = new Client();
