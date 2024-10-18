@@ -30,6 +30,7 @@
     @paddleJS
     @cookieconsentscripts
     <script defer src="https://cloud.umami.is/script.js" data-website-id="06db6e2e-fb33-4581-8722-67ece940e18e"></script>
+    <script src="https://js-de.sentry-cdn.com/edf86eb6486765d336450b383fdd60b0.min.js" crossorigin="anonymous"></script>
     <!-- Brevo Conversations {literal} -->
     <script>
         (function(d, w, c) {

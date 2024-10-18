@@ -7,7 +7,7 @@ use function Swoole\Coroutine\run;
 
 $numberOfClients = 1;
 
-$sendInterval = 1000;
+$sendInterval = 100;
 
 // $data = ['appId' => '123', 'clientId' => '22f8e456-93f2-4173-8f2d-8a010abcceb1', 'data' => ['type' => 'Point', 'coordinates' => [1, 1]]];
 $data = [
