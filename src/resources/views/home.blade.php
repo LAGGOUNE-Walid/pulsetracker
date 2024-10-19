@@ -103,7 +103,8 @@
                     </div>
                     <div class="col-md-6 order-first order-md-last " style="min-height: 250px;">
                         <center>
-                            <canvas id="cobe" style="width: 400px; height: 400px;"></canvas>
+                            {{-- <canvas id="cobe" style="width: 400px; height: 400px;"></canvas> --}}
+                            <img src="{{ url('assets/img/globe.png') }}" alt="">
                         </center>
                     </div>
                 </div>
