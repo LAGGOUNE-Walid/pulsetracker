@@ -1,3 +1,4 @@
+/config/stripe-subscriptions.php
 /.phpunit.cache
 /node_modules
 /public/build

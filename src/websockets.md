@@ -40,6 +40,60 @@ print(f"Location sent: {json_data}")
 sock.close()
 ```
 
+#### Javascript websockets example
+```javascript
+    var wsServer = 'wss://ws-tracking.pulsestracker.com';
+    var websocket = new WebSocket(wsServer);
+    const appId = 'YOUR_APP_KEY';
+    const clientId = 'YOUR_CLIENT_KEY';
+
+    websocket.onopen = function (evt) {
+        console.log("Connected to WebSocket server.");
+        // Send location every 2 seconds
+        setInterval(() => {
+            if (websocket.readyState === WebSocket.OPEN) {
+                navigator.geolocation.getCurrentPosition((position) => {
+                    console.log(position);
+                    const locationData = {
+                        appId: appId,
+                        clientId: clientId,
+                        data: {
+                            type: "Point",
+                            coordinates: [position.coords.longitude, position.coords.latitude]
+                        },
+                        extra: {
+                            key: "value"
+                        }
+                    };
+
+
+                    // Send location data as JSON
+                    websocket.send(JSON.stringify(locationData));
+                    console.log('Location sent:', locationData);
+                }, (error) => {
+                    console.error('Error getting location:', error);
+                });
+            }
+        }, 3000); // Every 2 seconds
+    };
+
+    websocket.onclose = function (evt) {
+        console.log("Disconnected");
+    };
+
+    websocket.onmessage = function (evt) {
+        if (event.data === 'Pong') {
+            console.log('Received Pong from server');
+        } else {
+            // Handle other messages
+            console.log('Received:', event.data);
+        }
+    };
+
+    websocket.onerror = function (evt, e) {
+        console.log('Error occurred: ' + evt.data);
+    };
+```
 <hr/>
 
 # Pusher Listeners Integration (Listen for events)
