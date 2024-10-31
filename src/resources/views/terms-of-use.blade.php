@@ -15,18 +15,21 @@
                                 terms and conditions. If you do not agree, you should not use Pulsetracker.</p>
 
                             <h1 class="mt-5">1. Account Registration</h1>
-                            <p>Anyone, whether an individual or a company, can create an account. Users must provide an
+                            <p>Anyone, whether an individual or a company, can create an account. Users can create an
+                                account using google or github providers OR provide an
                                 email address and password, and are responsible for safeguarding their credentials.</p>
 
                             <h1 class="mt-5">2. Subscription Plans and Payment</h1>
-                            <p>Pulsetracker offers Free, Pro, and Enterprise plans, billed monthly through Paddle.
+                            <p>Pulsetracker offers Free, Pro, and Enterprise plans, billed monthly through <a
+                                    href="https://stripe.com">Stripe</a>.
                                 <br />
-                                If you upgrade or downgrade your plan, an immediate charge will occur, but your quota
-                                max limits will only change, not reset.
+                                When you upgrade or downgrade your plan, you’ll be charged immediately, and your quota
+                                limits will adjust according to the new plan’s maximums. However, the usage won’t reset to
+                                zero.
                                 <br />
                                 Quotas reset at the beginning of each billing period. Canceled subscriptions remain
                                 active until the end
-                                of the billing period. Payment methods include Visa, Mastercard, Apple pay, and PayPal.
+                                of the billing period.
                             </p>
                             <h1 class="mt-5">3.Refunds</h1>
                             <p>
