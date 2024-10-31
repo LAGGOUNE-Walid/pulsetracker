@@ -100,7 +100,7 @@ sock.close()
 
 To receive real-time location updates on the client side, connect to our Pusher server at the following address:
 
-- **Server Address**: `wss://ws-tracking.pulsestracker.com`
+- **Server Address**: `pusher.pulsestracker.com`
 - **Channel Name**: `private-apps.APP_KEY`
 - **Event Name**: `App\Events\DeviceLocationUpdated`
 - **Auth endpoint**: `pulse.com/broadcasting/auth`
