@@ -17,7 +17,7 @@
                     user privacy
                     and ensuring data is only used for approved purposes. After user consent, Pulsetracker begins
                     broadcasting live
-                    location data to an authorized platform, which can be accessed by developers or individuals needing
+                    location data to our backend and also to your backend if chosen, which can be accessed by developers or individuals needing
                     real-time
                     location visibility. This makes it ideal for scalable realtime tracking solution as a backend.
                 </p>

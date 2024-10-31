@@ -31,8 +31,6 @@ return [
         ],
         'enterprise' => [
             'name' => 'enterprise',
-            // 'product_id' => 'prod_R6hFullMfq1OtP',
-            // 'price_id' => 'price_1QETrSBi3kjHIWhO1XuHWT4x',
             'product_id' => 'prod_R6hEi2EsZ1HlSa',
             'price_id' => 'price_1QEYaMBi3kjHIWhOyvjdM0G3',
             'price' => 149,
