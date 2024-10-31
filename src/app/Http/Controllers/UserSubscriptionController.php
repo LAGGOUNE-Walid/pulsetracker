@@ -2,24 +2,34 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+use Laravel\Cashier\Checkout;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 
 class UserSubscriptionController extends Controller
 {
     public function showHomePage(Request $request): View
     {
-        $checkoutLinks = [];
-        $subscriptions = config('paddle-subscriptions.plans');
-        if ($request->user()) {
-            foreach ($subscriptions as $subscription) {
-                $checkoutLinks[$subscription['name']] = $request->user()->subscribe($subscription['price_id'], $subscription['name'])
-                    ->returnTo(route('settings'));
-            }
-        }
+        $subscriptions = config('stripe-subscriptions.plans');
 
-        return view('home', ['checkoutLinks' => $checkoutLinks, 'subscriptions' => $subscriptions]);
+        return view('home', ['subscriptions' => $subscriptions]);
+    }
+
+    public function subscribe(Request $request, string $plan)
+    {
+        $subscriptions = config('stripe-subscriptions.plans');
+        if (! array_key_exists($plan, $subscriptions)) {
+            abort(404);
+        }
+        $subscription = $subscriptions[$plan];
+
+        return $request->user()
+            ->newSubscription($subscription['product_id'], $subscription['price_id'])
+            ->checkout([
+                'success_url' => url('dashboard/settings'),
+                'cancel_url' => url('/#pricing'),
+            ]);
     }
 
     public function moveToFree(Request $request): RedirectResponse
@@ -34,42 +44,59 @@ class UserSubscriptionController extends Controller
 
     public function cancel(Request $request, string $type): RedirectResponse
     {
-        $subscriptions = config('paddle-subscriptions.plans');
+        $subscriptions = config('stripe-subscriptions.plans');
         if (! array_key_exists($type, $subscriptions)) {
             abort(404);
         }
-        if (! $request->user()->subscribed($type)) {
-            return redirect()->back();
-        }
-        $request->user()->subscription($type)->cancel();
 
+        foreach ($subscriptions as $subscription) {
+            if ($subscription['product_id'] !== null) {
+                if ($request->user()->subscribed($subscription['product_id'])) {
+                    $request->user()->subscription($subscription['product_id'])->cancel();
+                }
+            }
+        }
         return redirect(url('/#pricing'));
     }
 
     public function resume(Request $request, string $type): RedirectResponse
     {
-        $subscriptions = config('paddle-subscriptions.plans');
+        $subscriptions = config('stripe-subscriptions.plans');
         if (! array_key_exists($type, $subscriptions)) {
             abort(404);
         }
-        if (! $request->user()->subscription($type)->onGracePeriod()) {
-            return redirect()->back();
+        foreach ($subscriptions as $subscription) {
+            if ($subscription['product_id'] !== null) {
+                if ($request->user()->subscription($subscription['product_id'])->onGracePeriod()) {
+                    $request->user()->subscription($subscription['product_id'])->stopCancelation();
+                }
+            }
         }
-        $request->user()->subscription($type)->stopCancelation();
 
         return redirect(url('/#pricing'));
     }
 
-    public function swap(Request $request, string $type): RedirectResponse
+    public function swap(Request $request, string $type)
     {
-        $subscriptions = config('paddle-subscriptions.plans');
+        $subscriptions = config('stripe-subscriptions.plans');
         if (! array_key_exists($type, $subscriptions)) {
             abort(404);
         }
+
+        $currentActiveSubscription = $request->user()->subscriptions()->active()->first();
+        $currentActiveSubscription->noProrate()->swapAndInvoice($subscriptions[$type]['price_id']);
+        return redirect(url('/#pricing'));
         // exit;
         $currentActiveSubscription = $request->user()->subscriptions()->active()->first();
-        $request->user()->subscription($currentActiveSubscription->type)->noProrate()->swapAndInvoice($subscriptions[$type]['price_id']);
-        $request->user()->subscriptions()->active()->first()->update(['type' => $type]);
+        $currentActiveSubscription->cancelNow();
+        return $request->user()
+            ->newSubscription($subscriptions[$type]['product_id'], $subscriptions[$type]['price_id'])
+            ->checkout([
+                'success_url' => url('dashboard/settings'),
+                'cancel_url' => url('/#pricing'),
+            ]);
+        // $currentActiveSubscription->noProrate()->swapAndInvoice($subscriptions[$type]['price_id']);
+        // $request->user()->subscriptions()->active()->first()->update(['type' => $type]);
 
         return redirect(url('/#pricing'));
     }

@@ -1,10 +1,12 @@
 <?php
 
 return [
+    
     'plans' => [
         'free' => [
             'name' => 'free',
             'price' => 0,
+            'product_id' => null,
             'price_id' => null,
             'size' => [
                 'apps' => 1,
@@ -17,7 +19,8 @@ return [
         'pro' => [
             'name' => 'pro',
             'price' => 49,
-            'price_id' => 'pri_01j7p1hvxz3ptxw9ebrrxkdzh7',
+            'product_id' => 'prod_R6hEi2EsZ1HlSa',
+            'price_id' => 'price_1QETpyBi3kjHIWhO7jVOfMp3',
             'size' => [
                 'apps' => 5,
                 'devices' => 25,
@@ -28,7 +31,10 @@ return [
         ],
         'enterprise' => [
             'name' => 'enterprise',
-            'price_id' => 'pri_01j7p1k24mh7sp2dpbprazpz1q',
+            // 'product_id' => 'prod_R6hFullMfq1OtP',
+            // 'price_id' => 'price_1QETrSBi3kjHIWhO1XuHWT4x',
+            'product_id' => 'prod_R6hEi2EsZ1HlSa',
+            'price_id' => 'price_1QEYaMBi3kjHIWhOyvjdM0G3',
             'price' => 149,
             'size' => [
                 'apps' => null,

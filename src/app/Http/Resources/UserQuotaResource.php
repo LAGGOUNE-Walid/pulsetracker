@@ -14,11 +14,11 @@ class UserQuotaResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
-        $subscriptions = config('paddle-subscriptions.plans');
+        $subscriptions = config('stripe-subscriptions.plans');
         $userSubscriptionQuota = 0;
         foreach ($subscriptions as $subscription) {
             $allowedDevicesPerSubscription = $subscription['size']['messages_per_month'] ?? PHP_INT_MAX;
-            if ($this->subscribed($subscription['name'])) {
+            if ($this->subscribedToPrice($subscription['price_id'], $subscription['product_id'])) {
                 $userSubscriptionQuota = $allowedDevicesPerSubscription;
             }
         }

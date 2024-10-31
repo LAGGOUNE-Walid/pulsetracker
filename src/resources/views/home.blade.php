@@ -1,83 +1,6 @@
-<!DOCTYPE html>
-<html data-bs-theme="light" lang="en"
-    style="--bs-body-bg: black;--bs-body-font-size: 1.5rem;--bs-body-font-weight: 1000;--bs-dark: black;--bs-dark-rgb: 0,0,0;font-family: Alatsi, sans-serif !important;">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Home page</title>
-    <meta name="twitter:description"
-        content="Cutting-edge solution for real-time location tracking designed for developers and businesses. Our eco-friendly service uses the efficient UDP protocol to minimize mobile power consumption while delivering accurate location updates. Pulsetracker offers seamless integration with WebSockets for real-time data dispatch, comprehensive API access, and robust tracking features. Whether you're building a new app or enhancing existing services, Pulsetracker's scalable solutions and flexible pricing plans ensure you get the most reliable and cost-effective location tracking. Start with our free plan and scale up as your needs grow. Try Pulsetracker today and experience unparalleled location tracking performance.">
-    <meta name="twitter:image" content="{{ url('assets/img/Circle%20Brand%20Identity.jpeg') }}">
-    <meta property="og:image" content="{{ url('assets/img/Circle%20Brand%20Identity.jpeg') }}">
-    <meta property="og:url" content="{{ url('/') }}">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Pulsetracker">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="og:description"
-        content="Cutting-edge solution for real-time location tracking designed for developers and businesses. Our eco-friendly service uses the efficient UDP protocol to minimize mobile power consumption while delivering accurate location updates. Pulsetracker offers seamless integration with WebSockets for real-time data dispatch, comprehensive API access, and robust tracking features. Whether you're building a new app or enhancing existing services, Pulsetracker's scalable solutions and flexible pricing plans ensure you get the most reliable and cost-effective location tracking. Start with our free plan and scale up as your needs grow. Try Pulsetracker today and experience unparalleled location tracking performance.">
-    <meta name="description"
-        content="Cutting-edge solution for real-time location tracking designed for developers and businesses. Our eco-friendly service uses the efficient UDP protocol to minimize mobile power consumption while delivering accurate location updates. Pulsetracker offers seamless integration with WebSockets for real-time data dispatch, comprehensive API access, and robust tracking features. Whether you're building a new app or enhancing existing services, Pulsetracker's scalable solutions and flexible pricing plans ensure you get the most reliable and cost-effective location tracking. Start with our free plan and scale up as your needs grow. Try Pulsetracker today and experience unparalleled location tracking performance.">
-    <link rel="icon" type="image/jpeg" sizes="720x720"
-        href="assets/img/Circle_Brand_Identity__Copy_-removebg-preview.png">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/darkly/bootstrap.min.css">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&amp;display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alatsi&amp;display=swap">
-    <link rel="stylesheet" href="/assets/css/bs-theme-overrides.css">
-    <link rel="stylesheet" href="/assets/css/Banner-Heading-Image-images.css">
-    <link rel="stylesheet" href="/assets/css/Navbar-Centered-Brand-Dark-icons.css">
-    @paddleJS
-    @cookieconsentscripts
-    <script defer src="https://cloud.umami.is/script.js" data-website-id="06db6e2e-fb33-4581-8722-67ece940e18e"></script>
-    <script src="https://js-de.sentry-cdn.com/0327f3ab8d27598ea7b92ce14ea13526.min.js" crossorigin="anonymous"></script>
-    <!-- Brevo Conversations {literal} -->
-    <script>
-        (function(d, w, c) {
-            w.BrevoConversationsID = '6497148c29662f296f1f0eac';
-            w[c] = w[c] || function() {
-                (w[c].q = w[c].q || []).push(arguments);
-            };
-            var s = d.createElement('script');
-            s.async = true;
-            s.src = 'https://conversations-widget.brevo.com/brevo-conversations.js';
-            if (d.head) d.head.appendChild(s);
-        })(document, window, 'BrevoConversations');
-    </script>
-    <!-- /Brevo Conversations {/literal} -->
-</head>
-
-<body style="background: var(--bs-emphasis-color);--bs-primary: #00498c;--bs-primary-rgb: 0,73,140;">
-    <!-- Start: Navbar Centered Links -->
-    <nav class="navbar navbar-expand-md py-3" style="background: var(--bs-black);margin-top: 15px;">
-        <div class="container"><a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}"><span
-                    class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon"
-                    style="background: rgba(0,73,140,0);"><img
-                        src="{{ url('assets/img/Circle%20Brand%20Identity.jpeg') }}"
-                        style="width: 50px;height: 50px;"></span><span
-                    style="color: var(--bs-body-color);">Pulsetracker</span></a><button data-bs-toggle="collapse"
-                class="navbar-toggler" data-bs-target="#navcol-3"><span class="visually-hidden">Toggle
-                    navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navcol-3" style="color: white;">
-                <ul class="navbar-nav mx-auto" style="color: white;">
-                    <li class="nav-item" style="color: white;margin-right: 15px;"><a class="nav-link active"
-                            href="{{ url('about') }}" style="color: white;">About</a></li>
-                    <li class="nav-item" style="color: white;"><a class="nav-link active" href="{{ url('docs/api') }}"
-                            style="color: white;margin-right: 15px;">Docs</a></li>
-                    <li class="nav-item" style="color: white;"><a class="nav-link active" href="#pricing"
-                            style="color: white;">Pricing</a></li>
-                </ul>
-                @auth
-                    <a class="btn btn-success" role="button" href="{{ url('dashboard') }}">Dashboard</a>
-                @endauth
-                @guest
-                    <a class="btn btn-primary" role="button" style="margin-right: 20px;"
-                        href="{{ url('signin') }}">Login</a>
-                    <a class="btn btn-primary" role="button" href="{{ url('signup') }}">Create account</a>
-                @endguest
-            </div>
-        </div>
-    </nav><!-- End: Navbar Centered Links -->
+@extends('template')
+@section('title', 'Pulsetracker')
+@section('content')
     <!-- Start: Banner Heading Image -->
     <section class="text-primary py-4 py-xl-5">
         <!-- Start: 1 Row 2 Columns -->
@@ -263,6 +186,7 @@
     </section>
     <section style="margin-top: 8%;">
         <h1 style="text-align: center;" id="pricing">Pricing</h1><!-- Start: 1 Row 3 Columns -->
+        <h6 style="text-align: center;">All prices are in USD</h6><!-- Start: 1 Row 3 Columns -->
         <div class="container" style="margin-top: 3%;">
             <div class="row">
                 <div class="col-md-4 mt-3">
@@ -282,8 +206,8 @@
                                     </path>
                                 </svg>&nbsp;{{ $subscriptions['free']['size']['apps'] }} app</li>
                             <li><span style="color: var(--bs-form-valid-color);"> </span><svg
-                                    xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
-                                    fill="currentColor" viewBox="0 0 16 16" class="bi bi-check-circle"
+                                    xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                                    viewBox="0 0 16 16" class="bi bi-check-circle"
                                     style="color: var(--bs-form-valid-color);">
                                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16">
                                     </path>
@@ -344,8 +268,7 @@
                                     <a class="btn btn-outline-light btn" role="button" style="width: 100%;color: white;"
                                         href="{{ url('subscribe-plan-to-free') }}">Switch to this NOW</a>
                                 @else
-                                    <a class="btn btn-outline-light btn-lg" role="button"
-                                        style="width: 100%;color: white;"
+                                    <a class="btn btn-outline-light btn-lg" role="button" style="width: 100%;color: white;"
                                         href="{{ url('subscribe-plan-to-free') }}">Subscribe</a>
                                 @endif
                             @else
@@ -374,8 +297,8 @@
                                     </path>
                                 </svg>&nbsp;{{ $subscriptions['pro']['size']['apps'] }} apps</li>
                             <li><span style="color: var(--bs-form-valid-color);"> </span>&nbsp;<svg
-                                    xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
-                                    fill="currentColor" viewBox="0 0 16 16" class="bi bi-check-circle"
+                                    xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                                    viewBox="0 0 16 16" class="bi bi-check-circle"
                                     style="color: var(--bs-form-valid-color);">
                                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16">
                                     </path>
@@ -430,7 +353,8 @@
                         @endguest
                         @auth
                             @if (!auth()->user()->subscriptions()->active()->first()?->onGracePeriod())
-                                @if (auth()->user()->subscribed('pro'))
+                                @if (auth()->user()->subscribedToPrice(config('stripe-subscriptions.plans.pro.price_id'),
+                                            config('stripe-subscriptions.plans.pro.product_id')))
                                     <form action="{{ url('subscription-cancel/pro') }}" method="POST">
                                         @csrf
                                         <button type="submit" class="btn btn-outline-danger"
@@ -442,12 +366,16 @@
                                             @csrf
                                             <button type="submit" class="btn btn-outline-success"
                                                 style="width: 100%;">Switch to this NOW</button>
+                                            <center>
+                                                <small class=" text-muted" style="font-size: 13px;">This action will charge
+                                                    you again with the new price and cancel your previous plan</small>
+                                            </center>
                                         </form>
                                     @else
-                                        <x-paddle-button :checkout="$checkoutLinks['pro']" class="btn btn-outline-light btn-lg"
+                                        <a href="{{ url('subscribe-to/pro') }}" class="btn btn-outline-light btn-lg"
                                             style="width: 100%;color: white;">
                                             Subscribe
-                                        </x-paddle-button>
+                                        </a>
                                     @endif
                                 @endif
                             @else
@@ -476,8 +404,8 @@
                                     </path>
                                 </svg>&nbsp;{{ $subscriptions['enterprise']['size']['apps'] ?? 'Unlimited' }} apps</li>
                             <li><span style="color: var(--bs-form-valid-color);"> </span>&nbsp;<svg
-                                    xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
-                                    fill="currentColor" viewBox="0 0 16 16" class="bi bi-check-circle"
+                                    xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                                    viewBox="0 0 16 16" class="bi bi-check-circle"
                                     style="color: var(--bs-form-valid-color);">
                                     <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16">
                                     </path>
@@ -532,7 +460,8 @@
                         @endguest
                         @auth
                             @if (!auth()->user()->subscriptions()->active()->first()?->onGracePeriod())
-                                @if (auth()->user()->subscribed('enterprise'))
+                                @if (auth()->user()->subscribedToPrice(config('stripe-subscriptions.plans.enterprise.price_id'),
+                                            config('stripe-subscriptions.plans.enterprise.product_id')))
                                     <form action="{{ url('subscription-cancel/enterprise') }}" method="POST">
                                         @csrf
                                         <button type="submit" class="btn btn-outline-danger"
@@ -544,12 +473,17 @@
                                             @csrf
                                             <button type="submit" class="btn btn-outline-success"
                                                 style="width: 100%;">Switch to this NOW</button>
+                                            <center>
+                                                <small class=" text-muted" style="font-size: 13px;">This actions will charge
+                                                    you again with the new price and cancel your previous plan</small>
+                                            </center>
+
                                         </form>
                                     @else
-                                        <x-paddle-button :checkout="$checkoutLinks['enterprise']" class="btn btn-outline-light btn-lg"
+                                        <a href="{{ url('subscribe-to/enterprise') }}" class="btn btn-outline-light btn-lg"
                                             style="width: 100%;color: white;">
                                             Subscribe
-                                        </x-paddle-button>
+                                        </a>
                                     @endif
                                 @endif
                             @else
@@ -564,20 +498,6 @@
             </div>
         </div><!-- End: 1 Row 3 Columns -->
     </section><!-- Start: Footer Dark -->
-    @cookieconsentview
 
-    <x-footer />
-    <center>
-        <div style="text-align:center;">
-            <iframe src="https://status-pulsetracker.betteruptime.com/badge?theme=dark" width="200" height="50"
-                frameborder="0" scrolling="no"></iframe>
-        </div>
-    </center>
 
-    <!-- End: Footer Dark -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    @vite('resources/js/app.js')
-</body>
-
-</html>
+@endsection

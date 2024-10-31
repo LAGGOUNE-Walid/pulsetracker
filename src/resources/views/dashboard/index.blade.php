@@ -11,15 +11,15 @@
                     </div>
                     <div class="col col-6">
                         <b>
-                            @if ($user->subscribed('pro'))
+                            @if ($user->subscribedToPrice(config('stripe-subscriptions.plans.pro.price_id'), config('stripe-subscriptions.plans.pro.product_id')))
                                 PRO
-                                <?php $plan = config('paddle-subscriptions.plans.pro'); ?>
-                            @elseif($user->subscribed('enterprise'))
+                                <?php $plan = config('stripe-subscriptions.plans.pro'); ?>
+                            @elseif($user->subscribedToPrice(config('stripe-subscriptions.plans.enterprise.price_id'), config('stripe-subscriptions.plans.enterprise.product_id')))
                                 ENTERPRISE
-                                <?php $plan = config('paddle-subscriptions.plans.enterprise'); ?>
+                                <?php $plan = config('stripe-subscriptions.plans.enterprise'); ?>
                             @else
                                 FREE
-                                <?php $plan = config('paddle-subscriptions.plans.free'); ?>
+                                <?php $plan = config('stripe-subscriptions.plans.free'); ?>
                             @endif
                         </b>
                     </div>

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('current_user_subscriptions', function (Blueprint $table) {
             $table->id();
             $table->string('type');
-            $table->string('paddle_id')->nullable();
+            $table->string('stripe_id')->nullable();
             $table->string('price_id')->nullable();
             $table->dateTime('starts_at');
             $table->dateTime('ends_at');

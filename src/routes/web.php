@@ -18,17 +18,21 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\URL;
 
-Route::GET("/test-websockets-xx", function() {
+Route::GET("/test-websockets-xx", function () {
     return view("test-websockets");
 });
-Route::GET('/', [UserSubscriptionController::class, 'showHomePage']);
-Route::GET('/terms-of-use', function() {
+Route::GET('/', [UserSubscriptionController::class, 'showHomePage'])->name('index');
+Route::GET("about", function() {
+    return view('about');
+});
+Route::GET('/terms-of-use', function () {
     return view('terms-of-use');
 });
-Route::GET('/privacy-policy', function() {
+Route::GET('/privacy-policy', function () {
     return view('privacy-policy');
 });
 Route::GET('/subscribe-plan-to-free', [UserSubscriptionController::class, 'moveToFree'])->middleware('auth');
+Route::GET('subscribe-to/{plan}', [UserSubscriptionController::class, 'subscribe'])->middleware('auth');
 Route::POST('subscription-cancel/{type}', [UserSubscriptionController::class, 'cancel'])->middleware('auth');
 Route::POST('subscription-resume/{type}', [UserSubscriptionController::class, 'cancel'])->middleware('auth');
 Route::POST('subscription-swap/{type}', [UserSubscriptionController::class, 'swap'])->middleware('auth');
@@ -69,7 +73,7 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {
         ]);
 
         return view('dashboard.index', ['user' => $user]);
-    });
+    })->name('dashboard');
     Route::POST('/logout', function (Request $request) {
         Auth::logout();
 
@@ -83,10 +87,10 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {
         if ($request->user()->email_verified_at) {
             return redirect()->back();
         }
-        $lastmailSent = session('user-sent-mail-'.$request->user()->id, now());
+        $lastmailSent = session('user-sent-mail-' . $request->user()->id, now());
         if ($lastmailSent->diffInMinutes(now()) > 10) {
             Mail::to($request->user())->send(new EmailVerify(URL::temporarySignedRoute('email-verify', now()->addHours(24), ['user' => $request->user()])));
-            session(['user-sent-mail-'.$request->user()->id => now()]);
+            session(['user-sent-mail-' . $request->user()->id => now()]);
         }
 
         return redirect()->back();
@@ -112,7 +116,7 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {
     });
     Route::group(['prefix' => 'apps'], function () {
         Route::GET('/', [AppController::class, 'index']);
-        Route::GET('/create', fn () => view('dashboard.apps.create'));
+        Route::GET('/create', fn() => view('dashboard.apps.create'));
         Route::POST('/create', [AppController::class, 'create'])->can('create', App::class);
     });
     Route::group(['prefix' => 'devices'], function () {
@@ -129,7 +133,7 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {
         });
         Route::GET('/{appKey}', [MapController::class, 'show']);
     });
-    Route::POST("feedback", function(Request $request) {
+    Route::POST("feedback", function (Request $request) {
         $request->validate([
             'message' => ['required'],
             'feedbackType' => ['required']
@@ -142,4 +146,3 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {
         return $request->all();
     });
 });
-

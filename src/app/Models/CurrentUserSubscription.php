@@ -13,7 +13,7 @@ class CurrentUserSubscription extends Model
 
     protected $fillable = [
         'type',
-        'paddle_id',
+        'stripe_id',
         'price_id',
         'starts_at',
         'ends_at',
