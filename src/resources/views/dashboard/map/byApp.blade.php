@@ -66,7 +66,7 @@
                             return marker;
                         }
                     }).addTo(this.map);
-                    marker.openPopup();
+                    {{-- marker.openPopup(); --}}
                     this.devices[device.key] = {
                         data: device,
                         marker: marker

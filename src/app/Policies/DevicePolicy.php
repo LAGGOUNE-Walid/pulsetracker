@@ -8,10 +8,10 @@ class DevicePolicy
 {
     public function create(User $user): bool
     {
-        $subscriptions = config('paddle-subscriptions.plans');
+        $subscriptions = config('stripe-subscriptions.plans');
         foreach ($subscriptions as $subscription) {
             $allowedDevicesPerSubscription = $subscription['size']['devices'] ?? PHP_INT_MAX;
-            if ($user->subscribed($subscription['name']) and $user->devices()->count() < $allowedDevicesPerSubscription) {
+            if ($user->subscribedToPrice($subscription['price_id'], $subscription['product_id']) and $user->devices()->count() < $allowedDevicesPerSubscription) {
                 return $user->hasVerifiedEmail();
             }
         }

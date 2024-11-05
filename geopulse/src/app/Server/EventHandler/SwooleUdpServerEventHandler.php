@@ -38,6 +38,7 @@ class SwooleUdpServerEventHandler
         // Verify if the Client ID belongs to this App
         $appDataInCache = $this->appsDevicesTable->get($packet->getAppId());
         $appDevices = json_decode($appDataInCache['devicesKeys'], true);
+        
         if (! in_array($packet->getClientId(), $appDevices)) {
             $this->logger->notice('Could not find device id ' . $packet->getClientId());
             return false;

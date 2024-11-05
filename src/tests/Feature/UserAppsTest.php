@@ -19,6 +19,7 @@ class UserAppsTest extends TestCase
      */
     public function test_getting_user_apps_api(): void
     {
+        Queue::fake();
         $user = User::factory()->has(App::factory()->count(3))->create();
         $response = $this->actingAs($user)->getJson("/api/apps");
         $response->assertJson(

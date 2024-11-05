@@ -52,9 +52,9 @@ class DeviceController extends Controller
     public function get(string $key, Request $request): View
     {
         $historyLimitsByDay = 0;
-        $subscriptions = config('paddle-subscriptions.plans');
+        $subscriptions = config('stripe-subscriptions.plans');
         foreach ($subscriptions as $subscription) {
-            if ($request->user()->subscribed($subscription['name'])) {
+            if ($request->user()->subscribedToPrice($subscription['price_id'], $subscription['product_id'])) {
                 $historyLimitsByDay = $subscription['size']['data_retention_days'];
             }
         }

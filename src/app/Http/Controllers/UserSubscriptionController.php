@@ -51,7 +51,7 @@ class UserSubscriptionController extends Controller
 
         foreach ($subscriptions as $subscription) {
             if ($subscription['product_id'] !== null) {
-                if ($request->user()->subscribed($subscription['product_id'])) {
+                if ($request->user()->subscribedToPrice($subscription['price_id'], $subscription['product_id'])) {
                     $request->user()->subscription($subscription['product_id'])->cancel();
                 }
             }

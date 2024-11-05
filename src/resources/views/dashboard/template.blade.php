@@ -61,14 +61,14 @@
         </div>
     @endif
     @php
-        $subscriptions = config('paddle-subscriptions.plans');
+        $subscriptions = config('stripe-subscriptions.plans');
         $userSubscriptionQuota = 0;
         foreach ($subscriptions as $subscription) {
             $allowedMessagesPerSubscription = $subscription['size']['messages_per_month'] ?? PHP_INT_MAX;
             if (
                 auth()
                     ->user()
-                    ->subscribed($subscription['name'])
+                    ->subscribedToPrice($subscription['price_id'], $subscription['product_id'])
             ) {
                 $userSubscriptionQuota = $allowedMessagesPerSubscription;
             }

@@ -39,7 +39,8 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <h1 style="text-align: center;"><strong>Seamless Integration</strong></h1>
+                <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1026501976?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Pulsetracker map overview"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+                    <h1 class="mt-5" style="text-align: center;"><strong>Seamless Integration</strong></h1>
                 </div>
             </div>
         </div><!-- End: 1 Row 1 Column -->
@@ -166,7 +167,7 @@
                     <h4 class="text-center" style="color: var(--bs-gray-500);margin-top: 9px;padding-top: 20px;">
                         Pulsetracker puts you in
                         charge, offering complete control over how you track, manage, and dispatch location data.</h4>
-                    <img src="{{ url('assets/img/Screenshot 2024-09-23 at 11-40-30 Dashboard - Pulsetracker.png') }}"
+                    <img src="{{ url('assets/img/UHBAB8LJEMEKOJACOELDR9DRB8E7-1730810808626.png') }}"
                         style="width: 100%;border-radius: 10px;margin-top: 3%; border: 2px solid #f3f3f3; ">
                     <h4 class="text-center mt-5" style="color: var(--bs-gray-500);margin-top: 9px;padding-top: 20px;">
                         Location data is also transmitted to your WebSocket listener using the Pusher protocol.</h4>

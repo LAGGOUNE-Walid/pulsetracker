@@ -1,0 +1,1183 @@
+[2024-11-01 17:19:03 #17978.2]	INFO	Server is shutdown now
+[2024-11-01 17:19:03 $17980.0]	INFO	Server is shutdown now
+[2024-11-05 10:17:35 $653.0]	INFO	Server is shutdown now
+[2024-11-05 10:17:35 #651.2]	INFO	Server is shutdown now
+[2024-11-05 10:34:37 *21.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 38 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:37 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=21, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:37 *18.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 38 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:37 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=18, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:37 *78.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 37 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:37 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=78, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:37 *80.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 37 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:37 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=80, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:38 *84.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 37 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:38 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=84, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:38 *86.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 36 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:38 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=86, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:38 *90.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 36 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:38 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=90, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:38 *92.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 36 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:38 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=92, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:39 *96.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 36 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:39 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=96, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:39 *98.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 35 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:39 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=98, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:39 *102.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 35 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:39 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=102, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:39 *104.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 35 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:39 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=104, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:40 *108.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 35 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:40 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=108, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:40 *110.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 34 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:40 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=110, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:40 *114.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 34 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:40 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=114, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:40 *116.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 34 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:40 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=116, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:41 *120.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 34 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:41 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=120, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:41 *122.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 33 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:41 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=122, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:41 *126.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 33 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:41 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=126, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:41 *128.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 33 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:42 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=128, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:42 *132.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 32 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:42 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=132, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:42 *134.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 32 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:42 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=134, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:42 *138.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 32 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:42 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=138, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:43 *140.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 32 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:43 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=140, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:43 *144.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 31 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:43 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=144, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:43 *148.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 31 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:43 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=148, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:44 *152.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 31 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:44 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=152, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:44 *154.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 31 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:44 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=154, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:45 *158.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 30 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:45 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=158, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:45 *160.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 30 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:45 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=160, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:45 *164.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 29 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:45 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=164, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:45 *166.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 29 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:45 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=166, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:46 *170.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 29 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:46 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=170, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:46 *172.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 29 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:46 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=172, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:46 *176.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 28 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:46 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=176, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:46 *178.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 28 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:46 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=178, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:47 *182.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 28 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:47 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=182, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:47 *184.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 27 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:47 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=184, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:47 *188.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 27 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:47 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=188, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:47 *190.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 27 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:47 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=190, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:48 *194.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 27 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:48 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=194, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:48 *196.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 26 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:48 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=196, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:48 *200.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 26 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:48 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=200, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:48 *202.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 26 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:48 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=202, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:49 *206.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 26 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:49 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=206, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:49 *208.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 25 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:49 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=208, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:49 *212.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 25 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:49 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=212, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:50 *214.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 25 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:50 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=214, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:50 *217.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 25 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:50 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=217, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:50 *221.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 24 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:50 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=221, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:50 *223.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 24 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:50 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=223, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:51 *227.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 24 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:51 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=227, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:51 *229.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 24 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:51 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=229, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:51 *233.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 23 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:51 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=233, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:51 *235.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 23 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:51 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=235, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:52 *238.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 23 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:52 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=238, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:52 *241.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 22 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:52 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=241, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:52 *245.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 22 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:52 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=245, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:52 *247.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 22 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:52 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=247, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:53 *251.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 22 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:53 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=251, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:53 *253.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 21 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:53 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=253, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:53 *257.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 21 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:53 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=257, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:53 *259.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 21 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:54 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=259, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:54 *263.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 20 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:54 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=263, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:54 *265.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 20 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:54 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=265, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:54 *269.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 20 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:54 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=269, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:55 *271.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 20 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:55 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=271, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:55 *275.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 19 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:55 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=275, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:55 *277.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 19 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:55 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=277, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:56 *281.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 19 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:56 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=281, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:56 *283.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 19 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:56 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=283, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:56 *287.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 18 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:56 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=287, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:56 *289.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 18 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:56 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=289, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:57 *295.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 18 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:57 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=295, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:57 *293.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 18 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:57 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=293, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:57 *299.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 17 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:57 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=299, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:57 *301.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 17 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:57 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=301, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:58 *305.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 16 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:58 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=305, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:58 *307.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 16 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:58 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=307, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:58 *311.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 16 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:58 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=311, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:58 *313.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 16 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:58 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=313, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:59 *317.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 15 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:59 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=317, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:34:59 *319.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 15 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:34:59 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=319, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:35:00 *323.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 14 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:35:00 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=323, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:35:00 *325.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 14 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:35:00 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=325, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:35:00 *329.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 14 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:35:00 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=329, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:35:00 *331.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 14 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:35:00 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=331, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:35:01 *335.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 13 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:35:01 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=335, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:35:01 *337.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 13 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:35:01 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=337, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:35:01 *341.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 13 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:35:01 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=341, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:35:02 *343.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 13 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:35:02 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=343, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:35:02 *347.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 12 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:35:02 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=347, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:35:02 *349.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 12 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:35:02 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=349, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:35:03 *353.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 12 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:35:03 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=353, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:35:03 *355.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 12 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:35:03 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=355, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:35:03 *359.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 11 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:35:03 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=359, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:35:03 *361.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 11 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:35:03 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=361, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:35:04 *365.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 11 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:35:04 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=365, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:35:04 *367.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 11 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:35:04 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=367, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:35:04 *371.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 10 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:35:04 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=371, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:35:04 *373.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 10 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:35:04 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=373, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:35:05 *377.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 10 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:35:05 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=377, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:35:05 *379.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 9 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:35:05 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=379, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:35:05 *383.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 9 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:35:05 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=383, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:35:05 *385.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 9 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:35:05 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=385, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:35:14 *389.1]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Telegram API error: Too Many Requests: retry after 3 in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:200
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 200
+[2024-11-05 10:35:14 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=389, id=1) abnormal exit, status=255, signal=0
+[2024-11-05 10:35:16 *391.0]	ERROR	php_swoole_server_rshutdown() (ERRNO 503): Fatal error: Uncaught RuntimeException: Request to Telegram API failed: Operation timed out after 10001 milliseconds with 0 bytes received in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php:167
+Stack trace:
+#0 /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php(99): jacklul\MonologTelegramHandler\TelegramHandler->send('\xF0\x9F\x93\x8C <b>NOTICE<...')
+#1 /var/www/html/vendor/monolog/monolog/src/Monolog/Handler/AbstractProcessingHandler.php(44): jacklul\MonologTelegramHandler\TelegramHandler->write(Object(Monolog\LogRecord))
+#2 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(390): Monolog\Handler\AbstractProcessingHandler->handle(Object(Monolog\LogRecord))
+#3 /var/www/html/vendor/monolog/monolog/src/Monolog/Logger.php(619): Monolog\Logger->addRecord(Object(Monolog\Level), 'Could not find ...', Array)
+#4 /var/www/html/app/Server/EventHandler/SwooleUdpServerEventHandler.php(42): Monolog\Logger->notice('Could not find ...')
+#5 [internal function]: Pulse\Server\EventHandler\SwooleUdpServerEventHandler->onPacket(Object(Swoole\Server), '{"appId":"037eb...', Array)
+#6 {main}
+  thrown in /var/www/html/vendor/jacklul/monolog-telegram/src/TelegramHandler.php on line 167
+[2024-11-05 10:35:16 $13.0]	WARNING	Server::check_worker_exit_status(): worker(pid=391, id=0) abnormal exit, status=255, signal=0
+[2024-11-05 10:35:29 $12.0]	INFO	Server is shutdown now
+[2024-11-05 10:35:29 #10.2]	INFO	Server is shutdown now

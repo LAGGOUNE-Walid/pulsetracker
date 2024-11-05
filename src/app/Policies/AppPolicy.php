@@ -10,10 +10,10 @@ class AppPolicy
 
     public function create(User $user): bool
     {
-        $subscriptions = config('paddle-subscriptions.plans');
+        $subscriptions = config('stripe-subscriptions.plans');
         foreach ($subscriptions as $subscription) {
             $allowedAppsPersubsription = $subscription['size']['apps'] ?? PHP_INT_MAX;
-            if ($user->subscribed($subscription['name']) and $user->apps()->count() < $allowedAppsPersubsription) {
+            if ($user->subscribedToPrice($subscription['price_id'], $subscription['product_id']) and $user->apps()->count() < $allowedAppsPersubsription) {
                 return $user->hasVerifiedEmail();
             }
         }

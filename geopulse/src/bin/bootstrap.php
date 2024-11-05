@@ -90,9 +90,21 @@ $container->add(BroadcastPacketService::class, function () use ($config, $contai
 });
 
 $db = $container->get(DB::class);
+$apps = $db->table('apps')->get();
+
+$largestDevicesSizesInBytes = 1024;
+foreach ($apps as $app) {
+    $devices = $db->table('devices')->where('app_id', $app->id)->get();
+    if ($devices->count() > 0) {
+        $appDevicesSizeInBytes = strlen($devices->pluck('key')->toJson());
+        if ($appDevicesSizeInBytes > $largestDevicesSizesInBytes) {
+            $largestDevicesSizesInBytes = $appDevicesSizeInBytes;
+        }
+    }
+}
 
 $appsDevicesTable = new Swoole\Table(1024);
-$appsDevicesTable->column('devicesKeys', Swoole\Table::TYPE_STRING, 1600);
+$appsDevicesTable->column('devicesKeys', Swoole\Table::TYPE_STRING, $largestDevicesSizesInBytes+1024);
 $appsDevicesTable->column('userId', Swoole\Table::TYPE_INT);
 $appsDevicesTable->create();
 
@@ -102,12 +114,12 @@ $usersQuotaTable->column('used', Swoole\Table::TYPE_INT);
 $usersQuotaTable->column('left', Swoole\Table::TYPE_INT);
 $usersQuotaTable->create();
 
-$apps = $db->table('apps')->get();
+
+
 $usersIds = [];
 foreach ($apps as $app) {
     $devices = $db->table('devices')->where('app_id', $app->id)->get();
     if ($devices->count() > 0) {
-        //echo "Set $app->key to cache \n";
         $appsDevicesTable->set($app->key, ['devicesKeys' => $devices->pluck('key')->toJson(), 'userId' => $app->user_id]);
     }
     if (array_search($app->user_id, $usersIds) === false) {
