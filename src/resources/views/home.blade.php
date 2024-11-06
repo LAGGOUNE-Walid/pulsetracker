@@ -39,8 +39,8 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                <div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1026501976?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Pulsetracker map overview"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
-                    <h1 class="mt-5" style="text-align: center;"><strong>Seamless Integration</strong></h1>
+                    <script src="https://fast.wistia.com/player.js" async></script><script src="https://fast.wistia.com/embed/meshuaf4b3.js" async type="module"></script><style>wistia-player[media-id='meshuaf4b3']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/meshuaf4b3/swatch'); display: block; filter: blur(5px); padding-top:46.41%; }</style> <wistia-player media-id="meshuaf4b3"></wistia-player>
+                    <h1 style="text-align: center; margin-top: 8%;"><strong>Seamless Integration</strong></h1>
                 </div>
             </div>
         </div><!-- End: 1 Row 1 Column -->
