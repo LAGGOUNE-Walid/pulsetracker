@@ -112,6 +112,27 @@ This WebSocket server uses the **Pusher protocol**, chosen for its compatibility
 <br/>
 
 
+## Example using Pusher Javascript SDK
+```javascript
+    let client = new Pusher('SERVER_APP_KEY', {
+        wsHost: 'pusher.pulsestracker.com',
+        wssPort: 443,
+        forceTLS: true,
+        disableStats: true,
+        cluster: "",
+        enabledTransports: ['wss', 'ws'],
+        authEndpoint: 'https://www.pulsestracker.com/api/broadcasting/auth',
+        auth: {
+            headers: {
+                Authorization: 'Bearer YOUR_TOKEN',
+            }
+        }
+    });
+    client.subscribe('private-apps.YOUR_APP_ID').bind('App\\Events\\DeviceLocationUpdated', (message) => {
+        console.log(message);
+    });
+```
+
 ## Example using Pusher Javascript SDK with laravel echo 
 
 ```javascript
