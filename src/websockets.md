@@ -103,12 +103,14 @@ To receive real-time location updates on the client side, connect to our Pusher 
 - **Server Address**: `pusher.pulsestracker.com`
 - **Server APP KEY**: `92OHYPuG0KB2IPv8`
 - **Channel Name**: `private-apps.YOUR_APP_KEY`
-- **Event Name**: `DeviceLocationUpdated`
 - **Event Name**: `App\Events\DeviceLocationUpdated`
 - **Auth endpoint**: `https://www.pulsestracker.com/api/broadcasting/auth`
-- **Auth headers**: `Authorization Bearer TOKEN`
+- **Auth headers**: `Authorization: Bearer <token>`
 
 This WebSocket server uses the **Pusher protocol**, chosen for its compatibility with a wide range of existing applications. For detailed integration guidelines and additional information, please refer to the official [Pusher documentation](https://pusher.com/docs/channels/).
+
+<br/>
+
 
 ## Example using Pusher Javascript SDK with laravel echo 
 
