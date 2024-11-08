@@ -105,7 +105,8 @@ To receive real-time location updates on the client side, connect to our Pusher 
 - **Channel Name**: `private-apps.YOUR_APP_KEY`
 - **Event Name**: `DeviceLocationUpdated`
 - **Event Name**: `App\Events\DeviceLocationUpdated`
-- **Auth endpoint**: `https://pulsestracker.com/api/broadcasting/auth`
+- **Auth endpoint**: `https://www.pulsestracker.com/api/broadcasting/auth`
+- **Auth headers**: `Authorization Bearer TOKEN`
 
 This WebSocket server uses the **Pusher protocol**, chosen for its compatibility with a wide range of existing applications. For detailed integration guidelines and additional information, please refer to the official [Pusher documentation](https://pusher.com/docs/channels/).
 
