@@ -14,6 +14,7 @@
             <thead>
                 <tr>
                     <th scope="col">App name</th>
+                    <th scope="col">App Key</th>
                     <th scope="col">Device ID</th>
                     <th scope="col">Device name</th>
                     <th scope="col">Device type</th>
@@ -25,6 +26,7 @@
                 @foreach ($devices as $device)
                 <tr>
                     <th scope="row">{{ $device->app->name }}</th>
+                    <th scope="row">{{ $device->app->key }}</th>
                     <th scope="row">{{ $device->key }}</th>
                     <th scope="row">{{ $device->name }}</th>
                     <th scope="row">

@@ -7,7 +7,8 @@
                 <thead>
                     <tr>
                         <th scope="col">App</th>
-                        <th scope="col">Key</th>
+                        <th scope="col">App key</th>
+                        <th scope="col">Device key</th>
                         <th scope="col">Type</th>
                         <th scope="col">Total messages</th>
                         <th scope="col">History</th>
@@ -22,6 +23,9 @@
                             {{ $device->app->key }}
                         </td>
                         <td>
+                            {{ $device->key }}
+                        </td>
+                        <td>
                             {{ $device->deviceType->name }}
                         </td>
                         <td>
@@ -34,8 +38,10 @@
                                     Date
                                 </button>
                                 <ul class="dropdown-menu">
-                                    @foreach($device->locations as $dateLocations)
-                                        <li><a class="dropdown-item" href="{{url('dashboard/devices/'.$device->key."/$dateLocations->date")}}">{{$dateLocations->date}}</a></li>
+                                    @foreach ($device->locations as $dateLocations)
+                                        <li><a class="dropdown-item"
+                                                href="{{ url('dashboard/devices/' . $device->key . "/$dateLocations->date") }}">{{ $dateLocations->date }}</a>
+                                        </li>
                                     @endforeach
                                 </ul>
                             </div>

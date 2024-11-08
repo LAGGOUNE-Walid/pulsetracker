@@ -27,8 +27,8 @@ run(function () {
     ];
     $clients = ['8ec2f812-7888-4567-a8f6-232c71772015', '38012075-23b8-4b6e-9889-532463abf1a1', '08f3f5b5-cb26-45cc-8225-e954117fdd68', '0db9c544-d7c4-43f9-beea-b3de89898ef8'];
     $data = [
-        'appId' => '037eb0d7-5feb-426b-8731-e77a713668ae',
-        'clientId' => 'd421c10e-58a7-47ae-b5e6-e54e6f0f62f1',
+        'appId' => 'a3dc3943-3e1d-484c-9687-96adaad883d0',
+        'clientId' => 'ecd92134-6666-4778-aa96-ebefa0ad7e40',
         // long,lat
         'data' => ['type' => 'Point', 'coordinates' => $locations[array_rand($locations)]],
         'extra' => [
