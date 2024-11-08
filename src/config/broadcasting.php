@@ -66,6 +66,13 @@ return [
             ],
         ],
 
+        'pusher-sanctum' => [
+            'driver' => 'pusher-sanctum',  // same as first parameter in extend()
+            'options' => [
+                //
+            ],
+        ],
+
         'ably' => [
             'driver' => 'ably',
             'key' => env('ABLY_KEY'),

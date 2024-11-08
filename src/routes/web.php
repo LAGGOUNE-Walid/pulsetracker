@@ -18,9 +18,10 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\URL;
 
-Route::GET("/test-websockets-xx", function () {
+Route::GET("/test-websockets-xx", function (Request $request) {
+    dd($request->user());
     return view("test-websockets");
-});
+})->middleware("auth:sanctum");
 Route::GET('/', [UserSubscriptionController::class, 'showHomePage'])->name('index');
 Route::GET("about", function() {
     return view('about');

@@ -6,12 +6,12 @@ use function Swoole\Coroutine\run;
 
 run(function () {
     $client = new Client(SWOOLE_SOCK_UDP);
-    if (! $client->connect('udp-tracking.pulsestracker.com', 9506, 0.5)) {
+    if (! $client->connect('192.168.1.13', 9505, 0.5)) {
         echo "connect failed. Error: {$client->errCode}\n";
     }
     $data = [
-        'appId' => 'f1834d82-c3ee-4e3b-8891-ac04fc756684',
-        'clientId' => '13946096-58b7-42d8-8a46-d239b276568e',
+        'appId' => '037eb0d7-5feb-426b-8731-e77a713668ae',
+        'clientId' => 'ff9439ca-9a51-42f9-a220-cd245f4911bf',
         // long,lat
         'data' => ['type' => 'Point', 'coordinates' => [-0.136302, 51.498132]],
     ];
@@ -27,8 +27,8 @@ run(function () {
     ];
     $clients = ['8ec2f812-7888-4567-a8f6-232c71772015', '38012075-23b8-4b6e-9889-532463abf1a1', '08f3f5b5-cb26-45cc-8225-e954117fdd68', '0db9c544-d7c4-43f9-beea-b3de89898ef8'];
     $data = [
-        'appId' => 'aee77663-4db6-498e-9205-013dd8eba680',
-        'clientId' => '6af4a560-9b31-4b57-9253-98acdc87cded',
+        'appId' => '037eb0d7-5feb-426b-8731-e77a713668ae',
+        'clientId' => 'd421c10e-58a7-47ae-b5e6-e54e6f0f62f1',
         // long,lat
         'data' => ['type' => 'Point', 'coordinates' => $locations[array_rand($locations)]],
         'extra' => [
@@ -39,7 +39,7 @@ run(function () {
     while (true) {
 
         $client->send($data);
-        usleep(1000);
+        sleep(1);
     }
 
     $client->close();
