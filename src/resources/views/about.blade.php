@@ -11,6 +11,7 @@
                     developers to build their own custom client SDKs using UDP or WebSockets, empowering them to stream live
                     location data from Pulsetracker to their backends effortlessly.
                     <br />
+                    <br />
                     The platform handles heavy location traffic, processing updates from thousands of devices per second, so
                     developers don’t have to worry about infrastructure scaling. Pulsetracker also provides a simple
                     interface for users who prefer to store or visualize location data directly on the platform's dashboard,
@@ -23,16 +24,20 @@
                     as a middleware server that receives, processes, and distributes real-time location data from client
                     applications to developer backends. Here’s how it operates step-by-step:
                     <br />
+                    <br />
                     1. Client SDK Integration: Developers integrate Pulsetracker by implementing a custom client-side
                     SDK. This SDK can use either UDP or WebSocket protocols, which are lightweight and efficient for
                     real-time tracking.
                     <br />
+                    <br />
                     2. Location Data Transmission: The client SDK sends location updates directly to the Pulsetracker
                     server. Data is transmitted every few seconds, allowing for continuous, real-time tracking.
+                    <br />
                     <br />
                     3. Backend Delivery: Pulsetracker forwards location data in real-time to the developer’s backend or
                     stores it on the Pulsetracker dashboard. This option allows for flexible access: developers can retrieve
                     data from Pulsetracker’s servers or have it directly streamed to their own backend infrastructure.
+                    <br />
                     <br />
                     4. Data Management and Display: Through the Pulsetracker dashboard, developers can visualize and
                     manage location data, view movement patterns, or monitor device updates.
@@ -51,21 +56,27 @@
                 <h2 class="mt-5">Why Use Pulsetracker</h2>
                 <p>Here’s why developers and companies should consider using Pulsetracker:
                     <br/>
+                    <br/>
                     1. Control Over Tracking Data: Pulsetracker allows developers to create custom SDKs for client-side
                     tracking, offering flexibility in how they collect and manage location data without being restricted to
                     a specific backend.
                     <br/>
+                    <br/>
                     2. Real-Time Location Updates: With Pulsetracker, location updates are streamed in real time,
                     providing immediate access to data for services that depend on up-to-the-minute accuracy.
+                    <br/>
                     <br/>
                     3. Scalable Infrastructure: Pulsetracker manages high traffic and complex data handling, so
                     developers don’t need to build or scale backend systems to process location updates.
                     <br/>
+                    <br/>
                     4. Efficient Protocols: Pulsetracker uses UDP or WebSocket protocols for fast, efficient
                     communication that minimizes battery and data usage on client devices.
                     <br/>
+                    <br/>
                     5. Privacy and Security: Pulsetracker ensures data is securely transmitted and offers developers
                     control over data storage, aligning with privacy requirements.
+                    <br/>
                     <br/>
                 </p>
                 <section class="contact">
