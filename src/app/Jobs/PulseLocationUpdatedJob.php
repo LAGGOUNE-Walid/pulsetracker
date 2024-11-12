@@ -28,6 +28,7 @@ class PulseLocationUpdatedJob implements ShouldQueue
      */
     public function handle($job, array $data)
     {
+
         $app = $this->getAppByKey($data['appId']);
         $device = $this->getDeviceByKey($data['clientId']);
 
