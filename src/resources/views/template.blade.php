@@ -5,19 +5,23 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="Pulsetracker, location tracking, real-time tracking, developer location API, UDP tracking, WebSocket tracking, GPS tracking backend, scalable tracking solution">
     <title>@yield('title')</title>
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:description"
-        content="Cutting-edge solution for real-time location tracking designed for developers and businesses. Our eco-friendly service uses the efficient UDP protocol to minimize mobile power consumption while delivering accurate location updates. Pulsetracker offers seamless integration with WebSockets for real-time data dispatch, comprehensive API access, and robust tracking features. Whether you're building a new app or enhancing existing services, Pulsetracker's scalable solutions and flexible pricing plans ensure you get the most reliable and cost-effective location tracking. Start with our free plan and scale up as your needs grow. Try Pulsetracker today and experience unparalleled location tracking performance.">
+        content="Real-time location tracking designed for developers. Battery-friendly service uses UDP/Websockets protocols to minimize mobile power consumption while realtime location updates.">
     <meta name="twitter:image" content="{{ url('assets/img/Circle%20Brand%20Identity.jpeg') }}">
+    <meta property="twitter:title" content="Pulsetracker - Real-Time Location Tracking Solution for Developers">
+
     <meta property="og:image" content="{{ url('assets/img/Circle%20Brand%20Identity.jpeg') }}">
     <meta property="og:url" content="{{ url('/') }}">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Pulsetracker">
-    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:title" content="Pulsetracker - Real-Time Location Tracking Solution for Developers">
     <meta name="og:description"
-        content="Cutting-edge solution for real-time location tracking designed for developers and businesses. Our eco-friendly service uses the efficient UDP protocol to minimize mobile power consumption while delivering accurate location updates. Pulsetracker offers seamless integration with WebSockets for real-time data dispatch, comprehensive API access, and robust tracking features. Whether you're building a new app or enhancing existing services, Pulsetracker's scalable solutions and flexible pricing plans ensure you get the most reliable and cost-effective location tracking. Start with our free plan and scale up as your needs grow. Try Pulsetracker today and experience unparalleled location tracking performance.">
+        content="Real-time location tracking designed for developers. Battery-friendly service uses UDP/Websockets protocols to minimize mobile power consumption.">
     <meta name="description"
-        content="Cutting-edge solution for real-time location tracking designed for developers and businesses. Our eco-friendly service uses the efficient UDP protocol to minimize mobile power consumption while delivering accurate location updates. Pulsetracker offers seamless integration with WebSockets for real-time data dispatch, comprehensive API access, and robust tracking features. Whether you're building a new app or enhancing existing services, Pulsetracker's scalable solutions and flexible pricing plans ensure you get the most reliable and cost-effective location tracking. Start with our free plan and scale up as your needs grow. Try Pulsetracker today and experience unparalleled location tracking performance.">
+        content="Real-time location tracking designed for developers. Battery-friendly service uses UDP/Websockets protocols to minimize mobile power consumption.">
     <link rel="icon" type="image/jpeg" sizes="720x720"
         href="assets/img/Circle_Brand_Identity__Copy_-removebg-preview.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/darkly/bootstrap.min.css">
