@@ -70,7 +70,7 @@
             <div class="collapse navbar-collapse" id="navcol-3" style="color: white;">
                 <ul class="navbar-nav mx-auto" style="color: white;">
                     <li class="nav-item" style="color: white;margin-right: 15px;"><a class="nav-link active"
-                            href="{{ url('blog') }}" style="color: white;">Blog</a></li>
+                            href="{{ url('blogs') }}" style="color: white;">Blog</a></li>
                     <li class="nav-item" style="color: white;margin-right: 15px;"><a class="nav-link active"
                             href="{{ url('about') }}" style="color: white;">About</a></li>
                     <li class="nav-item" style="color: white;"><a class="nav-link active" href="{{ url('docs/api') }}"

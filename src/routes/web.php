@@ -148,7 +148,7 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {
         return $request->all();
     });
 });
-Route::group(['prefix' => 'blog'], function() {
+Route::group(['prefix' => 'blogs'], function() {
     Route::GET("/", [BlogController::class, 'index']);
-    Route::GET("/{slug}", [BlogController::class, 'get']);
+    Route::GET("/blog/{slug}", [BlogController::class, 'get']);
 });
