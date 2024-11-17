@@ -9,7 +9,6 @@
                         <img src="{{ $blog->cover }}" class="card-img-top rounded" style="height: 60%;" alt="{{ $blog->cover_alt }}">
                         <div class="card-body" style="height: 40%;">
                             <h5><a href="{{url('blogs/blog/'.$blog->slug)}}" class="card-title" style="text-decoration: none;">{{ $blog->title }}</a></h5>
-                            <h6><small class="float-end">{{$blog->created_at->format("Y-m-d")}}</small></h6>
                         </div>
                     </div>
                 </div>
