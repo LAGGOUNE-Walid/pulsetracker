@@ -29,7 +29,7 @@
     <meta name="description"
         content="Real-time location tracking designed for developers. Battery-friendly service uses UDP/Websockets protocols to minimize mobile power consumption."> --}}
     <link rel="icon" type="image/jpeg" sizes="720x720"
-        href="assets/img/Circle_Brand_Identity__Copy_-removebg-preview.png">
+        href="/assets/img/Circle_Brand_Identity__Copy_-removebg-preview.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/darkly/bootstrap.min.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&amp;display=swap">
