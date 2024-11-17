@@ -3,31 +3,15 @@
     style="--bs-body-bg: black;--bs-body-font-size: 1.5rem;--bs-body-font-weight: 1000;--bs-dark: black;--bs-dark-rgb: 0,0,0;font-family: Alatsi, sans-serif !important;">
 
 <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="keywords"
+        content="Pulsetracker, location tracking, real-time tracking, developer location API, UDP tracking, WebSocket tracking, GPS tracking backend, scalable tracking solution,real-time location tracking, location tracking software, GPS tracking solution, developer-friendly tracking tool, Pulsetracker app, real-time GPS updates, location tracking SDK alternative, track device movements, GPS tracking API, real-time geolocation, battery-efficient tracking app, location tracking for developers, GPS tracking integration, real-time location analytics, Pulsetracker API integration, custom location tracking backend, real-time geolocation updates, GPS location services, live location tracking, scalable tracking solutions, location monitoring tool, GPS location tracking system, remote GPS tracking, mobile device tracking, geofencing tool, real-time location data, GPS location updates, location tracking APIs, advanced location tracking system, lightweight tracking tool, mobile GPS tracker, live tracking software, location updates in real-time, GPS tracking for mobile apps, efficient location tracking, GPS-powered tracking app, customizable tracking software, live GPS location service, Pulsetracker for businesses, developer location tracking tools, real-time map updates, best GPS tracking system, accurate location tracking software, geolocation tracking app, GPS tracking device integration, real-time GPS mapping, location tracking technology, GPS tracking in apps, high-performance location tracking, easy GPS tracking solutions, GPS integration for developers, Pulsetracker location tracking API, fast GPS data tracking, real-time GPS device tracking, GPS app for location updates, location services SDK alternative, GPS backend solutions, GPS for app developers, location tracking library, live GPS app updates, GPS tracker with geofencing, Pulsetracker for real-time updates, tracking app backend integration, best location tracking API, real-time location services API, scalable GPS tracking tools, developer-first tracking software, lightweight geolocation tracking, mobile device location tracking, Pulsetracker real-time API, precise GPS tracking software, cloud-based GPS tracking solution, efficient geolocation services, real-time map tracking API, GPS software for app developers, live location tracking tools, GPS app development toolkit, real-time location tracker, advanced GPS solutions, GPS for mobile apps, Pulsetracker for GPS integration, high-accuracy location tracker, developer-friendly GPS APIs, GPS geolocation software, lightweight GPS SDK, GPS data tracking solutions, live device GPS tracking, GPS-powered mobile apps, Pulsetracker for geofencing, scalable real-time location services, GPS device integration API, accurate geolocation software, efficient GPS tracking backend">
     @if (isset($blog))
         {!! seo()->for($blog) !!}
     @else
         {!! seo() !!}
     @endif
-    {{-- <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <meta name="robots" content="index, follow">
-    <meta name="keywords"
-        content="Pulsetracker, location tracking, real-time tracking, developer location API, UDP tracking, WebSocket tracking, GPS tracking backend, scalable tracking solution">
-    <title>@yield('title')</title>
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:description"
-        content="Real-time location tracking designed for developers. Battery-friendly service uses UDP/Websockets protocols to minimize mobile power consumption while realtime location updates.">
-    <meta name="twitter:image" content="{{ url('assets/img/Circle%20Brand%20Identity.jpeg') }}">
-    <meta property="twitter:title" content="Pulsetracker - Real-Time Location Tracking Solution for Developers">
-
-    <meta property="og:image" content="{{ url('assets/img/Circle%20Brand%20Identity.jpeg') }}">
-    <meta property="og:url" content="{{ url('/') }}">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Pulsetracker - Real-Time Location Tracking Solution for Developers">
-    <meta name="og:description"
-        content="Real-time location tracking designed for developers. Battery-friendly service uses UDP/Websockets protocols to minimize mobile power consumption.">
-    <meta name="description"
-        content="Real-time location tracking designed for developers. Battery-friendly service uses UDP/Websockets protocols to minimize mobile power consumption."> --}}
     <link rel="icon" type="image/jpeg" sizes="720x720"
         href="/assets/img/Circle_Brand_Identity__Copy_-removebg-preview.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/darkly/bootstrap.min.css">
@@ -41,7 +25,7 @@
     <script defer src="https://cloud.umami.is/script.js" data-website-id="06db6e2e-fb33-4581-8722-67ece940e18e"></script>
     <script src="https://js-de.sentry-cdn.com/0327f3ab8d27598ea7b92ce14ea13526.min.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/dark.min.css">
-    
+
     <!-- Brevo Conversations {literal} -->
     <script>
         (function(d, w, c) {
