@@ -4,3 +4,5 @@ src/vendor/*
 .env
 docker-compose.yml
 nginx/default.conf
+src/storage/framework/*
+src/config/stripe-subscriptions.php
