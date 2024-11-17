@@ -108,7 +108,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <?php echo app('Illuminate\Foundation\Vite')('resources/js/app.js'); ?>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <?php echo $__env->yieldPushContent('scripts'); ?>
+    <script>hljs.highlightAll();</script>
 </body>
 
 </html>
