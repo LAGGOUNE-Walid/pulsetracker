@@ -21,10 +21,11 @@
     <link rel="stylesheet" href="/assets/css/bs-theme-overrides.css">
     <link rel="stylesheet" href="/assets/css/Banner-Heading-Image-images.css">
     <link rel="stylesheet" href="/assets/css/Navbar-Centered-Brand-Dark-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/dark.min.css">
     @cookieconsentscripts
     <script defer src="https://cloud.umami.is/script.js" data-website-id="06db6e2e-fb33-4581-8722-67ece940e18e"></script>
     <script src="https://js-de.sentry-cdn.com/0327f3ab8d27598ea7b92ce14ea13526.min.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/dark.min.css">
+    
 
     <!-- Brevo Conversations {literal} -->
     <script>
@@ -92,7 +93,7 @@
     @vite('resources/js/app.js')
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <script>
-        window.addEventListener('DOMContentLoaded', () => hljs.highlightAll(), false);
+        document.addEventListener('DOMContentLoaded', () => hljs.highlightAll());
     </script>
 </body>
 
