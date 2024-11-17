@@ -7,7 +7,7 @@
                     <div class="card h-100 p-1 rounded" style="background-color: #1c1c1c;">
                         <img src="<?php echo e($blog->cover); ?>" class="card-img-top rounded" style="height: 60%;" alt="<?php echo e($blog->cover_alt); ?>">
                         <div class="card-body" style="height: 40%;">
-                            <h5><a href="<?php echo e(url('blog/'.$blog->slug)); ?>" class="card-title" style="text-decoration: none;"><?php echo e($blog->title); ?></a></h5>
+                            <h5><a href="<?php echo e(url('blogs/blog/'.$blog->slug)); ?>" class="card-title" style="text-decoration: none;"><?php echo e($blog->title); ?></a></h5>
                             <h6><small class="float-end"><?php echo e($blog->created_at->format("Y-m-d")); ?></small></h6>
                         </div>
                     </div>

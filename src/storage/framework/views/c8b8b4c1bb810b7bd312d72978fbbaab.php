@@ -13,5 +13,7 @@
         </div>
     </div>
 <?php $__env->stopSection(); ?>
-
+<?php $__env->startPush('scripts'); ?>
+    <script>hljs.highlightAll();</script>
+<?php $__env->stopPush(); ?>
 <?php echo $__env->make('template', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /var/www/html/resources/views/blog.blade.php ENDPATH**/ ?>

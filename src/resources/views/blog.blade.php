@@ -13,3 +13,6 @@
         </div>
     </div>
 @endsection
+@push('scripts')
+    <script>hljs.highlightAll();</script>
+@endpush
