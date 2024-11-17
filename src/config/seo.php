@@ -59,7 +59,7 @@ return [
      *
      * You can use the following filetypes: ico, png, gif, jpeg, svg.
      */
-    'favicon' => "assets/img/Circle_Brand_Identity__Copy_-removebg-preview.png",
+    'favicon' => "/assets/img/Circle_Brand_Identity__Copy_-removebg-preview.png",
 
     'title' => [
         /**
