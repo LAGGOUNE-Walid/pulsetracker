@@ -3,10 +3,16 @@
     style="--bs-body-bg: black;--bs-body-font-size: 1.5rem;--bs-body-font-weight: 1000;--bs-dark: black;--bs-dark-rgb: 0,0,0;font-family: Alatsi, sans-serif !important;">
 
 <head>
-    <meta charset="utf-8">
+    @if (isset($blog))
+        {!! seo()->for($blog) !!}
+    @else
+        {!! seo() !!}
+    @endif
+    {{-- <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta name="robots" content="index, follow">
-    <meta name="keywords" content="Pulsetracker, location tracking, real-time tracking, developer location API, UDP tracking, WebSocket tracking, GPS tracking backend, scalable tracking solution">
+    <meta name="keywords"
+        content="Pulsetracker, location tracking, real-time tracking, developer location API, UDP tracking, WebSocket tracking, GPS tracking backend, scalable tracking solution">
     <title>@yield('title')</title>
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:description"
@@ -21,7 +27,7 @@
     <meta name="og:description"
         content="Real-time location tracking designed for developers. Battery-friendly service uses UDP/Websockets protocols to minimize mobile power consumption.">
     <meta name="description"
-        content="Real-time location tracking designed for developers. Battery-friendly service uses UDP/Websockets protocols to minimize mobile power consumption.">
+        content="Real-time location tracking designed for developers. Battery-friendly service uses UDP/Websockets protocols to minimize mobile power consumption."> --}}
     <link rel="icon" type="image/jpeg" sizes="720x720"
         href="assets/img/Circle_Brand_Identity__Copy_-removebg-preview.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/darkly/bootstrap.min.css">
@@ -63,6 +69,8 @@
                     navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-3" style="color: white;">
                 <ul class="navbar-nav mx-auto" style="color: white;">
+                    <li class="nav-item" style="color: white;margin-right: 15px;"><a class="nav-link active"
+                            href="{{ url('blog') }}" style="color: white;">Blog</a></li>
                     <li class="nav-item" style="color: white;margin-right: 15px;"><a class="nav-link active"
                             href="{{ url('about') }}" style="color: white;">About</a></li>
                     <li class="nav-item" style="color: white;"><a class="nav-link active" href="{{ url('docs/api') }}"

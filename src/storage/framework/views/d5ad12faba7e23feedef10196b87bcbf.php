@@ -1,0 +1,1 @@
+<?php echo $__env->make(backpack_view('auth.register.' . backpack_theme_config('auth_layout')), \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /var/www/html/vendor/backpack/theme-tabler/resources/views/auth/register.blade.php ENDPATH**/ ?>

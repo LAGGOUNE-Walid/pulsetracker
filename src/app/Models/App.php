@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use App\Observers\AppObserver;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -12,6 +13,7 @@ use Illuminate\Database\Eloquent\Attributes\ObservedBy;
 #[ObservedBy([AppObserver::class])]
 class App extends Model
 {
+    use CrudTrait;
     use HasFactory, SoftDeletes;
 
     protected $fillable = ['key', 'name'];

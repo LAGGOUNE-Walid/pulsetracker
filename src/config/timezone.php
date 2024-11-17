@@ -12,7 +12,7 @@ return [
     */
 
     'events' => [
-        \Illuminate\Auth\Events\Login::class,
+        // \Illuminate\Auth\Events\Login::class,
     ],
 
     /*

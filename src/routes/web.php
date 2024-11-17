@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AppController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\DeviceController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\LoginWithProvider;
@@ -146,4 +147,8 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {
         ]);
         return $request->all();
     });
+});
+Route::group(['prefix' => 'blog'], function() {
+    Route::GET("/", [BlogController::class, 'index']);
+    Route::GET("/{slug}", [BlogController::class, 'get']);
 });
