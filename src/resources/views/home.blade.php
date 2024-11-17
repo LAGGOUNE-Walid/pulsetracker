@@ -27,7 +27,7 @@
                     <div class="col-md-6 order-first order-md-last " style="min-height: 250px;">
                         <center>
                             {{-- <canvas id="cobe" style="width: 400px; height: 400px;"></canvas> --}}
-                            <img src="{{ url('assets/img/globe.png') }}" alt="">
+                            <img src="{{ url('assets/img/globe.png') }}" alt="Pulsetracker globe realtime locations">
                         </center>
                     </div>
                 </div>
@@ -134,7 +134,7 @@
                 <div class="col-md-12">
                     <h1 class="text-center" style="--bs-body-font-weight: 1000;font-weight: bold;">How it works
                     </h1>
-                    <img class="mt-3 img-fluid" src="assets/img/Pulsetracker-howto.svg" alt="">
+                    <img class="mt-3 img-fluid" src="assets/img/Pulsetracker-howto.svg" alt="How pulsetracker realtime location tracking for developers work">
                 </div>
             </div>
             <div class="row mt-5">
@@ -148,10 +148,10 @@
                     </h4>
                     <div class="row">
                         <div class="col-12 col-md-6">
-                            <img src="/assets/img/dart.png" class="rounded img-fluid" alt="example with dart">
+                            <img src="/assets/img/dart.png" class="rounded img-fluid" alt="realtime location tracking using dart">
                         </div>
                         <div class="col-12 col-md-6">
-                            <img src="/assets/img/python.png" class="rounded img-fluid" alt="example with python">
+                            <img src="/assets/img/python.png" class="rounded img-fluid" alt="realtime location tracking using python">
                         </div>
                     </div>
                 </div>
@@ -167,7 +167,7 @@
                     <h4 class="text-center" style="color: var(--bs-gray-500);margin-top: 9px;padding-top: 20px;">
                         Pulsetracker puts you in
                         charge, offering complete control over how you track, manage, and dispatch location data.</h4>
-                    <img src="{{ url('assets/img/UHBAB8LJEMEKOJACOELDR9DRB8E7-1730810808626.png') }}"
+                    <img src="{{ url('assets/img/UHBAB8LJEMEKOJACOELDR9DRB8E7-1730810808626.png') }}" alt="Pulsetracker realtime location tracking for developers dashboard map"
                         style="width: 100%;border-radius: 10px;margin-top: 3%; border: 2px solid #f3f3f3; ">
                     <h4 class="text-center mt-5" style="color: var(--bs-gray-500);margin-top: 9px;padding-top: 20px;">
                         Location data is also transmitted to your WebSocket listener using the Pusher protocol.</h4>
