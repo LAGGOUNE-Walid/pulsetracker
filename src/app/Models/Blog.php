@@ -18,7 +18,7 @@ class Blog extends Model
     {
         return new SEOData(
             title: $this->title,
-            description: substr(Str::markdown($this->content), 0, 300),
+            description: substr(strip_tags(Str::markdown($this->content)), 0, 300),
             author: "Pulsetracker",
             image: $this->cover
         );
