@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Laravel\Cashier\Checkout;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 
 class UserSubscriptionController extends Controller
 {
@@ -56,6 +55,7 @@ class UserSubscriptionController extends Controller
                 }
             }
         }
+
         return redirect(url('/#pricing'));
     }
 
@@ -85,10 +85,12 @@ class UserSubscriptionController extends Controller
 
         $currentActiveSubscription = $request->user()->subscriptions()->active()->first();
         $currentActiveSubscription->noProrate()->swapAndInvoice($subscriptions[$type]['price_id']);
+
         return redirect(url('/#pricing'));
         // exit;
         $currentActiveSubscription = $request->user()->subscriptions()->active()->first();
         $currentActiveSubscription->cancelNow();
+
         return $request->user()
             ->newSubscription($subscriptions[$type]['product_id'], $subscriptions[$type]['price_id'])
             ->checkout([

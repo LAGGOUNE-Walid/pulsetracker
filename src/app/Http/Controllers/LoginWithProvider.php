@@ -21,7 +21,7 @@ class LoginWithProvider extends Controller
         } catch (\Throwable $th) {
             abort(404);
         }
-        
+
     }
 
     public function handleProviderCallback(string $provider): RedirectResponse
@@ -31,7 +31,7 @@ class LoginWithProvider extends Controller
         } catch (\Throwable $th) {
             abort(404);
         }
-        
+
         $authUser = $this->findOrCreateUser($user, $provider);
         Auth::login($authUser, true);
 

@@ -5,7 +5,7 @@ use Swoole\Coroutine\Client;
 
 use function Swoole\Coroutine\run;
 
-require "vendor/autoload.php";
+require 'vendor/autoload.php';
 
 $sendInterval = 3000;
 $devices = [
@@ -818,7 +818,7 @@ $devices = [
     '01181d54-a366-4da7-a267-f2c975f075f4',
 ];
 
-$appKey = "037eb0d7-5feb-426b-8731-e77a713668ae";
+$appKey = '037eb0d7-5feb-426b-8731-e77a713668ae';
 
 function simulateClient($host, $port, $sendInterval, $appKey, $device, $locations)
 {
@@ -854,7 +854,7 @@ run(function () use ($sendInterval, $devices, $appKey) {
 
         $locations[] = [
             'type' => 'Point',
-            'coordinates' => [$longitude, $latitude]
+            'coordinates' => [$longitude, $latitude],
         ];
     }
     // london
@@ -863,16 +863,16 @@ run(function () use ($sendInterval, $devices, $appKey) {
         $latitude = rand(-10, 10) / 100 + 51.5074; // Approximate around London's latitude
         $locations[] = [
             'type' => 'Point',
-            'coordinates' => [$longitude, $latitude]
+            'coordinates' => [$longitude, $latitude],
         ];
     }
-    // russia 
+    // russia
     for ($i = 1; $i <= 500; $i++) {
         $longitude = rand(20000, 180000) / 1000; // Approximate longitude range for Russia
         $latitude = rand(41000, 82000) / 1000; // Approximate latitude range for Russia
         $locations[] = [
             'type' => 'Point',
-            'coordinates' => [$longitude, $latitude]
+            'coordinates' => [$longitude, $latitude],
         ];
     }
 
@@ -882,7 +882,7 @@ run(function () use ($sendInterval, $devices, $appKey) {
         $latitude = rand(41000, 51000) / 1000; // Approximate latitude range for France
         $locations[] = [
             'type' => 'Point',
-            'coordinates' => [$longitude, $latitude]
+            'coordinates' => [$longitude, $latitude],
         ];
     }
 
@@ -892,11 +892,9 @@ run(function () use ($sendInterval, $devices, $appKey) {
         $latitude = rand(24000, 46000) / 1000; // Approximate latitude range for Japan
         $locations[] = [
             'type' => 'Point',
-            'coordinates' => [$longitude, $latitude]
+            'coordinates' => [$longitude, $latitude],
         ];
     }
-
-
 
     foreach ($devices as $device) {
 

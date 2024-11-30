@@ -2,14 +2,14 @@
 
 namespace App\Listeners;
 
-use Stripe\Subscription as StripeSubscription;
-use Illuminate\Support\Carbon;
-use App\Models\UserCurrentQuota;
-use Laravel\Cashier\Subscription;
-use Illuminate\Support\Facades\Log;
 use App\Actions\GeopulseQueueAction;
-use Laravel\Cashier\Events\WebhookHandled;
+use App\Models\UserCurrentQuota;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Log;
+use Laravel\Cashier\Events\WebhookHandled;
+use Laravel\Cashier\Subscription;
+use Stripe\Subscription as StripeSubscription;
 
 class StripeHandledEventsListener implements ShouldQueue
 {
@@ -25,17 +25,17 @@ class StripeHandledEventsListener implements ShouldQueue
     public function handle(WebhookHandled $event): void
     {
         if ($event->payload['type'] == 'customer.subscription.created') {
-            dump("customer.subscription.created : ");
+            dump('customer.subscription.created : ');
             $this->subscriptionCreated($event);
         }
 
         if ($event->payload['type'] == 'customer.subscription.updated') {
-            dump("customer.subscription.updated : ");
+            dump('customer.subscription.updated : ');
             $this->subscriptionUpdated($event);
         }
 
         if ($event->payload['type'] == 'customer.subscription.deleted') {
-            dump("customer.subscription.deleted : ");
+            dump('customer.subscription.deleted : ');
             $this->subscriptionDeleted($event);
         }
     }
@@ -69,12 +69,12 @@ class StripeHandledEventsListener implements ShouldQueue
             ->first();
 
         if (! $subscription) {
-            throw new \Exception("Subscription id " . $event->payload['data']['object']['id'] . " not found", 1);
+            throw new \Exception('Subscription id '.$event->payload['data']['object']['id'].' not found', 1);
         }
 
         $user = $subscription->user;
         if ($subscription->stripe_status === StripeSubscription::STATUS_ACTIVE) {
-            
+
             if (! $subscription->ends_at) {
                 $type = $this->resolveSubscriptionName($subscription->stripe_price);
                 $userOldSubscription = $user->currentSubscription;
@@ -117,7 +117,7 @@ class StripeHandledEventsListener implements ShouldQueue
     {
         $subscription = Subscription::where('stripe_id', $event->payload['data']['object']['id'])->whereHas('user')->first();
         if (! $subscription) {
-            throw new \Exception("Subscription id " . $event->payload['data']['object']['id'] . " not found", 1);
+            throw new \Exception('Subscription id '.$event->payload['data']['object']['id'].' not found', 1);
         }
         $user = $subscription->user;
         $user->currentSubscription()->update([
@@ -128,7 +128,6 @@ class StripeHandledEventsListener implements ShouldQueue
         $this->geopulseQueueAction->push('RefreshUserQuota', ['userId' => $user->id]);
         Log::info("Subscription move to free of user $user->email");
     }
-
 
     public function resolveSubscriptionName(string $stripePrice): ?string
     {

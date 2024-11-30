@@ -2,14 +2,14 @@
 
 namespace App\Jobs;
 
-use Illuminate\Support\Carbon;
-use App\Models\UserCurrentQuota;
-use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\Log;
 use App\Actions\GeopulseQueueAction;
 use App\Models\CurrentUserSubscription;
-use Illuminate\Foundation\Queue\Queueable;
+use App\Models\UserCurrentQuota;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Foundation\Queue\Queueable;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Log;
 
 class RenewFreeSubscriptionsQuota implements ShouldQueue
 {

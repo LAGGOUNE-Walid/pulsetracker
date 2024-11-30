@@ -2,3 +2,6 @@ vendor/*
 composer.lock
 config/pulse.php
 supervisord.*
+swoole.*
+swoole.log.*
+swoole_redis_db/*

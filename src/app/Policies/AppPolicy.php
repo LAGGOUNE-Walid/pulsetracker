@@ -7,7 +7,6 @@ use App\Models\User;
 
 class AppPolicy
 {
-
     public function create(User $user): bool
     {
         $subscriptions = config('stripe-subscriptions.plans');

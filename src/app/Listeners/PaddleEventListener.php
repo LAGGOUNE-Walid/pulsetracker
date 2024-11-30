@@ -2,13 +2,13 @@
 
 namespace App\Listeners;
 
-use Illuminate\Support\Carbon;
-use App\Models\UserCurrentQuota;
-use Laravel\Paddle\Subscription;
-use Illuminate\Support\Facades\Log;
 use App\Actions\GeopulseQueueAction;
-use Laravel\Paddle\Events\WebhookReceived;
+use App\Models\UserCurrentQuota;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Log;
+use Laravel\Paddle\Events\WebhookReceived;
+use Laravel\Paddle\Subscription;
 
 class PaddleEventListener implements ShouldQueue
 {
@@ -64,7 +64,7 @@ class PaddleEventListener implements ShouldQueue
                     and
                     ($currentUserSubscription->ends_at->format('Y-m-d H:i:s') !== Carbon::parse($event->payload['data']['current_billing_period']['ends_at'])->format('Y-m-d H:i:s'))
                 ) {
-                    
+
                     $user->currentSubscription()->update([
                         'starts_at' => Carbon::parse($event->payload['data']['current_billing_period']['starts_at']),
                         'ends_at' => Carbon::parse($event->payload['data']['current_billing_period']['ends_at']),

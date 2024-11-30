@@ -2,20 +2,16 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Actions\PusherSanctumBroadcaster;
 use App\Actions\SanctumBroadcastingAuthAction;
-use Pusher\Pusher;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Broadcasting\Broadcasters\Broadcaster;
-use Illuminate\Broadcasting\Broadcasters\PusherBroadcaster;
-use Illuminate\Broadcasting\Broadcasters\UsePusherChannelConventions;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Broadcast;
-use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
+use Pusher\Pusher;
 
 class SanctumBroadcastingAuthController extends Controller
 {
     public $pusherSanctumBroadcaster;
+
     public function __construct()
     {
         $this->pusherSanctumBroadcaster = Broadcast::driver('pusher-sanctum');

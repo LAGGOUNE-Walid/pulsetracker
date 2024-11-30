@@ -2,13 +2,30 @@
 
 use Illuminate\Queue\Capsule\Manager as Queue;
 use League\Container\Container;
+use Pulse\Server\EventHandler\SwooleRedisServerEventHandler;
 use Pulse\Server\EventHandler\SwooleUdpServerEventHandler;
 use Pulse\Server\EventHandler\SwooleWsServerEventHandler;
 use Swoole\Process\Manager;
 use Swoole\Process\Pool;
+use Swoole\Redis\Server as SwooleRedisServer;
 use Swoole\Server;
 
 require 'bin/bootstrap.php';
+
+function startSwooleRedisServer(SwooleRedisServerEventHandler $swooleRedisServerEventsHandler)
+{
+    $server = new SwooleRedisServer('0.0.0.0', 6378, SWOOLE_BASE);
+    $swooleRedisServerEventsHandler->setServer($server);
+    @$server->setHandler('info', [$swooleRedisServerEventsHandler, 'emptyResponse']);
+    @$server->setHandler('GET', [$swooleRedisServerEventsHandler, 'emptyResponse']);
+    @$server->setHandler('AUTH', [$swooleRedisServerEventsHandler, 'emptyResponse']);
+    @$server->setHandler('SELECT', [$swooleRedisServerEventsHandler, 'emptyResponse']);
+    @$server->setHandler('SUBSCRIBE', [$swooleRedisServerEventsHandler, 'subscribe']);
+    $server->on('close', [$swooleRedisServerEventsHandler, 'unsubscribe']);
+    $server->addProcess($swooleRedisServerEventsHandler->getListenerProcess());
+
+    $server->start();
+}
 
 function startQueueWorker($appsDevicesTable, $usersQuotaTable, Container $container)
 {
@@ -65,10 +82,13 @@ $pm->add(function (Pool $pool, int $workerId) use ($config, $swooleWsEventsHandl
     startWsServer($config, $swooleWsEventsHandler);
 });
 
+$pm->add(function (Pool $pool, int $workerId) use ($swooleRedisServerEventsHandler) {
+    startSwooleRedisServer($swooleRedisServerEventsHandler);
+});
+
 $pm->add(function () use ($httpClient) {
     try {
         $httpClient->request('GET', 'https://uptime.betterstack.com/api/v1/heartbeat/fEzyiyJf3hSET2RkiKv8CrWT');
-        
     } catch (\Throwable $th) {
         \Sentry\captureException($th);
     }

@@ -4,7 +4,6 @@ namespace App\Jobs;
 
 use App\Models\App;
 use App\Models\Device;
-use App\Models\DeviceLocation;
 use GeoJson\GeoJson;
 use GeoJson\Geometry\Point;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -36,7 +35,6 @@ class PulseLocationUpdatedJob implements ShouldQueue
         $point = new Point($data['point']['coordinates']);
         InsertDeviceLocationJob::dispatch($app, $device, $point, $data);
 
-
         IncrementUserQuota::dispatch($app, $device);
         SetDeviceLastLocation::dispatch($app, $device, $data['ip'], $point, $data['extraData']);
 
@@ -45,10 +43,10 @@ class PulseLocationUpdatedJob implements ShouldQueue
 
     public function getAppByKey(string $key): App
     {
-        $app = Cache::get('cached-app-key-' . $key, null);
+        $app = Cache::get('cached-app-key-'.$key, null);
         if (! $app) {
             $app = App::where('key', $key)->firstOrFail();
-            Cache::put('cached-app-key-' . $key, $app);
+            Cache::put('cached-app-key-'.$key, $app);
         }
 
         return $app;
@@ -56,10 +54,10 @@ class PulseLocationUpdatedJob implements ShouldQueue
 
     public function getDeviceByKey(string $key): Device
     {
-        $device = Cache::get('cached-device-key-' . $key, null);
+        $device = Cache::get('cached-device-key-'.$key, null);
         if (! $device) {
             $device = Device::where('key', $key)->firstOrFail();
-            Cache::put('cached-device-key-' . $key, $device);
+            Cache::put('cached-device-key-'.$key, $device);
         }
 
         return $device;

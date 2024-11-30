@@ -1,23 +1,24 @@
 <?php
 
-use Monolog\Level;
-use Pusher\Pusher;
-use Monolog\Logger;
-use League\Container\Container;
-use Illuminate\Redis\RedisManager;
-use Pulse\Pool\QueueConnectionPool;
-use Pulse\Actions\EnqueuePacketAction;
-use Pulse\Actions\BroadcastPacketAction;
-use Pulse\Services\BroadcastPacketService;
-use Pulse\Server\PacketParser\WsPacketParser;
+use Illuminate\Container\Container as LaravelContainer;
 use Illuminate\Database\Capsule\Manager as DB;
 use Illuminate\Queue\Capsule\Manager as Queue;
-use Pulse\Server\PacketParser\UdpPacketParser;
-use jacklul\MonologTelegramHandler\TelegramHandler;
+use Illuminate\Redis\RedisManager;
 use jacklul\MonologTelegramHandler\TelegramFormatter;
-use Illuminate\Container\Container as LaravelContainer;
-use Pulse\Server\EventHandler\SwooleWsServerEventHandler;
+use jacklul\MonologTelegramHandler\TelegramHandler;
+use League\Container\Container;
+use Monolog\Level;
+use Monolog\Logger;
+use Pulse\Actions\BroadcastPacketAction;
+use Pulse\Actions\EnqueuePacketAction;
+use Pulse\Pool\QueueConnectionPool;
+use Pulse\Server\EventHandler\SwooleRedisServerEventHandler;
 use Pulse\Server\EventHandler\SwooleUdpServerEventHandler;
+use Pulse\Server\EventHandler\SwooleWsServerEventHandler;
+use Pulse\Server\PacketParser\UdpPacketParser;
+use Pulse\Server\PacketParser\WsPacketParser;
+use Pulse\Services\BroadcastPacketService;
+use Pusher\Pusher;
 
 require 'vendor/autoload.php';
 $config = require 'config/pulse.php';
@@ -36,12 +37,11 @@ $container->add(Logger::class, function () use ($config) {
         10,
         true
     );
-    $handler->setFormatter(new TelegramFormatter()); 
+    $handler->setFormatter(new TelegramFormatter);
     $logger->pushHandler($handler);
+
     return $logger;
 });
-
-
 
 if ($config['enable-queue']) {
     $container->add(Queue::class, function () use ($config, $laravelContainer) {
@@ -104,7 +104,7 @@ foreach ($apps as $app) {
 }
 
 $appsDevicesTable = new Swoole\Table(1024);
-$appsDevicesTable->column('devicesKeys', Swoole\Table::TYPE_STRING, $largestDevicesSizesInBytes+1024);
+$appsDevicesTable->column('devicesKeys', Swoole\Table::TYPE_STRING, $largestDevicesSizesInBytes + 1024);
 $appsDevicesTable->column('userId', Swoole\Table::TYPE_INT);
 $appsDevicesTable->create();
 
@@ -113,8 +113,6 @@ $usersQuotaTable->column('quota', Swoole\Table::TYPE_INT);
 $usersQuotaTable->column('used', Swoole\Table::TYPE_INT);
 $usersQuotaTable->column('left', Swoole\Table::TYPE_INT);
 $usersQuotaTable->create();
-
-
 
 $usersIds = [];
 foreach ($apps as $app) {
@@ -130,16 +128,15 @@ if ($usersIds !== []) {
 
     $response = $httpClient->request('GET', $config['api_server'] . '/api/users/quota?' . http_build_query(['ids' => $usersIds]));
     if ($response->getStatusCode() == 200) {
-        $usersQuotaResponse = json_decode($response->getBody(), true)['data'];
-        foreach ($usersQuotaResponse as $userQuota) {
-            //echo 'Set user ' . $userQuota['id'] . " quota to cache \n";
-            //print_r($userQuota);
-            //echo "\n";
-            $usersQuotaTable->set($userQuota['id'], [
-                'quota' => $userQuota['quota'],
-                'used' => $userQuota['used'],
-                'left' => $userQuota['left'],
-            ]);
+        $usersQuotaResponse = json_decode($response->getBody(), true);
+        if ($usersQuotaResponse) {
+            foreach ($usersQuotaResponse['data'] as $userQuota) {
+                $usersQuotaTable->set($userQuota['id'], [
+                    'quota' => $userQuota['quota'],
+                    'used' => $userQuota['used'],
+                    'left' => $userQuota['left'],
+                ]);
+            }
         }
     } else {
         throw new Exception('Error Processing Request to get users quota', 1);
@@ -147,7 +144,17 @@ if ($usersIds !== []) {
     unset($response);
 }
 
+$appsSubscribersTable = new Swoole\Table(count($apps) + 1024);
+$appsSubscribersTable->column('subscribers', Swoole\Table::TYPE_STRING, 1000);
+$appsSubscribersTable->create();
+
+$subscribersAppTable = new Swoole\Table(1024);
+$subscribersAppTable->column('channel', Swoole\Table::TYPE_STRING, 64);
+$subscribersAppTable->create();
+
 unset($usersIds);
+unset($apps);
+
 $container->add(UdpPacketParser::class)->addArgument($config['use-msgPack']);
 $container->add(WsPacketParser::class)->addArgument($config['use-msgPack']);
 
@@ -167,6 +174,13 @@ $container->add(SwooleWsServerEventHandler::class)
     ->addArgument($usersQuotaTable)
     ->addArgument($logger);
 
+$container->add(SwooleRedisServerEventHandler::class)
+    ->addArgument($appsDevicesTable)
+    ->addArgument($appsSubscribersTable)
+    ->addArgument($subscribersAppTable)
+    ->addArgument($db)
+    ->addArgument($container->get(Queue::class));
+
 \Sentry\init([
     'dsn' => 'https://edf86eb6486765d336450b383fdd60b0@o4508063795904512.ingest.de.sentry.io/4508063843876944',
     // Specify a fixed sample rate
@@ -175,6 +189,7 @@ $container->add(SwooleWsServerEventHandler::class)
     'profiles_sample_rate' => 1.0,
 ]);
 
-$logger->debug("Servers starting");
+$logger->debug('Servers starting');
 $swooleUdpEventsHandler = $container->get(SwooleUdpServerEventHandler::class);
 $swooleWsEventsHandler = $container->get(SwooleWsServerEventHandler::class);
+$swooleRedisServerEventsHandler = $container->get(SwooleRedisServerEventHandler::class);

@@ -4,6 +4,7 @@ USER root
 RUN install-php-extensions intl
 RUN install-php-extensions gd
 RUN install-php-extensions bcmath
+RUN install-php-extensions redis
 RUN rm /usr/local/etc/php/conf.d/serversideup-docker-php.ini
 
 COPY ./php/php.ini /usr/local/etc/php/conf.d/

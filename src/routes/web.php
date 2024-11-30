@@ -19,12 +19,13 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\URL;
 
-Route::GET("/test-websockets-xx", function (Request $request) {
+Route::GET('/test-websockets-xx', function (Request $request) {
     dd($request->user());
-    return view("test-websockets");
-})->middleware("auth:sanctum");
+
+    return view('test-websockets');
+})->middleware('auth:sanctum');
 Route::GET('/', [UserSubscriptionController::class, 'showHomePage'])->name('index');
-Route::GET("about", function() {
+Route::GET('about', function () {
     return view('about');
 });
 Route::GET('/terms-of-use', function () {
@@ -89,10 +90,10 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {
         if ($request->user()->email_verified_at) {
             return redirect()->back();
         }
-        $lastmailSent = session('user-sent-mail-' . $request->user()->id, now());
+        $lastmailSent = session('user-sent-mail-'.$request->user()->id, now());
         if ($lastmailSent->diffInMinutes(now()) > 10) {
             Mail::to($request->user())->send(new EmailVerify(URL::temporarySignedRoute('email-verify', now()->addHours(24), ['user' => $request->user()])));
-            session(['user-sent-mail-' . $request->user()->id => now()]);
+            session(['user-sent-mail-'.$request->user()->id => now()]);
         }
 
         return redirect()->back();
@@ -118,7 +119,7 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {
     });
     Route::group(['prefix' => 'apps'], function () {
         Route::GET('/', [AppController::class, 'index']);
-        Route::GET('/create', fn() => view('dashboard.apps.create'));
+        Route::GET('/create', fn () => view('dashboard.apps.create'));
         Route::POST('/create', [AppController::class, 'create'])->can('create', App::class);
     });
     Route::group(['prefix' => 'devices'], function () {
@@ -135,20 +136,21 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {
         });
         Route::GET('/{appKey}', [MapController::class, 'show']);
     });
-    Route::POST("feedback", function (Request $request) {
+    Route::POST('feedback', function (Request $request) {
         $request->validate([
             'message' => ['required'],
-            'feedbackType' => ['required']
+            'feedbackType' => ['required'],
         ]);
         Feedback::create([
             'message' => $request->message,
             'feedbackType' => $request->feedbackType,
-            'user_id' => $request->user()->id
+            'user_id' => $request->user()->id,
         ]);
+
         return $request->all();
     });
 });
-Route::group(['prefix' => 'blogs'], function() {
-    Route::GET("/", [BlogController::class, 'index']);
-    Route::GET("/blog/{slug}", [BlogController::class, 'get']);
+Route::group(['prefix' => 'blogs'], function () {
+    Route::GET('/', [BlogController::class, 'index']);
+    Route::GET('/blog/{slug}', [BlogController::class, 'get']);
 });

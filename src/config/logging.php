@@ -1,11 +1,9 @@
 <?php
 
+use App\LogHandlers\TelegramLoggerHandler;
 use Monolog\Handler\NullHandler;
-use Monolog\Handler\FilterHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Handler\SyslogUdpHandler;
-use Monolog\Handler\TelegramBotHandler;
-use App\LogHandlers\TelegramLoggerHandler;
 use Monolog\Processor\PsrLogMessageProcessor;
 
 return [
@@ -55,12 +53,12 @@ return [
 
     'channels' => [
 
-        "telegram" => [
+        'telegram' => [
             'driver' => 'monolog',
             'handler' => TelegramLoggerHandler::class,
             'level' => env('LOG_LEVEL', 'debug'),
             'TELEGRAM_BOT_TOKEN' => env('TELEGRAM_BOT_TOKEN'),
-            'TELEGRAM_CHANNEL_ID' => env('TELEGRAM_CHANNEL_ID')
+            'TELEGRAM_CHANNEL_ID' => env('TELEGRAM_CHANNEL_ID'),
         ],
 
         'stack' => [
@@ -100,7 +98,7 @@ return [
             'handler_with' => [
                 'host' => env('PAPERTRAIL_URL'),
                 'port' => env('PAPERTRAIL_PORT'),
-                'connectionString' => 'tls://' . env('PAPERTRAIL_URL') . ':' . env('PAPERTRAIL_PORT'),
+                'connectionString' => 'tls://'.env('PAPERTRAIL_URL').':'.env('PAPERTRAIL_PORT'),
             ],
             'processors' => [PsrLogMessageProcessor::class],
         ],

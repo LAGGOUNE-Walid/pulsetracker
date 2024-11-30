@@ -3,10 +3,10 @@
 namespace App\Actions;
 
 use App\Models\User;
-use Illuminate\Support\Facades\Log;
 use App\Traits\HaveToCreateCurrentUsageQuota;
 use App\Traits\HaveToInitTheFreeSubscription;
 use App\Traits\SendWelcomeEmailToNewCreatedUser;
+use Illuminate\Support\Facades\Log;
 
 class OauthCreateUserAction
 {

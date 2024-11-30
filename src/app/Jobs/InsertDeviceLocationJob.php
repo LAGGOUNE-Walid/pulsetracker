@@ -4,10 +4,10 @@ namespace App\Jobs;
 
 use App\Models\App;
 use App\Models\Device;
-use GeoJson\Geometry\Point;
 use App\Models\DeviceLocation;
-use Illuminate\Foundation\Queue\Queueable;
+use GeoJson\Geometry\Point;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Foundation\Queue\Queueable;
 
 class InsertDeviceLocationJob implements ShouldQueue
 {

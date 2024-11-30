@@ -3,11 +3,11 @@
 namespace App\Actions;
 
 use App\Models\App;
-use App\Models\User;
 use App\Models\Device;
 use App\Models\DeviceType;
-use Illuminate\Support\Str;
+use App\Models\User;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Str;
 
 class CreateDeviceAction
 {

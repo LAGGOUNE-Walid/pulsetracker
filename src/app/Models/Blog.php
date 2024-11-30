@@ -2,11 +2,11 @@
 
 namespace App\Models;
 
-use Illuminate\Support\Str;
+use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 use RalphJSmit\Laravel\SEO\Support\HasSEO;
 use RalphJSmit\Laravel\SEO\Support\SEOData;
-use Backpack\CRUD\app\Models\Traits\CrudTrait;
 
 class Blog extends Model
 {
@@ -19,7 +19,7 @@ class Blog extends Model
         return new SEOData(
             title: $this->title,
             description: substr(strip_tags(Str::markdown($this->content)), 0, 300),
-            author: "Pulsetracker",
+            author: 'Pulsetracker',
             image: $this->cover
         );
     }
