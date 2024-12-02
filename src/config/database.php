@@ -169,11 +169,7 @@ return [
         ],
 
         'pulsetracker' => [
-            'host' => env('PULSETRACKER_REDIS_HOST'),
-            'username' => env('PULSETRACKER_REDIS_USERNAME'),
-            'password' => env('PULSETRACKER_REDIS_PASSWORD'),
-            'port' => env('PULSETRACKER_REDIS_PORT'),
-            'database' => env('PULSETRACKER_REDIS_DB'),
+            'url' => env('PULSETRACKER_REDIS_URL'),
         ],
 
     ],

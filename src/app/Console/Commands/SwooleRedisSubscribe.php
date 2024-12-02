@@ -28,8 +28,8 @@ class SwooleRedisSubscribe extends Command
      */
     public function handle()
     {
-        $appKey = '037eb0d7-5feb-426b-8731-e77a713668ae';
-        $token = '7|V4RjdYulUAT8YcR4W1DiksQqbQeMNebXR8UEJhfz052bf39f'; 
+        $appKey = 'a9b8dffd-e68c-4bff-95cd-21fbcb86fcfb';
+        $token = '5|TbXSXBFoG2wzeMPgoR7hoUG2mgNrnrCUJiyvOJxB7ce145e2'; 
         $signature = $this->generateSignature($appKey, $token);
         Redis::connection('pulsetracker')->subscribe(["app:$appKey.$signature"], function (string $message) {
             echo $message . "\n";
