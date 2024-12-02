@@ -6,3 +6,4 @@ docker-compose.yml
 nginx/default.conf
 src/storage/framework/*
 src/config/stripe-subscriptions.php
+src/public/sitemap.xml
