@@ -16,6 +16,7 @@ function startSwooleRedisServer(SwooleRedisServerEventHandler $swooleRedisServer
 {
     $server = new SwooleRedisServer('0.0.0.0', 6378, SWOOLE_BASE);
     $swooleRedisServerEventsHandler->setServer($server);
+    @$server->setHandler('PING', [$swooleRedisServerEventsHandler, 'ping']);
     @$server->setHandler('info', [$swooleRedisServerEventsHandler, 'emptyResponse']);
     @$server->setHandler('GET', [$swooleRedisServerEventsHandler, 'emptyResponse']);
     @$server->setHandler('AUTH', [$swooleRedisServerEventsHandler, 'emptyResponse']);

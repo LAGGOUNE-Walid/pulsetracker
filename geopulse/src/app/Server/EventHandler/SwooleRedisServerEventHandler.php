@@ -33,7 +33,7 @@ class SwooleRedisServerEventHandler
         $this->server = $server;
     }
 
-    public function emptyResponse(int $fd): void
+    public function emptyResponse(int $fd, $data): void
     {
         $this->server->send($fd, SwooleRedisServer::format(SwooleRedisServer::INT, 1));
     }
@@ -47,7 +47,7 @@ class SwooleRedisServerEventHandler
 
         $this->attachSubscriberToChannel($fd, $channel);
         $this->attachChannelToSubscriber($fd, $channel);
-        return true;
+        return $this->server->send($fd, SwooleRedisServer::format(SwooleRedisServer::SET, ['subscribe', $channel, 1]));
     }
 
     public function attachSubscriberToChannel(int $fd, string $channel): void
@@ -96,13 +96,21 @@ class SwooleRedisServerEventHandler
                         $subscribers = json_decode($this->appsSubscribersTable->get($payload['appId'])['subscribers'], true);
                         foreach ($subscribers as $fd) {
                             $this->server->send($fd, SwooleRedisServer::format(SwooleRedisServer::SET, ['message', $payload['appId'], json_encode($payload)]));
-                            var_dump("sent to $fd");
                         }
                     }
                     $job->delete();
                 }
+                foreach ($this->subscribersAppTable as $subscriber => $channel) {
+                    $this->server->send($subscriber, SwooleRedisServer::format(SwooleRedisServer::SET, ["pong", "", ""]));
+                }
+
                 usleep(500000);
             }
         });
+    }
+
+    public function ping(int $fd, array $data): void
+    {
+        $this->server->send($fd, SwooleRedisServer::format(SwooleRedisServer::STRING, "pong"));
     }
 }
