@@ -62,7 +62,7 @@
                             href="{{ url('about') }}" style="color: white;">About</a></li>
                     <li class="nav-item" style="color: white;"><a class="nav-link active" href="{{ url('docs/api') }}"
                             style="color: white;margin-right: 15px;">Docs</a></li>
-                    <li class="nav-item" style="color: white;"><a class="nav-link active" href="#pricing"
+                    <li class="nav-item" style="color: white;"><a class="nav-link active" href="{{url('/#pricing')}}"
                             style="color: white;">Pricing</a></li>
                 </ul>
                 @auth

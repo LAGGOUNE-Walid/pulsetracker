@@ -6,8 +6,10 @@ use App\Http\Controllers\DeviceController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\LoginWithProvider;
 use App\Http\Controllers\MapController;
+use App\Http\Controllers\StorageController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserSubscriptionController;
+use App\Http\Controllers\UserTokensController;
 use App\Http\Middleware\UserCanAccessLocationsHistory;
 use App\Mail\EmailVerify;
 use App\Models\App;
@@ -20,7 +22,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\URL;
 
 Route::GET('/test-websockets-xx', function (Request $request) {
-    dd($request->user());
+    // dd($request->user());
+    exit;
 
     return view('test-websockets');
 })->middleware('auth:sanctum');
@@ -148,6 +151,13 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {
         ]);
 
         return $request->all();
+    });
+    Route::group(['prefix' => "tokens"], function() {
+        Route::GET('/', [UserTokensController::class, 'index']);
+    });
+    Route::group(['prefix' => "storage"], function() {
+        Route::GET('/', [StorageController::class, 'index']);
+        Route::POST('/ldps', [StorageController::class, 'ldps']);
     });
 });
 Route::group(['prefix' => 'blogs'], function () {

@@ -5,8 +5,8 @@
 |   Port  |    9506   |    /    |
 
 > **Note**: If your quota is exceeded, the server will respond with an `"ERR_QUOTA"` message to your client.
-#### UDP Dart example
-```dart
+#### UDP Python example
+```python
 import json
 import socket
 

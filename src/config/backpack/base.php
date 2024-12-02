@@ -131,7 +131,7 @@ return [
 
     // Backpack assumes that your "database email column" for operations like Login and Register is called "email".
     // If your database email column have a different name, you can configure it here. Eg: `user_mail`
-    'email_column' => 'email',
+    'email_column' => 'username',
 
     // The guard that protects the Backpack admin panel.
     // If null, the config.auth.defaults.guard value will be used.

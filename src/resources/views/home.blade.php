@@ -11,14 +11,14 @@
                         <div class="text-white p-4 p-md-5">
                             <h2 class="fw-bold text-white mb-3" style="font-size: 52px;">Real-Time Location Tracking for
                                 Developers and Everyone</h2>
-                            <p class="mb-4" style="font-size: 18px;color: var(--bs-gray-500);">Track and manage
-                                devices in real-time with fast UDP and WebSocket support. Optimize battery usage, scale
-                                effortlessly, and visualize live movements—perfect for developers and everyday users
-                                alike.</p>
+                            <p class="mb-4" style="font-size: 18px;color: var(--bs-gray-500);">Track and manage devices in
+                                real-time with lightning-fast protocols. Optimize battery usage, scale seamlessly
+                                while Pulsetracker handles the heavy lifting, <span class="text-success">all in hours not
+                                    months.</span>
+                            </p>
                             <div class="my-3">
                                 @guest
-                                    <a class="btn btn-primary" role="button" href="{{ url('signup') }}">Getting
-                                        started</a>
+                                    <a class="btn btn-success" role="button" href="{{ url('signup') }}">Take the first step</a>
                                 @endguest
 
                             </div>
@@ -27,20 +27,24 @@
                     <div class="col-md-6 order-first order-md-last " style="min-height: 250px;">
                         <center>
                             {{-- <canvas id="cobe" style="width: 400px; height: 400px;"></canvas> --}}
-                            <img src="{{ url('assets/img/globe.png') }}" alt="Pulsetracker globe realtime locations">
+                            <img src="{{ url('assets/img/globe.png') }}" alt="Pulsetracker globe Real-time locations">
                         </center>
                     </div>
                 </div>
             </div>
         </div><!-- End: 1 Row 2 Columns -->
     </section><!-- End: Banner Heading Image -->
-    <section style="margin-top: 8%;">
+    <section style="margin-top: 10%;">
         <!-- Start: 1 Row 1 Column -->
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <script src="https://fast.wistia.com/player.js" async></script><script src="https://fast.wistia.com/embed/meshuaf4b3.js" async type="module"></script><style>wistia-player[media-id='meshuaf4b3']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/meshuaf4b3/swatch'); display: block; filter: blur(5px); padding-top:46.41%; }</style> <wistia-player media-id="meshuaf4b3"></wistia-player>
-                    <h1 style="text-align: center; margin-top: 8%;"><strong>Seamless Integration</strong></h1>
+                    <script src="https://fast.wistia.com/player.js" async></script>
+                    <script src="https://fast.wistia.com/embed/meshuaf4b3.js" async type="module"></script><style>wistia-player[media-id='meshuaf4b3']:not(:defined) { background: center /
+                        contain no-repeat url('https://fast.wistia.com/embed/medias/meshuaf4b3/swatch'); display: block;
+                        filter: blur(5px); padding-top:46.41%; }</style> <wistia-player
+                            media-id="meshuaf4b3"></wistia-player>
+                        <h1 style="text-align: center; margin-top: 8%;"><strong>Seamless Integration</strong></h1>
                 </div>
             </div>
         </div><!-- End: 1 Row 1 Column -->
@@ -54,36 +58,33 @@
                             d="M6.634 1.135A7 7 0 0 1 15 8a.5.5 0 0 1-1 0 6 6 0 1 0-6.5 5.98v-1.005A5 5 0 1 1 13 8a.5.5 0 0 1-1 0 4 4 0 1 0-4.5 3.969v-1.011A2.999 2.999 0 1 1 11 8a.5.5 0 0 1-1 0 2 2 0 1 0-2.5 1.936v-1.07a1 1 0 1 1 1 0V15.5a.5.5 0 0 1-1 0v-.518a7 7 0 0 1-.866-13.847Z">
                         </path>
                     </svg>
-                    <h3>Real-time Location Tracking</h3>
+                    <h3>Real-time Location <span class="text-success">Tracking</span></h3>
                     <p style="color: var(--bs-gray-500);font-size: 20px;">Integrate effortlessly with Pulsetracker to
                         send location updates every second using UDP or Websockets, ensuring real-Time transmission.</p>
                 </div>
                 <div class="col-md-4"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
-                        fill="currentColor" viewBox="0 0 16 16" class="bi bi-browser-chrome"
+                        fill="currentColor" class="bi bi-diagram-3" viewBox="0 0 16 16"
                         style="font-size: 39px;margin-bottom: 15px;">
                         <path fill-rule="evenodd"
-                            d="M16 8a8.001 8.001 0 0 1-7.022 7.94l1.902-7.098a2.995 2.995 0 0 0 .05-1.492A2.977 2.977 0 0 0 10.237 6h5.511A8 8 0 0 1 16 8M0 8a8 8 0 0 0 7.927 8l1.426-5.321a2.978 2.978 0 0 1-.723.255 2.979 2.979 0 0 1-1.743-.147 2.986 2.986 0 0 1-1.043-.7L.633 4.876A7.975 7.975 0 0 0 0 8m5.004-.167L1.108 3.936A8.003 8.003 0 0 1 15.418 5H8.066a2.979 2.979 0 0 0-1.252.243 2.987 2.987 0 0 0-1.81 2.59ZM8 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4">
-                        </path>
+                            d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H14a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 2 7h5.5V6A1.5 1.5 0 0 1 6 4.5zM8.5 5a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5zM0 11.5A1.5 1.5 0 0 1 1.5 10h1A1.5 1.5 0 0 1 4 11.5v1A1.5 1.5 0 0 1 2.5 14h-1A1.5 1.5 0 0 1 0 12.5zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm4.5.5A1.5 1.5 0 0 1 7.5 10h1a1.5 1.5 0 0 1 1.5 1.5v1A1.5 1.5 0 0 1 8.5 14h-1A1.5 1.5 0 0 1 6 12.5zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm4.5.5a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z" />
                     </svg>
-                    <h3>WebSocket Dispatching</h3>
-                    <p style="color: var(--bs-gray-500);font-size: 20px;">Utilize WebSockets with Pusher protocol for
-                        instant updates and live tracking on your backend or to your application’s map interface.</p>
+                    <h3>Real-Time <span class="text-success">Dispatching<span></h3>
+                    <p style="color: var(--bs-gray-500);font-size: 20px;">Leverage WebSockets with the Pusher protocol or
+                        our Redis Pub/Sub for seamless real-time updates. Stream live location data to your backend or
+                        to your application's map interface.</p>
                 </div>
                 <div class="col-md-4"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
-                        fill="currentColor" viewBox="0 0 16 16" class="bi bi-file-zip"
+                        fill="currentColor" class="bi bi-shield-check" viewBox="0 0 16 16"
                         style="font-size: 39px;margin-bottom: 15px;">
                         <path
-                            d="M6.5 7.5a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v.938l.4 1.599a1 1 0 0 1-.416 1.074l-.93.62a1 1 0 0 1-1.109 0l-.93-.62a1 1 0 0 1-.415-1.074l.4-1.599V7.5zm2 0h-1v.938a1 1 0 0 1-.03.243l-.4 1.598.93.62.93-.62-.4-1.598a1 1 0 0 1-.03-.243z">
-                        </path>
+                            d="M5.338 1.59a61 61 0 0 0-2.837.856.48.48 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.7 10.7 0 0 0 2.287 2.233c.346.244.652.42.893.533q.18.085.293.118a1 1 0 0 0 .101.025 1 1 0 0 0 .1-.025q.114-.034.294-.118c.24-.113.547-.29.893-.533a10.7 10.7 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.8 11.8 0 0 1-2.517 2.453 7 7 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7 7 0 0 1-1.048-.625 11.8 11.8 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 63 63 0 0 1 5.072.56" />
                         <path
-                            d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm5.5-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H9v1H8v1h1v1H8v1h1v1H7.5V5h-1V4h1V3h-1V2h1z">
-                        </path>
+                            d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0" />
                     </svg>
-                    <h3>Compact Format</h3>
-                    <p style="color: var(--bs-gray-500);font-size: 20px;">Benefit from quick serialization and
-                        deserialization, enhancing data transfer speed and reducing latency with MessagePack’s compact
-                        binary format. <small><span class="badge rounded-pill text-bg-light"
-                                style="color: black !important;">Soon</span></small></p>
+                    <h3><span class="text-success">Privacy</span> Control</h3>
+                    <p style="color: var(--bs-gray-500);font-size: 20px;">Choose where your data is stored. Opt to save
+                        location data in Pulsetracker's database or disable storage entirely for enhanced privacy and
+                        flexibility.</p>
                 </div>
                 <div class="col-md-4"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
                         fill="currentColor" viewBox="0 0 16 16" class="bi bi-tree"
@@ -92,7 +93,7 @@
                             d="M8.416.223a.5.5 0 0 0-.832 0l-3 4.5A.5.5 0 0 0 5 5.5h.098L3.076 8.735A.5.5 0 0 0 3.5 9.5h.191l-1.638 3.276a.5.5 0 0 0 .447.724H7V16h2v-2.5h4.5a.5.5 0 0 0 .447-.724L12.31 9.5h.191a.5.5 0 0 0 .424-.765L10.902 5.5H11a.5.5 0 0 0 .416-.777l-3-4.5zM6.437 4.758A.5.5 0 0 0 6 4.5h-.066L8 1.401 10.066 4.5H10a.5.5 0 0 0-.424.765L11.598 8.5H11.5a.5.5 0 0 0-.447.724L12.69 12.5H3.309l1.638-3.276A.5.5 0 0 0 4.5 8.5h-.098l2.022-3.235a.5.5 0 0 0 .013-.507z">
                         </path>
                     </svg>
-                    <h3>Eco-Friendly Data Transmission</h3>
+                    <h3><span class="text-success">Eco-Friendly</span> Data Transmission</h3>
                     <p style="color: var(--bs-gray-500);font-size: 20px;">Benefit from the low-power consumption of
                         UDP, making it ideal for mobile/Iot devices and reducing battery drain.</p>
                 </div>
@@ -103,26 +104,26 @@
                             d="M5.854 4.854a.5.5 0 1 0-.708-.708l-3.5 3.5a.5.5 0 0 0 0 .708l3.5 3.5a.5.5 0 0 0 .708-.708L2.707 8l3.147-3.146zm4.292 0a.5.5 0 0 1 .708-.708l3.5 3.5a.5.5 0 0 1 0 .708l-3.5 3.5a.5.5 0 0 1-.708-.708L13.293 8l-3.147-3.146z">
                         </path>
                     </svg>
-                    <h3>Flexible Integration</h3>
+                    <h3><span class='text-success'>Flexible</span> Integration</h3>
                     <p style="color: var(--bs-gray-500);font-size: 20px;">Easy integration with your devices & backend
                         through API endpoints for creating device tokens and sending location data.</p>
                 </div>
+
                 <div class="col-md-4"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
-                        fill="currentColor" viewBox="0 0 16 16" class="bi bi-server"
+                        fill="currentColor" viewBox="0 0 16 16" class="bi bi-file-zip"
                         style="font-size: 39px;margin-bottom: 15px;">
                         <path
-                            d="M1.333 2.667C1.333 1.194 4.318 0 8 0s6.667 1.194 6.667 2.667V4c0 1.473-2.985 2.667-6.667 2.667S1.333 5.473 1.333 4V2.667z">
+                            d="M6.5 7.5a1 1 0 0 1 1-1h1a1 1 0 0 1 1 1v.938l.4 1.599a1 1 0 0 1-.416 1.074l-.93.62a1 1 0 0 1-1.109 0l-.93-.62a1 1 0 0 1-.415-1.074l.4-1.599V7.5zm2 0h-1v.938a1 1 0 0 1-.03.243l-.4 1.598.93.62.93-.62-.4-1.598a1 1 0 0 1-.03-.243z">
                         </path>
                         <path
-                            d="M1.333 6.334v3C1.333 10.805 4.318 12 8 12s6.667-1.194 6.667-2.667V6.334a6.51 6.51 0 0 1-1.458.79C11.81 7.684 9.967 8 8 8c-1.966 0-3.809-.317-5.208-.876a6.508 6.508 0 0 1-1.458-.79z">
-                        </path>
-                        <path
-                            d="M14.667 11.668a6.51 6.51 0 0 1-1.458.789c-1.4.56-3.242.876-5.21.876-1.966 0-3.809-.316-5.208-.876a6.51 6.51 0 0 1-1.458-.79v1.666C1.333 14.806 4.318 16 8 16s6.667-1.194 6.667-2.667z">
+                            d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2zm5.5-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H9v1H8v1h1v1H8v1h1v1H7.5V5h-1V4h1V3h-1V2h1z">
                         </path>
                     </svg>
-                    <h3>Scalable Architecture</h3>
-                    <p style="color: var(--bs-gray-500);font-size: 20px;">Robust backend that handles high-frequency
-                        data streams and supports large numbers of concurrent users.</p>
+                    <h3><span class="text-success">Compact</span> Format</h3>
+                    <p style="color: var(--bs-gray-500);font-size: 20px;">Benefit from quick serialization and
+                        deserialization, enhancing data transfer speed and reducing latency with MessagePack’s compact
+                        binary format. <small><span class="badge rounded-pill text-bg-light"
+                                style="color: black !important;">Soon</span></small></p>
                 </div>
             </div>
         </div><!-- End: 1 Row 3 Columns -->
@@ -130,28 +131,40 @@
     <section style="margin-top: 8%;">
         <!-- Start: 1 Row 1 Column -->
         <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1 class="text-center" style="--bs-body-font-weight: 1000;font-weight: bold;">How it works
-                    </h1>
-                    <img class="mt-3 img-fluid" src="assets/img/Pulsetracker-howto.svg" alt="How pulsetracker realtime location tracking for developers work">
-                </div>
-            </div>
             <div class="row mt-5">
                 <div class="col-md-12">
-                    <h1 class="text-center" style="--bs-body-font-weight: 1000;font-weight: bold;">Integrate tonight
+                    <h1 class="text-center" style="--bs-body-font-weight: 1000;font-weight: bold;">Integrate <span
+                            class="text-warning">this morning</span>
                     </h1>
                     <h4 class="text-center" style="color: var(--bs-gray-500);margin-top: 9px;padding-top: 20px;">
-                        <strong>Seamlessly
-                            integrate with Pulsetracker in just a few lines of code. Below are examples for Dart and
-                            python .</strong>
+                        <strong>Step 1: Broadcast locations to Pulsetracker in just a few lines of code.</strong>
                     </h4>
                     <div class="row">
                         <div class="col-12 col-md-6">
-                            <img src="/assets/img/dart.png" class="rounded img-fluid" alt="realtime location tracking using dart">
+                            <img src="/assets/img/Javascript-client-with-websockets-example.png" class="rounded img-fluid"
+                                alt="Real-time location tracking using javascript">
                         </div>
                         <div class="col-12 col-md-6">
-                            <img src="/assets/img/python.png" class="rounded img-fluid" alt="realtime location tracking using python">
+                            <img src="/assets/img/Python-client-with-UDP-example.png" class="rounded img-fluid"
+                                alt="Real-time location tracking using python">
+                        </div>
+                    </div>
+                    <h4 class="text-center" style="color: var(--bs-gray-500);margin-top: 9px;padding-top: 20px;">
+                        <strong>Step 2: Listen for realtime location updates in your applications.</strong>
+                    </h4>
+                    <div class="row">
+                        <div class="col-12 ">
+                            <img src="/assets/img/Javascript-listener-with-Pusher-example.png" class="rounded img-fluid"
+                                alt="Real-time location tracking using javascript">
+                        </div>
+                        <h1 class="text-center">OR </h1>
+                        <div class="col-12">
+                            <img src="/assets/img/Listen-for-realtime-updates-with-our-redis-server.png" class="rounded img-fluid"
+                                alt="Real-time location tracking using python">
+                        </div>
+                        <div class="col-12">
+                            <img src="/assets/img/Example-redis-subscriber-in-Laravel.png" class="rounded img-fluid"
+                                alt="Real-time location tracking using python">
                         </div>
                     </div>
                 </div>
@@ -167,10 +180,11 @@
                     <h4 class="text-center" style="color: var(--bs-gray-500);margin-top: 9px;padding-top: 20px;">
                         Pulsetracker puts you in
                         charge, offering complete control over how you track, manage, and dispatch location data.</h4>
-                    <img src="{{ url('assets/img/UHBAB8LJEMEKOJACOELDR9DRB8E7-1730810808626.png') }}" alt="Pulsetracker realtime location tracking for developers dashboard map"
+                    <img src="{{ url('assets/img/UHBAB8LJEMEKOJACOELDR9DRB8E7-1730810808626.png') }}"
+                        alt="Pulsetracker Real-time location tracking for developers dashboard map"
                         style="width: 100%;border-radius: 10px;margin-top: 3%; border: 2px solid #f3f3f3; ">
                     <h4 class="text-center mt-5" style="color: var(--bs-gray-500);margin-top: 9px;padding-top: 20px;">
-                        Location data is also transmitted to your WebSocket listener using the Pusher protocol.</h4>
+                        Location data is also transmitted to your listeners.</h4>
                     <div class="mt-5 p-3 rounded" style="border: 1px solid #3e3e3e;">
                         <small>
                             <pre>{
@@ -234,7 +248,8 @@
                                     <path
                                         d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05">
                                     </path>
-                                </svg><strong>&nbsp;{{ $subscriptions['enterprise']['size']['wesockets_limits'] ?? 'Unlimited' }} websockets
+                                </svg><strong>&nbsp;{{ $subscriptions['enterprise']['size']['wesockets_limits'] ?? 'Unlimited' }}
+                                    websockets
                                     connections</strong></li>
                             <li><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
                                     fill="currentColor" viewBox="0 0 16 16" class="bi bi-check-circle"

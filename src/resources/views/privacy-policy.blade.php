@@ -9,7 +9,7 @@
                     <div class="col-md-12">
                         <div class="text-white p-4 p-md-5">
                             <h1>Pulsetracker Privacy Policy</h1>
-                            <p><strong>Effective Date:</strong> 2024-10-04</p>
+                            <p><strong>Effective Date:</strong> 2024-12-02</p>
 
                             <h2>1. Introduction</h2>
                             <p>Pulsetracker ("we", "our", or "us") is committed to protecting your privacy. This Privacy
@@ -22,8 +22,7 @@
                                 <li><strong>Account Information:</strong> When you create an account, we collect your
                                     fullname,
                                     email address and password.</li>
-                                <li><strong>Device Information:</strong> We collect location data from devices linked to
-                                    your account to provide the location tracking service.</li>
+                                <li><strong>Device Information:</strong> We collect location data from devices linked to your account to deliver the location tracking service. This functionality is active only when Location Data Privacy Settings are enabled in your dashboard, allowing Pulsetracker to store location data in our database. If data storage is disabled, the Devices Locations API will no longer provide real-time updates, as Pulsetracker will not retain any location records.</li>
                                 <li><strong>Analytics Information:</strong> We use umami, an open-source analytics
                                     platform, to collect non-personal information such as visitor sources and page
                                     interactions to improve our service.</li>

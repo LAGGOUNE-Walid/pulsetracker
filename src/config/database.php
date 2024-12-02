@@ -174,7 +174,7 @@ return [
             'password' => env('PULSETRACKER_REDIS_PASSWORD'),
             'port' => env('PULSETRACKER_REDIS_PORT'),
             'database' => env('PULSETRACKER_REDIS_DB'),
-        ]
+        ],
 
     ],
 

@@ -31,17 +31,20 @@ class SetDeviceLastLocation implements ShouldQueue
      */
     public function handle(): void
     {
-        DeviceLastLocation::updateOrCreate(
-            ['device_id' => $this->device->id],
-            [
-                'ip_address' => $this->ip,
-                'app_id' => $this->app->id,
-                'app_key' => $this->app->key,
-                'device_key' => $this->device->key,
-                'location' => $this->point,
-                'user_id' => $this->app->user_id,
-                'extra_data' => $this->extraData,
-            ]
-        );
+        $this->app->load('user');
+        if ($this->app->user->save_locations_enabled) {
+            DeviceLastLocation::updateOrCreate(
+                ['device_id' => $this->device->id],
+                [
+                    'ip_address' => $this->ip,
+                    'app_id' => $this->app->id,
+                    'app_key' => $this->app->key,
+                    'device_key' => $this->device->key,
+                    'location' => $this->point,
+                    'user_id' => $this->app->user_id,
+                    'extra_data' => $this->extraData,
+                ]
+            );
+        }
     }
 }

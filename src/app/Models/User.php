@@ -14,8 +14,7 @@ use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use Billable, HasApiTokens, HasFactory, Notifiable, SoftDeletes;
-    use CrudTrait;
+    use Billable, HasApiTokens, HasFactory, Notifiable, SoftDeletes, CrudTrait;
 
     /**
      * The attributes that are mass assignable.
@@ -29,6 +28,7 @@ class User extends Authenticatable
         'provider',
         'provider_id',
         'email_verified_at',
+        'save_locations_enabled'
     ];
 
     /**

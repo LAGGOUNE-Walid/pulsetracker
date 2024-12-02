@@ -131,6 +131,22 @@
                                             d="M15.817.113A.5.5 0 0 1 16 .5v14a.5.5 0 0 1-.402.49l-5 1a.502.502 0 0 1-.196 0L5.5 15.01l-4.902.98A.5.5 0 0 1 0 15.5v-14a.5.5 0 0 1 .402-.49l5-1a.5.5 0 0 1 .196 0L10.5.99l4.902-.98a.5.5 0 0 1 .415.103M10 1.91l-4-.8v12.98l4 .8V1.91zm1 12.98 4-.8V1.11l-4 .8zm-6-.8V1.11l-4 .8v12.98z">
                                         </path>
                                     </svg> Map</span></a></li>
+                        <li style="margin-top: 10%;"><a href="{{ url('dashboard/tokens') }}"
+                                class="@if (Request::is('dashboard/tokens*')) selected @endif nav-link px-0 align-middle"><span
+                                    class="ms-1 d-none d-sm-inline"><svg xmlns="http://www.w3.org/2000/svg"
+                                        width="16" height="16" fill="currentColor" class="bi bi-key-fill"
+                                        viewBox="0 0 16 16">
+                                        <path
+                                            d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2M2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
+                                    </svg> Tokens</span></a></li>
+                        <li style="margin-top: 10%;"><a href="{{ url('dashboard/storage') }}"
+                                class="@if (Request::is('dashboard/storage*')) selected @endif nav-link px-0 align-middle"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" class="bi bi-floppy" viewBox="0 0 16 16">
+                                    <path d="M11 2H9v3h2z" />
+                                    <path
+                                        d="M1.5 0h11.586a1.5 1.5 0 0 1 1.06.44l1.415 1.414A1.5 1.5 0 0 1 16 2.914V14.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 14.5v-13A1.5 1.5 0 0 1 1.5 0M1 1.5v13a.5.5 0 0 0 .5.5H2v-4.5A1.5 1.5 0 0 1 3.5 9h9a1.5 1.5 0 0 1 1.5 1.5V15h.5a.5.5 0 0 0 .5-.5V2.914a.5.5 0 0 0-.146-.353l-1.415-1.415A.5.5 0 0 0 13.086 1H13v4.5A1.5 1.5 0 0 1 11.5 7h-7A1.5 1.5 0 0 1 3 5.5V1H1.5a.5.5 0 0 0-.5.5m3 4a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5V1H4zM3 15h10v-4.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5z" />
+                                </svg> Custom Storage</span></a></li>
                         <li style="margin-top: 10%;"><a href="{{ url('dashboard/settings') }}"
                                 class="@if (Request::is('dashboard/settings*')) selected @endif nav-link px-0 align-middle"><span
                                     class="ms-1 d-none d-sm-inline"><svg xmlns="http://www.w3.org/2000/svg"

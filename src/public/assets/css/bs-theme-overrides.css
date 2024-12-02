@@ -16,7 +16,7 @@
 .text-white {
   color: rgb(231, 233, 234, 1) !important;
 }
-input {
+input[type=text] {
   background: #16171C !important;
   border-style: solid !important;
   border-color: var(--bs-light) !important;
