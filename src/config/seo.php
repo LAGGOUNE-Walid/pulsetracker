@@ -59,7 +59,7 @@ return [
      *
      * You can use the following filetypes: ico, png, gif, jpeg, svg.
      */
-    'favicon' => config('app.url').'/assets/img/Circle Brand Identity.jpeg',
+    'favicon' => config('app.url').'/assets/img/Circle%20Brand%20Identity.jpeg',
 
     'title' => [
         /**
@@ -101,7 +101,7 @@ return [
          * This should be a path to an image. The url to the path is generated using the `secure_url()` function
          * (`secure_url($yourProvidedPath)`), so make sure the image is accessible from the public folder.
          */
-        'fallback' => config('app.url').'/assets/img/Circle Brand Identity.jpeg',
+        'fallback' => config('app.url').'/assets/img/Circle%20Brand%20Identity.jpeg',
     ],
 
     'author' => [
