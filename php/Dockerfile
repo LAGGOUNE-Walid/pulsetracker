@@ -13,12 +13,13 @@ RUN docker-php-serversideup-set-id www-data $USER_ID:$GROUP_ID && \
     \
     # Update the file permissions for our NGINX service to match the new UID/GID
     docker-php-serversideup-set-file-permissions --owner $USER_ID:$GROUP_ID --service nginx
-USER www-data
+
 COPY ./src /var/www/html
-# RUN chgrp -R www-data storage bootstrap/cache
-# RUN chown -R www-data:www-data storage bootstrap/cache
-# RUN chown -R www-data:www-data storage/app
-# RUN chown -R www-data:www-data storage/logs
+RUN chgrp -R www-data storage bootstrap/cache
+RUN chown -R www-data:www-data storage bootstrap/cache
+RUN chown -R www-data:www-data storage/app
+RUN chown -R www-data:www-data storage/logs
+USER www-data
 # RUN composer install --no-interaction --optimize-autoloader --no-dev
 # WORKDIR /var/www/html
 
