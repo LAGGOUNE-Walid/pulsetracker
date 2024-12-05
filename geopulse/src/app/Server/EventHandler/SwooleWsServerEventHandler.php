@@ -30,13 +30,18 @@ class SwooleWsServerEventHandler
 
     public function onMessage(Server $ws, Frame $frame): bool
     {
+        if ($frame->opcode === WEBSOCKET_OPCODE_PING) {
+            $pongFrame = new Frame;
+            $pongFrame->opcode = WEBSOCKET_OPCODE_PONG;
+            return $ws->push($frame->fd, $pongFrame);
+        }
         $packet = $this->wsPacketParser->fromString($frame->data, $this->clientIps[$frame->fd] ?? 'unknown');
         if ($packet === null) {
-            $ws->disconnect($frame->fd);
+            return $ws->disconnect($frame->fd);
         }
         if (! $this->appsDevicesTable->exists($packet->getAppId())) {
             $ws->disconnect($frame->fd);
-            $this->logger->notice('Could not find in table app id '.$packet->getAppId());
+            $this->logger->notice('Could not find in table app id ' . $packet->getAppId());
 
             return false;
         }
@@ -46,7 +51,7 @@ class SwooleWsServerEventHandler
         $appDevices = json_decode($appDataInCache['devicesKeys'], true);
         if (! in_array($packet->getClientId(), $appDevices)) {
             $ws->disconnect($frame->fd);
-            $this->logger->notice('Could not find device id '.$packet->getClientId());
+            $this->logger->notice('Could not find device id ' . $packet->getClientId());
 
             return false;
         }
@@ -54,7 +59,7 @@ class SwooleWsServerEventHandler
         // Verify if the user has more monthly quota
         if (! $this->usersQuotaTable->exists($appDataInCache['userId'])) {
             $ws->disconnect($frame->fd);
-            $this->logger->notice('Could not user id '.$appDataInCache['userId']);
+            $this->logger->notice('Could not user id ' . $appDataInCache['userId']);
 
             return false;
         }
@@ -69,7 +74,7 @@ class SwooleWsServerEventHandler
             return false;
         }
         if ($userQuotaInCache['left'] === 0) {
-            $this->logger->notice('User id '.$appDataInCache['userId'].' quota exceeded');
+            $this->logger->notice('User id ' . $appDataInCache['userId'] . ' quota exceeded');
         }
         $this->usersQuotaTable->decr($appDataInCache['userId'], 'left');
 
