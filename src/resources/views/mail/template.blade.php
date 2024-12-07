@@ -1,45 +1,45 @@
 <!DOCTYPE html>
-<html data-bs-theme="light" lang="en">
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <meta name="twitter:description"
-        content="Pulsetracker, the cutting-edge solution for real-time location tracking designed for developers and businesses. Our eco-friendly service uses the efficient UDP protocol to minimize mobile power consumption while delivering accurate location updates. Pulsetracker offers seamless integration with WebSockets for real-time data dispatch, comprehensive API access, and robust tracking features. Whether you're building a new app or enhancing existing services, Pulsetracker's scalable solutions and flexible pricing plans ensure you get the most reliable and cost-effective location tracking. Start with our free plan and scale up as your needs grow. Try Pulsetracker today and experience unparalleled location tracking performance.">
-    <meta name="twitter:image" content="{{ url('assets/img/Circle%20Brand%20Identity.jpeg') }}">
-    <meta property="og:image" content="{{ url('assets/img/Circle%20Brand%20Identity.jpeg') }}">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Pulsetracker">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="description"
-        content="Pulsetracker, the cutting-edge solution for real-time location tracking designed for developers and businesses. Our eco-friendly service uses the efficient UDP protocol to minimize mobile power consumption while delivering accurate location updates. Pulsetracker offers seamless integration with WebSockets for real-time data dispatch, comprehensive API access, and robust tracking features. Whether you're building a new app or enhancing existing services, Pulsetracker's scalable solutions and flexible pricing plans ensure you get the most reliable and cost-effective location tracking. Start with our free plan and scale up as your needs grow. Try Pulsetracker today and experience unparalleled location tracking performance.">
-    <link rel="icon" type="image/jpeg" sizes="720x720"
-        href="{{ url('assets/img/Circle%20Brand%20Identity.jpeg') }}">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/darkly/bootstrap.min.css">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&amp;display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alatsi&amp;display=swap">
-    <link rel="stylesheet" href="{{ url('assets/css/bs-theme-overrides.css') }}">
-    <link rel="stylesheet" href="{{ url('assets/css/Banner-Heading-Image-images.css') }}">
-    <link rel="stylesheet" href="{{ url('assets/css/Navbar-Centered-Brand-Dark-icons.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pulsetracker Email</title>
 </head>
 
-<body style="--bs-body-bg: black;">
-    <!-- Start: 1 Row 1 Column -->
-    <div class="container" style="margin-top: 5%;">
-        <div class="row justify-content-center">
-            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
-                <h3><img src="{{ url('assets/img/Circle%20Brand%20Identity.jpeg') }}" width="70" height="70"
-                        style="width: 70px;height: 70px;">Pulsetracker</h3>
-                <hr style="margin-top: 5%;">
-                @yield('content')
-                <hr style="margin-top: 5%;">
-            </div>
-        </div>
-    </div><!-- End: 1 Row 1 Column -->
-    <x-footer/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<body style="margin: 0; padding: 0; background-color: #000; color: #E7E9EA; font-family: Arial, sans-serif; line-height: 1.6;">
+
+    <!-- Wrapper -->
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #000; margin: 0; padding: 0; width: 100%;">
+        <tr>
+            <td align="center" style="padding: 20px;">
+                <!-- Email Container -->
+                <table width="600" cellpadding="0" cellspacing="0" border="0" style="background-color: #16171C; border-radius: 10px; overflow: hidden; width: 100%; max-width: 600px;">
+                    <tr>
+                        <!-- Header -->
+                        <td align="center" style="padding: 20px; text-align: left; background-color: #000;">
+                            <img src="{{ url('assets/img/Circle%20Brand%20Identity.jpeg') }}" alt="Pulsetracker Logo" width="70" height="70" style="display: block; margin-bottom: 10px;">
+                            <h3 style="margin: 0; color: #E7E9EA; font-size: 24px;">Pulsetracker</h3>
+                        </td>
+                    </tr>
+                    <tr>
+                        <!-- Content -->
+                        <td style="padding: 20px; text-align: left; color: #E7E9EA; font-size: 16px;">
+                            <hr style="border: none; border-top: 1px solid rgba(255, 255, 255, 0.1); margin: 20px 0;">
+                            @yield('content')
+                            <hr style="border: none; border-top: 1px solid rgba(255, 255, 255, 0.1); margin: 20px 0;">
+                        </td>
+                    </tr>
+                    <tr>
+                        <!-- Footer -->
+                        <td align="center" style="padding: 20px; text-align: center; font-size: 12px; color: rgba(255, 255, 255, 0.6); background-color: #16171C;">
+                            © 2024 Pulsetracker. All rights reserved.
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
 </body>
 
 </html>
