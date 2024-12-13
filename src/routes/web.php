@@ -164,3 +164,6 @@ Route::group(['prefix' => 'blogs'], function () {
     Route::GET('/', [BlogController::class, 'index']);
     Route::GET('/blog/{slug}', [BlogController::class, 'get']);
 });
+Route::GET("docs/api", function() {
+    return redirect("https://docs.pulsestracker.com");
+});
