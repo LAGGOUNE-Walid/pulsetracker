@@ -3,7 +3,7 @@
         <ul class="list-inline">
             <li class="list-inline-item me-4"><h5><a class="link-light" href="{{ url('terms-of-use') }}">Terms of Service</a></h5></li>
             <li class="list-inline-item me-4"><h5><a class="link-light" href="{{ url('privacy-policy') }}">Privacy Policy</a></h5></li>
-            <li class="list-inline-item me-4"><h5><a class="link-light" href="{{ url('docs/api') }}">API
+            <li class="list-inline-item me-4"><h5><a class="link-light" href="{{ url('https://docs.pulsestracker.com') }}">API
                     Documentation</a></h5></li>
             <li class="list-inline-item"><h5><a class="link-light" href="mailto:contact@pulsestracker.com">Contact Us</a></h5></li>
         </ul>

@@ -60,7 +60,7 @@
                             href="{{ url('blogs') }}" style="color: white;">Blog</a></li>
                     <li class="nav-item" style="color: white;margin-right: 15px;"><a class="nav-link active"
                             href="{{ url('about') }}" style="color: white;">About</a></li>
-                    <li class="nav-item" style="color: white;"><a class="nav-link active" href="{{ url('docs/api') }}"
+                    <li class="nav-item" style="color: white;"><a class="nav-link active" href="{{ url('https://docs.pulsestracker.com') }}"
                             style="color: white;margin-right: 15px;">Docs</a></li>
                     <li class="nav-item" style="color: white;"><a class="nav-link active" href="{{url('/#pricing')}}"
                             style="color: white;">Pricing</a></li>
