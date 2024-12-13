@@ -57,7 +57,7 @@
             <div class="collapse navbar-collapse" id="navcol-3" style="color: white;">
                 <ul class="navbar-nav mx-auto" style="color: white;">
                     <li class="nav-item" style="color: white;margin-right: 15px;"><a class="nav-link active"
-                            href="{{ url('blogs') }}" style="color: white;">Blog</a></li>
+                            href="https://blog.pulsestracker.com" style="color: white;">Blog</a></li>
                     <li class="nav-item" style="color: white;margin-right: 15px;"><a class="nav-link active"
                             href="{{ url('about') }}" style="color: white;">About</a></li>
                     <li class="nav-item" style="color: white;"><a class="nav-link active" href="{{ url('https://docs.pulsestracker.com') }}"

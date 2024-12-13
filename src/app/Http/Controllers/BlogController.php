@@ -8,8 +8,9 @@ use Illuminate\Http\Request;
 
 class BlogController extends Controller
 {
-    public function index(Request $request): View
+    public function index(Request $request)
     {
+        return redirect("https://blog.pulsestracker.com");
         $blogs = Blog::orderByDesc('id')->paginate(24);
 
         return view('blogs', ['blogs' => $blogs]);
