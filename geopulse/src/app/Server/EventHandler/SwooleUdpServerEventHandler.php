@@ -4,11 +4,12 @@ namespace Pulse\Server\EventHandler;
 
 use Monolog\Logger;
 use Pulse\Contracts\PacketParser\Packet;
+use Pulse\Contracts\Server\UdpEventsHandler;
 use Pulse\Services\BroadcastPacketService;
 use Swoole\Server;
 use Swoole\Table;
 
-class SwooleUdpServerEventHandler
+class SwooleUdpServerEventHandler implements UdpEventsHandler
 {
     public function __construct(
         private Packet $udpPacketParser,

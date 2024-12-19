@@ -4,13 +4,14 @@ namespace Pulse\Server\EventHandler;
 
 use Illuminate\Database\Capsule\Manager as DB;
 use Illuminate\Queue\Capsule\Manager as Queue;
+use Pulse\Contracts\Server\RedisEventsHandler;
 use Pulse\Traits\SwooleRedisServerSubscriberAuth;
 use Swoole\Process;
 use Swoole\Redis\Server as SwooleRedisServer;
 use Swoole\Server;
 use Swoole\Table;
 
-class SwooleRedisServerEventHandler
+class SwooleRedisServerEventHandler implements RedisEventsHandler
 {
     use SwooleRedisServerSubscriberAuth;
 
@@ -47,6 +48,7 @@ class SwooleRedisServerEventHandler
 
         $this->attachSubscriberToChannel($fd, $channel);
         $this->attachChannelToSubscriber($fd, $channel);
+
         return $this->server->send($fd, SwooleRedisServer::format(SwooleRedisServer::SET, ['subscribe', $channel, 1]));
     }
 
@@ -101,7 +103,7 @@ class SwooleRedisServerEventHandler
                     $job->delete();
                 }
                 foreach ($this->subscribersAppTable as $subscriber => $channel) {
-                    $this->server->send($subscriber, SwooleRedisServer::format(SwooleRedisServer::SET, ["pong", "", ""]));
+                    $this->server->send($subscriber, SwooleRedisServer::format(SwooleRedisServer::SET, ['pong', '', '']));
                 }
 
                 usleep(500000);
@@ -111,6 +113,6 @@ class SwooleRedisServerEventHandler
 
     public function ping(int $fd, array $data): void
     {
-        $this->server->send($fd, SwooleRedisServer::format(SwooleRedisServer::STRING, "pong"));
+        $this->server->send($fd, SwooleRedisServer::format(SwooleRedisServer::STRING, 'pong'));
     }
 }

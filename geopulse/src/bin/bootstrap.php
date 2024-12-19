@@ -12,9 +12,15 @@ use Monolog\Logger;
 use Pulse\Actions\BroadcastPacketAction;
 use Pulse\Actions\EnqueuePacketAction;
 use Pulse\Pool\QueueConnectionPool;
+use Pulse\Server\Custom\Gps103Server;
+use Pulse\Server\Custom\RedisServer;
+use Pulse\Server\Custom\UdpServer;
+use Pulse\Server\Custom\WsServer;
+use Pulse\Server\EventHandler\SwooleGps103TcpServerEventHandler;
 use Pulse\Server\EventHandler\SwooleRedisServerEventHandler;
 use Pulse\Server\EventHandler\SwooleUdpServerEventHandler;
 use Pulse\Server\EventHandler\SwooleWsServerEventHandler;
+use Pulse\Server\PacketParser\Gps103PacketParser;
 use Pulse\Server\PacketParser\UdpPacketParser;
 use Pulse\Server\PacketParser\WsPacketParser;
 use Pulse\Services\BroadcastPacketService;
@@ -108,6 +114,16 @@ $appsDevicesTable->column('devicesKeys', Swoole\Table::TYPE_STRING, $largestDevi
 $appsDevicesTable->column('userId', Swoole\Table::TYPE_INT);
 $appsDevicesTable->create();
 
+$devices = $db->table('devices')->get();
+$deviceAppsTable = new Swoole\Table($devices->count() + 1024);
+$deviceAppsTable->column('appKey', Swoole\Table::TYPE_STRING, 36);
+$deviceAppsTable->column('userId', Swoole\Table::TYPE_INT);
+$deviceAppsTable->create();
+
+foreach ($devices as $device) {
+    $deviceAppsTable->set($device->key, ['appKey' => $device->app_key, 'userId' => $device->user_id]);
+}
+
 $usersQuotaTable = new Swoole\Table($db->table('users')->whereNotNull('email_verified_at')->count() * 2);
 $usersQuotaTable->column('quota', Swoole\Table::TYPE_INT);
 $usersQuotaTable->column('used', Swoole\Table::TYPE_INT);
@@ -126,7 +142,7 @@ foreach ($apps as $app) {
 }
 if ($usersIds !== []) {
 
-    $response = $httpClient->request('GET', $config['api_server'] . '/api/users/quota?' . http_build_query(['ids' => $usersIds]));
+    $response = $httpClient->request('GET', $config['api_server'].'/api/users/quota?'.http_build_query(['ids' => $usersIds]));
     if ($response->getStatusCode() == 200) {
         $usersQuotaResponse = json_decode($response->getBody(), true);
         if ($usersQuotaResponse) {
@@ -157,6 +173,7 @@ unset($apps);
 
 $container->add(UdpPacketParser::class)->addArgument($config['use-msgPack']);
 $container->add(WsPacketParser::class)->addArgument($config['use-msgPack']);
+$container->add(Gps103PacketParser::class);
 
 $logger = $container->get(Logger::class);
 
@@ -181,6 +198,13 @@ $container->add(SwooleRedisServerEventHandler::class)
     ->addArgument($db)
     ->addArgument($container->get(Queue::class));
 
+$container->add(SwooleGps103TcpServerEventHandler::class)
+    ->addArgument(Gps103PacketParser::class)
+    ->addArgument(BroadcastPacketService::class)
+    ->addArgument($deviceAppsTable)
+    ->addArgument($usersQuotaTable)
+    ->addArgument($logger);
+
 \Sentry\init([
     'dsn' => 'https://edf86eb6486765d336450b383fdd60b0@o4508063795904512.ingest.de.sentry.io/4508063843876944',
     // Specify a fixed sample rate
@@ -189,7 +213,14 @@ $container->add(SwooleRedisServerEventHandler::class)
     'profiles_sample_rate' => 1.0,
 ]);
 
-$logger->debug('Servers starting');
-$swooleUdpEventsHandler = $container->get(SwooleUdpServerEventHandler::class);
-$swooleWsEventsHandler = $container->get(SwooleWsServerEventHandler::class);
-$swooleRedisServerEventsHandler = $container->get(SwooleRedisServerEventHandler::class);
+// $swooleUdpEventsHandler = $container->get(SwooleUdpServerEventHandler::class);
+// $swooleWsEventsHandler = $container->get(SwooleWsServerEventHandler::class);
+// $swooleRedisServerEventsHandler = $container->get(SwooleRedisServerEventHandler::class);
+// $swooleGps103TcpServerEventHandler = $container->get(SwooleGps103TcpServerEventHandler::class);
+
+$container->add(UdpServer::class);
+$container->add(WsServer::class);
+$container->add(RedisServer::class);
+$container->add(Gps103Server::class);
+
+// $logger->debug('Servers starting');

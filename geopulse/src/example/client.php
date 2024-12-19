@@ -6,7 +6,7 @@ use function Swoole\Coroutine\run;
 
 run(function () {
     $client = new Client(SWOOLE_SOCK_UDP);
-    if (! $client->connect('udp-tracking.pulsestracker.com', 9506, 0.5)) {
+    if (! $client->connect('127.0.0.1', 9505, 0.5)) {
         echo "connect failed. Error: {$client->errCode}\n";
     }
 

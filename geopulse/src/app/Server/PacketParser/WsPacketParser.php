@@ -69,7 +69,7 @@ class WsPacketParser implements Packet
         return null;
     }
 
-    public function dataIsValide(array $data): bool
+    public function dataIsValide(array $data = []): bool
     {
         return array_key_exists('appId', $data) and array_key_exists('clientId', $data) and array_key_exists('data', $data);
     }

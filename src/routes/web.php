@@ -152,10 +152,10 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {
 
         return $request->all();
     });
-    Route::group(['prefix' => "tokens"], function() {
+    Route::group(['prefix' => 'tokens'], function () {
         Route::GET('/', [UserTokensController::class, 'index']);
     });
-    Route::group(['prefix' => "storage"], function() {
+    Route::group(['prefix' => 'storage'], function () {
         Route::GET('/', [StorageController::class, 'index']);
         Route::POST('/ldps', [StorageController::class, 'ldps']);
     });
@@ -164,6 +164,6 @@ Route::group(['prefix' => 'blogs'], function () {
     Route::GET('/', [BlogController::class, 'index']);
     Route::GET('/blog/{slug}', [BlogController::class, 'get']);
 });
-Route::GET("docs/api", function() {
-    return redirect("https://docs.pulsestracker.com");
+Route::GET('docs/api', function () {
+    return redirect('https://docs.pulsestracker.com');
 });

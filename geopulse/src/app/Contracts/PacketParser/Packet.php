@@ -20,10 +20,10 @@ interface Packet
     /**
      * Check if sended data are valide and ready to parse
      *
-     * @param  array<string>  $data
+     * @param  ?array<string>  $data
      * @return bool if data is valide.
      */
-    public function dataIsValide(array $data): bool;
+    public function dataIsValide(array $data = []): bool;
 
     /**
      * Retrieve the App ID included in the packet.

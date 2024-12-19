@@ -2,31 +2,57 @@
 
 use Illuminate\Queue\Capsule\Manager as Queue;
 use League\Container\Container;
+use Pulse\Server\Custom\Gps103Server;
+use Pulse\Server\Custom\RedisServer;
+use Pulse\Server\Custom\UdpServer;
+use Pulse\Server\Custom\WsServer;
+use Pulse\Server\EventHandler\SwooleGps103TcpServerEventHandler;
 use Pulse\Server\EventHandler\SwooleRedisServerEventHandler;
 use Pulse\Server\EventHandler\SwooleUdpServerEventHandler;
 use Pulse\Server\EventHandler\SwooleWsServerEventHandler;
 use Swoole\Process\Manager;
 use Swoole\Process\Pool;
-use Swoole\Redis\Server as SwooleRedisServer;
-use Swoole\Server;
 
 require 'bin/bootstrap.php';
 
-function startSwooleRedisServer(SwooleRedisServerEventHandler $swooleRedisServerEventsHandler)
-{
-    $server = new SwooleRedisServer('0.0.0.0', 6378, SWOOLE_BASE);
-    $swooleRedisServerEventsHandler->setServer($server);
-    @$server->setHandler('PING', [$swooleRedisServerEventsHandler, 'ping']);
-    @$server->setHandler('info', [$swooleRedisServerEventsHandler, 'emptyResponse']);
-    @$server->setHandler('GET', [$swooleRedisServerEventsHandler, 'emptyResponse']);
-    @$server->setHandler('AUTH', [$swooleRedisServerEventsHandler, 'emptyResponse']);
-    @$server->setHandler('SELECT', [$swooleRedisServerEventsHandler, 'emptyResponse']);
-    @$server->setHandler('SUBSCRIBE', [$swooleRedisServerEventsHandler, 'subscribe']);
-    $server->on('close', [$swooleRedisServerEventsHandler, 'unsubscribe']);
-    $server->addProcess($swooleRedisServerEventsHandler->getListenerProcess());
+$pm = new Manager;
+$pm->add(function (Pool $pool, int $workerId) use ($config, $container) {
+    $udpServer = $container->get(UdpServer::class)->setAddress('0.0.0.0')->setPort(9505)->create();
+    $udpServer->setEventsHandler($container->get(SwooleUdpServerEventHandler::class));
+    $udpServer->setConfig($config['swoole']);
+    $udpServer->start();
+});
 
-    $server->start();
-}
+$pm->add(function (Pool $pool, int $workerId) use ($config, $container) {
+    $wsServer = $container->get(WsServer::class)->setAddress('0.0.0.0')->setPort(9509)->create();
+    $wsServer->setEventsHandler($container->get(SwooleWsServerEventHandler::class));
+    $wsServer->setConfig($config['swoole']);
+    $wsServer->start();
+});
+
+$pm->add(function (Pool $pool, int $workerId) use ($container) {
+    $swooleRedisServerEventsHandler = $container->get(SwooleRedisServerEventHandler::class);
+    $redisServer = $container->get(RedisServer::class)->setAddress('0.0.0.0')->setPort(6378)->create();
+    $redisServer->setEventsHandler($swooleRedisServerEventsHandler);
+    $redisServer->getServer()->addProcess($swooleRedisServerEventsHandler->getListenerProcess());
+    $redisServer->start();
+});
+
+$pm->add(function (Pool $pool, int $workerId) use ($config, $container) {
+    $gps103server = $container->get(Gps103Server::class)->setAddress('0.0.0.0')->setPort(5001)->create();
+    $gps103server->setEventsHandler($container->get(SwooleGps103TcpServerEventHandler::class));
+    $gps103server->setConfig($config['gps103']);
+    $gps103server->start();
+});
+
+$pm->add(function () use ($httpClient) {
+    try {
+        $httpClient->request('GET', 'https://uptime.betterstack.com/api/v1/heartbeat/fEzyiyJf3hSET2RkiKv8CrWT');
+    } catch (\Throwable $th) {
+        \Sentry\captureException($th);
+    }
+    sleep(1 * 60);
+});
 
 function startQueueWorker($appsDevicesTable, $usersQuotaTable, Container $container)
 {
@@ -47,53 +73,8 @@ function startQueueWorker($appsDevicesTable, $usersQuotaTable, Container $contai
         usleep(500000);
     }
 }
-
-function startUdpServer(array $config, SwooleUdpServerEventHandler $swooleUdpEventsHandler)
-{
-    $server = new Server(
-        '0.0.0.0',
-        $config['port'],
-        SWOOLE_PROCESS,
-        SWOOLE_SOCK_UDP
-    );
-    $server->set($config['swoole']);
-    $server->on('Packet', [$swooleUdpEventsHandler, 'onPacket']);
-    $server->start();
-}
-
-function startWsServer(array $config, SwooleWsServerEventHandler $swooleWsServerEventHandler)
-{
-    $ws = new Swoole\WebSocket\Server('0.0.0.0', $config['ws_port']);
-    $ws->set($config['swoole']);
-    $ws->on('Open', [$swooleWsServerEventHandler, 'onOpen']);
-    $ws->on('Message', [$swooleWsServerEventHandler, 'onMessage']);
-    $ws->on('Close', [$swooleWsServerEventHandler, 'onClose']);
-    $ws->start();
-}
-
-$pm = new Manager;
-$pm->add(function (Pool $pool, int $workerId) use ($config, $swooleUdpEventsHandler) {
-    startUdpServer($config, $swooleUdpEventsHandler);
-});
 $pm->add(function (Pool $pool, int $workerId) use ($appsDevicesTable, $container, $usersQuotaTable) {
     startQueueWorker($appsDevicesTable, $usersQuotaTable, $container);
-});
-
-$pm->add(function (Pool $pool, int $workerId) use ($config, $swooleWsEventsHandler) {
-    startWsServer($config, $swooleWsEventsHandler);
-});
-
-$pm->add(function (Pool $pool, int $workerId) use ($swooleRedisServerEventsHandler) {
-    startSwooleRedisServer($swooleRedisServerEventsHandler);
-});
-
-$pm->add(function () use ($httpClient) {
-    try {
-        $httpClient->request('GET', 'https://uptime.betterstack.com/api/v1/heartbeat/fEzyiyJf3hSET2RkiKv8CrWT');
-    } catch (\Throwable $th) {
-        \Sentry\captureException($th);
-    }
-    sleep(1 * 60);
 });
 
 $pm->start();

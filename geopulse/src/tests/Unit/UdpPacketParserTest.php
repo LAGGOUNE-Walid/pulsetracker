@@ -15,7 +15,7 @@ final class UdpPacketParserTest extends TestCase
     {
         $udpPacketParser = new UdpPacketParser(true);
         $data = msgpack_pack(['appId' => 123, 'clientId' => 123, 'data' => []]);
-        $packet = $udpPacketParser->fromString($data);
+        $packet = $udpPacketParser->fromString($data, '123');
         $this->assertEquals($packet->getAppId(), 123);
     }
 
@@ -23,7 +23,7 @@ final class UdpPacketParserTest extends TestCase
     {
         $udpPacketParser = new UdpPacketParser(false);
         $data = json_encode(['appId' => 123, 'clientId' => 123, 'data' => []]);
-        $packet = $udpPacketParser->fromString($data);
+        $packet = $udpPacketParser->fromString($data, '123');
         $this->assertEquals($packet->getAppId(), 123);
     }
 
@@ -31,7 +31,7 @@ final class UdpPacketParserTest extends TestCase
     {
         $udpPacketParser = new UdpPacketParser(false);
         $data = '{"data":{"type":"Point","coordinates":[1,1]},"appId":"22f8e456-93f2-4173-8f2d-8a010abcceb1","clientId":"22f8e456-93f2-4173-8f2d-8a010abcceb1"}';
-        $packet = $udpPacketParser->fromString($data);
+        $packet = $udpPacketParser->fromString($data, '123');
         $this->assertEquals('22f8e456-93f2-4173-8f2d-8a010abcceb1', $packet->getAppId());
     }
 
@@ -39,7 +39,7 @@ final class UdpPacketParserTest extends TestCase
     {
         $udpPacketParser = new UdpPacketParser(false);
         $data = '{"data":{"type":"Point","coordinates":[1,1]},"appId":"22f8e456-93f2-4173-8f2d-8a010abcceb1","clientId":"22f8e456-93f2-4173-8f2d-8a010abcceb1"}';
-        $packet = $udpPacketParser->fromString($data);
+        $packet = $udpPacketParser->fromString($data, '123');
         $this->assertTrue($packet->toPoint() instanceof Point);
     }
 
@@ -47,7 +47,7 @@ final class UdpPacketParserTest extends TestCase
     {
         $udpPacketParser = new UdpPacketParser(false);
         $data = '';
-        $packet = $udpPacketParser->fromString($data);
+        $packet = $udpPacketParser->fromString($data, '123');
         $this->assertEquals(null, $packet);
     }
 
@@ -55,7 +55,7 @@ final class UdpPacketParserTest extends TestCase
     {
         $udpPacketParser = new UdpPacketParser(false);
         $data = '{"data":{},"appId":"22f8e456-93f2-4173-8f2d-8a010abcceb1","clientId":"22f8e456-93f2-4173-8f2d-8a010abcceb1"}';
-        $packet = $udpPacketParser->fromString($data);
+        $packet = $udpPacketParser->fromString($data, '123');
         $this->assertEquals([0, 0], $packet->toPoint()->getCoordinates());
     }
 
@@ -63,8 +63,8 @@ final class UdpPacketParserTest extends TestCase
     {
         $udpPacketParser = new UdpPacketParser(false);
         $data = '{"data":{"type":"Point"},"appId":"22f8e456-93f2-4173-8f2d-8a010abcceb1","clientId":"22f8e456-93f2-4173-8f2d-8a010abcceb1"}';
-        $packet = $udpPacketParser->fromString($data);
+        $packet = $udpPacketParser->fromString($data, '123');
         $this->assertEquals($packet->toPoint()->getCoordinates(), [0, 0]);
-        $this->assertEquals('{"point":{"type":"Point","coordinates":[0,0]},"appId":"22f8e456-93f2-4173-8f2d-8a010abcceb1","clientId":"22f8e456-93f2-4173-8f2d-8a010abcceb1"}', $packet->toJson());
+        $this->assertEquals('{"point":{"type":"Point","coordinates":[0,0]},"appId":"22f8e456-93f2-4173-8f2d-8a010abcceb1","clientId":"22f8e456-93f2-4173-8f2d-8a010abcceb1","ip":"123","extraData":[]}', $packet->toJson());
     }
 }
