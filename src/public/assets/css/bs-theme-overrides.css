@@ -23,3 +23,7 @@ input[type=text] {
   font-size: 24px !important; 
   color: var(--bs-body-color) !important;
 }
+
+--bs-nav-link-font-size {
+  
+}

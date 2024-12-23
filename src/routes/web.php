@@ -37,6 +37,9 @@ Route::GET('/terms-of-use', function () {
 Route::GET('/privacy-policy', function () {
     return view('privacy-policy');
 });
+Route::GET('use-cases', function() {
+    return view('use-cases');
+});
 Route::GET('/subscribe-plan-to-free', [UserSubscriptionController::class, 'moveToFree'])->middleware('auth');
 Route::GET('subscribe-to/{plan}', [UserSubscriptionController::class, 'subscribe'])->middleware('auth');
 Route::POST('subscription-cancel/{type}', [UserSubscriptionController::class, 'cancel'])->middleware('auth');

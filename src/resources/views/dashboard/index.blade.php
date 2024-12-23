@@ -11,26 +11,28 @@
                     </div>
                     <div class="col col-6">
                         <b>
-                            @if ($user->subscribedToPrice(config('stripe-subscriptions.plans.pro.price_id'), config('stripe-subscriptions.plans.pro.product_id')))
-                                PRO
-                                <?php $plan = config('stripe-subscriptions.plans.pro'); ?>
-                            @elseif($user->subscribedToPrice(config('stripe-subscriptions.plans.enterprise.price_id'), config('stripe-subscriptions.plans.enterprise.product_id')))
-                                ENTERPRISE
-                                <?php $plan = config('stripe-subscriptions.plans.enterprise'); ?>
-                            @else
-                                FREE
-                                <?php $plan = config('stripe-subscriptions.plans.free'); ?>
+                            <?php $plans = config('stripe-subscriptions.plans'); $userPlan = null; ?>
+                            @foreach($plans as $plan)
+                                @if ($user->subscribedToPrice($plan['price_id'], $plan['product_id']))
+                                    {{ ucfirst($plan['name']) }}
+                                    
+                                    <?php $userPlan = $plan; ?>
+                                    
+                                @endif
+                            @endforeach
+                            @if(! $userPlan)
+                                <?php $userPlan =  config('stripe-subscriptions.plans.free'); ?>
                             @endif
                         </b>
                     </div>
                     <div class="col col-6">
-                        Applications {{ $user->apps_count }}/{{ $plan['size']['apps'] ?? 'UNLIMITED' }}
+                        Applications {{ $user->apps_count }}/{{ $userPlan['size']['apps'] ?? 'UNLIMITED' }}
                     </div>
                     <div class="col col-6">
                         <div class="progress">
                             @php
-                                if ($plan['size']['apps']) {
-                                    $plansPercentage = ($user->apps_count / $plan['size']['apps']) * 100;
+                                if ($userPlan['size']['apps']) {
+                                    $plansPercentage = ($user->apps_count / $userPlan['size']['apps']) * 100;
                                 } else {
                                     $plansPercentage = 0;
                                 }
@@ -41,13 +43,13 @@
                         </div>
                     </div>
                     <div class="col col-6">
-                        Devices {{ $user->devices_count }}/{{ $plan['size']['devices'] ?? 'UNLIMITED' }}
+                        Devices {{ $user->devices_count }}/{{ $userPlan['size']['devices'] ?? 'UNLIMITED' }}
                     </div>
                     <div class="col col-6">
                         <div class="progress">
                             @php
-                                if ($plan['size']['devices']) {
-                                    $devicesPercentage = ($user->devices_count / $plan['size']['devices']) * 100;
+                                if ($userPlan['size']['devices']) {
+                                    $devicesPercentage = ($user->devices_count / $userPlan['size']['devices']) * 100;
                                 } else {
                                     $devicesPercentage = 0;
                                 }
@@ -58,18 +60,18 @@
                     </div>
                     <div class="col col-6">
                         Messages this month
-                        {{ number_format($user->currentUsage->messages_sent ?? 0) }}/{{ $plan['size']['messages_per_month'] ? number_format($plan['size']['messages_per_month']) : 'UNLIMITED' }}
+                        {{ number_format($user->currentUsage->messages_sent ?? 0) }}/{{ $userPlan['size']['messages_per_month'] ? number_format($userPlan['size']['messages_per_month']) : 'UNLIMITED' }}
                     </div>
                     <div class="col col-6">
                         <div class="progress">
                             @php
                                 if (
-                                    $plan['size']['messages_per_month'] and
+                                    $userPlan['size']['messages_per_month'] and
                                     $user->currentUsage->messages_sent
                                 ) {
                                     $messagesPercentage =
                                         ($user->locationsCounts->first()->messages_sent /
-                                            $plan['size']['messages_per_month']) *
+                                            $userPlan['size']['messages_per_month']) *
                                         100;
                                 } else {
                                     $messagesPercentage = 0;

@@ -63,6 +63,8 @@ class StripeHandledEventsListener implements ShouldQueue
 
     public function subscriptionUpdated(WebhookHandled $event): void
     {
+        dump(Subscription::where('stripe_id', $event->payload['data']['object']['id'])->get());
+        dump(Subscription::all());
         $subscription = Subscription::where('stripe_id', $event->payload['data']['object']['id'])
             ->whereHas('user')
             // ->where('stripe_status', StripeSubscription::STATUS_ACTIVE)

@@ -57,13 +57,18 @@
             <div class="collapse navbar-collapse" id="navcol-3" style="color: white;">
                 <ul class="navbar-nav mx-auto" style="color: white;">
                     <li class="nav-item" style="color: white;margin-right: 15px;"><a class="nav-link active"
-                            href="https://blog.pulsestracker.com" style="color: white;">Blog</a></li>
-                    <li class="nav-item" style="color: white;margin-right: 15px;"><a class="nav-link active"
                             href="{{ url('about') }}" style="color: white;">About</a></li>
-                    <li class="nav-item" style="color: white;"><a class="nav-link active" href="{{ url('https://docs.pulsestracker.com') }}"
+                    <li class="nav-item" style="color: white;margin-right: 15px;"><a class="nav-link active"
+                            href="{{ url('use-cases') }}" style="color: white;">Use cases</a></li>
+
+
+                    <li class="nav-item" style="color: white;"><a class="nav-link active"
+                            href="{{ url('https://docs.pulsestracker.com') }}"
                             style="color: white;margin-right: 15px;">Docs</a></li>
-                    <li class="nav-item" style="color: white;"><a class="nav-link active" href="{{url('/#pricing')}}"
-                            style="color: white;">Pricing</a></li>
+                    <li class="nav-item" style="color: white;"><a class="nav-link active" href="{{ url('/#pricing') }}"
+                            style="color: white;margin-right: 15px;">Pricing</a></li>
+                    <li class="nav-item" style="color: white;margin-right: 15px;"><a class="nav-link active"
+                            href="https://blog.pulsestracker.com" style="color: white;">Blog</a></li>
                 </ul>
                 @auth
                     <a class="btn btn-success" role="button" href="{{ url('dashboard') }}">Dashboard</a>
@@ -94,6 +99,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => hljs.highlightAll());
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
     </script>
 </body>
 
