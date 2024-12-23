@@ -12,14 +12,13 @@
                     $userPlan = null; ?>
                     @foreach ($plans as $plan)
                         @if ($user->subscribedToPrice($plan['price_id'], $plan['product_id']))
-                            {{ ucfirst($plan['name']) }}
-
                             <?php $userPlan = $plan; ?>
                         @endif
                     @endforeach
                     @if (!$userPlan)
                         <?php $userPlan = config('stripe-subscriptions.plans.free'); ?>
                     @endif
+                    {{ ucfirst($userPlan['name']) }}
                 </b>
             </div>
             <div class="col col-6">
