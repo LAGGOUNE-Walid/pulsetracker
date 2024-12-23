@@ -9,7 +9,7 @@
                     <div class="col-md-12">
                         <div class="text-white p-4 p-md-5">
                             <h1 class="mt-5">Pulsetracker Terms of Service</h1>
-                            <small>Last Updated: October 12, 2024</small>
+                            <small>Last Updated: December 23, 2024</small>
 
                             <p>Welcome to Pulsetracker! By using our service, you agree to comply with the following
                                 terms and conditions. If you do not agree, you should not use Pulsetracker.</p>
@@ -24,12 +24,9 @@
                                     href="https://stripe.com">Stripe</a>.
                                 <br />
                                 When you upgrade or downgrade your plan, you’ll be charged immediately, and your quota
-                                limits will adjust according to the new plan’s maximums. However, the usage won’t reset to
-                                zero.
+                                limits will adjust according to the new plan’s maximums.
                                 <br />
-                                Quotas reset at the beginning of each billing period. Canceled subscriptions remain
-                                active until the end
-                                of the billing period.
+                                Canceled subscriptions remain active until the end of the billing period.
                             </p>
                             <h1 class="mt-5">3.Refunds</h1>
                             <p>
@@ -38,8 +35,7 @@
                                 offer refunds for any subscription payments.
                                 <br />
                                 <br />
-                                This includes cases where a user consumes their account quota early or within a short
-                                period of time. Once a subscription is initiated, it will remain active until the end of
+                                Once a subscription is initiated, it will remain active until the end of
                                 the billing period, but no refunds will be processed under any circumstances.
                                 <br />
                                 <br />
