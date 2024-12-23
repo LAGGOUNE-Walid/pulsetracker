@@ -80,13 +80,22 @@ class UserSubscriptionController extends Controller
     {
         $subscriptions = config('stripe-subscriptions.plans');
         if (! array_key_exists($type, $subscriptions)) {
-            abort(404);
+            return abort(404);
         }
 
         $currentActiveSubscription = $request->user()->subscriptions()->active()->first();
-        $currentActiveSubscription->noProrate()->swapAndInvoice($subscriptions[$type]['price_id']);
+        if (! $currentActiveSubscription) {
+            return redirect(url('/#pricing'));
+        }
 
+        try {
+            $currentActiveSubscription->noProrate()->swapAndInvoice($subscriptions[$type]['price_id']);
+        } catch (\Exception $e) {
+            return redirect(url('/#pricing'))->withErrors('Failed to swap subscription: ' . $e->getMessage());
+        }
+        $currentActiveSubscription->noProrate()->swapAndInvoice($subscriptions[$type]['price_id']);
         return redirect(url('/#pricing'));
+
         // exit;
         $currentActiveSubscription = $request->user()->subscriptions()->active()->first();
         $currentActiveSubscription->cancelNow();

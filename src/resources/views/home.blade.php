@@ -2,12 +2,14 @@
 @section('title', 'Pulsetracker')
 @section('content')
     <!-- Start: Banner Heading Image -->
+
     <section class="text-primary py-4 py-xl-5">
         <!-- Start: 1 Row 2 Columns -->
         <div class="container">
             <div class="bg-dark border rounded border-0 border-dark overflow-hidden">
                 <div class="row g-0">
                     <div class="col-md-12">
+
                         <div class="text-white p-4 p-md-5">
                             <center>
                                 <h2 class="text-center fw-bold text-white mb-3" style="font-size: 3.5rem;">Real-Time Location
@@ -267,6 +269,14 @@
     <section style="margin-top: 8%;">
         <h1 style="text-align: center;" id="pricing">Pricing</h1>
         <h6 style="text-align: center;">All prices are in USD</h6>
+        @if ($errors->any())
+            <div class="alert alert-danger" role="alert">
+                @foreach ($errors->all() as $error)
+                    {{ $error }} <br/>
+                @endforeach
+            </div>
+        @endif
+
         <div class="container" style="margin-top: 3%;">
             <div class="row">
                 @foreach ($subscriptions as $plan)
@@ -379,14 +389,15 @@
                                     @auth
                                         @if (!auth()->user()->subscriptions()->active()->first()?->onGracePeriod())
                                             @if (auth()->user()->subscribedToPrice($plan['price_id'], $plan['product_id']))
-                                                <form action="{{ url('subscription-cancel/'.$plan['name']) }}" method="POST">
+                                                <form action="{{ url('subscription-cancel/' . $plan['name']) }}" method="POST">
                                                     @csrf
                                                     <button type="submit" class="btn btn-outline-danger"
                                                         style="width: 100%;">Cancel</button>
                                                 </form>
                                             @else
                                                 @if (auth()->user()->subscriptions()->active()->first() !== null)
-                                                    <form action="{{ url('subscription-swap/'.$plan['name']) }}" method="POST">
+                                                    <form action="{{ url('subscription-swap/' . $plan['name']) }}"
+                                                        method="POST">
                                                         @csrf
                                                         <button type="submit" class="btn btn-outline-success"
                                                             style="width: 100%;">Switch to this NOW</button>
@@ -397,8 +408,8 @@
                                                         </center>
                                                     </form>
                                                 @else
-                                                    <a href="{{ url('subscribe-to/'.$plan['name']) }}" class="btn btn-outline-light btn-lg"
-                                                        style="width: 100%;color: white;">
+                                                    <a href="{{ url('subscribe-to/' . $plan['name']) }}"
+                                                        class="btn btn-outline-light btn-lg" style="width: 100%;color: white;">
                                                         Subscribe
                                                     </a>
                                                 @endif

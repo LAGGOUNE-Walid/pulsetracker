@@ -75,18 +75,19 @@ class SwooleGps103TcpServerEventHandler implements Gps103EventsHandler
 
         $clientData = $this->connectedClients[$clientKey];
 
-        $userQuotaInCache = $this->usersQuotaTable->get($clientData['userId']);
-        if (
-            $userQuotaInCache['left'] < 0
-        ) {
-            $server->close($fd);
+        // $userQuotaInCache = $this->usersQuotaTable->get($clientData['userId']);
+        // if (
+        //     $userQuotaInCache['left'] < 0
+        // ) {
+        //     $server->close($fd);
 
-            return false;
-        }
-        if ($userQuotaInCache['left'] === 0) {
-            $this->logger->notice('User id '.$clientData['userId'].' quota exceeded');
-        }
-        $this->usersQuotaTable->decr($clientData['userId'], 'left');
+        //     return false;
+        // }
+        // if ($userQuotaInCache['left'] === 0) {
+        //     $this->logger->notice('User id '.$clientData['userId'].' quota exceeded');
+        // }
+        // $this->usersQuotaTable->decr($clientData['userId'], 'left');
+
         $packet->setAppId($clientData['appKey']);
         $this->broadcastPacketService->dropAndPopPacket($packet);
 

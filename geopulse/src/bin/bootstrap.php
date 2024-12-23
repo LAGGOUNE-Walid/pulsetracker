@@ -223,4 +223,4 @@ $container->add(WsServer::class);
 $container->add(RedisServer::class);
 $container->add(Gps103Server::class);
 
-// $logger->debug('Servers starting');
+$logger->debug('Servers starting');

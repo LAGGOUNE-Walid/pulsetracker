@@ -65,20 +65,20 @@ class SwooleWsServerEventHandler implements WsEventsHandler
 
             return false;
         }
-        $userQuotaInCache = $this->usersQuotaTable->get($appDataInCache['userId']);
-        if (
-            $userQuotaInCache['left'] < 0
-        ) {
-            // echo "No left quota in this month \n";
-            $ws->push($frame->fd, 'ERR_QUOTA');
-            $ws->disconnect($frame->fd);
+        // $userQuotaInCache = $this->usersQuotaTable->get($appDataInCache['userId']);
+        // if (
+        //     $userQuotaInCache['left'] < 0
+        // ) {
+        //     // echo "No left quota in this month \n";
+        //     $ws->push($frame->fd, 'ERR_QUOTA');
+        //     $ws->disconnect($frame->fd);
 
-            return false;
-        }
-        if ($userQuotaInCache['left'] === 0) {
-            $this->logger->notice('User id '.$appDataInCache['userId'].' quota exceeded');
-        }
-        $this->usersQuotaTable->decr($appDataInCache['userId'], 'left');
+        //     return false;
+        // }
+        // if ($userQuotaInCache['left'] === 0) {
+        //     $this->logger->notice('User id '.$appDataInCache['userId'].' quota exceeded');
+        // }
+        // $this->usersQuotaTable->decr($appDataInCache['userId'], 'left');
 
         $this->broadcastPacketService->dropAndPopPacket($packet);
 

@@ -59,7 +59,7 @@ return [
      *
      * You can use the following filetypes: ico, png, gif, jpeg, svg.
      */
-    'favicon' => config('app.url').'/assets/img/Circle%20Brand%20Identity.jpeg',
+    'favicon' => config('app.url').'/assets/img/cover.webp',
 
     'title' => [
         /**
@@ -82,7 +82,7 @@ return [
          * so you'll need to add the suffix manually if you want that. If set to null, we'll determine the title
          * just like the other pages.
          */
-        'homepage_title' => 'Pulsetracker',
+        'homepage_title' => 'Pulsetracker backend for realtime location tracking designed for developers',
     ],
 
     'description' => [
@@ -91,7 +91,7 @@ return [
          * where we don't have a description set via an associated ->seo model or via
          * the ->getDynamicSEOData() method.
          */
-        'fallback' => 'Real-time location tracking designed for developers. Battery-friendly service uses UDP/Websockets protocols to minimize mobile power consumption while realtime location updates.',
+        'fallback' => 'pulsetracker: The ultimate real-time location tracking platform for businesses, logistics, fleet management, and personal asset monitoring. Track unlimited locations, manage multiple devices, and organize projects effortlessly. Enjoy scalable, secure, and globally accessible tracking solutions designed for SaaS, IoT, and modern business needs. Optimize operations with advanced features, seamless integrations, and reliable performance. Visit pulsetracker.com for cutting-edge location tracking technology',
     ],
 
     'image' => [
@@ -101,7 +101,7 @@ return [
          * This should be a path to an image. The url to the path is generated using the `secure_url()` function
          * (`secure_url($yourProvidedPath)`), so make sure the image is accessible from the public folder.
          */
-        'fallback' => config('app.url').'/assets/img/Circle%20Brand%20Identity.jpeg',
+        'fallback' => config('app.url').'/assets/img/cover.webp',
     ],
 
     'author' => [

@@ -53,19 +53,19 @@ class SwooleUdpServerEventHandler implements UdpEventsHandler
 
             return false;
         }
-        $userQuotaInCache = $this->usersQuotaTable->get($appDataInCache['userId']);
-        if (
-            $userQuotaInCache['left'] < 0
-        ) {
-            // echo "No left quota in this month \n";
-            $server->sendto($clientInfo['address'], $clientInfo['port'], 'ERR_QUOTA');
+        // $userQuotaInCache = $this->usersQuotaTable->get($appDataInCache['userId']);
+        // if (
+        //     $userQuotaInCache['left'] < 0
+        // ) {
+        //     // echo "No left quota in this month \n";
+        //     $server->sendto($clientInfo['address'], $clientInfo['port'], 'ERR_QUOTA');
 
-            return false;
-        }
-        if ($userQuotaInCache['left'] === 0) {
-            $this->logger->notice('User id '.$appDataInCache['userId'].' quota exceeded');
-        }
-        $this->usersQuotaTable->decr($appDataInCache['userId'], 'left');
+        //     return false;
+        // }
+        // if ($userQuotaInCache['left'] === 0) {
+        //     $this->logger->notice('User id '.$appDataInCache['userId'].' quota exceeded');
+        // }
+        // $this->usersQuotaTable->decr($appDataInCache['userId'], 'left');
         $this->broadcastPacketService->dropAndPopPacket($packet);
 
         return true;

@@ -28,6 +28,6 @@ class AppController extends Controller
 
         $this->createAppAction->create($request->user(), $request->name);
 
-        return redirect()->back()->with('success', 'App successfully created! You can now return to the Apps table and start using it with the provided App ID.');
+        return redirect("dashboard/apps");
     }
 }

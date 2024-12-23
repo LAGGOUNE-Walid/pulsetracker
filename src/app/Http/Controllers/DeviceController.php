@@ -46,7 +46,7 @@ class DeviceController extends Controller
             DeviceType::find($request->device_type)
         );
 
-        return redirect()->back()->with('success', 'Device successfully created! You can now return to devcies table and start using it with the provided device ID.');
+        return redirect("dashboard/devices");
     }
 
     public function get(string $key, Request $request): View
