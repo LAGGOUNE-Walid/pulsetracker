@@ -91,7 +91,7 @@ return [
          * where we don't have a description set via an associated ->seo model or via
          * the ->getDynamicSEOData() method.
          */
-        'fallback' => 'pulsetracker: The ultimate real-time location tracking platform for businesses, logistics, fleet management, and personal asset monitoring. Track unlimited locations, manage multiple devices, and organize projects effortlessly. Enjoy scalable, secure, and globally accessible tracking solutions designed for SaaS, IoT, and modern business needs. Optimize operations with advanced features, seamless integrations, and reliable performance. Visit pulsetracker.com for cutting-edge location tracking technology',
+        'fallback' => 'Backend for Real-time location tracking platform for developers, businesses, logistics, fleet management, and personal asset monitoring. Enjoy scalable, secure, and globally accessible tracking solutions designed for SaaS, IoT, and modern business needs.',
     ],
 
     'image' => [
