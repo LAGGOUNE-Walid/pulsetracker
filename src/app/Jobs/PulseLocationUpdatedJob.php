@@ -36,7 +36,7 @@ class PulseLocationUpdatedJob implements ShouldQueue
         InsertDeviceLocationJob::dispatch($app, $device, $point, $data);
 
         IncrementUserQuota::dispatch($app, $device);
-        SetDeviceLastLocation::dispatch($app, $device, $data['ip'], $point, $data['extraData']);
+        SetDeviceLastLocation::dispatch($app, $device, $point, $data['extraData']);
 
         return $job->delete();
     }

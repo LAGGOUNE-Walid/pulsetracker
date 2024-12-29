@@ -13,7 +13,6 @@ class DeviceLocation extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
-        'ip_address',
         'app_id',
         'app_key',
         'device_id',

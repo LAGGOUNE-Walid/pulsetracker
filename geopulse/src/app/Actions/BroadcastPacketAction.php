@@ -17,7 +17,6 @@ class BroadcastPacketAction implements PacketActionContract
                 'appKey' => $packet->getAppId(),
                 'key' => $packet->getClientId(),
                 'name' => $packet->getClientId(),
-                'ip' => $packet->getIp(),
                 'location' => $packet->toPoint(),
                 'extra' => $packet->getExtraData(),
             ]);

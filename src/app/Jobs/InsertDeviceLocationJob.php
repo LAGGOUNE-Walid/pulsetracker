@@ -33,7 +33,6 @@ class InsertDeviceLocationJob implements ShouldQueue
         $this->app->load('user');
         if ($this->app->user->save_locations_enabled) {
             DeviceLocation::create([
-                'ip_address' => $this->data['ip'],
                 'app_id' => $this->app->id,
                 'app_key' => $this->app->key,
                 'device_id' => $this->device->id,

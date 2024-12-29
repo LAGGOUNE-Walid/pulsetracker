@@ -12,7 +12,6 @@ class DeviceLastLocation extends Model
     use HasFactory;
 
     protected $fillable = [
-        'ip_address',
         'app_id',
         'app_key',
         'device_id',

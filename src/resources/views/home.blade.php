@@ -2,17 +2,80 @@
 @section('title', 'Pulsetracker')
 @section('content')
     <!-- Start: Banner Heading Image -->
+    <style>
+        .pulses-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            z-index: 0;
+        pointer-events: none; /* Disables pointer events */
+        }
 
+        .pulses {
+            height: 1px;
+            width: 1px;
+            position: absolute;
+            top: 60%;
+            left: 20%;
+            transform: translate(-50%, -50%);
+            animation: pulsing 5s linear infinite;
+        }
+
+        .pulse-outer,
+        .pulse-inner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 6px solid rgba(255, 255, 255, .15);
+            border-radius: 50%;
+        }
+
+        .pulse-outer {
+            height: 100%;
+            width: 100%;
+        }
+
+        .pulse-inner {
+            height: 90%;
+            width: 90%;
+        }
+
+        @keyframes pulsing {
+            0% {
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0.7;
+            }
+
+            100% {
+                opacity: 0.5;
+                height: 200vw;
+                width: 200vw;
+            }
+        }
+    </style>
     <section class="text-primary py-4 py-xl-5">
         <!-- Start: 1 Row 2 Columns -->
         <div class="container">
             <div class="bg-dark border rounded border-0 border-dark overflow-hidden">
-                <div class="row g-0">
+                <div class="row g-0 particle-network-animation">
                     <div class="col-md-12">
-
+                        <div class="pulses-container">
+                            <div class="pulses">
+                                <div class="pulse-outer"></div>
+                                <div class="pulse-inner"></div>
+                            </div>
+                        </div>
                         <div class="text-white p-4 p-md-5">
                             <center>
-                                <h2 class="text-center fw-bold text-white mb-3" style="font-size: 3.5rem;">Real-Time Location
+                                <h2 class="text-center fw-bold text-white mb-3" style="font-size: 3.5rem;">Real-Time
+                                    Location
                                     Tracking for <br />
                                     Developers</h2>
 
@@ -257,7 +320,7 @@
                             <pre>{
   "event": "App\\Events\\DeviceLocationUpdated",
   "channel": "private-apps.APP_KEY",
-  "data": "{\"appKey\":\"APP_KEY\",\"key\":\"DEVICE_KEY\",\"name\":\"DEVICE_NAME\",\"ip\":\"0.0.0.0\",\"location\":{\"type\":\"Point\",\"coordinates\":[-0.071368,51.5107]}}"
+  "data": "{\"appKey\":\"APP_KEY\",\"key\":\"DEVICE_KEY\",\"name\":\"DEVICE_NAME\",\"location\":{\"type\":\"Point\",\"coordinates\":[-0.071368,51.5107]}}"
 }
                             </pre>
                         </small>
@@ -272,7 +335,7 @@
         @if ($errors->any())
             <div class="alert alert-danger" role="alert">
                 @foreach ($errors->all() as $error)
-                    {{ $error }} <br/>
+                    {{ $error }} <br />
                 @endforeach
             </div>
         @endif

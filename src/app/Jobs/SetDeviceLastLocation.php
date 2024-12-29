@@ -19,7 +19,6 @@ class SetDeviceLastLocation implements ShouldQueue
     public function __construct(
         public App $app,
         public Device $device,
-        public string $ip,
         public Point $point,
         public array $extraData
     ) {
@@ -36,7 +35,6 @@ class SetDeviceLastLocation implements ShouldQueue
             DeviceLastLocation::updateOrCreate(
                 ['device_id' => $this->device->id],
                 [
-                    'ip_address' => $this->ip,
                     'app_id' => $this->app->id,
                     'app_key' => $this->app->key,
                     'device_key' => $this->device->key,

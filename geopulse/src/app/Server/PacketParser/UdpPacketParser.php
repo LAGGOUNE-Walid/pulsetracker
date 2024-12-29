@@ -8,39 +8,14 @@ use Pulse\Contracts\PacketParser\Packet;
 
 class UdpPacketParser implements Packet
 {
-    /**
-     * The raw payload data associated with the packet.
-     *
-     * @var array{
-     *     type: string,
-     *     coordinates: array<float>
-     * }
-     */
     private array $payload;
-
-    /**
-     * The extra data
-     */
     private array $extraData;
-
-    /**
-     * The Application ID extracted from the packet data.
-     */
-    private string $appId;
-
-    /**
-     * The Client ID extracted from the packet data.
-     */
+    private ?string $appId = null;
     private string $clientId;
-
-    /**
-     * The Client ip
-     */
-    private string $ip;
 
     public function __construct(private bool $usingMsgPack) {}
 
-    public function fromString(string $data, string $ip): ?Packet
+    public function fromString(string $data): ?Packet
     {
         try {
             if ($this->usingMsgPack) {
@@ -55,7 +30,10 @@ class UdpPacketParser implements Packet
 
         if ($unpackedData !== [] and $unpackedData !== null and is_array($unpackedData)) {
             if ($this->dataIsValide($unpackedData)) {
-                $this->appId = $unpackedData['appId'];
+                if (array_key_exists("appId", $unpackedData)) {
+                    $this->appId = $unpackedData['appId'];
+                }
+
                 $this->clientId = $unpackedData['clientId'];
                 $this->payload = $unpackedData['data'];
                 if (array_key_exists('extra', $unpackedData)) {
@@ -63,8 +41,6 @@ class UdpPacketParser implements Packet
                 } else {
                     $this->extraData = [];
                 }
-                $this->ip = $ip;
-
                 return $this;
             }
         }
@@ -74,15 +50,15 @@ class UdpPacketParser implements Packet
 
     public function dataIsValide(array $data = []): bool
     {
-        return array_key_exists('appId', $data) and array_key_exists('clientId', $data) and array_key_exists('data', $data);
+        return array_key_exists('clientId', $data) and array_key_exists('data', $data);
     }
 
-    public function getIp(): string
+    public function setAppId(string $appId): void
     {
-        return $this->ip;
+        $this->appId = $appId;
     }
 
-    public function getAppId(): string
+    public function getAppId(): ?string
     {
         return $this->appId;
     }
@@ -128,7 +104,6 @@ class UdpPacketParser implements Packet
             'point' => $this->toPoint(),
             'appId' => $this->getAppId(),
             'clientId' => $this->getClientId(),
-            'ip' => $this->ip,
             'extraData' => $this->extraData,
         ];
     }

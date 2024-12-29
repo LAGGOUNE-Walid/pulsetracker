@@ -16,41 +16,47 @@ class SwooleUdpServerEventHandler implements UdpEventsHandler
         private BroadcastPacketService $broadcastPacketService,
         private Table $appsDevicesTable,
         private Table $usersQuotaTable,
+        private Table $deviceAppsTable,
         private Logger $logger
     ) {}
 
     public function onPacket(Server $server, string $data, $clientInfo): bool
     {
-        // Read and unpack the message if it is compressed with msgpack
-        // This uses the udpPacketParser service to deserialize the incoming UDP packet data
-        $packet = $this->udpPacketParser->fromString($data, $clientInfo['address']);
+        echo $data."\n";
+        $packet = $this->udpPacketParser->fromString($data);
 
         if ($packet === null) {
             return false;
         }
 
-        // Verify that the App ID sent from the client matches the server's configured App ID
-        // This ensures that only authorized clients can send data to the server
-        if (! $this->appsDevicesTable->exists($packet->getAppId())) {
-            $this->logger->notice('Could not find in table app id '.$packet->getAppId());
-
-            return false;
+        if ($packet->getAppId()) {
+            if (! $this->appsDevicesTable->exists($packet->getAppId())) {
+                $this->logger->notice('Could not find in table app id ' . $packet->getAppId());
+                return false;
+            }
+            $appDataInCache = $this->appsDevicesTable->get($packet->getAppId());
+            $appDevices = json_decode($appDataInCache['devicesKeys'], true);
+            if (! in_array($packet->getClientId(), $appDevices)) {
+                $this->logger->notice('Could not find device id ' . $packet->getClientId());
+                return false;
+            }
+            $userId = $appDataInCache['userId'];
+        } else {
+            if (! $this->deviceAppsTable->exists($packet->getClientId())) {
+                $this->logger->notice('Could not find device in devices table ' . $packet->getClientId());
+                return false;
+            }
+            $deviceData = $this->deviceAppsTable->get($packet->getClientId());
+            $packet->setAppId($deviceData['appKey']);
+            if (! $this->appsDevicesTable->exists($packet->getAppId())) {
+                $this->logger->notice('Could not find in table app id ' . $packet->getAppId());
+                return false;
+            }
+            $userId = $deviceData['userId'];
         }
 
-        // Verify if the Client ID belongs to this App
-        $appDataInCache = $this->appsDevicesTable->get($packet->getAppId());
-        $appDevices = json_decode($appDataInCache['devicesKeys'], true);
-
-        if (! in_array($packet->getClientId(), $appDevices)) {
-            $this->logger->notice('Could not find device id '.$packet->getClientId());
-
-            return false;
-        }
-
-        // Verify if the user has more monthly quota
-        if (! $this->usersQuotaTable->exists($appDataInCache['userId'])) {
-            $this->logger->notice('Could not user id '.$appDataInCache['userId']);
-
+        if (! $this->usersQuotaTable->exists($userId)) {
+            $this->logger->notice('Could not user id ' . $appDataInCache['userId']);
             return false;
         }
         // $userQuotaInCache = $this->usersQuotaTable->get($appDataInCache['userId']);

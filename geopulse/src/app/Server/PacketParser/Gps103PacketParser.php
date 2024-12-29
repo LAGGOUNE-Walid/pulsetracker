@@ -17,8 +17,6 @@ class Gps103PacketParser implements Packet
 
     private string $clientId;
 
-    private string $ip;
-
     private string $raw_message;
 
     private Gps103MessageType $type;
@@ -53,9 +51,8 @@ class Gps103PacketParser implements Packet
 
     private ?string $door_state;
 
-    public function fromString(string $data, string $ip): ?Packet
+    public function fromString(string $data): ?Packet
     {
-        $this->ip = $ip;
         // Split the message into parts
         $parts = explode(',', $data);
         $this->raw_message = $data;
@@ -131,11 +128,6 @@ class Gps103PacketParser implements Packet
     public function dataIsValide(array $data = []): bool
     {
         return ! in_array($this->type, [Gps103MessageType::ERROR, Gps103MessageType::UNKNOWN, Gps103MessageType::POSITION_NO_GPS]);
-    }
-
-    public function getIp(): string
-    {
-        return $this->ip;
     }
 
     public function getAppId(): string
@@ -215,7 +207,6 @@ class Gps103PacketParser implements Packet
             'point' => $this->toPoint(),
             'appId' => $this->getAppId(),
             'clientId' => $this->getClientId(),
-            'ip' => $this->ip,
             'extraData' => $this->getExtraData(),
         ];
     }

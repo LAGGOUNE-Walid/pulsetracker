@@ -182,6 +182,7 @@ $container->add(SwooleUdpServerEventHandler::class)
     ->addArgument(BroadcastPacketService::class)
     ->addArgument($appsDevicesTable)
     ->addArgument($usersQuotaTable)
+    ->addArgument($deviceAppsTable)
     ->addArgument($logger);
 
 $container->add(SwooleWsServerEventHandler::class)
@@ -207,16 +208,9 @@ $container->add(SwooleGps103TcpServerEventHandler::class)
 
 \Sentry\init([
     'dsn' => 'https://edf86eb6486765d336450b383fdd60b0@o4508063795904512.ingest.de.sentry.io/4508063843876944',
-    // Specify a fixed sample rate
     'traces_sample_rate' => 1.0,
-    // Set a sampling rate for profiling - this is relative to traces_sample_rate
     'profiles_sample_rate' => 1.0,
 ]);
-
-// $swooleUdpEventsHandler = $container->get(SwooleUdpServerEventHandler::class);
-// $swooleWsEventsHandler = $container->get(SwooleWsServerEventHandler::class);
-// $swooleRedisServerEventsHandler = $container->get(SwooleRedisServerEventHandler::class);
-// $swooleGps103TcpServerEventHandler = $container->get(SwooleGps103TcpServerEventHandler::class);
 
 $container->add(UdpServer::class);
 $container->add(WsServer::class);

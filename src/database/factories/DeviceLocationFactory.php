@@ -27,7 +27,6 @@ class DeviceLocationFactory extends Factory
         // 'location',
         // 'extra_data',
         return [
-            'ip_address' => fake()->ipv4(),
             'location' => json_encode(new Point([fake()->longitude(), fake()->latitude()])),
             'device_key' => function (array $attributes) {
                 return Device::find($attributes['device_id'])->key;

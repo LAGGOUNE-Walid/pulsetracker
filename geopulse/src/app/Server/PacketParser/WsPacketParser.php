@@ -30,14 +30,10 @@ class WsPacketParser implements Packet
      */
     private string $clientId;
 
-    /**
-     * The Client ip
-     */
-    private string $ip;
 
     public function __construct(private bool $usingMsgPack) {}
 
-    public function fromString(string $data, string $ip): ?Packet
+    public function fromString(string $data): ?Packet
     {
         try {
             if ($this->usingMsgPack) {
@@ -55,7 +51,6 @@ class WsPacketParser implements Packet
                 $this->appId = $unpackedData['appId'];
                 $this->clientId = $unpackedData['clientId'];
                 $this->payload = $unpackedData['data'];
-                $this->ip = $ip;
                 if (array_key_exists('extra', $unpackedData)) {
                     $this->extraData = $unpackedData['extra'];
                 } else {
@@ -74,9 +69,9 @@ class WsPacketParser implements Packet
         return array_key_exists('appId', $data) and array_key_exists('clientId', $data) and array_key_exists('data', $data);
     }
 
-    public function getIp(): string
+    public function setAppId(string $appId): void
     {
-        return $this->ip;
+        $this->appId = $appId;
     }
 
     public function getAppId(): string
@@ -125,7 +120,6 @@ class WsPacketParser implements Packet
             'point' => $this->toPoint(),
             'appId' => $this->getAppId(),
             'clientId' => $this->getClientId(),
-            'ip' => $this->ip,
             'extraData' => $this->extraData,
         ];
     }

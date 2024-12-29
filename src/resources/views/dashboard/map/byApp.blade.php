@@ -61,7 +61,7 @@
                             marker = L.marker(latlng, {
                                 icon: div_circle
                             });
-                            marker.bindPopup(`${device.name} <br/> ${device.ip}`);
+                            marker.bindPopup(`${device.name}`);
 
                             return marker;
                         }

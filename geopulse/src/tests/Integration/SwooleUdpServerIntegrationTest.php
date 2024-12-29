@@ -46,6 +46,12 @@ class SwooleUdpServerIntegrationTest extends TestCase
             'left' => 1000,
         ]);
 
+        $deviceAppsTable = new Swoole\Table(1024);
+        $deviceAppsTable->column('appKey', Swoole\Table::TYPE_STRING, 36);
+        $deviceAppsTable->column('userId', Swoole\Table::TYPE_INT);
+        $deviceAppsTable->create();
+        $deviceAppsTable->set("device123", ['appKey' => "app123", 'userId' => 1]);
+
         $logger = new Logger('test', [], []);
 
         $serverHandler = new SwooleUdpServerEventHandler(
@@ -53,6 +59,7 @@ class SwooleUdpServerIntegrationTest extends TestCase
             $broadcastService,
             $appsDevicesTable,
             $usersQuotaTable,
+            $deviceAppsTable,
             $logger
         );
 
@@ -91,6 +98,12 @@ class SwooleUdpServerIntegrationTest extends TestCase
         $appsDevicesTable->create();
         $appsDevicesTable->set('app123', ['devicesKeys' => json_encode(['device123']), 'userId' => 1]);
 
+        $deviceAppsTable = new Swoole\Table(1024);
+        $deviceAppsTable->column('appKey', Swoole\Table::TYPE_STRING, 36);
+        $deviceAppsTable->column('userId', Swoole\Table::TYPE_INT);
+        $deviceAppsTable->create();
+        $deviceAppsTable->set("device123", ['appKey' => "app123", 'userId' => 1]);
+
         $usersQuotaTable = new Swoole\Table(1024);
         $usersQuotaTable->column('quota', Swoole\Table::TYPE_INT);
         $usersQuotaTable->column('used', Swoole\Table::TYPE_INT);
@@ -109,6 +122,7 @@ class SwooleUdpServerIntegrationTest extends TestCase
             $broadcastService,
             $appsDevicesTable,
             $usersQuotaTable,
+            $deviceAppsTable,
             $logger
         );
 
@@ -148,6 +162,16 @@ class SwooleUdpServerIntegrationTest extends TestCase
             ],
         ]);
         $result = $serverHandler->onPacket($serverStub, $packetData, ['address' => '127.0.0.1', 'port' => 12345]);
-        $this->assertFalse($result);
+        $this->assertTrue($result);
+
+        $packetData = json_encode([
+            'clientId' => 'device123',
+            'data' => [
+                'type' => 'Point',
+                'coordinates' => [102.0, 0.5],
+            ],
+        ]);
+        $result = $serverHandler->onPacket($serverStub, $packetData, ['address' => '127.0.0.1', 'port' => 12345]);
+        $this->assertTrue($result);
     }
 }

@@ -30,7 +30,6 @@ class MapController extends Controller
                 return [
                     'key' => $device->key,
                     'name' => $device->name,
-                    'ip' => $device->lastLocation->ip_address,
                     'type' => $device->deviceType->name,
                     'location' => $device->lastLocation->location,
                 ];
