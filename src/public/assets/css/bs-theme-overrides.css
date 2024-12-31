@@ -10,20 +10,97 @@
   --bs-border-radius-xl: 1.5rem;
   --bs-border-radius-xxl: 2.5rem;
 }
+
 :root {
   --bs-body-color: rgb(231, 233, 234);
 }
+
 .text-white {
   color: rgb(231, 233, 234, 1) !important;
 }
+
 input[type=text] {
   background: #16171C !important;
   border-style: solid !important;
   border-color: var(--bs-light) !important;
-  font-size: 24px !important; 
+  font-size: 24px !important;
   color: var(--bs-body-color) !important;
 }
 
---bs-nav-link-font-size {
-  
+--bs-nav-link-font-size {}
+
+.pulses-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+  /* Disables pointer events */
+}
+
+.pulses {
+  height: 1px;
+  width: 1px;
+  position: absolute;
+  top: 60%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  animation: pulsing 5s linear infinite;
+}
+
+.pulse-outer,
+.pulse-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 6px solid rgba(255, 255, 255, .15);
+  border-radius: 50%;
+}
+
+.pulse-outer {
+  height: 100%;
+  width: 100%;
+}
+
+.pulse-inner {
+  height: 90%;
+  width: 90%;
+}
+
+@keyframes pulsing {
+  0% {
+    opacity: 0;
+  }
+
+  20% {
+    opacity: 0.7;
+  }
+
+  100% {
+    opacity: 0.5;
+    height: 200vw;
+    width: 200vw;
+  }
+}
+
+.dashboard-preview {
+  /* transform:
+    perspective(75em) rotateX(18deg);
+  box-shadow:
+    rgba(22, 31, 39, 0.42) 0px 60px 123px -25px,
+    rgba(19, 26, 32, 0.08) 0px 35px 75px -35px;
+  border-radius: 10px;
+  border: 1px solid;
+  border-color:
+    rgb(213, 220, 226) rgb(213, 220, 226) rgb(184, 194, 204); */
+  transform:
+    perspective(750px) translate3d(0px, 0px, -250px) rotateX(27deg) scale(0.9, 0.9);
+  border-radius: 20px;
+  border: 5px solid #e6e6e6;
+  box-shadow: 0 70px 40px -20px rgba(136, 136, 136, 0.2);
+
 }

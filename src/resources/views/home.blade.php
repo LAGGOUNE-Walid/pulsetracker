@@ -1,65 +1,6 @@
 @extends('template')
 @section('title', 'Pulsetracker')
 @section('content')
-    <!-- Start: Banner Heading Image -->
-    <style>
-        .pulses-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            overflow: hidden;
-            z-index: 0;
-        pointer-events: none; /* Disables pointer events */
-        }
-
-        .pulses {
-            height: 1px;
-            width: 1px;
-            position: absolute;
-            top: 60%;
-            left: 20%;
-            transform: translate(-50%, -50%);
-            animation: pulsing 5s linear infinite;
-        }
-
-        .pulse-outer,
-        .pulse-inner {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            border: 6px solid rgba(255, 255, 255, .15);
-            border-radius: 50%;
-        }
-
-        .pulse-outer {
-            height: 100%;
-            width: 100%;
-        }
-
-        .pulse-inner {
-            height: 90%;
-            width: 90%;
-        }
-
-        @keyframes pulsing {
-            0% {
-                opacity: 0;
-            }
-
-            20% {
-                opacity: 0.7;
-            }
-
-            100% {
-                opacity: 0.5;
-                height: 200vw;
-                width: 200vw;
-            }
-        }
-    </style>
     <section class="text-primary py-4 py-xl-5">
         <!-- Start: 1 Row 2 Columns -->
         <div class="container">
@@ -104,22 +45,26 @@
             </div>
         </div><!-- End: 1 Row 2 Columns -->
     </section><!-- End: Banner Heading Image -->
-    <section style="margin-top: 10%;">
+    <section style="">
         <!-- Start: 1 Row 1 Column -->
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <script src="https://fast.wistia.com/player.js" async></script>
-                    <script src="https://fast.wistia.com/embed/meshuaf4b3.js" async type="module"></script><style>wistia-player[media-id='meshuaf4b3']:not(:defined) { background: center /
-                        contain no-repeat url('https://fast.wistia.com/embed/medias/meshuaf4b3/swatch'); display: block;
-                        filter: blur(5px); padding-top:46.41%; }</style> <wistia-player
-                            media-id="meshuaf4b3"></wistia-player>
-                        <h1 style="text-align: center; margin-top: 8%;"><strong>Features</strong></h1>
+
+                    <img src="{{ url('assets/img/UHBAB8LJEMEKOJACOELDR9DRB8E7-1730810808626.webp') }}"
+                        alt="Pulsetracker Real-time location tracking for developers dashboard map"
+                        style="width: 100%;border-radius: 10px; border: 2px solid #f3f3f3; " class="dashboard-preview">
+                    <h4 class="text-center" style="color: var(--bs-gray-500);">
+                        Pulsetracker puts you in
+                        charge, offering complete control over how you track, manage, and dispatch location data.</h4>
                 </div>
             </div>
         </div><!-- End: 1 Row 1 Column -->
         <!-- Start: 1 Row 3 Columns -->
+
+        <h1 style="text-align: center; margin-top: 8%;"><strong>Features</strong></h1>
         <div class="container" style="margin-top: 3%;">
+
             <div class="row mt-5">
                 <div class="col-md-12">
                     <div class="row">
@@ -136,6 +81,25 @@
                             <p style="color: var(--bs-gray-500);font-size: 20px;">Integrate effortlessly with Pulsetracker
                                 to
                                 send location updates every second using UDP or Websockets, ensuring real-Time transmission.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-12 col-md-6 text-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                                class="bi bi-phone" viewBox="0 0 16 16" style="font-size: 10rem;margin-bottom: 15px;">>
+                                <path
+                                    d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z" />
+                                <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
+                            </svg>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <h3><span class="text-success">Mobile</span> app</h3>
+                            <p style="color: var(--bs-gray-500);font-size: 20px;">Pulsetracker offers a free Android mobile app for non-developers, <br/> making it easy to start using Pulsetracker and transform any Android phone into a GPS tracker.
                             </p>
                         </div>
                     </div>
@@ -302,34 +266,6 @@
         </div><!-- End: 1 Row 1 Column -->
     </section>
     <section style="margin-top: 8%;">
-        <!-- Start: 1 Row 1 Column -->
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1 class="text-center" style="font-weight: bold;">Everything in your control</h1>
-                    <h4 class="text-center" style="color: var(--bs-gray-500);margin-top: 9px;padding-top: 20px;">
-                        Pulsetracker puts you in
-                        charge, offering complete control over how you track, manage, and dispatch location data.</h4>
-                    <img src="{{ url('assets/img/UHBAB8LJEMEKOJACOELDR9DRB8E7-1730810808626.webp') }}"
-                        alt="Pulsetracker Real-time location tracking for developers dashboard map"
-                        style="width: 100%;border-radius: 10px;margin-top: 3%; border: 2px solid #f3f3f3; ">
-                    <h4 class="text-center mt-5" style="color: var(--bs-gray-500);margin-top: 9px;padding-top: 20px;">
-                        Location data is also transmitted to your listeners.</h4>
-                    <div class="mt-5 p-3 rounded" style="border: 1px solid #3e3e3e;">
-                        <small>
-                            <pre>{
-  "event": "App\\Events\\DeviceLocationUpdated",
-  "channel": "private-apps.APP_KEY",
-  "data": "{\"appKey\":\"APP_KEY\",\"key\":\"DEVICE_KEY\",\"name\":\"DEVICE_NAME\",\"location\":{\"type\":\"Point\",\"coordinates\":[-0.071368,51.5107]}}"
-}
-                            </pre>
-                        </small>
-                    </div>
-                </div>
-            </div>
-        </div><!-- End: 1 Row 1 Column -->
-    </section>
-    <section style="margin-top: 8%;">
         <h1 style="text-align: center;" id="pricing">Pricing</h1>
         <h6 style="text-align: center;">All prices are in USD</h6>
         @if ($errors->any())
@@ -346,11 +282,29 @@
                     <div class="col-md-3 mt-3">
                         <div style="@if ($plan['name'] == 'pathfinder') border: 2px solid var(--bs-success); height: 103%; @else border: 2px solid var(--bs-dark-text-emphasis); @endif;padding: 5%;"
                             class="rounded-3">
-                            <h5 class="text-center">{{ $plan['name'] }}</h5>
+                            <h5 class="text-center">{{ ucfirst($plan['name']) }}</h5>
                             <h3 class="text-center" style="margin-top: 5%;">${{ $plan['price'] }} / mo
                             </h3>
                             <hr>
                             <ul class="list-unstyled" style="font-size: 1.1rem;">
+                                <li><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                        fill="currentColor" viewBox="0 0 16 16" class="bi bi-check-circle"
+                                        style="color: var(--bs-form-valid-color);">
+                                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16">
+                                        </path>
+                                        <path
+                                            d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05">
+                                        </path>
+                                    </svg>&nbsp; Free mobile app
+                                    <svg data-bs-toggle="tooltip" data-bs-placement="top"
+                                        data-bs-title="If you are not a developer, pulsetracker offers a free android mobile app that works with our infrastructure."
+                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                        fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+                                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16" />
+                                        <path
+                                            d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
+                                    </svg>
+                                </li>
                                 <li><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
                                         fill="currentColor" viewBox="0 0 16 16" class="bi bi-check-circle"
                                         style="color: var(--bs-form-valid-color);">

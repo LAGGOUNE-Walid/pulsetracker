@@ -81,7 +81,7 @@
     @endphp
     @if ($left <= 0)
         <div class="alert alert-warning text-center" style="border-radius: 0px;" role="alert">
-            You have exceeded your monthly quota. Please <a href="{{ url('/#pricing') }}">upgrade</a> your plan.
+            You have exceeded your quota. Please <a href="{{ url('/#pricing') }}">upgrade</a> your plan.
         </div>
     @endif
     <div class="container-fluid" style="background: black;">

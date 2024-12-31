@@ -54,12 +54,15 @@
                     style="color: var(--bs-body-color);">Pulsetracker</span></a><button data-bs-toggle="collapse"
                 class="navbar-toggler" data-bs-target="#navcol-3"><span class="visually-hidden">Toggle
                     navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navcol-3" style="color: white;">
+            <div class="collapse navbar-collapse" id="navcol-3" style="color: white; font-size: 17px;">
                 <ul class="navbar-nav mx-auto" style="color: white;">
                     <li class="nav-item" style="color: white;margin-right: 15px;"><a class="nav-link active"
                             href="{{ url('about') }}" style="color: white;">About</a></li>
                     <li class="nav-item" style="color: white;margin-right: 15px;"><a class="nav-link active"
                             href="{{ url('use-cases') }}" style="color: white;">Use cases</a></li>
+
+                    <li class="nav-item" style="color: white;margin-right: 15px;"><a class="nav-link active"
+                            href="https://github.com/Pulsestracker/client-android/releases" style="color: white;">Download app</a></li>
 
 
                     <li class="nav-item" style="color: white;"><a class="nav-link active"
