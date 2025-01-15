@@ -6,16 +6,22 @@
             <div class="col">
                 <h2>What is it ? </h2>
                 <p>
-                    Pulsetracker is a real-time location tracking platform built for developers who need high-frequency,
-                    flexible location updates without the constraints of traditional SDKs or backend dependencies. It allows
-                    developers to build their own custom client SDKs using UDP or WebSockets, empowering them to stream live
-                    location data from Pulsetracker to their backends effortlessly.
+                    Pulsetracker is a real-time location tracking service tailored for developers and general users looking for a seamless way to monitor device locations live. <br/>
+                    It is built to deliver fast racking by leveraging UDP and WebSocket technologies, ensuring low latency and immediate updates. <br/>
+                    Pulsetracker eliminates the need for backend setup, allowing users to integrate a client-side and start tracking devices almost instantly. <br/>
+                    This makes it an attractive solution for developers who want to add location-based features to their applications without dealing with complex server management or scaling issues.
                     <br />
                     <br />
                     The platform handles heavy location traffic, processing updates from thousands of devices per second, so
                     developers don’t have to worry about infrastructure scaling. Pulsetracker also provides a simple
-                    interface for users who prefer to store or visualize location data directly on the platform's dashboard,
+                    interface for users who prefer to visualize location data directly on the platform's dashboard,
                     making it versatile for a wide range of use cases.
+                    <br />
+                    <br />
+                    PulsesTracker makes it easy for developers to get real-time location updates directly into their backend. 
+                    You have a few options to choose from: our simple HTTP API, the Pusher server for event-based updates, or Redis for fast, real-time data streaming. 
+                    <br/>
+                    It’s all about giving you the flexibility to integrate location tracking the way that works best for you.
                 </p>
                 <h2 class="mt-5">How It Works</h2>
                 <p>Pulsetracker requires explicit user consent to start tracking, respecting
@@ -35,46 +41,30 @@
                     <br />
                     <br />
                     3. Backend Delivery: Pulsetracker forwards location data in real-time to the developer’s backend or
-                    stores it on the Pulsetracker dashboard. This option allows for flexible access: developers can retrieve
-                    data from Pulsetracker’s servers or have it directly streamed to their own backend infrastructure.
+                    stores it on the Pulsetracker dashboard. <i>This option allows for flexible access: developers can retrieve
+                    data from Pulsetracker’s servers or have it directly streamed to their own backend infrastructure</i>.
                     <br />
                     <br />
                     4. Data Management and Display: Through the Pulsetracker dashboard, developers can visualize and
                     manage location data, view movement patterns, or monitor device updates.
                 </p>
-                <h2 class="mt-5">Use cases</h2>
-                <ol>
-                    <li><strong>Developers</strong> can integrate Pulsetracker into apps to provide location-based services,
-                        adding
-                        value for users seeking device tracking.</li>
-                    <li><strong>Everyday Users</strong> can use it to track their personal devices or family members safely.
-                    </li>
-                    <li><strong>Businesses</strong> can monitor assets, logistics, or employee locations in real-time,
-                        helping with
-                        efficient operations and quick response.</li>
-                </ol>
                 <h2 class="mt-5">Why Use Pulsetracker</h2>
                 <p>Here’s why developers and companies should consider using Pulsetracker:
                     <br/>
                     <br/>
-                    1. Control Over Tracking Data: Pulsetracker allows developers to create custom SDKs for client-side
-                    tracking, offering flexibility in how they collect and manage location data without being restricted to
-                    a specific backend.
-                    <br/>
-                    <br/>
-                    2. Real-Time Location Updates: With Pulsetracker, location updates are streamed in real time,
+                    1. Real-Time Location Updates: With Pulsetracker, location updates are streamed in real time,
                     providing immediate access to data for services that depend on up-to-the-minute accuracy.
                     <br/>
                     <br/>
-                    3. Scalable Infrastructure: Pulsetracker manages high traffic and complex data handling, so
+                    2. Scalable Infrastructure: Pulsetracker manages high traffic and complex data handling, so
                     developers don’t need to build or scale backend systems to process location updates.
                     <br/>
                     <br/>
-                    4. Efficient Protocols: Pulsetracker uses UDP or WebSocket protocols for fast, efficient
+                    3. Efficient Protocols: Pulsetracker uses UDP or WebSocket protocols for fast, efficient
                     communication that minimizes battery and data usage on client devices.
                     <br/>
                     <br/>
-                    5. Privacy and Security: Pulsetracker ensures data is securely transmitted and offers developers
+                    4. Privacy and Security: Pulsetracker ensures data is securely transmitted and offers developers
                     control over data storage, aligning with privacy requirements.
                     <br/>
                     <br/>

@@ -78,4 +78,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(CurrentUserSubscription::class);
     }
+
+    public function geofences(): HasMany
+    {
+        return $this->hasMany(Geofence::class);
+    }
 }

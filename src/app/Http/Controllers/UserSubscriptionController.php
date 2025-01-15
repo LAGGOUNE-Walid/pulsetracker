@@ -91,9 +91,10 @@ class UserSubscriptionController extends Controller
         try {
             $currentActiveSubscription->noProrate()->swapAndInvoice($subscriptions[$type]['price_id']);
         } catch (\Exception $e) {
-            return redirect(url('/#pricing'))->withErrors('Failed to swap subscription: ' . $e->getMessage());
+            return redirect(url('/#pricing'))->withErrors('Failed to swap subscription: '.$e->getMessage());
         }
         $currentActiveSubscription->noProrate()->swapAndInvoice($subscriptions[$type]['price_id']);
+
         return redirect(url('/#pricing'));
 
         // exit;

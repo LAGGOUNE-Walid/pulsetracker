@@ -98,9 +98,10 @@ input[type=text] {
   border-color:
     rgb(213, 220, 226) rgb(213, 220, 226) rgb(184, 194, 204); */
   transform:
-    perspective(750px) translate3d(0px, 0px, -250px) rotateX(27deg) scale(0.9, 0.9);
+    perspective(1750px) translate3d(0px, 0px, -250px) rotateX(27deg) scale(0.9, 0.9);
   border-radius: 20px;
   border: 5px solid #e6e6e6;
-  box-shadow: 0 70px 40px -20px rgba(136, 136, 136, 0.2);
+  /* box-shadow: 0 70px 40px -20px rgba(136, 136, 136, 0.2); */
+  mask-image: linear-gradient(to bottom,black 55%,transparent 92%);
 
 }

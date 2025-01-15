@@ -3,6 +3,7 @@
 use App\Http\Controllers\AppController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\DeviceController;
+use App\Http\Controllers\GeofencingController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\LoginWithProvider;
 use App\Http\Controllers\MapController;
@@ -37,7 +38,7 @@ Route::GET('/terms-of-use', function () {
 Route::GET('/privacy-policy', function () {
     return view('privacy-policy');
 });
-Route::GET('use-cases', function() {
+Route::GET('use-cases', function () {
     return view('use-cases');
 });
 Route::GET('/subscribe-plan-to-free', [UserSubscriptionController::class, 'moveToFree'])->middleware('auth');
@@ -161,6 +162,14 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {
     Route::group(['prefix' => 'storage'], function () {
         Route::GET('/', [StorageController::class, 'index']);
         Route::POST('/ldps', [StorageController::class, 'ldps']);
+    });
+    Route::group(['prefix' => 'geofencing'], function () {
+        Route::GET('/', [GeofencingController::class, 'show']);
+        Route::GET('/create', fn () => view('dashboard.geofencing.create', ['apps' => auth()->user()->apps()->orderByDesc('id')->get()]));
+        Route::POST('/create', [GeofencingController::class, 'create']);
+        Route::POST('/update', [GeofencingController::class, 'update']);
+        Route::GET('/{geofence}', [GeofencingController::class, 'get']);
+
     });
 });
 Route::group(['prefix' => 'blogs'], function () {

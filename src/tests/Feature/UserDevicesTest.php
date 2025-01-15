@@ -49,6 +49,7 @@ class UserDevicesTest extends TestCase
             'app_key' => $user->apps()->first()->key,
             'type_id' => DeviceType::first()->id,
         ]);
+        
         $response->assertJson(
             function (AssertableJson $json) {
                 return $json->has('data');
@@ -170,7 +171,7 @@ class UserDevicesTest extends TestCase
                 )
                 ->count(1)
         )->create();
-        $response = $this->actingAs($user)->putJson('/api/devices/' . $user->devices()->first()->key, [
+        $response = $this->actingAs($user)->putJson('/api/devices/'.$user->devices()->first()->key, [
             'name' => 'buz',
         ]);
         $response->assertStatus(Response::HTTP_OK);
@@ -193,7 +194,7 @@ class UserDevicesTest extends TestCase
                 )
                 ->count(1)
         )->create();
-        $response = $this->actingAs($user)->getJson('/api/devices/' . $user->devices->first()->key . '/locations');
+        $response = $this->actingAs($user)->getJson('/api/devices/'.$user->devices->first()->key.'/locations');
         $response->assertJson(
             function (AssertableJson $json) {
                 return $json->has('meta')

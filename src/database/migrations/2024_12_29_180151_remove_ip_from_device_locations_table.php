@@ -12,10 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('device_locations', function (Blueprint $table) {
-            $table->dropColumn("ip_address");
+            $table->dropColumn('ip_address');
         });
         Schema::table('device_last_locations', function (Blueprint $table) {
-            $table->dropColumn("ip_address");
+            $table->dropColumn('ip_address');
         });
     }
 

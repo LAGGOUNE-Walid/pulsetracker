@@ -7,20 +7,14 @@
             <div class="bg-dark border rounded border-0 border-dark overflow-hidden">
                 <div class="row g-0 particle-network-animation">
                     <div class="col-md-12">
-                        <div class="pulses-container">
-                            <div class="pulses">
-                                <div class="pulse-outer"></div>
-                                <div class="pulse-inner"></div>
-                            </div>
-                        </div>
                         <div class="text-white p-4 p-md-5">
                             <center>
-                                <h2 class="text-center fw-bold text-white mb-3" style="font-size: 3.5rem;">Real-Time
+                                <h3 class="text-center fw-bold text-white mb-3" style="font-size: 2.5rem;">Real-Time
                                     Location
                                     Tracking for <br />
-                                    Developers</h2>
+                                    Developers</h3>
 
-                                <p class="mb-4 w-75" style="font-size: 1.5rem;color: var(--bs-gray-500);">Track and manage
+                                <p class="mb-4 w-75" style="font-size: 1.1rem;color: var(--bs-gray-500);">Track and manage
                                     devices
                                     in
                                     real-time with lightning-fast protocols. Optimize battery usage, scale seamlessly
@@ -29,15 +23,24 @@
                                         not
                                         months.</span>
                                 </p>
-                                <div class="my-3">
-                                    @guest
+                                @guest
+                                    <div class="my-3">
+
                                         <a class="btn btn-success" role="button" href="{{ url('signup') }}">Start
                                             integrating</a>
                                         <a class="btn btn-primary" role="button" href="https://docs.pulsestracker.com">Read the
                                             docs</a>
-                                    @endguest
 
-                                </div>
+                                    </div>
+                                @endguest
+                                <img src="{{ url('assets/img/UHBAB8LJEMEKOJACOELDR9DRB8E7-1730810808626.webp') }}"
+                                    alt="Pulsetracker Real-time location tracking for developers dashboard map"
+                                    style="width: 100%;border-radius: 10px; border: 2px solid #f3f3f3; "
+                                    class="dashboard-preview">
+                                <h4 class="text-center" style="color: var(--bs-gray-500);">
+                                    Pulsetracker puts you in
+                                    charge, offering complete control over how you track, manage, and dispatch location
+                                    data.</h4>
                             </center>
                         </div>
                     </div>
@@ -46,21 +49,6 @@
         </div><!-- End: 1 Row 2 Columns -->
     </section><!-- End: Banner Heading Image -->
     <section style="">
-        <!-- Start: 1 Row 1 Column -->
-        <div class="container">
-            <div class="row">
-                <div class="col">
-
-                    <img src="{{ url('assets/img/UHBAB8LJEMEKOJACOELDR9DRB8E7-1730810808626.webp') }}"
-                        alt="Pulsetracker Real-time location tracking for developers dashboard map"
-                        style="width: 100%;border-radius: 10px; border: 2px solid #f3f3f3; " class="dashboard-preview">
-                    <h4 class="text-center" style="color: var(--bs-gray-500);">
-                        Pulsetracker puts you in
-                        charge, offering complete control over how you track, manage, and dispatch location data.</h4>
-                </div>
-            </div>
-        </div><!-- End: 1 Row 1 Column -->
-        <!-- Start: 1 Row 3 Columns -->
 
         <h1 style="text-align: center; margin-top: 8%;"><strong>Features</strong></h1>
         <div class="container" style="margin-top: 3%;">
@@ -99,7 +87,9 @@
                         </div>
                         <div class="col-12 col-md-6">
                             <h3><span class="text-success">Mobile</span> app</h3>
-                            <p style="color: var(--bs-gray-500);font-size: 20px;">Pulsetracker offers a free Android mobile app for non-developers, <br/> making it easy to start using Pulsetracker and transform any Android phone into a GPS tracker.
+                            <p style="color: var(--bs-gray-500);font-size: 20px;">Pulsetracker offers a free Android mobile
+                                app for non-developers, <br /> making it easy to start using Pulsetracker and transform any
+                                Android phone into a GPS tracker.
                             </p>
                         </div>
                     </div>

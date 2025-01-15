@@ -34,6 +34,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@5/dark.css" />
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
         integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.2/leaflet.draw.css" />
 
     <style>
         #map {
@@ -130,14 +131,13 @@
                                             d="M15.817.113A.5.5 0 0 1 16 .5v14a.5.5 0 0 1-.402.49l-5 1a.502.502 0 0 1-.196 0L5.5 15.01l-4.902.98A.5.5 0 0 1 0 15.5v-14a.5.5 0 0 1 .402-.49l5-1a.5.5 0 0 1 .196 0L10.5.99l4.902-.98a.5.5 0 0 1 .415.103M10 1.91l-4-.8v12.98l4 .8V1.91zm1 12.98 4-.8V1.11l-4 .8zm-6-.8V1.11l-4 .8v12.98z">
                                         </path>
                                     </svg> Map</span></a></li>
-                        <li style="margin-top: 10%;"><a href="{{ url('dashboard/tokens') }}"
-                                class="@if (Request::is('dashboard/tokens*')) selected @endif nav-link px-0 align-middle"><span
-                                    class="ms-1 d-none d-sm-inline"><svg xmlns="http://www.w3.org/2000/svg"
-                                        width="16" height="16" fill="currentColor" class="bi bi-key-fill"
-                                        viewBox="0 0 16 16">
-                                        <path
-                                            d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2M2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
-                                    </svg> Tokens</span></a></li>
+                        {{-- <li style="margin-top: 10%;"><a href="{{ url('dashboard/geofencing') }}"
+                                class="@if (Request::is('dashboard/geofencing*')) selected @endif nav-link px-0 align-middle"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                    fill="currentColor" class="bi bi-grid-3x3" viewBox="0 0 16 16">
+                                    <path
+                                        d="M0 1.5A1.5 1.5 0 0 1 1.5 0h13A1.5 1.5 0 0 1 16 1.5v13a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 14.5zM1.5 1a.5.5 0 0 0-.5.5V5h4V1zM5 6H1v4h4zm1 4h4V6H6zm-1 1H1v3.5a.5.5 0 0 0 .5.5H5zm1 0v4h4v-4zm5 0v4h3.5a.5.5 0 0 0 .5-.5V11zm0-1h4V6h-4zm0-5h4V1.5a.5.5 0 0 0-.5-.5H11zm-1 0V1H6v4z" />
+                                </svg> Geofencing</span></a></li> --}}
                         <li style="margin-top: 10%;"><a href="{{ url('dashboard/storage') }}"
                                 class="@if (Request::is('dashboard/storage*')) selected @endif nav-link px-0 align-middle"><svg
                                     xmlns="http://www.w3.org/2000/svg" width="16" height="16"
@@ -146,6 +146,15 @@
                                     <path
                                         d="M1.5 0h11.586a1.5 1.5 0 0 1 1.06.44l1.415 1.414A1.5 1.5 0 0 1 16 2.914V14.5a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 14.5v-13A1.5 1.5 0 0 1 1.5 0M1 1.5v13a.5.5 0 0 0 .5.5H2v-4.5A1.5 1.5 0 0 1 3.5 9h9a1.5 1.5 0 0 1 1.5 1.5V15h.5a.5.5 0 0 0 .5-.5V2.914a.5.5 0 0 0-.146-.353l-1.415-1.415A.5.5 0 0 0 13.086 1H13v4.5A1.5 1.5 0 0 1 11.5 7h-7A1.5 1.5 0 0 1 3 5.5V1H1.5a.5.5 0 0 0-.5.5m3 4a.5.5 0 0 0 .5.5h7a.5.5 0 0 0 .5-.5V1H4zM3 15h10v-4.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5z" />
                                 </svg> Custom Storage</span></a></li>
+                        <li style="margin-top: 10%;"><a href="{{ url('dashboard/tokens') }}"
+                                class="@if (Request::is('dashboard/tokens*')) selected @endif nav-link px-0 align-middle"><span
+                                    class="ms-1 d-none d-sm-inline"><svg xmlns="http://www.w3.org/2000/svg"
+                                        width="16" height="16" fill="currentColor" class="bi bi-key-fill"
+                                        viewBox="0 0 16 16">
+                                        <path
+                                            d="M3.5 11.5a3.5 3.5 0 1 1 3.163-5H14L15.5 8 14 9.5l-1-1-1 1-1-1-1 1-1-1-1 1H6.663a3.5 3.5 0 0 1-3.163 2M2.5 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2" />
+                                    </svg> Tokens</span></a></li>
+
                         <li style="margin-top: 10%;"><a href="{{ url('dashboard/settings') }}"
                                 class="@if (Request::is('dashboard/settings*')) selected @endif nav-link px-0 align-middle"><span
                                     class="ms-1 d-none d-sm-inline"><svg xmlns="http://www.w3.org/2000/svg"
@@ -208,6 +217,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/leaflet.markercluster.js"
         integrity="sha512-OFs3W4DIZ5ZkrDhBFtsCP6JXtMEDGmhl0QPlmWYBJay40TT1n3gt2Xuw8Pf/iezgW9CdabjkNChRqozl/YADmg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.2/leaflet.draw.js"></script>
     @stack('scripts')
     @vite('resources/js/app.js')
 

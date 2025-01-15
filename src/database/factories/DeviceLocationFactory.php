@@ -44,8 +44,8 @@ class DeviceLocationFactory extends Factory
                 return Device::find($attributes['device_id'])->app_id;
             },
             'extra_data' => [
-                "speed" => rand(100, 120)
-            ]
+                'speed' => rand(100, 120),
+            ],
         ];
     }
 }

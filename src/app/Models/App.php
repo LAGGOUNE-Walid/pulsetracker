@@ -38,4 +38,9 @@ class App extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function geofences(): HasMany
+    {
+        return $this->hasMany(Geofence::class);
+    }
 }

@@ -28,6 +28,6 @@ class AppController extends Controller
 
         $this->createAppAction->create($request->user(), $request->name);
 
-        return redirect("dashboard/apps");
+        return redirect('dashboard/apps');
     }
 }

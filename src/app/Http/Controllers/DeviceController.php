@@ -46,7 +46,7 @@ class DeviceController extends Controller
             DeviceType::find($request->device_type)
         );
 
-        return redirect("dashboard/devices");
+        return redirect('dashboard/devices');
     }
 
     public function get(string $key, Request $request): View
