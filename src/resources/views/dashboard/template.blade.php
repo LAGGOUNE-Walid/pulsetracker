@@ -131,13 +131,13 @@
                                             d="M15.817.113A.5.5 0 0 1 16 .5v14a.5.5 0 0 1-.402.49l-5 1a.502.502 0 0 1-.196 0L5.5 15.01l-4.902.98A.5.5 0 0 1 0 15.5v-14a.5.5 0 0 1 .402-.49l5-1a.5.5 0 0 1 .196 0L10.5.99l4.902-.98a.5.5 0 0 1 .415.103M10 1.91l-4-.8v12.98l4 .8V1.91zm1 12.98 4-.8V1.11l-4 .8zm-6-.8V1.11l-4 .8v12.98z">
                                         </path>
                                     </svg> Map</span></a></li>
-                        {{-- <li style="margin-top: 10%;"><a href="{{ url('dashboard/geofencing') }}"
+                        <li style="margin-top: 10%;"><a href="{{ url('dashboard/geofencing') }}"
                                 class="@if (Request::is('dashboard/geofencing*')) selected @endif nav-link px-0 align-middle"><svg
                                     xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                     fill="currentColor" class="bi bi-grid-3x3" viewBox="0 0 16 16">
                                     <path
                                         d="M0 1.5A1.5 1.5 0 0 1 1.5 0h13A1.5 1.5 0 0 1 16 1.5v13a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 14.5zM1.5 1a.5.5 0 0 0-.5.5V5h4V1zM5 6H1v4h4zm1 4h4V6H6zm-1 1H1v3.5a.5.5 0 0 0 .5.5H5zm1 0v4h4v-4zm5 0v4h3.5a.5.5 0 0 0 .5-.5V11zm0-1h4V6h-4zm0-5h4V1.5a.5.5 0 0 0-.5-.5H11zm-1 0V1H6v4z" />
-                                </svg> Geofencing</span></a></li> --}}
+                                </svg> Geofencing</span></a></li>
                         <li style="margin-top: 10%;"><a href="{{ url('dashboard/storage') }}"
                                 class="@if (Request::is('dashboard/storage*')) selected @endif nav-link px-0 align-middle"><svg
                                     xmlns="http://www.w3.org/2000/svg" width="16" height="16"

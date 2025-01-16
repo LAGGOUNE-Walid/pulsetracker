@@ -44,7 +44,6 @@ class AppController extends Controller
         $request->validate([
             'name' => 'required',
         ]);
-
         return new AppResource($this->createAppAction->create($request->user(), $request->name));
     }
 

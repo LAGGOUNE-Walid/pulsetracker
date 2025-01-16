@@ -25,7 +25,7 @@ class AppController extends Controller
             return redirect()->back()->with('error', "You've reached the limit for creating apps on your current plan. Please upgrade to add more apps and unlock additional features.");
         }
         $request->validate(['name' => 'required']);
-
+        
         $this->createAppAction->create($request->user(), $request->name);
 
         return redirect('dashboard/apps');

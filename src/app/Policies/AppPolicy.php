@@ -9,6 +9,7 @@ class AppPolicy
 {
     public function create(User $user): bool
     {
+        
         $subscriptions = config('stripe-subscriptions.plans');
         foreach ($subscriptions as $subscription) {
             $allowedAppsPersubsription = $subscription['size']['apps'] ?? PHP_INT_MAX;
@@ -16,7 +17,6 @@ class AppPolicy
                 return $user->hasVerifiedEmail();
             }
         }
-
         return $user->apps()->count() < 1 and $user->hasVerifiedEmail();
     }
 
