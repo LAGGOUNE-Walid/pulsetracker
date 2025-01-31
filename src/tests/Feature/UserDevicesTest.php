@@ -49,7 +49,7 @@ class UserDevicesTest extends TestCase
             'app_key' => $user->apps()->first()->key,
             'type_id' => DeviceType::first()->id,
         ]);
-        
+
         $response->assertJson(
             function (AssertableJson $json) {
                 return $json->has('data');

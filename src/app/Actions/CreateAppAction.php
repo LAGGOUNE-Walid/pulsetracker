@@ -13,6 +13,7 @@ class CreateAppAction
     {
         $app = $user->apps()->create(['name' => $name, 'key' => Str::uuid()]);
         Log::info("App create of $user->email");
+
         return $app;
     }
 }

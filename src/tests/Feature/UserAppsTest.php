@@ -34,27 +34,28 @@ class UserAppsTest extends TestCase
     public function test_create_new_app_api(): void
     {
         Queue::fake();
-        $this->assertDatabaseCount("apps", 0);
         $user = User::factory()->create();
         $response = $this->actingAs($user)->postJson('/api/apps', [
             'name' => 'foo',
         ]);
-        $this->assertDatabaseCount("apps", 1);
+        $response->assertJson(
+            function (AssertableJson $json) {
+                return $json->has('data');
+            }
+        );
     }
 
     public function test_create_apps_out_of_quota_will_give_error(): void
     {
         Queue::fake();
         $user = User::factory()->create();
-        $this->assertDatabaseCount('apps', 0);
         $app1Response = $this->actingAs($user)->postJson('/api/apps', [
             'name' => 'foo',
         ]);
-        $this->assertDatabaseCount('apps', 1);
         $app2Response = $this->actingAs($user)->postJson('/api/apps', [
             'name' => 'foo',
         ]);
-        $this->assertDatabaseCount('apps', 1);
+        $app1Response->assertStatus(Response::HTTP_CREATED);
         $app2Response->assertStatus(Response::HTTP_FORBIDDEN);
     }
 

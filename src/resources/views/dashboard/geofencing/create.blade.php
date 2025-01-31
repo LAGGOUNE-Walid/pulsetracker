@@ -73,8 +73,8 @@
                 attribution: osmAttrib
             }),
             map = new L.Map('map', {
-                center: new L.LatLng(51.505, -0.04),
-                zoom: 13
+                center: new L.LatLng(0, 0),
+                zoom: 2
             }),
             drawnItems = L.featureGroup().addTo(map);
 

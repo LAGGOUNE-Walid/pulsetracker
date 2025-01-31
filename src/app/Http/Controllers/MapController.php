@@ -18,8 +18,8 @@ class MapController extends Controller
                         return $query->where('device_last_locations.updated_at', '>', now()->subMinutes(15));
                     });
                 },
-
                 'devices.deviceType',
+                'geofences',
             ])
             ->where('key', $appKey)
             ->firstOrFail();

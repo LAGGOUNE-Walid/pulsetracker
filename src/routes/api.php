@@ -1,15 +1,15 @@
 <?php
 
+use App\Http\Controllers\Api\AppController;
+use App\Http\Controllers\Api\DeviceController;
+use App\Http\Controllers\Api\DeviceLocationController;
+use App\Http\Controllers\Api\DeviceTypeController;
+use App\Http\Controllers\Api\SanctumBroadcastingAuthController;
+use App\Http\Controllers\Api\UserGeofencingController;
+use App\Http\Resources\UserQuotaResource;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Resources\UserQuotaResource;
-use App\Http\Controllers\Api\AppController;
-use App\Http\Controllers\Api\DeviceController;
-use App\Http\Controllers\Api\DeviceTypeController;
-use App\Http\Controllers\Api\DeviceLocationController;
-use App\Http\Controllers\Api\UserGeofencingController;
-use App\Http\Controllers\Api\SanctumBroadcastingAuthController;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
@@ -47,7 +47,7 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
         'store',
         'update',
         // 'delete',
-    ]); 
+    ]);
     Route::get('device_types', [DeviceTypeController::class, 'index']);
     Route::post('broadcasting/auth', [SanctumBroadcastingAuthController::class, 'handle']);
 });

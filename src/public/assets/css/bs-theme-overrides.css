@@ -105,3 +105,9 @@ input[type=text] {
   mask-image: linear-gradient(to bottom,black 55%,transparent 92%);
 
 }
+
+.highlight-table {
+  background: linear-gradient(90deg, #003113, #004b043a);
+  color: #fff;
+  font-weight: bold;
+}

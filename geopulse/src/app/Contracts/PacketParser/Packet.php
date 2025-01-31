@@ -6,7 +6,7 @@ use GeoJson\Geometry\Point;
 
 interface Packet
 {
-    public function fromString(string $data): ?Packet;
+    public function fromString(string $data, int $receivedAt): ?Packet;
 
     public function dataIsValide(array $data = []): bool;
 

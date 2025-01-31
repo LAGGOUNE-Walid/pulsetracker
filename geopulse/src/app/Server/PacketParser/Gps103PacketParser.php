@@ -51,7 +51,7 @@ class Gps103PacketParser implements Packet
 
     private ?string $door_state;
 
-    public function fromString(string $data): ?Packet
+    public function fromString(string $data, int $receivedAt): ?Packet
     {
         // Split the message into parts
         $parts = explode(',', $data);

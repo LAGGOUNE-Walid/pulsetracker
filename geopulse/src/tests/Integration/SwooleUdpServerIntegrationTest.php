@@ -63,6 +63,8 @@ class SwooleUdpServerIntegrationTest extends TestCase
             $logger
         );
 
+        $time = time();
+
         $packetData = json_encode([
             'appId' => 'app123',
             'clientId' => 'device123',
@@ -70,13 +72,14 @@ class SwooleUdpServerIntegrationTest extends TestCase
                 'type' => 'Point',
                 'coordinates' => [102.0, 0.5],
             ],
+            'receivedAt' => $time
         ]);
 
         $broadcastService->expects($this->once())
             ->method('dropAndPopPacket');
         $result = $serverHandler->onPacket($serverStub, $packetData, ['address' => '127.0.0.1', 'port' => 12345]);
         $this->assertTrue($result);
-        $packet = $udpPacketParser->fromString($packetData, '');
+        $packet = $udpPacketParser->fromString($packetData, $time);
         $this->assertNotNull($packet);
     }
 
@@ -125,7 +128,7 @@ class SwooleUdpServerIntegrationTest extends TestCase
             $deviceAppsTable,
             $logger
         );
-
+        $time = time();
         $packetData = json_encode([
             'appId' => 'app1234',
             'clientId' => 'device123',
@@ -133,6 +136,7 @@ class SwooleUdpServerIntegrationTest extends TestCase
                 'type' => 'Point',
                 'coordinates' => [102.0, 0.5],
             ],
+            'receivedAt' => $time
         ]);
         $result = $serverHandler->onPacket($serverStub, $packetData, ['address' => '127.0.0.1', 'port' => 12345]);
         $this->assertFalse($result);
@@ -144,6 +148,7 @@ class SwooleUdpServerIntegrationTest extends TestCase
                 'type' => 'Point',
                 'coordinates' => [102.0, 0.5],
             ],
+            'receivedAt' => $time
         ]);
         $result = $serverHandler->onPacket($serverStub, $packetData, ['address' => '127.0.0.1', 'port' => 12345]);
         $this->assertFalse($result);
@@ -160,6 +165,7 @@ class SwooleUdpServerIntegrationTest extends TestCase
                 'type' => 'Point',
                 'coordinates' => [102.0, 0.5],
             ],
+            'receivedAt' => $time
         ]);
         $result = $serverHandler->onPacket($serverStub, $packetData, ['address' => '127.0.0.1', 'port' => 12345]);
         $this->assertTrue($result);
@@ -170,6 +176,7 @@ class SwooleUdpServerIntegrationTest extends TestCase
                 'type' => 'Point',
                 'coordinates' => [102.0, 0.5],
             ],
+            'receivedAt' => $time
         ]);
         $result = $serverHandler->onPacket($serverStub, $packetData, ['address' => '127.0.0.1', 'port' => 12345]);
         $this->assertTrue($result);

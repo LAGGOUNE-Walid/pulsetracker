@@ -4,6 +4,9 @@ namespace App\Jobs;
 
 use App\Models\App;
 use App\Models\Device;
+use App\Services\DeviceGeofenceStateService;
+use App\Services\GeofencingService;
+use App\Services\WebhookService;
 use GeoJson\GeoJson;
 use GeoJson\Geometry\Point;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -17,8 +20,11 @@ class PulseLocationUpdatedJob implements ShouldQueue
     /**
      * Create a new job instance.
      */
-    public function __construct()
-    {
+    public function __construct(
+        public GeofencingService $geofencingService,
+        public DeviceGeofenceStateService $deviceGeofenceStateService,
+        public WebhookService $webhookService
+    ) {
         //
     }
 
@@ -34,6 +40,8 @@ class PulseLocationUpdatedJob implements ShouldQueue
         GeoJson::jsonUnserialize($data['point']);
         $point = new Point($data['point']['coordinates']);
         InsertDeviceLocationJob::dispatch($app, $device, $point, $data);
+
+        ProcessGeofence::dispatch($app, $device, $point, $data['receivedAt'], $this->geofencingService, $this->deviceGeofenceStateService, $this->webhookService);
 
         IncrementUserQuota::dispatch($app, $device);
         SetDeviceLastLocation::dispatch($app, $device, $point, $data['extraData']);

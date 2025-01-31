@@ -83,4 +83,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Geofence::class);
     }
+
+    public function webhookSignature(): HasOne
+    {
+        return $this->hasOne(WebhookSignature::class);
+    }
 }

@@ -91,7 +91,7 @@ class DeviceController extends Controller
      *
      * @param  string  $id  the device key
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, string $id): int
     {
         $request->validate([
             'name' => 'required',
@@ -105,7 +105,7 @@ class DeviceController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Request $request, string $id)
+    public function destroy(Request $request, string $id): int
     {
         return $request->user()->devices()->where('key', $id)->firstOrFail()->delete();
     }

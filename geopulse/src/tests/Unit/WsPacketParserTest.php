@@ -63,8 +63,9 @@ final class WsPacketParserTest extends TestCase
     {
         $wsPacketParser = new WsPacketParser(false);
         $data = '{"data":{"type":"Point"},"appId":"22f8e456-93f2-4173-8f2d-8a010abcceb1","clientId":"22f8e456-93f2-4173-8f2d-8a010abcceb1"}';
-        $packet = $wsPacketParser->fromString($data, '123');
+        $time = time();
+        $packet = $wsPacketParser->fromString($data, $time);
         $this->assertEquals($packet->toPoint()->getCoordinates(), [0, 0]);
-        $this->assertEquals('{"point":{"type":"Point","coordinates":[0,0]},"appId":"22f8e456-93f2-4173-8f2d-8a010abcceb1","clientId":"22f8e456-93f2-4173-8f2d-8a010abcceb1","extraData":[]}', $packet->toJson());
+        $this->assertEquals('{"point":{"type":"Point","coordinates":[0,0]},"appId":"22f8e456-93f2-4173-8f2d-8a010abcceb1","clientId":"22f8e456-93f2-4173-8f2d-8a010abcceb1","extraData":[],"receivedAt":'.$time.'}', $packet->toJson());
     }
 }

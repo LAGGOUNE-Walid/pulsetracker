@@ -14,7 +14,7 @@ trait GeoJsonPolygonToEloquentSpatialPolygonTrait
         $points = [];
         foreach ($polygon->getCoordinates() as $coordinateGroups) {
             foreach ($coordinateGroups as $coordinate) {
-                $points[] = new Point($coordinate[0], $coordinate[1]);
+                $points[] = new Point($coordinate[1], $coordinate[0]);
             }
         }
 

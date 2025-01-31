@@ -46,6 +46,10 @@
                         }).addTo(this.map);
                     var markersClusters = L.markerClusterGroup();
                     this.addDeviceLocations(this.map, locations, markersClusters);
+                    var drawnItems = L.featureGroup().addTo(this.map);
+                    @foreach($app->geofences as $geofence)
+                        L.geoJSON(@json(json_decode($geofence->geometry->toJson(), true))).addTo(drawnItems);
+                    @endforeach
                     this.listenForWebsocketsLocationsUpdates();
                 },
                 addDeviceLocations(map, locations, markersClusters) {

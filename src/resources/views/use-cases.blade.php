@@ -63,7 +63,7 @@
                         <ul>
                             <li>Build custom dashboards for live fleet visualization.</li>
                             <li>Enable dispatch systems to make real-time decisions based on location data.</li>
-                            <li>Monitor vehicle activity without relying on restrictive services & SDKs.</li>
+                            <li>Monitor vehicle activity without relying on restrictive and closed services.</li>
                         </ul>
                         </p>
                         <br />

@@ -12,10 +12,11 @@ class UdpPacketParser implements Packet
     private array $extraData;
     private ?string $appId = null;
     private string $clientId;
+    private int $receivedAt;
 
     public function __construct(private bool $usingMsgPack) {}
 
-    public function fromString(string $data): ?Packet
+    public function fromString(string $data, int $receivedAt): ?Packet
     {
         try {
             if ($this->usingMsgPack) {
@@ -36,6 +37,7 @@ class UdpPacketParser implements Packet
 
                 $this->clientId = $unpackedData['clientId'];
                 $this->payload = $unpackedData['data'];
+                $this->receivedAt = $receivedAt;
                 if (array_key_exists('extra', $unpackedData)) {
                     $this->extraData = $unpackedData['extra'];
                 } else {
@@ -105,6 +107,7 @@ class UdpPacketParser implements Packet
             'appId' => $this->getAppId(),
             'clientId' => $this->getClientId(),
             'extraData' => $this->extraData,
+            'receivedAt' => $this->receivedAt
         ];
     }
 }

@@ -22,8 +22,7 @@ class SwooleUdpServerEventHandler implements UdpEventsHandler
 
     public function onPacket(Server $server, string $data, $clientInfo): bool
     {
-        echo $data."\n";
-        $packet = $this->udpPacketParser->fromString($data);
+        $packet = $this->udpPacketParser->fromString($data, time());
 
         if ($packet === null) {
             return false;

@@ -31,12 +31,12 @@
                     applications to developer backends. Here’s how it operates step-by-step:
                     <br />
                     <br />
-                    1. Client SDK Integration: Developers integrate Pulsetracker by implementing a custom client-side
-                    SDK. This SDK can use either UDP or WebSocket protocols, which are lightweight and efficient for
+                    1. Client Integration: Developers integrate Pulsetracker by implementing a custom client-side
+                    either UDP or WebSocket protocols, which are lightweight and efficient for
                     real-time tracking.
                     <br />
                     <br />
-                    2. Location Data Transmission: The client SDK sends location updates directly to the Pulsetracker
+                    2. Location Data Transmission: The client sends location updates directly to the Pulsetracker
                     server. Data is transmitted every few seconds, allowing for continuous, real-time tracking.
                     <br />
                     <br />

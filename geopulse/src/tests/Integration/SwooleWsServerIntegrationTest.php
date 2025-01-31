@@ -55,7 +55,7 @@ class SwooleWsServerIntegrationTest extends TestCase
             $usersQuotaTable,
             $logger
         );
-
+        $time = time();
         $packetData = json_encode([
             'appId' => 'app123',
             'clientId' => 'device123',
@@ -63,6 +63,7 @@ class SwooleWsServerIntegrationTest extends TestCase
                 'type' => 'Point',
                 'coordinates' => [102.0, 0.5],
             ],
+            'receivedAt' => $time
         ]);
 
         $broadcastService->expects($this->once())
@@ -71,7 +72,7 @@ class SwooleWsServerIntegrationTest extends TestCase
         $frame->data = $packetData;
         $result = $serverHandler->onMessage($serverStub, $frame);
         $this->assertTrue($result);
-        $packet = $wsPacketParser->fromString($packetData, '');
+        $packet = $wsPacketParser->fromString($packetData, $time);
         $this->assertNotNull($packet);
     }
 }

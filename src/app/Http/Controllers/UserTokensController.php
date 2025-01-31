@@ -12,6 +12,8 @@ class UserTokensController extends Controller
         $user = $request->user();
         $user->load(['tokens' => function ($query) {
             return $query->orderByDesc('id');
+        }, 'webhookSignature' => function ($query) {
+            return $query->orderByDesc('id');
         }]);
 
         return view('dashboard.tokens', ['user' => $user]);

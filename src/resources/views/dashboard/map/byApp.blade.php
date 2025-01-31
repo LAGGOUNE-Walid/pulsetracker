@@ -45,6 +45,10 @@
                             attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
                             ext: 'png'
                         }).addTo(this.map);
+                    var drawnItems = L.featureGroup().addTo(this.map);
+                    @foreach($app->geofences as $geofence)
+                        L.geoJSON(@json(json_decode($geofence->geometry->toJson(), true))).addTo(drawnItems);
+                    @endforeach
                     this.addLastDevices(this.map, devices);
                     this.listenForWebsocketsLocationsUpdates();
                 },

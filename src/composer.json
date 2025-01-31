@@ -26,6 +26,7 @@
         "ralphjsmit/laravel-seo": "^1.6",
         "sentry/sentry-laravel": "^4.9",
         "spatie/laravel-sitemap": "^7.2",
+        "spatie/laravel-webhook-server": "^3.8",
         "whitecube/laravel-cookie-consent": "*"
     },
     "require-dev": {

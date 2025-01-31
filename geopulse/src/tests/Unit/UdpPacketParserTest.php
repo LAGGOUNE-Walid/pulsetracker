@@ -15,7 +15,7 @@ final class UdpPacketParserTest extends TestCase
     {
         $udpPacketParser = new UdpPacketParser(true);
         $data = msgpack_pack(['appId' => 123, 'clientId' => 123, 'data' => []]);
-        $packet = $udpPacketParser->fromString($data, '123');
+        $packet = $udpPacketParser->fromString($data, time());
         $this->assertEquals($packet->getAppId(), 123);
     }
 
@@ -23,23 +23,25 @@ final class UdpPacketParserTest extends TestCase
     {
         $udpPacketParser = new UdpPacketParser(false);
         $data = json_encode(['appId' => 123, 'clientId' => 123, 'data' => []]);
-        $packet = $udpPacketParser->fromString($data, '123');
+        $packet = $udpPacketParser->fromString($data, time());
         $this->assertEquals($packet->getAppId(), 123);
     }
 
     public function testGettingAppId(): void
     {
         $udpPacketParser = new UdpPacketParser(false);
-        $data = '{"data":{"type":"Point","coordinates":[1,1]},"appId":"22f8e456-93f2-4173-8f2d-8a010abcceb1","clientId":"22f8e456-93f2-4173-8f2d-8a010abcceb1"}';
-        $packet = $udpPacketParser->fromString($data, '123');
+        $time = time();
+        $data = '{"data":{"type":"Point","coordinates":[1,1]},"appId":"22f8e456-93f2-4173-8f2d-8a010abcceb1","clientId":"22f8e456-93f2-4173-8f2d-8a010abcceb1", "receivedAt":'.$time.'}';
+        $packet = $udpPacketParser->fromString($data, $time);
         $this->assertEquals('22f8e456-93f2-4173-8f2d-8a010abcceb1', $packet->getAppId());
     }
 
     public function testGettingPointFromData(): void
     {
         $udpPacketParser = new UdpPacketParser(false);
-        $data = '{"data":{"type":"Point","coordinates":[1,1]},"appId":"22f8e456-93f2-4173-8f2d-8a010abcceb1","clientId":"22f8e456-93f2-4173-8f2d-8a010abcceb1"}';
-        $packet = $udpPacketParser->fromString($data, '123');
+        $time = time();
+        $data = '{"data":{"type":"Point","coordinates":[1,1]},"appId":"22f8e456-93f2-4173-8f2d-8a010abcceb1","clientId":"22f8e456-93f2-4173-8f2d-8a010abcceb1", "receivedAt":'.$time.'}';
+        $packet = $udpPacketParser->fromString($data, time());
         $this->assertTrue($packet->toPoint() instanceof Point);
     }
 
@@ -47,24 +49,26 @@ final class UdpPacketParserTest extends TestCase
     {
         $udpPacketParser = new UdpPacketParser(false);
         $data = '';
-        $packet = $udpPacketParser->fromString($data, '123');
+        $packet = $udpPacketParser->fromString($data, time());
         $this->assertEquals(null, $packet);
     }
 
     public function testGettingNullPointFromData(): void
     {
         $udpPacketParser = new UdpPacketParser(false);
-        $data = '{"data":{},"appId":"22f8e456-93f2-4173-8f2d-8a010abcceb1","clientId":"22f8e456-93f2-4173-8f2d-8a010abcceb1"}';
-        $packet = $udpPacketParser->fromString($data, '123');
+        $time = time();
+        $data = '{"data":{},"appId":"22f8e456-93f2-4173-8f2d-8a010abcceb1","clientId":"22f8e456-93f2-4173-8f2d-8a010abcceb1", "receivedAt":'.$time.'}';
+        $packet = $udpPacketParser->fromString($data, time());
         $this->assertEquals([0, 0], $packet->toPoint()->getCoordinates());
     }
 
     public function testGettingEmptyJsonOfNonValidePoint(): void
     {
         $udpPacketParser = new UdpPacketParser(false);
-        $data = '{"data":{"type":"Point"},"appId":"22f8e456-93f2-4173-8f2d-8a010abcceb1","clientId":"22f8e456-93f2-4173-8f2d-8a010abcceb1"}';
-        $packet = $udpPacketParser->fromString($data, '123');
+        $time = time();
+        $data = '{"data":{"type":"Point"},"appId":"22f8e456-93f2-4173-8f2d-8a010abcceb1","clientId":"22f8e456-93f2-4173-8f2d-8a010abcceb1","receivedAt":'.$time.'}';
+        $packet = $udpPacketParser->fromString($data, $time);
         $this->assertEquals($packet->toPoint()->getCoordinates(), [0, 0]);
-        $this->assertEquals('{"point":{"type":"Point","coordinates":[0,0]},"appId":"22f8e456-93f2-4173-8f2d-8a010abcceb1","clientId":"22f8e456-93f2-4173-8f2d-8a010abcceb1","extraData":[]}', $packet->toJson());
+        $this->assertEquals('{"point":{"type":"Point","coordinates":[0,0]},"appId":"22f8e456-93f2-4173-8f2d-8a010abcceb1","clientId":"22f8e456-93f2-4173-8f2d-8a010abcceb1","extraData":[],"receivedAt":'.$time.'}', $packet->toJson());
     }
 }

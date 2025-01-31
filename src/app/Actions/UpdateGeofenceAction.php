@@ -11,10 +11,10 @@ class UpdateGeofenceAction
 {
     use GeoJsonPolygonToEloquentSpatialPolygonTrait;
 
-    public function update(Geofence $geofence, App $app, ?Polygon $polygon, string $name, ?string $webhookUrl = null): Geofence
+    public function update(Geofence $geofence, App $app, ?Polygon $polygon, ?string $name = null, ?string $webhookUrl = null): Geofence
     {
         $geofence->update([
-            'name' => $name,
+            'name' => $name ?? $geofence->name,
             'app_id' => $app->id,
             'user_id' => $app->user_id,
             'webhook_url' => $webhookUrl,

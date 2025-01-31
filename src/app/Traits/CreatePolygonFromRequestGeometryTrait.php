@@ -14,12 +14,12 @@ trait CreatePolygonFromRequestGeometryTrait
         } catch (\Throwable $th) {
             return null;
         }
-        
+
         if (! array_key_exists('geometry', $geometry)) {
             return null;
         }
         try {
-            
+
             $polygon = GeoJson::jsonUnserialize($geometry['geometry']);
         } catch (\Throwable $th) {
             return null;

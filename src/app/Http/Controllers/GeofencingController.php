@@ -2,21 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use GeoJson\GeoJson;
-use App\Models\Geofence;
-use Illuminate\Http\Request;
-use GeoJson\Geometry\Polygon;
-use Illuminate\Contracts\View\View;
 use App\Actions\CreateGeofenceAction;
 use App\Actions\UpdateGeofenceAction;
-use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\CreateGeofenceRequest;
 use App\Http\Requests\UpdateGeofenceRequest;
+use App\Models\Geofence;
 use App\Traits\CreatePolygonFromRequestGeometryTrait;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
 
 class GeofencingController extends Controller
 {
-
     use CreatePolygonFromRequestGeometryTrait;
 
     public function __construct(
@@ -65,11 +62,16 @@ class GeofencingController extends Controller
             }
         }
 
+        $newName = null;
+        if ($request->has('name') and $request->name !== null and $request->name !== '') {
+            $newName = $request->name;
+        }
+
         $this->updateGeofenceAction->update(
             auth()->user()->geofences()->where('id', $request->id)->firstOrFail(),
             auth()->user()->apps()->where('id', $request->app_id)->firstOrFail(),
             $newPolygon,
-            $request->name,
+            $newName,
             $request->webhook_url
         );
 

@@ -123,6 +123,9 @@ Route::group(['prefix' => 'dashboard', 'middleware' => 'auth'], function () {
         Route::POST('/update', [UserController::class, 'update']);
         Route::POST('create-token', [UserController::class, 'createToken']);
         Route::POST('delete-token', [UserController::class, 'deleteToken']);
+        Route::POST('create-signature', [UserController::class, 'createSignature']);
+        Route::POST('delete-signature', [UserController::class, 'deleteSignature']);
+
     });
     Route::group(['prefix' => 'apps'], function () {
         Route::GET('/', [AppController::class, 'index']);

@@ -31,13 +31,14 @@ class SwooleWsServerEventHandler implements WsEventsHandler
 
     public function onMessage(Server $ws, Frame $frame): bool
     {
+        $receivedAt = time();
         if ($frame->opcode === WEBSOCKET_OPCODE_PING) {
             $pongFrame = new Frame;
             $pongFrame->opcode = WEBSOCKET_OPCODE_PONG;
 
             return $ws->push($frame->fd, $pongFrame);
         }
-        $packet = $this->wsPacketParser->fromString($frame->data, $this->clientIps[$frame->fd] ?? 'unknown');
+        $packet = $this->wsPacketParser->fromString($frame->data, $receivedAt);
         if ($packet === null) {
             return $ws->disconnect($frame->fd);
         }

@@ -67,7 +67,7 @@
 @endsection
 @push('scripts')
     <script>
-    var polygonCoords = @json(json_decode($geofence->geometry->toJson(), true)['coordinates'][0]);
+    var polygonCoords = @json(json_decode($geofence->geometry->toJson(), true));
     var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
         osmAttrib = '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors',
         osm = L.tileLayer(osmUrl, {
@@ -81,7 +81,7 @@
         drawnItems = L.featureGroup().addTo(map);
 
     // Add the existing polygon to the map and drawnItems
-    var polygon = L.polygon(polygonCoords).addTo(drawnItems);
+    var polygon = L.geoJSON(polygonCoords).addTo(drawnItems);
     map.fitBounds(polygon.getBounds());
 
     L.control.layers({

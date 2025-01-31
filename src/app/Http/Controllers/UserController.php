@@ -6,6 +6,7 @@ use App\Actions\ManualCreateUserAction;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 
 class UserController extends Controller
@@ -80,6 +81,25 @@ class UserController extends Controller
             'token_id' => 'required',
         ]);
         $request->user()->tokens()->where('id', $request->token_id)->delete();
+
+        return redirect()->back();
+    }
+
+    public function createSignature(Request $request): RedirectResponse
+    {
+        $request->validate([
+            'name' => 'required',
+        ]);
+
+        return redirect()->back()->with('createdSignature', $request->user()->webhookSignature()->create(['name' => $request->name, 'value' => Str::random(32)])->value);
+    }
+
+    public function deleteSignature(Request $request): RedirectResponse
+    {
+        $request->validate([
+            'signature_id' => 'required',
+        ]);
+        $request->user()->webhookSignature()->delete();
 
         return redirect()->back();
     }
