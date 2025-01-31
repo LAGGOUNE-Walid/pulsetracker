@@ -44,20 +44,20 @@
             </tbody>
         </table>
         <hr />
-        <h3 class="mt-5 mb-5">Your webhook signature</h3>
+        <h3 class="mt-5 mb-5">Your webhook tokens</h3>
         @if ($user->webhookSignature === null)
             <form action="{{ url('dashboard/settings/create-signature') }}" method="POST">
                 <div class="input-group mb-3">
                     @csrf
-                    <input type="text" class="form-control rounded-start-2" name="name" placeholder="Signature name"
-                        aria-label="Signature name" aria-describedby="button-addon2">
+                    <input type="text" class="form-control rounded-start-2" name="name" placeholder="Token name"
+                        aria-label="Token name" aria-describedby="button-addon2">
                     <button class="btn btn-outline-success" type="submit" id="button-addon2">Create new</button>
                 </div>
             </form>
         @endif
         @if (session('createdSignature'))
             <div class="alert alert-success mt-5 mb-5" role="alert">
-                Here is your signature. Please store it securely:
+                Here is your token. Please store it securely:
                 <br />
                 <b>{{ session('createdSignature') }}</b>
             </div>
