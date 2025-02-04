@@ -15,6 +15,7 @@ class DeviceCreatedJob
     public function __construct(
         public Table $appsDevicesTable,
         public Table $usersQuotaTable,
+        public Table $deviceAppsTable,
         public string $appKey,
         public string $deviceKey,
         public int $userId
@@ -39,6 +40,12 @@ class DeviceCreatedJob
             $this->createUserIfNotExists($this->userId, $this->usersQuotaTable);
         } catch (\Throwable $th) {
             \Sentry\captureException($th);
+        }
+
+
+        if (! $this->deviceAppsTable->exist($this->deviceKey)) {
+            $deviceData = ['appKey' => $this->appKey, 'userId' => $this->userId];
+            $this->deviceAppsTable->set($this->deviceKey, $deviceData);
         }
     }
 }

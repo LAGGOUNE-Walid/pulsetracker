@@ -15,6 +15,7 @@ class AppDeletedJob
     public function __construct(
         public Table $appsDevicesTable,
         public Table $usersQuotaTable,
+        public Table $deviceAppsTable,
         public string $appKey,
         public int $userId
     ) {

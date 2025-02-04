@@ -54,7 +54,7 @@ $pm->add(function () use ($httpClient) {
     sleep(1 * 60);
 });
 
-function startQueueWorker($appsDevicesTable, $usersQuotaTable, Container $container)
+function startQueueWorker($appsDevicesTable, $usersQuotaTable, $deviceAppsTable, Container $container)
 {
     $queue = $container->get(Queue::class);
     while (true) {
@@ -62,7 +62,7 @@ function startQueueWorker($appsDevicesTable, $usersQuotaTable, Container $contai
         if ($job) {
             $jobClassName = $job->payload()['displayName'];
             try {
-                $jobClass = new $jobClassName($appsDevicesTable, $usersQuotaTable, ...$job->payload()['data']);
+                $jobClass = new $jobClassName($appsDevicesTable, $usersQuotaTable, $deviceAppsTable, ...$job->payload()['data']);
                 $jobClass->handle();
             } catch (\Throwable $th) {
                 \Sentry\captureException($th);
@@ -73,8 +73,8 @@ function startQueueWorker($appsDevicesTable, $usersQuotaTable, Container $contai
         usleep(500000);
     }
 }
-$pm->add(function (Pool $pool, int $workerId) use ($appsDevicesTable, $container, $usersQuotaTable) {
-    startQueueWorker($appsDevicesTable, $usersQuotaTable, $container);
+$pm->add(function (Pool $pool, int $workerId) use ($appsDevicesTable, $container, $usersQuotaTable, $deviceAppsTable) {
+    startQueueWorker($appsDevicesTable, $usersQuotaTable, $deviceAppsTable, $container);
 });
 
 $pm->start();

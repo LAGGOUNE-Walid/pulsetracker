@@ -12,8 +12,12 @@ class RefreshUserQuotaJob
     /**
      * Create a new job instance.
      */
-    public function __construct(public Table $appsDevicesTable, public Table $usersQuotaTable, public int $userId)
-    {
+    public function __construct(
+        public Table $appsDevicesTable,
+        public Table $usersQuotaTable,
+        public Table $deviceAppsTable,
+        public int $userId
+    ) {
         //
     }
 

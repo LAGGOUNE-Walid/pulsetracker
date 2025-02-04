@@ -12,8 +12,13 @@ class AppCreatedJob
     /**
      * Create a new job instance.
      */
-    public function __construct(public Table $appsDevicesTable, public Table $usersQuotaTable, public string $appKey, public int $userId)
-    {
+    public function __construct(
+        public Table $appsDevicesTable,
+        public Table $usersQuotaTable,
+        public Table $deviceAppsTable,
+        public string $appKey,
+        public int $userId
+    ) {
         //
     }
 

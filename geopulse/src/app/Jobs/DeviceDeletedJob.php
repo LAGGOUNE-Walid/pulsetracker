@@ -15,6 +15,7 @@ class DeviceDeletedJob
     public function __construct(
         public Table $appsDevicesTable,
         public Table $usersQuotaTable,
+        public Table $deviceAppsTable,
         public string $appKey,
         public string $deviceKey,
         public int $userId
@@ -40,6 +41,10 @@ class DeviceDeletedJob
             $this->appsDevicesTable->set($this->appKey, ['devicesKeys' => json_encode($devices), 'userId' => $this->userId]);
         } catch (\Throwable $th) {
             \Sentry\captureException($th);
+        }
+
+        if ($this->deviceAppsTable->exist($this->deviceKey)) {
+            $this->deviceAppsTable->del($this->deviceKey);
         }
 
     }
