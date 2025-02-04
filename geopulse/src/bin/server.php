@@ -38,12 +38,12 @@ $pm->add(function (Pool $pool, int $workerId) use ($container) {
     $redisServer->start();
 });
 
-$pm->add(function (Pool $pool, int $workerId) use ($config, $container) {
-    $gps103server = $container->get(Gps103Server::class)->setAddress('0.0.0.0')->setPort(5001)->create();
-    $gps103server->setEventsHandler($container->get(SwooleGps103TcpServerEventHandler::class));
-    $gps103server->setConfig($config['gps103']);
-    $gps103server->start();
-});
+// $pm->add(function (Pool $pool, int $workerId) use ($config, $container) {
+//     $gps103server = $container->get(Gps103Server::class)->setAddress('0.0.0.0')->setPort(5001)->create();
+//     $gps103server->setEventsHandler($container->get(SwooleGps103TcpServerEventHandler::class));
+//     $gps103server->setConfig($config['gps103']);
+//     $gps103server->start();
+// });
 
 $pm->add(function () use ($httpClient) {
     try {

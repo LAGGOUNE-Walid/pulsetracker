@@ -17,8 +17,8 @@ run(function () {
     ];
 
     $data = [
-        'appId' => 'a9b8dffd-e68c-4bff-95cd-21fbcb86fcfb',
-        'clientId' => '3faffcfa-d486-4e38-9598-e27ff129b6e9',
+        // 'appId' => '78981cd5-a6d9-4fa4-8ba9-4108791e9fa7',
+        'clientId' => 'ac01cdfd-9891-4773-b988-04c0180eeece',
         // long,lat
         'data' => ['type' => 'Point', 'coordinates' => $locations[array_rand($locations)]],
         'extra' => [

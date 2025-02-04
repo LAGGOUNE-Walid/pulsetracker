@@ -33,6 +33,8 @@ class UdpPacketParser implements Packet
             if ($this->dataIsValide($unpackedData)) {
                 if (array_key_exists("appId", $unpackedData)) {
                     $this->appId = $unpackedData['appId'];
+                }else {
+                    $this->appId = null;
                 }
 
                 $this->clientId = $unpackedData['clientId'];
