@@ -59,10 +59,13 @@
                     <li class="nav-item" style="color: white;margin-right: 15px;"><a class="nav-link active"
                             href="{{ url('about') }}" style="color: white;">About</a></li>
                     <li class="nav-item" style="color: white;margin-right: 15px;"><a class="nav-link active"
+                            href="{{ url('team') }}" style="color: white;">Team</a></li>
+                    <li class="nav-item" style="color: white;margin-right: 15px;"><a class="nav-link active"
                             href="{{ url('use-cases') }}" style="color: white;">Use cases</a></li>
 
                     <li class="nav-item" style="color: white;margin-right: 15px;"><a class="nav-link active"
-                            href="https://github.com/Pulsestracker/client-android/releases" style="color: white;">Download app</a></li>
+                            href="https://github.com/Pulsestracker/client-android/releases"
+                            style="color: white;">Download app</a></li>
 
 
                     <li class="nav-item" style="color: white;"><a class="nav-link active"
@@ -104,7 +107,6 @@
         document.addEventListener('DOMContentLoaded', () => hljs.highlightAll());
         const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
         const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-        
     </script>
 </body>
 

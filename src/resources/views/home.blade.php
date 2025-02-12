@@ -50,63 +50,71 @@
     </section><!-- End: Banner Heading Image -->
     <section style="">
 
-        <h1 style="text-align: center; margin-top: 8%;"><strong>The Problem with <span class="text-warning">Traditional</span> Location Tracking APIs</strong>
+        <h1 style="text-align: center; margin-top: 8%;"><strong>The Problem with <span
+                    class="text-warning">Traditional</span> Location Tracking APIs</strong>
         </h1>
         <div class="container" style="margin-top: 3%;">
             <div class="row mt-5">
                 <div class="col-md-12">
-                    <table class="table table text-center h4">
-                        <thead>
-                            <tr class="text-center">
-                                <th scope="col" style="">Features</th>
-                                <th scope="col" class="text-muted">Traditional Tracking APIs 😖</th>
-                                <th scope="col">Pulsetracker 🚀</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Developer Happiness 😃</strong></td>
-                                <td class="text-muted">Debugging tracking issues at 2 AM while questioning life choices.</td>
-                                <td class="highlight-table"><strong>Simple, reliable, and built so you can sleep at night.</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Backend Setup</strong></td>
-                                <td class="text-muted">Requires servers, databases, UDP, WebSockets, and scaling.</td>
-                                <td class="highlight-table"><strong>No backend needed—just integrate and track.</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Real-Time Updates</strong></td>
-                                <td class="text-muted">Often slow, uses polling, or has high latency.</td>
-                                <td class="highlight-table"><strong>low latency with WebSockets & UDP.</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Ease of Integration</strong></td>
-                                <td class="text-muted">Complicated SDKs, excessive setup.</td>
-                                <td class="highlight-table"><strong>Lightweight, plug-and-play integration.</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Cost & Pricing</strong></td>
-                                <td class="text-muted">Expensive, pay-per-request, unpredictable costs.</td>
-                                <td class="highlight-table"><strong>Transparent pricing with a free tier.</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Privacy & Compliance</strong></td>
-                                <td class="text-muted">Hard to handle user consent and security.</td>
-                                <td class="highlight-table"><strong>Privacy-first with built-in user consent features.</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Customization</strong></td>
-                                <td class="text-muted">Limited control over update frequency and API's.</td>
-                                <td class="highlight-table"><strong>Fine-tuned settings for developers.</strong></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Scalability</strong></td>
-                                <td class="text-muted">Becomes costly and complex at scale.</td>
-                                <td class="highlight-table"><strong>Scales effortlessly without extra infrastructure.</strong></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    
+                    <div class="table-responsive">
+                        <table class="table table text-center h4">
+                            <thead>
+                                <tr class="text-center">
+                                    <th scope="col" style="">Features</th>
+                                    <th scope="col" class="text-muted">Traditional Tracking APIs 😖</th>
+                                    <th scope="col">Pulsetracker 🚀</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Developer Happiness 😃</strong></td>
+                                    <td class="text-muted">Debugging tracking issues at 2 AM while questioning life choices.
+                                    </td>
+                                    <td class="highlight-table"><strong>Simple, reliable, and built so you can sleep at
+                                            night.</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Backend Setup</strong></td>
+                                    <td class="text-muted">Requires servers, databases, UDP, WebSockets, and scaling.</td>
+                                    <td class="highlight-table"><strong>No backend needed—just integrate and track.</strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Real-Time Updates</strong></td>
+                                    <td class="text-muted">Often slow, uses polling, or has high latency.</td>
+                                    <td class="highlight-table"><strong>low latency with WebSockets & UDP.</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Ease of Integration</strong></td>
+                                    <td class="text-muted">Complicated SDKs, excessive setup.</td>
+                                    <td class="highlight-table"><strong>Lightweight, plug-and-play integration.</strong>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Cost & Pricing</strong></td>
+                                    <td class="text-muted">Expensive, pay-per-request, unpredictable costs.</td>
+                                    <td class="highlight-table"><strong>Transparent pricing with a free tier.</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Privacy & Compliance</strong></td>
+                                    <td class="text-muted">Hard to handle user consent and security.</td>
+                                    <td class="highlight-table"><strong>Privacy-first with built-in user consent
+                                            features.</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Customization</strong></td>
+                                    <td class="text-muted">Limited control over update frequency and API's.</td>
+                                    <td class="highlight-table"><strong>Fine-tuned settings for developers.</strong></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Scalability</strong></td>
+                                    <td class="text-muted">Becomes costly and complex at scale.</td>
+                                    <td class="highlight-table"><strong>Scales effortlessly without extra
+                                            infrastructure.</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div><!-- End: 1 Row 3 Columns -->
@@ -142,14 +150,18 @@
                 <div class="col-md-12">
                     <div class="row">
                         <div class="col-12 col-md-6 text-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" class="bi bi-pin-map" viewBox="0 0 16 16" style="font-size: 10rem;margin-bottom: 15px;">
-                                <path fill-rule="evenodd" d="M3.1 11.2a.5.5 0 0 1 .4-.2H6a.5.5 0 0 1 0 1H3.75L1.5 15h13l-2.25-3H10a.5.5 0 0 1 0-1h2.5a.5.5 0 0 1 .4.2l3 4a.5.5 0 0 1-.4.8H.5a.5.5 0 0 1-.4-.8z"/>
-                                <path fill-rule="evenodd" d="M8 1a3 3 0 1 0 0 6 3 3 0 0 0 0-6M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999z"/>
-                              </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
+                                class="bi bi-pin-map" viewBox="0 0 16 16" style="font-size: 10rem;margin-bottom: 15px;">
+                                <path fill-rule="evenodd"
+                                    d="M3.1 11.2a.5.5 0 0 1 .4-.2H6a.5.5 0 0 1 0 1H3.75L1.5 15h13l-2.25-3H10a.5.5 0 0 1 0-1h2.5a.5.5 0 0 1 .4.2l3 4a.5.5 0 0 1-.4.8H.5a.5.5 0 0 1-.4-.8z" />
+                                <path fill-rule="evenodd"
+                                    d="M8 1a3 3 0 1 0 0 6 3 3 0 0 0 0-6M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999z" />
+                            </svg>
                         </div>
                         <div class="col-12 col-md-6">
                             <h3>Geo<span class="text-success">fencing</span></h3>
-                            <p style="color: var(--bs-gray-500);font-size: 20px;">Effortlessly set up geofencing with PulsesTracker to receive instant alerts when a device enters or leaves a designated area.
+                            <p style="color: var(--bs-gray-500);font-size: 20px;">Effortlessly set up geofencing with
+                                PulsesTracker to receive instant alerts when a device enters or leaves a designated area.
                             </p>
                         </div>
                     </div>
@@ -181,7 +193,8 @@
                     <div class="row">
                         <div class="col-12 col-md-6 text-center">
                             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor"
-                                class="bi bi-diagram-3" viewBox="0 0 16 16" style="font-size: 10rem;margin-bottom: 15px;">
+                                class="bi bi-diagram-3" viewBox="0 0 16 16"
+                                style="font-size: 10rem;margin-bottom: 15px;">
                                 <path fill-rule="evenodd"
                                     d="M6 3.5A1.5 1.5 0 0 1 7.5 2h1A1.5 1.5 0 0 1 10 3.5v1A1.5 1.5 0 0 1 8.5 6v1H14a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0V8h-5v.5a.5.5 0 0 1-1 0v-1A.5.5 0 0 1 2 7h5.5V6A1.5 1.5 0 0 1 6 4.5zM8.5 5a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5zM0 11.5A1.5 1.5 0 0 1 1.5 10h1A1.5 1.5 0 0 1 4 11.5v1A1.5 1.5 0 0 1 2.5 14h-1A1.5 1.5 0 0 1 0 12.5zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm4.5.5A1.5 1.5 0 0 1 7.5 10h1a1.5 1.5 0 0 1 1.5 1.5v1A1.5 1.5 0 0 1 8.5 14h-1A1.5 1.5 0 0 1 6 12.5zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm4.5.5a1.5 1.5 0 0 1 1.5-1.5h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z" />
                             </svg>
