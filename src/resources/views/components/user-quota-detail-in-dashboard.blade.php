@@ -1,6 +1,8 @@
 <div class="p-5 mt-5" style="border: 1px solid #737272; border-radius: 10px;">
     <h3>Usage: &nbsp; <a class="btn btn-outline-success" role="button" style="color: white;"
-            href="{{ url('/#pricing') }}">Upgrade your account</a></h3>
+            href="{{ url('/#pricing') }}">Upgrade your account</a> &nbsp; <a class="btn btn-outline-info" href="{{ route('billing') }}">
+                Billing
+            </a> </h3>
     <div class="mt-5">
         <div class="row gy-5">
             <div class="col col-6">

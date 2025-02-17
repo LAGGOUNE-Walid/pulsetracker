@@ -185,3 +185,10 @@ Route::group(['prefix' => 'blogs'], function () {
 Route::GET('docs/api', function () {
     return redirect('https://docs.pulsestracker.com');
 });
+Route::get('/billing', function (Request $request) {
+    return $request->user()->redirectToBillingPortal(route('dashboard'));
+})->middleware(['auth'])->name('billing');
+
+Route::get('ambassadorship', function() {
+    return view('ambassadorship');
+});

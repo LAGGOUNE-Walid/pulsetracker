@@ -69,7 +69,7 @@ class StripeHandledEventsListener implements ShouldQueue
             ->first();
 
         if (! $subscription) {
-            throw new \Exception('Subscription id '.$event->payload['data']['object']['id'].' not found', 1);
+            throw new \Exception('Subscription id ' . $event->payload['data']['object']['id'] . ' not found', 1);
         }
 
         $user = $subscription->user;
@@ -79,7 +79,7 @@ class StripeHandledEventsListener implements ShouldQueue
                 $type = $this->resolveSubscriptionName($subscription->stripe_price);
                 $userOldSubscription = $user->currentSubscription;
                 if (
-                    $userOldSubscription->price_id !== $subscription->stripe_price
+                    $userOldSubscription and $userOldSubscription->price_id !== $subscription->stripe_price
                 ) {
                     // its and upgrade operation
                     $user->currentSubscription()->update([
@@ -93,6 +93,8 @@ class StripeHandledEventsListener implements ShouldQueue
                 }
 
                 if (
+                    $userOldSubscription
+                    and
                     ($userOldSubscription->starts_at->notEqualTo(Carbon::parse($event->payload['data']['object']['current_period_start'])))
                     and
                     ($userOldSubscription->ends_at->notEqualTo(Carbon::parse($event->payload['data']['object']['current_period_end'])))
@@ -117,7 +119,7 @@ class StripeHandledEventsListener implements ShouldQueue
     {
         $subscription = Subscription::where('stripe_id', $event->payload['data']['object']['id'])->whereHas('user')->first();
         if (! $subscription) {
-            throw new \Exception('Subscription id '.$event->payload['data']['object']['id'].' not found', 1);
+            throw new \Exception('Subscription id ' . $event->payload['data']['object']['id'] . ' not found', 1);
         }
         $user = $subscription->user;
         $user->currentSubscription()->update([

@@ -2,14 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 
 class UserSubscriptionController extends Controller
 {
     public function showHomePage(Request $request): View
     {
+        if ($request->query('ref')) {
+            Cookie::queue(Cookie::forever('referral_ambassador', $request->query('ref')));
+        }
         $subscriptions = config('stripe-subscriptions.plans');
 
         return view('home', ['subscriptions' => $subscriptions]);
@@ -23,8 +27,14 @@ class UserSubscriptionController extends Controller
         }
         $subscription = $subscriptions[$plan];
 
+        $metadata = [];
+        if ($request->cookie('referral_ambassador')) {
+            $metadata['referral_ambassador'] = $request->cookie('referral_ambassador');
+        }
+
         return $request->user()
             ->newSubscription($subscription['product_id'], $subscription['price_id'])
+            ->withMetadata($metadata)
             ->checkout([
                 'success_url' => url('dashboard/settings'),
                 'cancel_url' => url('/#pricing'),
