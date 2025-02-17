@@ -4,7 +4,7 @@
     <div class="container py-5" style="margin-top: 10%;">
         <div class="row text-center">
             <div class="col">
-                <h1 class="accent mb-4">PulseTracker Ambassador Program</h1>
+                <h1 class="accent mb-4">Pulsetracker Ambassador Program</h1>
                 <h3>Earn Recurring Lifetime Commissions on Every Referral</h3>
             </div>
         </div>
@@ -54,16 +54,16 @@
                             <li class="h5">All referrals are tracked using your unique ambassador code. It is your responsibility to share your personal link accurately.</li>
                             <li class="h5">Commissions are calculated on a monthly basis based on verified subscription payments. Payment is made via our chosen payout method.</li>
                             <li class="h5">Ambassadors must adhere to our branding guidelines and ethical promotion practices. Any fraudulent activity will result in immediate termination.</li>
-                            <li class="h5">This Ambassador Program is operated solely by the PulseTracker creator as an individual developer, not a legal entity. All decisions regarding program structure, payouts, and participation are made at the sole discretion of the program operator.</li>
+                            <li class="h5">This Ambassador Program is operated solely by the Pulsetracker creator as an individual developer, not a legal entity. All decisions regarding program structure, payouts, and participation are made at the sole discretion of the program operator.</li>
                             <li class="h5">This Ambassador Program is managed solely by an individual without a formal legal entity. There is no warranty or guarantee regarding the continuity, availability, or future evolution of the program. Participation is voluntary and at your own risk.</li>
-                            <li class="h5">Ambassadors are not employees, agents, or legal partners of PulseTracker. You're responsible for: 
+                            <li class="h5">Ambassadors are not employees, agents, or legal partners of Pulsetracker. You're responsible for: 
                                 <ul>
                                     <li class="h5">Your own marketing costs</li>
                                     <li class="h5">Tax compliance in your jurisdiction</li>
                                     <li class="h5">Content legality in your region.</li>
                                 </ul>
                             </li>
-                            <li class="h5">You may promote competing products, but cannot: <ul> <li class="h5">Bundle PulseTracker with other offers without written approval</li> <li class="h5">Use 'official partnership' claims in marketing</li></ul></li>
+                            <li class="h5">You may promote competing products, but cannot: <ul> <li class="h5">Bundle Pulsetracker with other offers without written approval</li> <li class="h5">Use 'official partnership' claims in marketing</li></ul></li>
                             <li class="h5">All commissions are gross payments. We do not: <ul> <li class="h5">Withhold taxes</li> <li class="h5">Provide 1099/W-8BEN forms </li> <li class="h5">Advise on tax obligations</li></ul></li>
                         </ul>
                         <div class="text-center mt-5">
