@@ -186,6 +186,12 @@ Route::GET('docs/api', function () {
     return redirect('https://docs.pulsestracker.com');
 });
 Route::get('/billing', function (Request $request) {
+    $user = $request->user();
+
+    if (!$user->stripe_id) {
+        $user->createAsStripeCustomer(); // Create Stripe customer if not exists
+    }
+
     return $request->user()->redirectToBillingPortal(route('dashboard'));
 })->middleware(['auth'])->name('billing');
 
