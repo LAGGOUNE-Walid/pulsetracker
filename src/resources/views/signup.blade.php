@@ -60,6 +60,7 @@
                     <div class="input-group"><input class="form-control" type="password" required
                             style="background: #16171C;border-style: solid;border-color: var(--bs-light);font-size: 24px;color: var(--bs-body-color);margin-top: 3%;"
                             placeholder="Password" name="password"></div>
+                    {{-- <div class="cf-turnstile" data-sitekey="0x4AAAAAAA-cemfbToLJ0rZ_"></div> --}}
                     <button class="btn btn-outline-success btn-lg" type="submit"
                         style="margin-top: 5%;width: 100%;">Create acccount</button>
                 </form>
