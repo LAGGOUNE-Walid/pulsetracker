@@ -11,6 +11,7 @@ use App\Http\Controllers\StorageController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserSubscriptionController;
 use App\Http\Controllers\UserTokensController;
+use App\Http\Middleware\HasValidCaptcha;
 use App\Http\Middleware\UserCanAccessLocationsHistory;
 use App\Mail\EmailVerify;
 use App\Models\App;
@@ -52,13 +53,13 @@ Route::POST('subscription-swap/{type}', [UserSubscriptionController::class, 'swa
 
 Route::GET('/signup', function () {
     return view('signup');
-})->middleware('guest');
+})->middleware(['guest']);
 
 Route::GET('/signin', function () {
     return view('signin');
 })->middleware('guest')->name('login');
 
-Route::POST('account/create', [UserController::class, 'create'])->middleware('guest');
+Route::POST('account/create', [UserController::class, 'create'])->middleware(['guest', HasValidCaptcha::class]);
 Route::POST('account/login', [UserController::class, 'login'])->middleware('guest');
 
 Route::GET('login/{provider}', [LoginWithProvider::class, 'redirectToProvider'])->middleware('guest');

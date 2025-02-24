@@ -14,6 +14,13 @@ return [
     |
     */
 
+    'cloudflare' => [
+        'turnstile' => [
+            'site_key' => env('TURNSTILE_SITE_KEY'),
+            'site_secret' => env('TURNSTILE_SITE_SECRET'),
+        ]
+    ],
+
     'github' => [
         'client_id' => env('GITHUB_CLIENT_ID'),
         'client_secret' => env('GITHUB_CLIENT_SECRET'),

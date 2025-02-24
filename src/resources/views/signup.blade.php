@@ -14,7 +14,8 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="description"
         content="Pulsetracker, the cutting-edge solution for real-time location tracking designed for developers and businesses. Our eco-friendly service uses the efficient UDP protocol to minimize mobile power consumption while delivering accurate location updates. Pulsetracker offers seamless integration with WebSockets for real-time data dispatch, comprehensive API access, and robust tracking features. Whether you're building a new app or enhancing existing services, Pulsetracker's scalable solutions and flexible pricing plans ensure you get the most reliable and cost-effective location tracking. Start with our free plan and scale up as your needs grow. Try Pulsetracker today and experience unparalleled location tracking performance.">
-    <link rel="icon" type="image/jpeg" sizes="720x720" href="assets/img/Circle_Brand_Identity__Copy_-removebg-preview.png">
+    <link rel="icon" type="image/jpeg" sizes="720x720"
+        href="assets/img/Circle_Brand_Identity__Copy_-removebg-preview.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/darkly/bootstrap.min.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&amp;display=swap">
@@ -23,6 +24,7 @@
     <link rel="stylesheet" href="assets/css/Banner-Heading-Image-images.css">
     <link rel="stylesheet" href="assets/css/Navbar-Centered-Brand-Dark-icons.css">
     <script defer src="https://cloud.umami.is/script.js" data-website-id="06db6e2e-fb33-4581-8722-67ece940e18e"></script>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"></script>
 </head>
 
 <body style="background: black;border-color: var(--bs-body-bg);margin: 0px;">
@@ -60,9 +62,10 @@
                     <div class="input-group"><input class="form-control" type="password" required
                             style="background: #16171C;border-style: solid;border-color: var(--bs-light);font-size: 24px;color: var(--bs-body-color);margin-top: 3%;"
                             placeholder="Password" name="password"></div>
-                    {{-- <div class="cf-turnstile" data-sitekey="0x4AAAAAAA-cemfbToLJ0rZ_"></div> --}}
+                    <div class="cf-turnstile" data-sitekey="{{ config('services.cloudflare.turnstile.site_key') }}"
+                        data-callback="onTurnstileSuccess"> </div>
                     <button class="btn btn-outline-success btn-lg" type="submit"
-                        style="margin-top: 5%;width: 100%;">Create acccount</button>
+                        style="margin-top: 5%;width: 100%;" disabled>Create acccount</button>
                 </form>
                 <hr style="margin-top: 5%;">
                 <div class="row text-center">
@@ -82,13 +85,18 @@
                             </svg>&nbsp;Sign up with Google</a></div>
                 </div>
                 <h5 style="margin-top: 5%;color: var(--bs-gray-500);">By signing up, you agree to our <a
-                        href="{{url('terms-of-use')}}" target="_blank">terms</a>, <a
-                        href="{{url('privacy-policy')}}" target="_blank">privacy policy</a>.</h5>
+                        href="{{ url('terms-of-use') }}" target="_blank">terms</a>, <a
+                        href="{{ url('privacy-policy') }}" target="_blank">privacy policy</a>.</h5>
             </div>
         </div>
     </div><!-- End: 1 Row 1 Column -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        window.onTurnstileSuccess = function(code) {
+            document.querySelector('form button[type="submit"]').disabled = false;
+        }
+    </script>
 </body>
 
 </html>
