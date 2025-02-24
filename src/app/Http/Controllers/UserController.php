@@ -18,7 +18,7 @@ class UserController extends Controller
     public function create(Request $request): RedirectResponse
     {
         $credentials = $request->validate([
-            'email' => ['required', 'email', 'unique:users'],
+            'email' => ['required', 'email', 'unique:App\Models\User,email'],
             'password' => ['required'],
         ]);
 
