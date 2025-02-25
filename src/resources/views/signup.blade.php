@@ -65,7 +65,7 @@
                     <div class="cf-turnstile" data-sitekey="{{ config('services.cloudflare.turnstile.site_key') }}"
                         data-callback="onTurnstileSuccess"> </div>
                     <button class="btn btn-outline-success btn-lg" type="submit"
-                        style="margin-top: 5%;width: 100%;" disabled>Create acccount</button>
+                        style="margin-top: 5%;width: 100%;">Create acccount</button>
                 </form>
                 <hr style="margin-top: 5%;">
                 <div class="row text-center">
