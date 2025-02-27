@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Actions\ManualCreateUserAction;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use App\Rules\CloudflareTurnstile;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\RedirectResponse;
+use App\Actions\ManualCreateUserAction;
 
 class UserController extends Controller
 {
@@ -20,6 +21,7 @@ class UserController extends Controller
         $credentials = $request->validate([
             'email' => ['required', 'email', 'unique:App\Models\User,email'],
             'password' => ['required'],
+            'cf-turnstile-response' => ['required', 'string', new CloudflareTurnstile()],
         ]);
 
         $this->manualCreateUserAction->create($credentials);

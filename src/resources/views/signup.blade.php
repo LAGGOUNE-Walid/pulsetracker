@@ -24,7 +24,6 @@
     <link rel="stylesheet" href="assets/css/Banner-Heading-Image-images.css">
     <link rel="stylesheet" href="assets/css/Navbar-Centered-Brand-Dark-icons.css">
     <script defer src="https://cloud.umami.is/script.js" data-website-id="06db6e2e-fb33-4581-8722-67ece940e18e"></script>
-    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"></script>
 </head>
 
 <body style="background: black;border-color: var(--bs-body-bg);margin: 0px;">
@@ -62,8 +61,12 @@
                     <div class="input-group"><input class="form-control" type="password" required
                             style="background: #16171C;border-style: solid;border-color: var(--bs-light);font-size: 24px;color: var(--bs-body-color);margin-top: 3%;"
                             placeholder="Password" name="password"></div>
-                    <div class="cf-turnstile" data-sitekey="{{ config('services.cloudflare.turnstile.site_key') }}"
-                        data-callback="onTurnstileSuccess"> </div>
+                    
+                        <div id="cf-turnstile-container" class="mt-3">
+                            <div class="cf-turnstile" data-sitekey="{{ config('services.cloudflare.turnstile.site_key') }}"></div>
+                            <input type="hidden" id="turnstile-response" name="cf-turnstile-response" required>
+                        </div>
+
                     <button class="btn btn-outline-success btn-lg" type="submit"
                         style="margin-top: 5%;width: 100%;">Create acccount</button>
                 </form>
@@ -92,10 +95,17 @@
     </div><!-- End: 1 Row 1 Column -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"></script>
     <script>
-        window.onTurnstileSuccess = function(code) {
-            document.querySelector('form button[type="submit"]').disabled = false;
-        }
+        turnstile.ready(function () {
+            turnstile.render('#cf-turnstile-container', {
+                'sitekey': '{{ config('services.cloudflare.turnstile.site_key') }}',
+                'theme': 'light',
+                'callback': function(token) {
+                    document.getElementById('turnstile-response').value = token;
+                }
+            });
+        });
     </script>
 </body>
 

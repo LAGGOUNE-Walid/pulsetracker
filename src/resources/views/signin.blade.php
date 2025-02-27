@@ -14,7 +14,8 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="description"
         content="Pulsetracker, the cutting-edge solution for real-time location tracking designed for developers and businesses. Our eco-friendly service uses the efficient UDP protocol to minimize mobile power consumption while delivering accurate location updates. Pulsetracker offers seamless integration with WebSockets for real-time data dispatch, comprehensive API access, and robust tracking features. Whether you're building a new app or enhancing existing services, Pulsetracker's scalable solutions and flexible pricing plans ensure you get the most reliable and cost-effective location tracking. Start with our free plan and scale up as your needs grow. Try Pulsetracker today and experience unparalleled location tracking performance.">
-    <link rel="icon" type="image/jpeg" sizes="720x720" href="assets/img/Circle_Brand_Identity__Copy_-removebg-preview.png">
+    <link rel="icon" type="image/jpeg" sizes="720x720"
+        href="assets/img/Circle_Brand_Identity__Copy_-removebg-preview.png">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.3/dist/darkly/bootstrap.min.css">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&amp;display=swap">
@@ -59,7 +60,8 @@
                             placeholder="Email" name="email" required></div>
                     <div class="input-group"><input class="form-control" type="password"
                             style="background: #16171C;border-style: solid;border-color: var(--bs-light);font-size: 24px;color: var(--bs-body-color);margin-top: 3%;"
-                            placeholder="Password" name="password" required></div><button class="btn btn-outline-success btn-lg" type="submit"
+                            placeholder="Password" name="password" required></div><button
+                        class="btn btn-outline-success btn-lg" type="submit"
                         style="margin-top: 5%;width: 100%;">Continue</button>
                 </form>
                 <hr style="margin-top: 5%;">
@@ -80,8 +82,8 @@
                             </svg>&nbsp;Login with Google</a></div>
                 </div>
                 <h5 style="margin-top: 5%;color: var(--bs-gray-500);">By signing in, you agree to our <a
-                        href="{{url('terms-of-use')}}" target="_blank">terms</a>, <a
-                        href="{{url('privacy-policy')}}" target="_blank">privacy policy</a>.</h5>
+                        href="{{ url('terms-of-use') }}" target="_blank">terms</a>, <a
+                        href="{{ url('privacy-policy') }}" target="_blank">privacy policy</a>.</h5>
             </div>
         </div>
     </div><!-- End: 1 Row 1 Column -->
