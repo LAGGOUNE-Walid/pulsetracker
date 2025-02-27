@@ -23,7 +23,7 @@ class UserController extends Controller
             'password' => ['required'],
             'cf-turnstile-response' => ['required', 'string', new CloudflareTurnstile()],
         ]);
-
+        unset($credentials['cf-turnstile-response']);
         $this->manualCreateUserAction->create($credentials);
 
         $request->session()->regenerate();
