@@ -1,0 +1,11 @@
+{
+    "debug": true,
+    "port": 6001,
+    "appManager.array.apps": [
+        {
+            "id": "TEST_ID",
+            "key": "TEST_KEY",
+            "secret": "TEST_SECRET"
+        }
+    ]
+}
