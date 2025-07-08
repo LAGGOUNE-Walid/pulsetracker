@@ -273,9 +273,9 @@ Developed and maintained by **Walid Laggoune** – Backend Engineer and Founder 
 
 ---
 
-[1]: https://dev.to/l_walid/building-a-real-time-location-tracking-solution-with-pulsetracker-laravel-and-python-b08?utm_source=chatgpt.com "Building a Real-Time Location Tracking Solution with Pulsetracker ..."
-[2]: https://github.com/LAGGOUNE-Walid?utm_source=chatgpt.com "LAGGOUNE-Walid - GitHub"
-[3]: https://www.linkedin.com/posts/walid-laggoune-295ab824a_real-time-location-tracking-with-nodejs-activity-7271566629472292864-9J3_?utm_source=chatgpt.com "Real-Time Location Tracking with Node.js and Pulsetracker's Redis ..."
-[4]: https://dev.to/l_walid/pulsetracker-geofencing-with-laravel-14h5?utm_source=chatgpt.com "Geofencing with Laravel - DEV Community"
-[5]: https://www.linkedin.com/posts/kaushikrishi_async-pressure-activity-7276547657634914305-Mqu2?utm_source=chatgpt.com "Kaushik Rishi - Async Pressure - LinkedIn"
-[6]: https://laggoune-walid.github.io/portfolio/?utm_source=chatgpt.com "LAGGOUNE Walid portfolio"
+[1]: https://dev.to/l_walid/building-a-real-time-location-tracking-solution-with-pulsetracker-laravel-and-python-b08?utm_source=github.com "Building a Real-Time Location Tracking Solution with Pulsetracker ..."
+[2]: https://github.com/LAGGOUNE-Walid?utm_source=github.com "LAGGOUNE-Walid - GitHub"
+[3]: https://www.linkedin.com/posts/walid-laggoune-295ab824a_real-time-location-tracking-with-nodejs-activity-7271566629472292864-9J3_?utm_source=github.com "Real-Time Location Tracking with Node.js and Pulsetracker's Redis ..."
+[4]: https://dev.to/l_walid/pulsetracker-geofencing-with-laravel-14h5?utm_source=github.com "Geofencing with Laravel - DEV Community"
+[5]: https://www.linkedin.com/posts/kaushikrishi_async-pressure-activity-7276547657634914305-Mqu2?utm_source=github.com "Kaushik Rishi - Async Pressure - LinkedIn"
+[6]: https://laggoune-walid.github.io/portfolio/?utm_source=github.com "LAGGOUNE Walid portfolio"
