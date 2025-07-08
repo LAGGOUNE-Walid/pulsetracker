@@ -1,10 +1,5 @@
-Here’s a **more detailed, production-ready `README.md`** extracted and enriched from your `pulsetracker` repo, real-world tutorials, and geofencing integrations.
-
----
-
 # PulseTracker
-
-A powerful real-time location tracking SaaS platform designed for developers. Hosts a fast, protocol-agnostic backend and scalable infrastructure—built with Laravel, Swoole, Redis, and MariaDB.
+Real-time location tracking SaaS platform designed for developers. Hosts a fast, protocol-agnostic backend and scalable infrastructure—built with Laravel, Swoole, Redis, and MariaDB.
 
 Rectifies vendor lock-in by enabling clients to integrate via TCP, UDP, WebSocket, HTTP, or Redis Pub/Sub without relying on proprietary SDKs ([dev.to][1], [github.com][2]).
 
@@ -277,8 +272,6 @@ Developed and maintained by **Walid Laggoune** – Backend Engineer and Founder 
 * Node.js Redis Pub/Sub backend use case ([linkedin.com][3])
 
 ---
-
-This detailed README combines code structure, workflow descriptions, examples, and production deployment notes. Let me know if you want additional diagrams, API reference, or CI/CD templates!
 
 [1]: https://dev.to/l_walid/building-a-real-time-location-tracking-solution-with-pulsetracker-laravel-and-python-b08?utm_source=chatgpt.com "Building a Real-Time Location Tracking Solution with Pulsetracker ..."
 [2]: https://github.com/LAGGOUNE-Walid?utm_source=chatgpt.com "LAGGOUNE-Walid - GitHub"
